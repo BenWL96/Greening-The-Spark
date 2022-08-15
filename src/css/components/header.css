@@ -1,0 +1,23 @@
+.section_header_title{
+    font-size: 80px;
+    font-weight: bold;
+    width: 100%;
+    background-color: transparent;
+    text-shadow: lightgreen 1px 1px ;
+    text-align: center;
+}
+
+.section_header_text{
+    width: 300px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+}
+
+.section_header{
+    background: rgb(7,73,0);
+  background: linear-gradient(90deg, rgba(7,73,0,1) 0%, rgba(67,140,30,1) 67%, rgba(43,115,0,1) 100%);
+
+}

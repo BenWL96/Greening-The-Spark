@@ -1,0 +1,71 @@
+import React, { getAllByText, getByText, render, screen, fireEvent } from '@testing-library/react';
+import Body from '../body';
+
+
+
+//Test form input and text upon page render
+it("Form input box renders on page open.", () => {
+    render(<Body/>);
+    const text = screen.getByPlaceholderText("Input Your Game ID here")
+    expect(text).toBeInTheDocument();
+})
+
+it("Form renders on page open.", () => {
+    render(<Body message="Please Enter Your Game ID"/>);
+    const text = screen.getByText("Please Enter Your Game ID");
+    expect(text).toBeInTheDocument();
+})
+
+//Test when user input in form fails
+const mockedInputText = jest.fn();
+it("test that form in DOM on page", () => {
+    render(<Body/>);
+    const inputText = screen.getByPlaceholderText("Input Your Game ID here")
+    expect(inputText).toBeInTheDocument();
+})
+
+it("input game ID information into box and render input", () => {
+    render(<Body/>);
+    const inputText = screen.getByPlaceholderText("Input Your Game ID here")
+    fireEvent.change(inputText, { target: { value: "1"}})
+    expect(inputText.value).toBe("1")
+})
+
+it("input game ID information into box then submit, check that loading indicated that data is being fetched", () => {
+    render(<Body/>);
+    const inputText = screen.getByPlaceholderText("Input Your Game ID here");
+    fireEvent.change(inputText, { target: { value: "1"}});
+    const submitButton = screen.getByTestId("section_body_form_submit_button");
+    fireEvent.click(submitButton);
+    const loadingMessage= screen.getByText("Loading");
+    expect(loadingMessage).toBeInTheDocument();
+    //Test fetch mock failure??
+
+})
+
+it("input game ID information into box then submit, check back button exists in dom", () => {
+    render(<Body/>);
+    const inputText = screen.getByPlaceholderText("Input Your Game ID here");
+    fireEvent.change(inputText, { target: { value: "1"}});
+    const submitButton = screen.getByTestId("section_body_form_submit_button");
+    fireEvent.click(submitButton);
+    //BAck button is not being displayedd....
+    //Already tried setting state to fulfil the statement below, but not sure if that's a correct approach.
+    //data_exists & !data_being_fetched_and_loading
+    const backButton= screen.getByText("Go Back");
+    expect(backButton).toBeInTheDocument();
+
+})
+
+
+
+
+
+//Test when user input in form succeeds
+
+
+
+//Check that nested components don't load until successful API fetch and props passed down.
+
+//When user form submitted, then display loading
+//Async find and pass data to the components, which display after successfull ID entry.

@@ -1,0 +1,51 @@
+.section_simrepo_wrapper_row{
+    width: 100%;
+    background-color: transparent;
+}
+
+.section_simrepo_wrapper_row{
+    width: 100%;
+}  
+
+.section_simrepo_wrapper_row_cont_1{
+    width: 50%;
+}
+
+.section_simrepo_wrapper_row_cont_2{
+    width: 50%;
+}
+
+.section_simrepo_wrapper_table_head_1{
+    width: 40%;
+}
+
+.section_simrepo_wrapper_table_head_2{
+    width: 20%;
+}
+.section_simrepo_wrapper_table_head_2{
+    width: 20%;
+}
+
+.section_simrepo_wrapper_table_head_2{
+    width: 20%;
+}
+
+.section_simrepo_wrapper{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section_simrepo_wrapper_title{
+    background-color: white;
+    font-size: 35px;
+}
+
+.section_simrepo_wrapper_sub_title{
+    background-color: white;
+}
+
+.section_simrepo_wrapper_spark{
+    width: 70px;
+    height: 70px;
+}

@@ -1,0 +1,1 @@
+web: gunicorn greening_the_spark.wsgi --log-file -

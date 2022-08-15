@@ -1,0 +1,14 @@
+.section_footer{
+    background-color:lightgray;
+    margin-bottom: 0;
+}
+
+.section_footer_wrapper_title{
+    font-size: 20px;
+    color: white
+}
+
+.icon_1{
+    width: 30px;
+    height: 30px;
+}
