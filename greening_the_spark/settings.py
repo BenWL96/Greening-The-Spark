@@ -9,9 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=config("SECRET_KEY", default='')
 
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #
 
@@ -48,7 +48,8 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "https://greening-the-spark.herokuapp.com/",
+    '192.168.1.25',
 ]
 
 
@@ -77,11 +78,11 @@ WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME", default=''),
-        'USER': config('DATABASE_USER', default=''),
-        'HOST': config('DATABASE_HOST', default=''),
+        'NAME': config("DATABASE_NAME_2", default=''),
+        'USER': config('DATABASE_USER_2', default=''),
+        'HOST': config('DATABASE_HOST_2', default=''),
         'PORT': config('DATABASE_PORT', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS', default=''),
+        'PASSWORD': config('DATABASE_PASS_2', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
 
