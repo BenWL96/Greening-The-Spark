@@ -47,11 +47,13 @@ MIDDLEWARE = [
 ]
 
 C_IP=config("C_IP", default='')
+B_IP=config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "https://greening-the-spark.herokuapp.com",
     C_IP,
+    B_IP,
 ]
 
 
