@@ -45,7 +45,7 @@ function Body() {
     setData_Being_Fetched_And_Loading(true);
 
     try {
-        let res = await fetch("api/v1/sim-reports/" + input_game_id + "/details", {
+        let res = await fetch("api/v1/sim-reports/" + input_game_id + "/details/", {
         method: "GET",
         });
         let json = await res.json();
