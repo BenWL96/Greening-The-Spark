@@ -46,10 +46,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+C_IP=config("C_IP", default='')
+
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "https://greening-the-spark.herokuapp.com/",
-    '192.168.1.25',
+    C_IP,
 ]
 
 
