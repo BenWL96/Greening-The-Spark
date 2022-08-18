@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 import json, datetime
 from django.urls import reverse
+from factory_djoy import UserFactory
 
 class test_simulation_report_endpoints(TestCase):
 
@@ -127,6 +128,50 @@ class test_simulation_report_endpoints(TestCase):
 			"hydro_level_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61"
 		}
 
+		"""Test Simulation_Reports_LIST endpoint when no auth"""
+
+		url = reverse('simulation-reports')
+
+		response = self.client.get(
+			url,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {'detail': 'Authentication credentials were not provided.'}
+
+		print("T0 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T0: Simulation_ID list shouldn't be accessible without Auth."
+			)
+
+		"""Test apiOverview endpoint when no auth"""
+
+		url = reverse('simulation-reports')
+
+		response = self.client.get(
+			url,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {'detail': 'Authentication credentials were not provided.'}
+
+		print("T0.25 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T0.25: API Overview shouldn't be accessible without Auth."
+			)
+
+
+		#Force Authenticate Here
+		username = "John"
+		password = "1234"
+		user = UserFactory(username=username,password=password)
+
+		self.client.force_login(user)
+
 		"""Test Simulation_Reports_LIST endpoint when no data"""
 
 		url = reverse('simulation-reports')
@@ -139,10 +184,10 @@ class test_simulation_report_endpoints(TestCase):
 		response_dict = json.loads(json.dumps(input_dict))
 		match_dict = {'error': 'No game results could be found.'}
 
-		print("T0 initiate")
+		print("T0.5 initiate")
 		if self.assertEqual(response_dict, match_dict) == False:
 			return print(
-				"T0: No simulation data should be found"
+				"T0.5: No simulation data should be found"
 			)
 
 
@@ -158,9 +203,10 @@ class test_simulation_report_endpoints(TestCase):
 
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {'simulation_id': 1}
 
 		print("T1 initiate")
-		if self.assertEqual(response_dict, working_post_data) == False:
+		if self.assertEqual(response_dict, match_dict) == False:
 			return print(
 				"T1: The dictionary posted is not the same "
 				"dictionary that is retreived."
