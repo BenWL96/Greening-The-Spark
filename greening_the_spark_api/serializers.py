@@ -1,8 +1,6 @@
 from . import models
 from rest_framework import serializers
 
-
-#Only accessible to authenticated users
 class SerializeSimulation_Reports_LIST(serializers.ModelSerializer):
 	class Meta:
 		model = models.Simulation_Report

@@ -16,7 +16,10 @@ def apiOverview(request):
 
 		'simulation reports': '/sim-reports/',
 		'simulation report detail': '/sim-reports/<str:simulation_id>/details',
-		'simulation report dump': '/sim-reports/dump/'
+		'simulation report dump': '/sim-reports/dump/',
+
+		'swagger': '/swagger/',
+		'redoc': '/redoc/'
 	}
 
 	return Response(api_urls)

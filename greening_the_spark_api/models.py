@@ -33,6 +33,8 @@ class Simulation_Report(models.Model):
 	average_CO2 = models.IntegerField()
 	average_cost = models.IntegerField()
 
+	#Spark Results
+
 	efficiency = models.CharField(choices=RESULTS, max_length=5)
 	economy = models.CharField(choices=RESULTS, max_length=5)
 	eco_friendliness = models.CharField(choices=RESULTS, max_length=5)
