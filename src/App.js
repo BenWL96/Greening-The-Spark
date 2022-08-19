@@ -16,11 +16,7 @@ const App = () => {
       <Body/>      
 
       <Footer/>
-      
-      
-      
-
-      
+    
     </>
   )
 }

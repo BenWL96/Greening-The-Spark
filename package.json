@@ -4,14 +4,14 @@
   "private": true,
   "proxy": "https://greening-the-spark.herokuapp.com",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.0",
-    "chart.js": "^3.8.2",
+    "chart.js": "^3.9.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.4.0",
+    "react-bootstrap": "^2.5.0",
     "react-chartjs-2": "^4.3.1",
-    "react-d3-library": "^1.1.8",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-scripts": "5.0.1",
@@ -25,8 +25,8 @@
     "postinstall": "npm run build"
   },
   "engines": {
-    "node": "14.x",
-    "npm": "6.x"
+    "node": "18.x",
+    "npm": "7.x"
   },
   "eslintConfig": {
     "extends": [
@@ -45,10 +45,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@faker-js/faker": "^7.3.0",
-    "@testing-library/react": "^13.3.0",
-    "jest-watch-typeahead": "^0.6.5"
   }
 }

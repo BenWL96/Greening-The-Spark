@@ -1,13 +1,16 @@
 .section_body{
-    background-color: transparent;
+    background-color: #edcd2d;
+}
+
+.section_body_form_message{
+    margin: 0px;
+    padding: 0px;
 }
 
 .section_body_back_button{
     width: 100px;
     height: 50px;
     font-weight: bold;
-    margin-top: 0;
-    margin-left: 0;
 }
 
 .section_body_form_wrapper{

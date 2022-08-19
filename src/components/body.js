@@ -110,7 +110,7 @@ function Body() {
 
         <div className='section_body'>
         {data_being_fetched_and_loading ? 
-            <div></div>
+            <></>
           : 
           displayEnterGameID()
         }
@@ -129,7 +129,7 @@ function Body() {
             
               <button type="submit" data-testid="section_body_form_submit_button" className="section_body_form_wrapper_button">Create</button>
 
-              <div className="message">{message ? <p data-testid="section_body_form_message">{message}</p> : null}</div>
+              <div className="message">{message ? <p data-testid="section_body_form_message" className='section_body_form_message'>{message}</p> : null}</div>
             </form>
             </div>
           }

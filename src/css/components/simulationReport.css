@@ -16,24 +16,34 @@
 }
 
 .section_simrepo_wrapper_table_head_1{
-    width: 40%;
+    width: 25%;
 }
 
 .section_simrepo_wrapper_table_head_2{
-    width: 20%;
+    width: 25%;
 }
 .section_simrepo_wrapper_table_head_2{
-    width: 20%;
+    width: 25%;
 }
 
 .section_simrepo_wrapper_table_head_2{
-    width: 20%;
+    width: 25%;
 }
 
-.section_simrepo_wrapper{
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+@media(min-width: 800px){
+    .section_simrepo_wrapper{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media(max-width: 800px){
+    .section_simrepo_wrapper{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .section_simrepo_wrapper_title{
@@ -48,4 +58,6 @@
 .section_simrepo_wrapper_spark{
     width: 70px;
     height: 70px;
+    margin-left: auto;
+    margin-right: auto;
 }

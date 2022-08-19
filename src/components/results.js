@@ -273,38 +273,49 @@ function Results({json_data}) {
 
     return (
 
-      <>
+     
       <div className='section section_results'>
       <p className='section_simulation_header'>ID:{simulation_id} Date:{date}</p>
       
         
         <div className='section_results_wrapper'>
 
+        <SimulationReport json_data={json_data}/>
+        
+       
+        <div className='graph_storage_wrapper'>
+              <Line options={options_2} data={data_2} className="graph_storage_wrapper_graph"/>
+            </div>
+      
+        <br />
+       
+            <div className='graph_demand_wrapper'>
+                <Line options={options} data={something_1} className="graph_demand_wrapper_graph"/>
+              </div>
 
-        <Tabs
+      <br />
+       {/*} <Tabs
       defaultActiveKey="home"
       transition={false}
       id="noanim-tab-example"
-      className="mb-3"
+      className="section_results_wrapper_tab"
     >
         <Tab eventKey="home" title="Home">
-          <SimulationReport json_data={json_data}/>
+          
         </Tab>
         <Tab eventKey="profile" title="Profile">
-          <section className="section section_graph_demand">
-            <div className='section section_graph_demand_wrapper'>
-              <Line options={options} data={something_1} />
-            </div>
-          </section>
+          <section className='section section_graph_demand_wrapper'>
+              
+            </section>
         </Tab>
         <Tab eventKey="contact" title="Contact">
-          <section className="section section_graph_storage">
-            <div className='section section_graph_storage_wrapper'>
-              <Line options={options_2} data={data_2} />
-            </div>
+          <section className='section section_graph_storage_wrapper'>
+            
           </section>
+            
+      
         </Tab>
-      </Tabs>
+    </Tabs>*/}
 
 
 
@@ -315,7 +326,7 @@ function Results({json_data}) {
           
         </div>
       </div>
-      </>
+    
     );
 }
 

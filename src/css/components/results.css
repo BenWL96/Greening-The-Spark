@@ -1,4 +1,66 @@
 .section_simulation_header{
     font-size: 30px;
     text-align: center;
+    font-weight: bold;
+}
+
+.section_results_wrapper_tab{
+    color: black;
+    font-weight: bold;
+    background-color: white
+}
+
+
+.graph_demand_wrapper{
+    background-color: #edcd2d;
+}
+
+.graph_storage_wrapper{
+    background-color: #edcd2d;
+}
+
+@media(min-width: 800px){
+    .graph_demand_wrapper{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .graph_demand_wrapper_graph{
+        width: 800px;
+    }
+
+    .graph_storage_wrapper{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .graph_storage_wrapper_graph{
+        width: 800px;
+    }
+}
+
+@media(max-width: 800px){
+
+    .graph_storage_wrapper{
+        width: 100%;
+        overflow: scroll;
+    }
+    .graph_demand_wrapper{
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .graph_demand_wrapper_graph{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .graph_storage_wrapper_graph{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }

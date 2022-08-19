@@ -1,11 +1,13 @@
 :root {
-  background: rgb(7,73,0);
-  background: linear-gradient(90deg, rgba(7,73,0,1) 0%, rgba(67,140,30,1) 67%, rgba(43,115,0,1) 100%);
+  background: rgb(13,131,0);
+  background: linear-gradient(90deg, rgba(13,131,0,1) 0%, rgba(94,194,44,1) 72%, rgba(66,176,0,1) 100%);
 }
 
+
+
 .section_results{
-  background: rgb(7,73,0);
-  background: linear-gradient(90deg, rgba(7,73,0,1) 0%, rgba(67,140,30,1) 67%, rgba(43,115,0,1) 100%);
+  background: rgb(13,131,0);
+  background: linear-gradient(90deg, rgba(13,131,0,1) 0%, rgba(94,194,44,1) 72%, rgba(66,176,0,1) 100%);
 }
 
 .section_results_wrapper_tabs{

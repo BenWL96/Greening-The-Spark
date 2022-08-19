@@ -3,21 +3,14 @@
     font-weight: bold;
     width: 100%;
     background-color: transparent;
-    text-shadow: lightgreen 1px 1px ;
+    text-shadow: #edcd2d 2px 2px ;
     text-align: center;
-}
-
-.section_header_text{
-    width: 300px;
-    font-size: 30px;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
 }
 
 .section_header{
-    background: rgb(7,73,0);
-  background: linear-gradient(90deg, rgba(7,73,0,1) 0%, rgba(67,140,30,1) 67%, rgba(43,115,0,1) 100%);
-
+    background: rgb(13,131,0);
+background: linear-gradient(90deg, rgba(13,131,0,1) 0%, rgba(94,194,44,1) 72%, rgba(66,176,0,1) 100%);
+height: 100%;
 }
