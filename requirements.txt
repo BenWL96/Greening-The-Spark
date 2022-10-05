@@ -9,6 +9,7 @@ django-baton==2.4.1
 django-cors-headers==3.13.0
 djangorestframework==3.13.1
 drf-yasg==1.21.3
+factory-boy==3.2.1
 factory-djoy==2.2.0
 Faker==14.1.0
 gunicorn==20.1.0
