@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=config("SECRET_KEY", default='')
 
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['greening-the-spark.herokuapp.com']
+ALLOWED_HOSTS = []
 
 #'greening-the-spark.herokuapp.com'
 
@@ -50,8 +50,7 @@ B_IP=config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://greening-the-spark.herokuapp.com",
-    C_IP,
+    "http://127.0.0.1:3000",
     B_IP
 ]
 
@@ -84,11 +83,11 @@ WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME_2", default=''),
-        'USER': config('DATABASE_USER_2', default=''),
-        'HOST': config('DATABASE_HOST_2', default=''),
-        'PORT': config('DATABASE_PORT', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS_2', default=''),
+        'NAME': config("DATABASE_NAME", default=''),
+        'USER': config('DATABASE_USER', default=''),
+        'HOST': config('DATABASE_HOST', default=''),
+        'PORT': config('PORT', default='3306', cast=float),
+        'PASSWORD': config('DATABASE_PASS', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
 

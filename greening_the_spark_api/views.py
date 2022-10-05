@@ -74,20 +74,20 @@ def Simulation_Reports_CREATE(request):
 			print("Data was successfully serialised, now only return ID of the game.")
 
 			date = serializer.data['date']
-			simulation_start_time = serializer.data['simulation_start_time']
+			game_start_time = serializer.data['time']
 
 			try:
 				simulation_object = get_object_or_404(
 					models.Simulation_Report,
 					date=date,
-					simulation_start_time=simulation_start_time
+					time=game_start_time
 				)
 
 			except models.Simulation_Report.DoesNotExist:
 				raise Http404("Game ID Not Found")
 
-			return Response({"simulation_id": simulation_object.simulation_id})
+			displayed_game_id = (simulation_object.game_id + 9) / 10
+			return Response({"display_game_id": displayed_game_id})
 
 		#Currently the post is not valid.
 		return Response({'message': "the data passed to the endpoint is not valid."})
-

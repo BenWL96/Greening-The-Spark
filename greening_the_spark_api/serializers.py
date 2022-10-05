@@ -4,12 +4,12 @@ from rest_framework import serializers
 class SerializeSimulation_Reports_LIST(serializers.ModelSerializer):
 	class Meta:
 		model = models.Simulation_Report
-		fields = ['simulation_id', 'date']
+		fields = ['game_id', 'date']
 
 class SerializeSimulation_Report_DATACHECK(serializers.ModelSerializer):
 	class Meta:
 		model = models.Simulation_Report
-		exclude = ['simulation_id']
+		exclude = ['game_id']
 
 class SerializeSimulation_Report_Detail(serializers.ModelSerializer):
 	class Meta:
