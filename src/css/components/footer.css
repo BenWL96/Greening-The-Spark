@@ -1,14 +1,19 @@
 .section_footer{
-    background-color:lightgray;
+    background: rgb(195,195,195);
+  background: linear-gradient(90deg, rgba(195,195,195,1) 0%, rgba(244,244,244,1) 72%, rgba(226,226,226,1) 100%);
+
     margin-bottom: 0;
 }
 
 .section_footer_wrapper_title{
     font-size: 20px;
-    color: white
+    color: black;
+    margin-left: 10px;
 }
 
 .icon_1{
     width: 30px;
     height: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }

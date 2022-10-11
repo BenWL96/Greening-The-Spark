@@ -2,6 +2,11 @@
     background-color: #edcd2d;
 }
 
+.section_body_form{
+    background-color: #edcd2d;
+}
+
+
 .section_body_form_message{
     margin: 0px;
     padding: 0px;
@@ -11,10 +16,21 @@
     width: 100px;
     height: 50px;
     font-weight: bold;
+    margin-left: 10px;
+}
+
+.section_body_back_button:hover{
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
 }
 
 .section_body_form_wrapper{
     width: 100%;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .prompt_game_ID{
@@ -30,10 +46,18 @@
 .section_body_form_wrapper_button{
     height: 50px;
     width: 100px;
-
     font-weight: bold;
 }
 
-.section_body_form_wrapper_form{
-    align-content: center;
+
+.section_body_loading{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.section_body_form_wrapper_success_message{
+    color: green;
+    padding: 0px;
+    margin: 0px;
 }

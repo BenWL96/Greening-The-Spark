@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../css/components/simulationReport.css';
 import Green_Spark from '../images/green_spark.png';
 import Blue_Spark from '../images/blue_spark.png';
@@ -15,88 +15,53 @@ function SimulationReport({json_data}){
     console.log(json_data);
     
     if (json_data){
-    var simulation_start_time = json_data.simulation_start_time;
-    var simulation_end_time = json_data.simulation_end_time;
-    var simulation_run_time_days = json_data.simulation_run_time_days;
+
+    var gameID = json_data.game_id
+
+    var timePlayed = json_data.time;
+    var datePlayed = json_data.date;
+    var difficulty = json_data.difficulty;
+
+
     var demand = json_data.demand;
     var wind = json_data.wind;
     var solar = json_data.solar;
-    var fossil_fuels = json_data.fossil_fuels;
+    var fossilFuels = json_data.fossil_fuels;
     var nuclear = json_data.nuclear;
+
     var surplus = json_data.surplus;
     var shortfall = json_data.shortfall;
-    var initial_stored = json_data.initial_stored;
-    var final_stored = json_data.final_stored;
-    var storage_discrepancy = json_data.storage_discrepancy;
-    var efficiency_score = json_data.efficiency_score;
-    var total_CO2 = json_data.total_CO2;
-    var total_cost = json_data.total_cost;
-    var average_CO2 = json_data.average_CO2;
-    var average_cost = json_data.average_CO2;
+    var initialStored = json_data.initial_stored;
+    var finalStored = json_data.final_stored;
+    var storageDiscrepancy = json_data.storage_discrepancy;
+    var efficiencyScore = json_data.efficiency_score;
+    
+    var totalCO2Tonnes = json_data.total_CO2_tonnes;
+    var totalCostMillionPounds = json_data.total_cost_million_pounds;
+    var averageCO2 = json_data.average_CO2_tonnes_per_gwh;
+    var averageCostMillionPerGWH = json_data.average_cost_million_pounds_per_gwh;
 
-    var efficiency = json_data.efficiency;
-    var economy = json_data.economy;
-    var eco_friendliness = json_data.eco_friendliness;
+    //COMMENTS
+
+    var surplusComment = json_data.surplus_comment;
+    var shortfallComment = json_data.shortfall_comment;
+    var storageDiscrepancyComment = json_data.storage_discrepancy_comment;
+    var efficiencyScoreComment = json_data.efficiency_score_comment;
+    var averageCO2Comment = json_data.average_CO2_comment;
+    var averageCostComment = json_data.average_cost_comment;
+
+
+    //SPARKS
+    var efficiencySpark = json_data.efficiency_spark;
+    var economySpark = json_data.economy_spark;
+    var ecoFriendlinessSpark = json_data.eco_friendliness_spark;
+
     }else{
-        console.log("User clicked back and json_data non existent");
+
+        console.log("No real data was passed to the simulation report..");
+        
     }
 
-    {/*Simulation Report 
-    let [simulation_id, setSimulation_Id] = useState(null);
-    let [date, setDate] = useState(null);
-    let [simulation_start_time, setSimulation_Start_Time] = useState(null);
-    let [simulation_end_time, setSimulation_End_Time] = useState(null);
-    let [simulation_run_time_days, setSimulation_Run_Time_Days] = useState(null);
-    let [demand, setDemand] = useState(null);
-    let [wind, setWind] = useState(null);
-    let [solar, setSolar] = useState(null);
-    let [fossil_fuels, setFossil_Fuels] = useState(null);
-    let [nuclear, setNuclear] = useState(null);
-    let [surplus, setSurplus] = useState(null);
-    let [shortfall, setShortfall] = useState(null);
-    let [initial_stored, setInitial_Stored] = useState(null);
-    let [final_stored, setFinal_Stored] = useState(null);
-    let [storage_discrepancy, setStorage_Discrepancy] = useState(null);
-    let [efficiency_score, setEfficiency_Score] = useState(null);
-    let [total_CO2, setTotal_CO2] = useState(null);
-    let [total_cost, setTotal_Cost] = useState(null);
-    let [average_CO2, setAverage_CO2] = useState(null);
-    let [average_cost, setAverage_Cost] = useState(null);
-
-    Spark Ratings
-    let [efficiency, setEfficiency] = useState(null);
-    let [economy, setEconomy] = useState(null);
-    let [eco_friendliness, setEco_Friendliness] = useState(null);
-    
-
-    simulation report
-
-    setSimulation_Id(json_data.simulation_id);
-    setDate(json_data.date);
-    setSimulation_Start_Time(json_data.simulation_start_time);
-    setSimulation_End_Time(json_data.simulation_end_time);
-    setSimulation_Run_Time_Days(json_data.simulation_run_time_days);
-    setDemand(json_data.demand);
-    setWind(json_data.wind);
-    setSolar(json_data.solar);
-    setFossil_Fuels(json_data.fossil_fuels);
-    setNuclear(json_data.nuclear);
-    setSurplus(json_data.surplus);
-    setShortfall(json_data.shortfall);
-    setInitial_Stored(json_data.initial_stored);
-    setFinal_Stored(json_data.final_stored);
-    setStorage_Discrepancy(json_data.storage_discrepancy);
-    setEfficiency_Score(json_data.efficiency_score);
-    setTotal_CO2(json_data.total_CO2);
-    setTotal_Cost(json_data.total_cost);
-    setAverage_CO2(json_data.average_CO2);
-    setAverage_Cost(json_data.average_cost);
-    
-    Ratings
-
-    setEfficiency(json_data.efficiency);
-    setEconomy(json_data.economy);
-    setEco_Friendliness(json_data.eco_friendliness); */}
     
 
         return (
@@ -107,7 +72,7 @@ function SimulationReport({json_data}){
                 <section className="section section_simrepo">
                     <div className='section_simrepo_wrapper'>
 
-                        <p className='section_simrepo_wrapper_title'>Simulation Report:</p>
+                        <p className='section_simrepo_wrapper_title' >Simulation Report: {gameID}</p>
                         <p className='section_simrepo_wrapper_sub_title'>Simulation Report StateDate StateTime</p>
 
 
@@ -115,21 +80,27 @@ function SimulationReport({json_data}){
                         <tbody>
                             <tr>
                             <td className='section_simrepo_wrapper_table_head_1'>Simulation Start Time</td>
-                            <td className='section_simrepo_wrapper_table_head_2'>{simulation_start_time}</td>
+                            <td className='section_simrepo_wrapper_table_head_2'>{timePlayed}</td>
                             <td className='section_simrepo_wrapper_table_head_3'></td>
                             <td className='section_simrepo_wrapper_table_head_4'></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
-                            <td>Simulation End Time</td>
-                            <td>{simulation_end_time}</td>
+                            <td>Time Played</td>
+                            <td>{timePlayed}</td>
                             <td></td>
                             <td></td>
                             </tr>
                             <tr>
-                            <td>Simulation Run Time</td>
-                            <td>{simulation_run_time_days}</td>
+                            <td>Date Played</td>
+                            <td>{datePlayed}</td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td>Difficulty</td>
+                            <td>{difficulty}</td>
                             <td></td>
                             <td></td>
                             </tr>
@@ -163,7 +134,7 @@ function SimulationReport({json_data}){
                             </tr>
                             <tr>
                             <td>Fossil Fuels</td>
-                            <td>{fossil_fuels}</td>
+                            <td>{fossilFuels}</td>
                             <td></td>
                             <td></td>
                             </tr>
@@ -176,37 +147,37 @@ function SimulationReport({json_data}){
                             <tr>
                             <td>Surplus</td>
                             <td>{surplus}</td>
-                            <td></td>
+                            <td>{surplusComment}</td>
                             <td></td>
                             </tr>
                             <tr>
                             <td>Shortfall</td>
                             <td>{shortfall}</td>
-                            <td></td>
+                            <td>{shortfallComment}</td>
                             <td></td>
                             </tr>
                             <tr>
                             <td>Initial Stored</td>
-                            <td>{initial_stored}</td>
+                            <td>{initialStored}</td>
                             <td></td>
                             <td></td>
                             </tr>
                             <tr>
                             <td>Final Stored</td>
-                            <td>{final_stored}</td>
+                            <td>{finalStored}</td>
                             <td></td>
                             <td></td>
                             </tr>
                             <tr>
                             <td>Storage Discrepancy</td>
-                            <td>{storage_discrepancy}</td>
-                            <td></td>
+                            <td>{storageDiscrepancy}</td>
+                            <td>{storageDiscrepancyComment}</td>
                             <td></td>
                             </tr>
                             <tr>
                             <td>Efficiency Score</td>
-                            <td>{efficiency_score}</td>
-                            <td></td>
+                            <td>{efficiencyScore}</td>
+                            <td>{efficiencyScoreComment}</td>
                             <td></td>
                             </tr>
                         </tbody>
@@ -219,28 +190,36 @@ function SimulationReport({json_data}){
                         <tbody>
                             <tr>
                             <td className='section_simrepo_wrapper_table_head_1'>Total CO2 (tonnes)</td>
-                            <td className='section_simrepo_wrapper_table_head_2'>{total_CO2}</td>
+                            <td className='section_simrepo_wrapper_table_head_2'>{totalCO2Tonnes}</td>
                             <td className='section_simrepo_wrapper_table_head_3'></td>
                             <td className='section_simrepo_wrapper_table_head_4'></td>
                             </tr>
                         </tbody>
                         <tbody>
+
+                
                             <tr>
                             <td>Total Cost (£M)</td>
-                            <td>{total_cost}</td>
+                            <td>{totalCostMillionPounds}</td>
                             <td></td>
                             <td></td>
                             </tr>
                             <tr>
-                            <td>Ave CO2 (tonnes/GWh)</td>
-                            <td>{average_CO2}</td>
+                            <td>Average Cost (£Million/Gwh)</td>
+                            <td>{averageCostMillionPerGWH}</td>
+                            <td>{averageCostComment}</td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td>Total CO2 (Tonnes)</td>
+                            <td>{totalCO2Tonnes}</td>
                             <td></td>
                             <td></td>
                             </tr>
                             <tr>
-                            <td>Ave Cost (£M/GWh)</td>
-                            <td>{average_cost}</td>
-                            <td></td>
+                            <td>Average CO2 (tonnes/GWh)</td>
+                            <td>{averageCO2}</td>
+                            <td>{averageCO2Comment}</td>
                             <td></td>
                             </tr>
                     
@@ -262,13 +241,13 @@ function SimulationReport({json_data}){
                             <tr>
                             <td></td>
                             <td>
-                                {efficiency === "Green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : efficiency === "Blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
+                                {efficiencySpark === "Green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : efficiencySpark === "Blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
                              </td>
                             <td>
-                                {eco_friendliness === "Green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : eco_friendliness === "Blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
+                                {ecoFriendlinessSpark === "Green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : ecoFriendlinessSpark === "Blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
                             </td>
                             <td>
-                                {economy === "Green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : economy === "Blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
+                                {economySpark === "Green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : economySpark === "Blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
                             </td>
                             </tr>
                            

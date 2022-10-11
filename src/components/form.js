@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-
+import React from 'react';
 
 function Form(props) {
 
-    {/*User Input */}
+    {/*User Input 
     const [input_game_id, setInput_Game_Id] = useState("");
     const [message, setMessage] = useState("");
 
@@ -30,7 +29,7 @@ function Form(props) {
           console.log(err);
         }
         
-      };
+      };*/}
 
     return (
         <div>

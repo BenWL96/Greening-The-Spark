@@ -1,22 +1,25 @@
 .section_simulation_header{
     font-size: 30px;
-    text-align: center;
-    font-weight: bold;
+    text-align: left;
 }
 
 .section_results_wrapper_tab{
     color: black;
-    font-weight: bold;
     background-color: white
+}
+
+.section_simulation_header{
+    color: white;
+    text-align: center;
 }
 
 
 .graph_demand_wrapper{
-    background-color: #edcd2d;
+    background-color: white
 }
 
 .graph_storage_wrapper{
-    background-color: #edcd2d;
+    background-color: white
 }
 
 @media(min-width: 800px){
@@ -37,6 +40,13 @@
 
     .graph_storage_wrapper_graph{
         width: 800px;
+    }
+
+    .section_results_wrapper{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #9e9e9d;
     }
 }
 
@@ -61,6 +71,13 @@
         width: 800px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .section_results_wrapper{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #9e9e9d;
     }
 
 }
