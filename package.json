@@ -2,7 +2,7 @@
   "name": "greening_the_spark_frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:8000/",
+  "proxy": "https://greening-the-spark.herokuapp.com",
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.0",
