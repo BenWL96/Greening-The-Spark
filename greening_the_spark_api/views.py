@@ -42,13 +42,13 @@ def Simulation_Reports_LIST(request):
 		return Response(content, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
-def Simulation_Reports_DETAIL(request, simulation_id):
+def Simulation_Reports_DETAIL(request, game_id):
 
 	#Test for special characters in simulation_id
 		try:
 			simulation_report_object = get_object_or_404(
 				models.Simulation_Report,
-				simulation_id=simulation_id
+				game_id=game_id
 			)
 		except models.Simulation_Report.DoesNotExist:
 			raise Http404("A game with this ID does not exist")

@@ -31,3 +31,4 @@ urlpatterns = [
     re_path('.*', TemplateView.as_view(template_name="index.html"))
 ]
 
+

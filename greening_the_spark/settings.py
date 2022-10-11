@@ -1,6 +1,8 @@
 from pathlib import Path
 from decouple import config
 import os
+import oracledb
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -50,8 +52,9 @@ B_IP=config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",
-    B_IP
+    "https://greening-the-spark.herokuapp.com",
+    B_IP,
+    C_IP
 ]
 
 """"#cors allowed origins
@@ -83,13 +86,33 @@ WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME", default=''),
-        'USER': config('DATABASE_USER', default=''),
-        'HOST': config('DATABASE_HOST', default=''),
-        'PORT': config('PORT', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS', default=''),
+        'NAME': config("DATABASE_NAME_2", default=''),
+        'USER': config('DATABASE_USER_2', default=''),
+        'HOST': config('DATABASE_HOST_2', default=''),
+        'PORT': config('PORT_2', default='3306', cast=float),
+        'PASSWORD': config('DATABASE_PASS_2', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
+
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'TM3W2QQKPVEIWLS0',
+        'USER': 'ADMIN',
+        'PASSWORD': 'aFASFQE141$!$!1afF',
+        'HOST': '81.98.137.255',
+        'PORT': '1521',
+    }
+}
+
+"""
+"""connection = oracledb.connect(user="ADMIN",
+                              password="aFASFQE141$!$!1afF",
+                              dsn="localhost:1521/TM3W2QQKPVEIWLS0"
+                              )"""
+#host="localhost", port=1521, service_name="TM3W2QQKPVEIWLS0"
+
+
 
 
 REST_FRAMEWORK = {
@@ -127,11 +150,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = [
+"""STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-
+"""
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
