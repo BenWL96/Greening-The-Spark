@@ -83,7 +83,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config("DATABASE_NAME_2", default=''),
@@ -92,6 +92,14 @@ DATABASES = {
         'PORT': config('PORT_2', default='3306', cast=float),
         'PASSWORD': config('DATABASE_PASS_2', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
+}"""
+
+import dj_database_url
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+DATABASES = {
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
 """DATABASES = {
