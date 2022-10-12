@@ -86,8 +86,7 @@ def Simulation_Reports_CREATE(request):
 			except models.Simulation_Report.DoesNotExist:
 				raise Http404("Game ID Not Found")
 
-			displayed_game_id = (simulation_object.game_id + 9) / 10
-			return Response({"display_game_id": displayed_game_id})
+			return Response({"display_game_id": simulation_object.game_id})
 
 		#Currently the post is not valid.
 		return Response({'message': "the data passed to the endpoint is not valid."})
