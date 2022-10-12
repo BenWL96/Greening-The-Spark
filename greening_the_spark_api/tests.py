@@ -10,6 +10,7 @@ from .data import (
 	post_data_fossil_nuclear_at_0,
 	post_data_fossil_nuclear_at_minus_one,
 	post_data_fossil_nuclear_at_101,
+	working_post_data_fields_rearranged,
 	date,
 	time,
 
@@ -309,6 +310,27 @@ class test_simulation_report_endpoints(TestCase):
 				"T11: The data posted should not be serialized"
 			)
 
+		"""Post Simulation_Reports_CREATE Correct Data But Rearranged Fields"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=working_post_data_fields_rearranged,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		print(response_dict)
+		print(response_dict)
+		"""match_dict = {'display_game_id': 1}
+
+		print("T1 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T1: The dictionary posted is not the same "
+				"dictionary that is retrieved."
+			)"""
 
 
 """ LATEST ITERATION

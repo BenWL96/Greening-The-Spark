@@ -69,6 +69,7 @@ def Simulation_Reports_CREATE(request):
 			data=request.data, many=False
 		)
 
+
 		if serializer.is_valid():
 			serializer.save()
 			print("Data was successfully serialised, now only return ID of the game.")
