@@ -7,6 +7,9 @@ from .data import (
 	failing_post_data,
 	malicious_post_data,
 	post_data_fossil_nuclear_at_100,
+	post_data_fossil_nuclear_at_0,
+	post_data_fossil_nuclear_at_minus_one,
+	post_data_fossil_nuclear_at_101,
 	date,
 	time,
 
@@ -249,7 +252,7 @@ class test_simulation_report_endpoints(TestCase):
 
 		response = self.client.post(
 			url,
-			data=post_data_fossil_nuclear_at_100,
+			data=post_data_fossil_nuclear_at_0,
 		)
 
 		input_dict = response.data
@@ -262,6 +265,48 @@ class test_simulation_report_endpoints(TestCase):
 			return print(
 				"T8: Nuclear and fossil utilisation percentage "
 				"cannot be 0% ??"
+			)
+
+		"""POST Simulation_Reports_CREATE incorrect data, utilisation_percentage
+		not an within range 0-100"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_minus_one,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {
+			'message': "the data passed to the endpoint is not valid."}
+
+		print("T10 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T10: The data posted should not be serialized"
+			)
+
+		"""POST Simulation_Reports_CREATE incorrect data, utilisation_percentage
+				not an within range 0-100"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_101,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {
+			'message': "the data passed to the endpoint is not valid."}
+
+		print("T11 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T11: The data posted should not be serialized"
 			)
 
 
