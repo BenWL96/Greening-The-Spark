@@ -2,6 +2,15 @@ from django.test import TestCase, Client
 import json, datetime
 from django.urls import reverse
 from factory_djoy import UserFactory
+from .data import (
+	working_post_data,
+	failing_post_data,
+	malicious_post_data,
+	post_data_fossil_nuclear_at_100,
+	date,
+	time,
+
+)
 
 class test_simulation_report_endpoints(TestCase):
 
@@ -13,169 +22,10 @@ class test_simulation_report_endpoints(TestCase):
 
 	def test_endpoints_and_functionality(self):
 
-		date = datetime.datetime.today().strftime('%Y-%m-%d')
-		time = datetime.datetime.today().strftime('%H:%M:%S')
-		simulation_start_time = datetime.datetime.today().strftime('%H:%M:%S')
-		simulation_end_time = datetime.datetime.today().strftime('%H:%M:%S')
-
-
 		"""Test Passing Info To API. 
 				This Simulates The Actions That Carl Needs To Do With The 
 				Requests Module (for the physical model)"""
 
-		working_post_data = {
-
-			"date": date,
-			"time": time,
-
-			"difficulty": "easy",
-
-			"demand": -23,
-			"wind": -23,
-			"solar": 42,
-			"fossil_fuels": -62,
-			"nuclear": 64,
-
-			"fossil_fuels_utilisation_percentage": 0,
-			"nuclear_fuels_utilisation_percentage": 99,
-
-			"surplus": 23,
-			"shortfall": 16,
-			"initial_stored": 45,
-			"final_stored": 25,
-			"storage_discrepancy": 1,
-			"efficiency_score": 51,
-
-			"total_CO2_tonnes": 62,
-			"total_cost_million_pounds": 54,
-			"average_CO2_tonnes_per_gwh": 62,
-			"average_cost_million_pounds_per_gwh": 72,
-
-			"surplus_comment": 23,
-			"shortfall_comment": 16,
-			"storage_discrepancy_comment": 1,
-			"efficiency_score_comment": 51,
-			"average_CO2_comment": 1,
-			"average_cost_comment": 51,
-
-			"efficiency_spark": "red",
-			"economy_spark": "red",
-			"eco_friendliness_spark": "red",
-
-			"wind_power_data_values": "-54 41 24 -15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"solar_power_data_values": "41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54",
-			"demand_power_data_values": "24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41",
-
-			"fossil_fuels_power_data_values": "15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24",
-			"nuclear_power_data_values": "61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15",
-
-			"batteries_power_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"hydro_power_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"grid_surplus_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61"
-		}
-
-		failing_post_data = {
-
-			"date": date + "d",
-			"time": time,
-
-			"difficulty": "easy",
-
-			"demand": -23,
-			"wind": -23,
-			"solar": 42,
-			"fossil_fuels": -62,
-			"nuclear": 64,
-
-			"fossil_fuels_utilisation_percentage": 0,
-			"nuclear_fuels_utilisation_percentage": 99,
-
-			"surplus": 23,
-			"shortfall": 16,
-			"initial_stored": 45,
-			"final_stored": 25,
-			"storage_discrepancy": 1,
-			"efficiency_score": 51,
-
-			"total_CO2_tonnes": 62,
-			"total_cost_million_pounds": 54,
-			"average_CO2_tonnes_per_gwh": 62,
-			"average_cost_million_pounds_per_gwh": 72,
-
-			"surplus_comment": 23,
-			"shortfall_comment": 16,
-			"storage_discrepancy_comment": 1,
-			"efficiency_score_comment": 51,
-			"average_CO2_comment": 1,
-			"average_cost_comment": 51,
-
-			"efficiency_spark": "red",
-			"economy_spark": "red",
-			"eco_friendliness_spark": "red",
-
-			"wind_power_data_values": "-54 41 24 -15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"solar_power_data_values": "41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54",
-			"demand_power_data_values": "24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41",
-
-			"fossil_fuels_power_data_values": "15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24",
-			"nuclear_power_data_values": "61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15",
-
-			"batteries_power_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"hydro_power_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"grid_surplus_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61"
-		}
-
-
-		malicious_post_data = {
-
-			"date": date,
-			"time": time,
-
-			"difficulty": "easy",
-
-			"demand": -23,
-			"wind": -23,
-			"solar": 42,
-			"fossil_fuels": -62,
-			"nuclear": 64,
-
-			"fossil_fuels_utilisation_percentage": 0,
-			"nuclear_fuels_utilisation_percentage": 99,
-
-			"surplus": "<script>alert('hello')</script>",
-			"shortfall": 16,
-			"initial_stored": 45,
-			"final_stored": 25,
-			"storage_discrepancy": 1,
-			"efficiency_score": 51,
-
-			"total_CO2_tonnes": 62,
-			"total_cost_million_pounds": 54,
-			"average_CO2_tonnes_per_gwh": 62,
-			"average_cost_million_pounds_per_gwh": 72,
-
-			"surplus_comment": 23,
-			"shortfall_comment": 16,
-			"storage_discrepancy_comment": 1,
-			"efficiency_score_comment": 51,
-			"average_CO2_comment": 1,
-			"average_cost_comment": 51,
-
-			"efficiency_spark": "red",
-			"economy_spark": "red",
-			"eco_friendliness_spark": "red",
-
-			"wind_power_data_values": "-54 '<script>alert('hello')</script>' 24 -15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"solar_power_data_values": "41 24 15 61 54 41 24 15 61 54 41 24 15 61 '<script>alert('hello')</script>' 41 24 15 61 54 41 24 15 61 54",
-			"demand_power_data_values": "24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41",
-
-			"fossil_fuels_power_data_values": "15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24",
-			"nuclear_power_data_values": "61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15",
-
-			"batteries_power_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"hydro_power_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
-			"grid_surplus_data_values": "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61"
-		}
 
 		"""Test Simulation_Reports_LIST endpoint when no auth"""
 
@@ -252,13 +102,13 @@ class test_simulation_report_endpoints(TestCase):
 
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
-		match_dict = {'simulation_id': 1}
+		match_dict = {'display_game_id': 1}
 
 		print("T1 initiate")
 		if self.assertEqual(response_dict, match_dict) == False:
 			return print(
 				"T1: The dictionary posted is not the same "
-				"dictionary that is retreived."
+				"dictionary that is retrieved."
 			)
 
 
@@ -273,7 +123,7 @@ class test_simulation_report_endpoints(TestCase):
 		response_dict = json.loads(json.dumps(input_dict))
 
 		print("T2 initiate")
-		match_dict = {'simulation_id': 1, 'date': date}
+		match_dict = {'game_id': 1, 'date': date}
 
 		if self.assertEqual(response_dict[0], match_dict) == False:
 			return print("T2: Could not find the first instance.")
@@ -320,7 +170,7 @@ class test_simulation_report_endpoints(TestCase):
 		"""GET to Simulation_Reports_DETAIL test length response dict
 		Take into account generated ID."""
 
-		arg = {"simulation_id": 1}
+		arg = {"game_id": 1}
 		url = reverse('simulation-report-detail', kwargs=arg)
 
 		response = self.client.get(
@@ -371,6 +221,49 @@ class test_simulation_report_endpoints(TestCase):
 				"T7: An incorrect error message has been thrown in response to"
 				"malicious data being passed to the endpoint."
 			)
+
+		"""Post Simulation_Reports_CREATE nuclear_fossil at 100%"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_100,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+
+		match_dict = {'display_game_id': 2}
+
+		print("T8 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T8: Nuclear and fossil utilisation percentage "
+				"cannot be 100% ??"
+			)
+
+		"""Post Simulation_Reports_CREATE nuclear_fossil at 0%"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_100,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+
+		match_dict = {'display_game_id': 3}
+
+		print("T9 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T8: Nuclear and fossil utilisation percentage "
+				"cannot be 0% ??"
+			)
+
 
 
 """ LATEST ITERATION

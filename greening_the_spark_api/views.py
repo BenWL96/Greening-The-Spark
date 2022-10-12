@@ -73,6 +73,9 @@ def Simulation_Reports_CREATE(request):
 			serializer.save()
 			print("Data was successfully serialised, now only return ID of the game.")
 
+			#There should be no two objects with the same time
+			#Make sure two can't be posted at the exact same time..
+
 			date = serializer.data['date']
 			game_start_time = serializer.data['time']
 
