@@ -9,9 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=config("SECRET_KEY", default='')
 
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://greening-the-spark.herokuapp.com']
 
 #'greening-the-spark.herokuapp.com'
 
@@ -52,12 +52,13 @@ B_IP=config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8000",
+    "https://greening-the-spark.herokuapp.com",
     B_IP,
     C_IP
 ]
 
 """"#cors allowed origins
+ http://127.0.0.1:8000
 https://greening-the-spark.herokuapp.com",
     C_IP,
     B_IP,"""
@@ -82,19 +83,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 
-
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME", default=''),
-        'USER': config('DATABASE_USER', default=''),
-        'HOST': config('DATABASE_HOST', default=''),
-        'PORT': config('PORT', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS', default=''),
+        'NAME': config("DATABASE_NAME_2", default=''),
+        'USER': config('DATABASE_USER_2', default=''),
+        'HOST': config('DATABASE_HOST_2', default=''),
+        'PORT': config('PORT_2', default='3306', cast=float),
+        'PASSWORD': config('DATABASE_PASS_2', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
-}
+}"""
 
-"""FOR RAILWAY..
 
 import dj_database_url
 
@@ -102,27 +101,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 DATABASES = {
     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-}"""
-
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'TM3W2QQKPVEIWLS0',
-        'USER': 'ADMIN',
-        'PASSWORD': 'aFASFQE141$!$!1afF',
-        'HOST': '81.98.137.255',
-        'PORT': '1521',
-    }
 }
-
-"""
-"""connection = oracledb.connect(user="ADMIN",
-                              password="aFASFQE141$!$!1afF",
-                              dsn="localhost:1521/TM3W2QQKPVEIWLS0"
-                              )"""
-#host="localhost", port=1521, service_name="TM3W2QQKPVEIWLS0"
-
-
 
 
 REST_FRAMEWORK = {

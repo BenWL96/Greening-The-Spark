@@ -40,6 +40,8 @@ function SimulationReport({json_data}){
     var totalCostMillionPounds = json_data.total_cost_million_pounds;
     var averageCO2 = json_data.average_CO2_tonnes_per_gwh;
     var averageCostMillionPerGWH = json_data.average_cost_million_pounds_per_gwh;
+    var averageCO2Score = json_data.average_CO2_score;
+    var averageCostScore = json_data.average_cost_score;
 
     //COMMENTS
 
@@ -220,6 +222,19 @@ function SimulationReport({json_data}){
                             <td>Average CO2 (tonnes/GWh)</td>
                             <td>{averageCO2}</td>
                             <td>{averageCO2Comment}</td>
+                            <td></td>
+                            </tr>
+
+                            <tr>
+                            <td>Average CO2 Score</td>
+                            <td>{averageCO2Score}</td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td>Average Cost Score</td>
+                            <td>{averageCostScore}</td>
+                            <td></td>
                             <td></td>
                             </tr>
                     
