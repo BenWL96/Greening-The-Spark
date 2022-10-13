@@ -10,7 +10,7 @@ SECRET_KEY=config("SECRET_KEY", default='')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://greening-the-spark.herokuapp.com']
+ALLOWED_HOSTS = ['greening-the-spark.herokuapp.com']
 
 #'greening-the-spark.herokuapp.com'
 
