@@ -10,7 +10,7 @@ SECRET_KEY=config("SECRET_KEY", default='')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://greening-the-spark.herokuapp.com/']
+ALLOWED_HOSTS = ['https://greening-the-spark.herokuapp.com']
 
 #'greening-the-spark.herokuapp.com'
 
@@ -51,7 +51,7 @@ B_IP=config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://greening-the-spark.herokuapp.com/",
+    "https://greening-the-spark.herokuapp.com",
     B_IP,
     C_IP
 ]
