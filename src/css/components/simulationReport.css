@@ -1,3 +1,14 @@
+.section_results_wrapper{
+    margin-top: 75px;
+}
+
+.section_simrepo_wrapper_table{
+    border-radius: 5px;
+    outline: solid;
+    outline-color: green;
+    outline-width: 1px;
+}
+
 .section_simrepo_wrapper_row{
     width: 100%;
     background-color: transparent;
@@ -17,18 +28,24 @@
 
 .section_simrepo_wrapper_table_head_1{
     width: 25%;
+    font-weight: 500;
 }
 
 .section_simrepo_wrapper_table_head_2{
     width: 25%;
-}
-.section_simrepo_wrapper_table_head_2{
-    width: 25%;
+    font-weight: 500;
 }
 
-.section_simrepo_wrapper_table_head_2{
+.section_simrepo_wrapper_table_head_3{
     width: 25%;
+    font-weight: 500;
 }
+
+.section_simrepo_wrapper_table_head_4{
+    width: 25%;
+    font-weight: 500;
+}
+
 
 @media(min-width: 800px){
     .section_simrepo_wrapper{
@@ -49,10 +66,22 @@
 .section_simrepo_wrapper_title{
     background-color: white;
     font-size: 35px;
+    text-align: center;
+    border-radius: 5px;
+    outline: solid;
+    outline-color:green;
+    outline-width: 1px;
+    font-weight: 700;
 }
 
 .section_simrepo_wrapper_sub_title{
     background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    outline: solid;
+    outline-color:green;
+    outline-width: 1px;
+    font-weight: 600;
 }
 
 .section_simrepo_wrapper_spark{

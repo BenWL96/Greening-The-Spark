@@ -1,9 +1,10 @@
 .section_body{
-    background-color: #edcd2d;
+    background: transparent;
+    height: 80vh;
 }
 
 .section_body_form{
-    background-color: #edcd2d;
+    background-color: transparent;
 }
 
 
@@ -29,31 +30,90 @@
 
 .section_body_form_wrapper{
     width: 100%;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    justify-content: center;
+    padding-top: 25vh
+
 }
 
+.section_body_form_wrapper_card{
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: green;
+    border-width: 1.5px;
+}
+@media(min-width: 750px){
+    .section_body_form_wrapper_card{
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+
+}
+
+@media(max-width: 750px){
+    .section_body_form_wrapper_card{
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;   
+    }
+}
+
+
+
 .prompt_game_ID{
-    font-size: 35px;
-    text-align: center;
+    text-align: left;
+    color: black;
+    font-weight: 600px;
+    font-size: 5vw;
+    margin-left: 10px;
+
 }
 
 .section_body_form_wrapper_input{
     height: 50px;
-    width: 200px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .section_body_form_wrapper_button{
     height: 50px;
-    width: 100px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
+@media(min-width: 360px){
+
+    .section_body_form_wrapper_input{
+        width: 200px;
+    }
+
+
+    .section_body_form_wrapper_button{
+        width: 100px;
+    }
+}
+
+@media(max-width: 360px){
+    .section_body_form_wrapper_input{
+        width: 125px;
+    }
+
+
+    .section_body_form_wrapper_button{
+        width: 80px;
+    }
+}
 
 .section_body_loading{
     margin: 0px;
     padding: 0px;
+
+    margin-left: 10px;
 }
+
 
 
 .section_body_form_wrapper_success_message{

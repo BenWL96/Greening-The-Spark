@@ -7,10 +7,11 @@ function Footer() {
         <div>
             <div className='section_footer' data-testid='section_footer'>
                 <div className='section_footer_wrapper' data-testid='section_footer_wrapper'>
-                    <p className='section_footer_wrapper_title' data-testid='section_footer_wrapper_title'>Social Icons + contact page + aboutpage + carl's website</p>
+                    
                     <AiFillFacebook className="icon_1"/>
                     <AiFillInstagram className="icon_1"/>
                     <AiFillTwitterSquare className="icon_1"/>
+                    <a href="https://www.cornucopia.co.uk" target="_blank" className='section_footer_wrapper_title' data-testid='section_footer_wrapper_title'>https://www.cornucopia.co.uk</a>
                 </div>
 
             </div>

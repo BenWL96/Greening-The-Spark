@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Footer from '../footer';
+import '@testing-library/jest-dom/extend-expect';
 
 test("Footer component should be rendered at all times", () => {
      render(<Footer/>)

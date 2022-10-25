@@ -3,6 +3,10 @@
     text-align: left;
 }
 
+.section_results{
+    padding-bottom: 25px;
+}
+
 .section_results_wrapper_tab{
     color: black;
     background-color: white
@@ -14,70 +18,56 @@
 }
 
 
-.graph_demand_wrapper{
-    background-color: white
+.graph_wrapper{
+    background-color: white;
+    border-radius: 5px;
+    outline: solid;
+    outline-color: green;
+    outline-width: 1px;
 }
 
-.graph_storage_wrapper{
-    background-color: white
+.graph_wrapper_graph{
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 @media(min-width: 800px){
-    .graph_demand_wrapper{
+    .graph_wrapper{
         width: 800px;
         margin-left: auto;
         margin-right: auto;
     }
-    .graph_demand_wrapper_graph{
+    .graph_wrapper_graph{
         width: 800px;
     }
 
-    .graph_storage_wrapper{
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .graph_storage_wrapper_graph{
-        width: 800px;
-    }
 
     .section_results_wrapper{
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        background-color: #9e9e9d;
+        background-color: transparent;
     }
 }
 
 @media(max-width: 800px){
 
-    .graph_storage_wrapper{
-        width: 100%;
-        overflow: scroll;
-    }
-    .graph_demand_wrapper{
+    .graph_wrapper{
         width: 100%;
         overflow: scroll;
     }
 
-    .graph_demand_wrapper_graph{
+    .graph_wrapper_graph{
         width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .graph_storage_wrapper_graph{
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .section_results_wrapper{
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        background-color: #9e9e9d;
+        background-color: transparent;
     }
 
 }

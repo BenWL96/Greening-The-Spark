@@ -3,17 +3,20 @@ import Results from './results';
 import '../css/components/body.css';
 import Api from '../helper/api.js';
 
+
+// When jsonData doesn't exist, background is fixed,
+
 function Body() {
 
     {/*Json Data*/}
-    const [json_data, setJson_Data] = useState(null);
-    const [data_exists, setData_Exists] = useState(false);
-    const [data_being_fetched_and_loading, setData_Being_Fetched_And_Loading] = useState(false);
+    const [jsonData, setJsonData] = useState(null);
+    const [dataExists, setDataExists] = useState(false);
+    const [dataBeingFetchedAndPageLoading, setDataBeingFetchedAndPageLoading] = useState(false);
 
     {/*User Input*/}
-    const [input_game_id, setInput_Game_Id] = useState("");
+    const [inputGameId, setInputGameId] = useState("");
     const [message, setMessage] = useState("");
-    const [success_message, setSuccess_Message] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
 
     useEffect(() => {
@@ -23,21 +26,21 @@ function Body() {
         //Json doesn't exist and loading
         //Json doesn't exist and not loading.
 
-        if(json_data){
+        if(jsonData){
         console.log("data was found in useEffect");
-        setData_Being_Fetched_And_Loading(false);
-        setData_Exists(true);
+        setDataBeingFetchedAndPageLoading(false);
+        setDataExists(true);
         
-        }else if(!json_data & data_being_fetched_and_loading === true){
+        }else if(!jsonData & dataBeingFetchedAndPageLoading === true){
         console.log("Data non existent in useEffect");
-        setData_Exists(false);
+        setDataExists(false);
         }else{
         console.log("Data Non existent and no fetch");
-        setData_Exists(false);
+        setDataExists(false);
 
         }
     
-    },[data_being_fetched_and_loading])
+    },[dataBeingFetchedAndPageLoading])
 
 
 
@@ -45,98 +48,94 @@ function Body() {
       e.preventDefault();
 
       setMessage("");
-      setData_Being_Fetched_And_Loading(true);
+      setDataBeingFetchedAndPageLoading(true);
     
-      const json = await Api(input_game_id);
+      const json = await Api(inputGameId);
 
       if (json) {
         //Remove the input box, display the loading logic.
-        setData_Being_Fetched_And_Loading(false);
-        setJson_Data(json);
+        setDataBeingFetchedAndPageLoading(false);
+        setJsonData(json);
         
-        setSuccess_Message("Data from the game with ID: " + input_game_id + " was successfully fetched.");
+        setSuccessMessage("Data from the game with ID: " + inputGameId + " was successfully fetched.");
         } else {
-        setData_Being_Fetched_And_Loading(false);
+        setDataBeingFetchedAndPageLoading(false);
         console.log("An error occurred");
-        setMessage("The game with ID: " + input_game_id + " could not be found.");
+        setMessage("The game with ID: " + inputGameId + " could not be found.");
       }
     
     };
 
 
-    const displayEnterGameID = () => {
-    if (json_data){
-        return (
-        <div></div>
-        )}else{
-        return (
-            <p className='prompt_game_ID'>Please Enter Your Game ID</p>
-        )
-        
-        }
-    }
-
 
 
     const displayDataOrNothing = () => {
-    if (json_data){
-        return (
+    if (jsonData){
+      
+      return (
+        <Results jsonData={jsonData}/>
 
-          <Results json_data={json_data}/>
+      )}else{
+      return (
 
-        )}else{
-        return (
-
-          <div></div>
+        <div></div>
       )}
     }
 
 
     const backButtonClicked = () => {
-    setJson_Data(null);
-    setData_Exists(null);
-    setSuccess_Message("");
+    setJsonData(null);
+    setDataExists(null);
+    setSuccessMessage("");
     }
 
 
 
     return (
 
-        <div className='section_body'>
-        {data_being_fetched_and_loading ? 
-            <></>
-          : 
-          displayEnterGameID()
-        }
         
-        {data_exists & !data_being_fetched_and_loading ?
+        <>
+        
+        {dataExists & !dataBeingFetchedAndPageLoading ?
           <button className="section_body_back_button" onClick={() => backButtonClicked()} data-testid="section_body_back_button">Go Back</button>
           :
-          <div className='section_body_form_wrapper'>
-      <form onSubmit={handleSubmit} data-testid="section_body_form" className='section_body_form_wrapper_form'>
-        <input required
-          type="number"
-          value={input_game_id}
-          placeholder="Input Your Game ID here"
-          onChange={(e) => setInput_Game_Id(e.target.value)}
-         className="section_body_form_wrapper_input"/>
-      
-        <button type="submit" data-testid="section_body_form_submit_button" className="section_body_form_wrapper_button">Create</button>
+          <div className='section_body'>
+            <div className='section_body_form_wrapper'>
+              <div className="section_body_form_wrapper_card">
+                <p className='prompt_game_ID'>Please Enter Your Game ID</p>
+                <form onSubmit={handleSubmit} data-testid="section_body_form" className='section_body_form_wrapper_form'>
+                  <input required
+                    type="number"
+                    value={inputGameId}
+                    placeholder="Input Your Game ID here"
+                    onChange={(e) => setInputGameId(e.target.value)}
+                  className="section_body_form_wrapper_input"/>
+                
+                  <button type="submit" data-testid="section_body_form_submit_button" className="section_body_form_wrapper_button">Submit</button>
 
-        <div className="message">{message ? <p data-testid="section_body_form_message" className='section_body_form_message'>{message}</p> : null}</div>
-        <div className="section_body_form_wrapper_success_message">{success_message ? <p data-testid="section_body_form_message">{success_message}</p> : null}</div>
-      </form>
-      </div>
+                  <div className="message">{message ? <p data-testid="section_body_form_message" className='section_body_form_message'>{message}</p> : null}</div>
+                  <div className="section_body_form_wrapper_success_message">{successMessage ? <p data-testid="section_body_form_message">{successMessage}</p> : null}</div>
+                </form>
+
+                {dataBeingFetchedAndPageLoading ? 
+                  <p data-testid="document_loading" className='section_body_loading'>Loading your game...</p>
+                  : 
+                  <></>
+                }
+              </div>
+            </div>
+          </div>
           }
 
-        {data_being_fetched_and_loading ? 
-            <p data-testid="document_loading" className='section_body_loading'>Loading</p>
-          : 
-          displayDataOrNothing()
-        }
+          {dataBeingFetchedAndPageLoading ? 
+            <></>
+            : 
+            displayDataOrNothing()
+          }
+          
 
 
-      </div>
+      </>
 
     );
 }

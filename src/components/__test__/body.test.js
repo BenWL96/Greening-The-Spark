@@ -1,6 +1,7 @@
 import React, {render, screen, fireEvent } from '@testing-library/react';
 import Body from '../body';
 //jest.mock('../../helper/api.js');
+import '@testing-library/jest-dom/extend-expect';
 
 //Test form input and text upon page render
 it("Form input box renders on page open.", () => {

@@ -9,13 +9,14 @@
 }
 
 .section_header{
-    background: rgb(195,195,195);
-    background: linear-gradient(90deg, rgba(195,195,195,1) 0%, rgba(244,244,244,1) 72%, rgba(226,226,226,1) 100%);
+    background: transparent;
+    height: 10vh;
 }
 
 .section_header_logo{
-    width: 200px;
-    height: 105px;
+    height: 5vh;
     margin-left: 10px;
+    margin-top: 10px;
+    background-color: black;
     
 }

@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Header from '../header';
+import '@testing-library/jest-dom/extend-expect';
 
 it("Render section_header of header component", () => {
     render(<Header/>)

@@ -51,13 +51,14 @@ B_IP=config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://greening-the-spark.herokuapp.com",
+    "https://greening-the-spark.herokuapp.com"
     B_IP,
     C_IP
 ]
 
 """"#cors allowed origins
  http://127.0.0.1:8000
+ http://127.0.0.1:3000
 https://greening-the-spark.herokuapp.com",
     C_IP,
     B_IP,"""
@@ -91,8 +92,8 @@ WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
         'PORT': config('PORT_2', default='3306', cast=float),
         'PASSWORD': config('DATABASE_PASS_2', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
-}"""
-
+}
+"""
 
 import dj_database_url
 
