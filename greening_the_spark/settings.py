@@ -125,6 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+Dummy = "something"
 
 LANGUAGE_CODE = 'en-us'
 
