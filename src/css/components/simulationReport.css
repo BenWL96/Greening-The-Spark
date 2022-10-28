@@ -181,7 +181,7 @@
 }
 
 .section_simrepo_wrapper_spark{
-    opacity: 75%;
+    opacity: 70%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -191,6 +191,7 @@
         width: 150px;
         height: 150px;
         opacity: 75%;
+        margin-top: -50px;
     }
 }
 
@@ -198,5 +199,7 @@
     .section_simrepo_wrapper_spark{
         width: 50vw;
         height: 100%;
+        margin-left: 25vw;
+
     }
 }

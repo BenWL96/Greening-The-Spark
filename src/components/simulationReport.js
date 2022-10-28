@@ -98,7 +98,7 @@ function SimulationReport({jsonData}){
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_1_wrapper_row">
-                                <Col className="row_header" xs={2} sm={2} md={3} lg={3}>Sparks Earned</Col>
+                                <Col className="row_header" xs={12} sm={2} md={3} lg={3}>Sparks Earned</Col>
                                 <Col xs={12} sm={3} md={3} lg={3}>
                                     {efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }
                                 </Col>
@@ -114,6 +114,7 @@ function SimulationReport({jsonData}){
                         <br /><br />
 
                         <p className="section_simrepo_wrapper_table_title">Results Summary</p>
+                        <br />    
                         <p className="section_simrepo_wrapper_table_subtitle">Description Goes Here</p>
                         <br />
                     
