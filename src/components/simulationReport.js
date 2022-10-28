@@ -1,11 +1,17 @@
 import React from 'react';
 import '../css/components/simulationReport.css';
-import Green_Spark from '../images/green_spark.png';
-import Blue_Spark from '../images/blue_spark.png';
-import Red_Spark from '../images/red_spark.png';
+import GreenSparkEfficiency from '../images/green_spark_efficiency.png';
+import GreenSparkEconomy from '../images/green_spark_economy.png';
+import GreenSparkEcoFriendliness from '../images/green_spark_eco_friendliness.png';
+import BlueSparkEfficiency from '../images/blue_spark_efficiency.png';
+import BlueSparkEconomy from '../images/blue_spark_economy.png';
+import BlueSparkEcoFriendliness from '../images/blue_spark_eco_friendliness.png';
+import RedSparkEfficiency from '../images/red_spark_efficiency.png';
+import RedSparkEconomy from '../images/red_spark_economy.png';
+import RedSparkEcoFriendliness from '../images/red_spark_eco_friendliness.png';
 
-import Table from 'react-bootstrap/Table';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -72,179 +78,151 @@ function SimulationReport({jsonData}){
 
             
             <div>
-                
+                <br />
                 <section className="section section_simrepo">
                     <div className='section_simrepo_wrapper'>
+
+                        <br />
 
                         <p className='section_simrepo_wrapper_title' >Simulation Report: #{gameID}</p>
                         <p className='section_simrepo_wrapper_sub_title'> {datePlayed}  {timePlayed} </p>
 
-
-                 
-                        <Table bordered hover variant="light" className='section_simrepo_wrapper_table'>
-                        <tbody>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'></td>
-                            <td className='section_simrepo_wrapper_table_head_2'>Efficiency</td>
-                            <td className='section_simrepo_wrapper_table_head_3'>Eco Friendliness</td>
-                            <td className='section_simrepo_wrapper_table_head_4'>Economy</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Sparks Earned</td>
-                            <td>
-                                {efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
-                             </td>
-                            <td>
-                                {ecoFriendlinessSpark === "green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : ecoFriendlinessSpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
-                            </td>
-                            <td>
-                                {economySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={Green_Spark} /> : economySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={Blue_Spark} /> : <img className="section_simrepo_wrapper_spark" src={Red_Spark} /> }
-                            </td>
-                            </tr>
-                           
-                    
-                        </tbody>
-                        </Table>
+                        <br />
                         
-                       
-                        <Table bordered hover variant="light" className='section_simrepo_wrapper_table'>
-                        <tbody>
-                           
-                           <tr>
-                           <td className='section_simrepo_wrapper_table_head_1'>Difficulty</td>
-                           <td>{difficulty}</td>
-                           <td></td>
-                           <td></td>
-                           </tr>
-                   
-                       </tbody>
-                        <tbody>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Demand</td>
-                            <td className='section_simrepo_wrapper_table_head_2'>{demand}</td>
-                            <td className='section_simrepo_wrapper_table_head_3'></td>
-                            <td className='section_simrepo_wrapper_table_head_4'></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Wind</td>
-                            <td>{wind}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Solar</td>
-                            <td>{solar}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Fossil Fuels</td>
-                            <td>{fossilFuels}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Nuclear</td>
-                            <td>{nuclear}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Surplus</td>
-                            <td>{surplus}</td>
-                            <td>{surplusComment}</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Shortfall</td>
-                            <td>{shortfall}</td>
-                            <td>{shortfallComment}</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Initial Stored</td>
-                            <td>{initialStored}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Final Stored</td>
-                            <td>{finalStored}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Storage Discrepancy</td>
-                            <td>{storageDiscrepancy}</td>
-                            <td>{storageDiscrepancyComment}</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Efficiency Score</td>
-                            <td>{efficiencyScore}</td>
-                            <td>{efficiencyScoreComment}</td>
-                            <td></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Total CO2 (tonnes)</td>
-                            <td className='section_simrepo_wrapper_table_head_2'>{totalCO2Tonnes}</td>
-                            <td className='section_simrepo_wrapper_table_head_3'></td>
-                            <td className='section_simrepo_wrapper_table_head_4'></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-
-                
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Total Cost (£M)</td>
-                            <td>{totalCostMillionPounds}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Average Cost (£Million/Gwh)</td>
-                            <td>{averageCostMillionPerGWH}</td>
-                            <td>{averageCostComment}</td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Total CO2 (Tonnes)</td>
-                            <td>{totalCO2Tonnes}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Average CO2 (tonnes/GWh)</td>
-                            <td>{averageCO2}</td>
-                            <td>{averageCO2Comment}</td>
-                            <td></td>
-                            </tr>
-
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Average CO2 Score</td>
-                            <td>{averageCO2Score}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                            <td className='section_simrepo_wrapper_table_head_1'>Average Cost Score</td>
-                            <td>{averageCostScore}</td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                    
-                        </tbody>
-                        </Table>
-
+                        <div className="section_simrepo_wrapper_table_1_wrapper">
+                            <Row className="section_simrepo_wrapper_table_1_wrapper_row">
+                                <Col className="row_header" xs={4} sm={3} md={3} lg={3}>Difficulty</Col>
+                                <Col className="row_text" xs={2} sm={3} md={3} lg={3}>{difficulty}</Col>
+                                <Col xs={1} sm={1} md={1} lg={1}></Col>
+                                <Col xs={1} sm={1} md={1} lg={1}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_1_wrapper_row">
+                                <Col className="row_header" xs={2} sm={2} md={3} lg={3}>Sparks Earned</Col>
+                                <Col xs={12} sm={3} md={3} lg={3}>
+                                    {efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }
+                                </Col>
+                                <Col xs={12} sm={3} md={3} lg={3}>
+                                {ecoFriendlinessSpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEcoFriendliness} /> : ecoFriendlinessSpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEcoFriendliness} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEcoFriendliness} /> }
+                                </Col>
+                                <Col xs={12} sm={3} md={3} lg={3}>
+                                {economySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEconomy} /> : economySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEconomy} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEconomy} /> }
+                                </Col>
+                            </Row>
+                        </div>
                         
+                        <br /><br />
 
+                        <p className="section_simrepo_wrapper_table_title">Results Summary</p>
+                        <p className="section_simrepo_wrapper_table_subtitle">Description Goes Here</p>
+                        <br />
+                    
+
+                        <div className="section_simrepo_wrapper_table_2_wrapper">
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Demand</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{demand}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Wind</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{wind}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Solar</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{solar}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Fossil Fuels</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{fossilFuels}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Nuclear</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{nuclear}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Surplus</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{surplus}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{surplusComment}</Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Shortfall</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{shortfall}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{shortfallComment}</Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Initial Stored</Col>
+                                <Col className="row_text" xs={6} md={4}>{initialStored}</Col>
+                                <Col xs={6} md={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Final Stored</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{finalStored}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Storage Discrepancy</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{storageDiscrepancy}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{storageDiscrepancyComment}</Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Efficiency Score</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{efficiencyScore}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{efficiencyScoreComment}</Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Total CO2 (tonnes)</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{totalCO2Tonnes}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Total Cost (£M)</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{totalCostMillionPounds}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Average Cost (£Million/Gwh)</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{averageCostMillionPerGWH}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{averageCostComment}</Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Average CO2 (tonnes/GWh)</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{averageCO2}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{averageCO2Comment}</Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Average CO2 Score</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{averageCO2Score}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                            <br />
+                            <Row className="section_simrepo_wrapper_table_2_wrapper_row">
+                                <Col className="row_header" xs={6} sm={6} md={4} lg={4}>Average Cost Score</Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{averageCostScore}</Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
+                            </Row>
+                        </div>
+                        <br /><br />
                     </div>
+                    
                 </section>
             </div>
         )

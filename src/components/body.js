@@ -109,6 +109,7 @@ function Body() {
                     value={inputGameId}
                     placeholder="Input Your Game ID here"
                     onChange={(e) => setInputGameId(e.target.value)}
+                    min="0"
                   className="section_body_form_wrapper_input"/>
                 
                   <button type="submit" data-testid="section_body_form_submit_button" className="section_body_form_wrapper_button">Submit</button>

@@ -1,38 +1,32 @@
 import React, { getAllByText, getByText, render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom'
-import Api from '../../helper/api';
+import Api from '../../__mocks__/api';
 import DATA from '../../setupJest';
-
 
 
 //TRy to get this working on the actual api, then try mocking
 //https://www.youtube.com/watch?v=mHXhuPHiDj8&ab_channel=LeighHalliday
 
 
-    it('Then the correct average should be returned', async () => {
-        //expect(results).toEqual(DATA);
-        //const input_game_id = 1;
-        //results = await Api(input_game_id);
-        const input_game_id = 5;
-        try {
-            let res = await fetch("/api/v1/sim-reports/" + input_game_id + "/details/", {
-            method: "GET",
-            });
-            let json = await res.json();
-    
-            if (res.status === 200) {
-                console.log(json);
-                return json;
-            }else {
-                console.log("sorry but the fetch failed");
-                return;
-            }
-    
-            } catch (err) {
-                console.log(err);
-                return;
-            } 
-        
-            
+  
+global.fetch = jest.fn(() => {
+    Promise.resolve({
+        json: () => Promise.resolve(
+             {json: DATA}
+        )  
+    })
+})
 
+
+    it('Then the correct average should be returned', async () => {
+        const input_game_id = 5;
+        const json =  Api(input_game_id);
+        console.log("fetch did something");
+
+        //THis is a pending promise 
+        //Promise { <pending> }
+        console.log(json);
+
+        //expect(json).toEqual(DATA);
+        //expect(fetch).toHaveBeenCalledTimes(1);
     });

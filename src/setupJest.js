@@ -1,7 +1,7 @@
 const DATA = {
-    "game_id": 1,
-    "date": "2022-10-11",
-    "time": "16:38:53",
+    "game_id": 5,
+    "date": '2022-10-12',
+    "time": '12:47:33',
     "difficulty": "easy",
     "demand": -23,
     "wind": -23,

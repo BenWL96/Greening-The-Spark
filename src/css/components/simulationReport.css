@@ -1,51 +1,131 @@
-.section_results_wrapper{
-    margin-top: 75px;
+
+
+.section_simrepo_wrapper_table_titlerow{
+    width: 100%;
 }
 
-.section_simrepo_wrapper_table{
-    border-radius: 5px;
-    outline: solid;
-    outline-color: green;
-    outline-width: 1px;
-}
+
 
 .section_simrepo_wrapper_row{
     width: 100%;
     background-color: transparent;
 }
 
-.section_simrepo_wrapper_row{
-    width: 100%;
-}  
-
-.section_simrepo_wrapper_row_cont_1{
-    width: 50%;
-}
-
-.section_simrepo_wrapper_row_cont_2{
-    width: 50%;
-}
 
 .section_simrepo_wrapper_table_head_1{
-    width: 25%;
+    width: 75px;
     font-weight: 500;
+    text-shadow: black 1px 1px 1px;
+    font-size: 20px;
+    opacity: 85%;
 }
 
-.section_simrepo_wrapper_table_head_2{
-    width: 25%;
-    font-weight: 500;
+
+.row_header{
+    font-weight: 400;
+    text-shadow: black 1px 1px 1px;
+    font-size: 20px;
+    opacity: 85%;
 }
 
-.section_simrepo_wrapper_table_head_3{
-    width: 25%;
-    font-weight: 500;
+.row_text{
+    font-weight: 300;
+    text-align: left;
+    opacity: 85%;
+    
 }
 
-.section_simrepo_wrapper_table_head_4{
-    width: 25%;
-    font-weight: 500;
+
+
+
+@media(min-width: 800px){
+
+    .section_simrepo_wrapper_title{
+        margin-left: 75px;
+        padding-top: 20px
+    }
+
+    
+    .section_simrepo_wrapper_sub_title{
+        margin-left: 75px;
+    }
+
+    .section_simrepo_wrapper_table_subtitle{
+        margin-left: 75px;
+    }
+
+    .section_simrepo_wrapper_results_wrapper_table{
+        margin-left: 75px;
+        padding-bottom: 50px;
+    }
+
+
+    .section_simrepo_wrapper_table_1_wrapper{
+        margin-left: 75px;
+    }
+    
+    .section_simrepo_wrapper_table_2_wrapper{
+        margin-left: 75px;
+    }
+
+    .section_simrepo_wrapper_table_1_wrapper_row{
+        width: 700px;
+    }
+    
+    .section_simrepo_wrapper_table_2_wrapper_row{
+        width: 700px;
+    }
 }
 
+@media(max-width: 800px){
+
+    .section_simrepo_wrapper_title{
+        margin-left: 10px;
+        padding-top: 20px
+    }
+    
+    .section_simrepo_wrapper_sub_title{
+        margin-left: 10px;
+    }
+
+    .section_simrepo_wrapper_table_subtitle{
+        margin-left: 10px;
+    }
+
+    .section_simrepo_wrapper_results_wrapper_table{
+        margin-left: 0;
+        padding-bottom: 50px;
+    }
+    
+    .section_simrepo_wrapper_table_1_wrapper{
+        margin-left: 10px;
+    }
+
+    
+    .section_simrepo_wrapper_table_2_wrapper{
+        margin-left: 10px;
+    }
+
+    .section_simrepo_wrapper_table_1_wrapper_row{
+        width: 90vw;
+    }
+    
+    .section_simrepo_wrapper_table_2_wrapper_row{
+        width: 90vw;
+    }
+
+}
+
+
+.section_simrepo_wrapper{
+    border-radius: 5px;
+    outline: solid;
+    outline-color: green;
+    outline-width: 1px;
+    background-repeat: repeat;
+    background-image: url("../../images/crinkled-paper.jpg");
+    background-size: 100vw;
+}
 
 @media(min-width: 800px){
     .section_simrepo_wrapper{
@@ -63,30 +143,60 @@
     }
 }
 
-.section_simrepo_wrapper_title{
-    background-color: white;
+.section_simrepo_wrapper_table_title{
     font-size: 35px;
     text-align: center;
-    border-radius: 5px;
-    outline: solid;
-    outline-color:green;
-    outline-width: 1px;
-    font-weight: 700;
+    color: black;
+    font-weight: 500;
+    text-shadow: black 1px 1px 1px;
+    opacity: 85%;
+  
+}
+
+.section_simrepo_wrapper_table_subtitle{
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    font-weight: 200;
+    opacity: 85%;
+  
+}
+
+
+.section_simrepo_wrapper_title{
+    font-size: 40px;
+    text-align: left;
+    font-weight: 500;
+    color: black;
+    text-shadow: black 1px 1px 1px;
+    padding-top: 20px;
+    opacity: 85%;
 }
 
 .section_simrepo_wrapper_sub_title{
-    background-color: white;
-    text-align: center;
-    border-radius: 5px;
-    outline: solid;
-    outline-color:green;
-    outline-width: 1px;
-    font-weight: 600;
+    text-align: left;
+    font-weight: 500;
+    text-shadow: black 1px 1px 1px;
+    opacity: 85%;
 }
 
 .section_simrepo_wrapper_spark{
-    width: 70px;
-    height: 70px;
+    opacity: 75%;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media(min-width: 576px){
+    .section_simrepo_wrapper_spark{
+        width: 150px;
+        height: 150px;
+        opacity: 75%;
+    }
+}
+
+@media(max-width: 576px){
+    .section_simrepo_wrapper_spark{
+        width: 50vw;
+        height: 100%;
+    }
 }

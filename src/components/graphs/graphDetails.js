@@ -9,6 +9,11 @@ export const WindSolarDemandDetails = {
       title: {
         display: true,
         text: 'Wind, Solar, And Demand Inputs',
+        font: {
+          size: 25,
+          opacity: "3%"
+        },
+        color: '#0000000'
       },
     },
     scales: {
@@ -18,17 +23,32 @@ export const WindSolarDemandDetails = {
         position: 'left',
         title: {
           display: true,
-          text: 'Giga Watts / Hour'
+          text: 'Giga Watts',
+          font: {
+            size: 20,
+            style: 'italic'
+          },
+          ticks: {
+            color: 'black'
+          },
+          color: '#0000000'
         }
       },
       x: {
         title: {
           display: true,
-          text: 'Time'
+          text: 'Time Of Day',
+          font: {
+            size: 20,
+            style: 'italic'
+          },
+          ticks: {
+            color: 'black'
+          },
+          color: '#0000000'
         }
-      }
-    
-    },
+      }},
+      
     };
   
 
@@ -45,6 +65,10 @@ export const WindSolarDemandDetails = {
       title: {
         display: true,
         text: 'Manual Control Of Renewables',
+        font: {
+            size: 25
+        },
+        color: '#0000000'
       },
     },
     scales: {
@@ -54,15 +78,26 @@ export const WindSolarDemandDetails = {
         position: 'left',
         title: {
           display: true,
-          text: 'Giga Watts / Hour'
+          text: 'Giga Watts',
+          font: {
+            size: 20,
+            style: 'italic'
+          },
+          color: '#0000000'
         }
       },
       x: {
         title: {
           display: true,
-          text: 'Time Of Day'
+          text: 'Time Of Day',
+          font: {
+            size: 20,
+            style: 'italic'
+          },
+          color: '#0000000'
         }
-      }
+      },
+    
     
     },
     };
@@ -79,6 +114,10 @@ export const WindSolarDemandDetails = {
         title: {
           display: true,
           text: 'Batteries, Pumped Hydro And Overall Supply Status',
+          font: {
+            size: 25
+          },
+          color: '#0000000'
         },
       },
       scales: {
@@ -88,13 +127,23 @@ export const WindSolarDemandDetails = {
           position: 'left',
           title: {
             display: true,
-            text: 'Giga Watts / Hour'
+            text: 'Giga Watts',
+            font: {
+              size: 20,
+              style: 'italic'
+            },
+            color: '#0000000'
           }
         },
         x: {
           title: {
             display: true,
-            text: 'Time Of Day'
+            text: 'Time Of Day',
+            font: {
+              size: 20,
+              style: 'italic'
+            },
+            color: '#0000000'
           }
         }
       

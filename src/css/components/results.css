@@ -19,7 +19,9 @@
 
 
 .graph_wrapper{
-    background-color: white;
+    background-repeat: no-repeat;
+    background-image: url("../../images/crinkled-paper.jpg");
+    background-size: 100vw;
     border-radius: 5px;
     outline: solid;
     outline-color: green;

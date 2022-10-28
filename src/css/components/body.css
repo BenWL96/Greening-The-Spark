@@ -36,7 +36,9 @@
 }
 
 .section_body_form_wrapper_card{
-    background-color: white;
+    background-repeat: no-repeat;
+    background-image: url("../../images/crinkled-paper.jpg");
+    background-size: 100vw;
     border-radius: 5px;
     border-style: solid;
     border-color: green;
@@ -66,7 +68,8 @@
 .prompt_game_ID{
     text-align: left;
     color: black;
-    font-weight: 600px;
+    font-weight: 500;
+    text-shadow: black 1px 1px 1px;
     font-size: 5vw;
     margin-left: 10px;
 

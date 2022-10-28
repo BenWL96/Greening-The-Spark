@@ -81,6 +81,13 @@ function Results({jsonData}) {
         yAxisID: 'y',
       },
     ],
+    options: {
+      legend: {
+         labels: {
+            fontColor: 'black'
+         }
+      }
+   }
   };
 
   const ManualControlOfRenewablesLabels = {
@@ -104,6 +111,13 @@ function Results({jsonData}) {
         yAxisID: 'y',
       }
     ],
+    options: {
+      legend: {
+         labels: {
+            fontColor: 'black'
+         }
+      }
+    },
   };
 
   const BatteriesHydroSupplyStatusLabels = {
@@ -135,6 +149,13 @@ function Results({jsonData}) {
         yAxisID: 'y',
       },
     ],
+    options: {
+      legend: {
+         labels: {
+            fontColor: 'black'
+         }
+      }
+   }
   };
 
 
@@ -235,7 +256,8 @@ function Results({jsonData}) {
           
         
           <SimulationReport jsonData={jsonData}/>
-          
+
+          <br />
         
           <div className='graph_wrapper'>
                 <Line options={WindSolarDemandDetails} data={WindSolarDemandLabels} className="graph_wrapper_graph"/>
