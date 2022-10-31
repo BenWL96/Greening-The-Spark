@@ -24,7 +24,7 @@
     "build": "react-scripts build"
   },
   "engines": {
-    "node": "18.x",
+    "node": "16.x",
     "npm": "7.x"
   },
   
