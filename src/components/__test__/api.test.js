@@ -7,20 +7,20 @@ import DATA from '../../setupJest';
 //TRy to get this working on the actual api, then try mocking
 //https://www.youtube.com/watch?v=mHXhuPHiDj8&ab_channel=LeighHalliday
 
-
+const data = DATA
   
 global.fetch = jest.fn(() => {
     Promise.resolve({
-        json: () => Promise.resolve(
-             {json: DATA}
-        )  
+        json: async () => await Promise.resolve({
+             data: {}
+        })  
     })
 })
 
 
     it('Then the correct average should be returned', async () => {
         const input_game_id = 5;
-        const json =  Api(input_game_id);
+        const json =  await Api(input_game_id);
         console.log("fetch did something");
 
         //THis is a pending promise 
@@ -29,4 +29,6 @@ global.fetch = jest.fn(() => {
 
         //expect(json).toEqual(DATA);
         //expect(fetch).toHaveBeenCalledTimes(1);
+        console.log(expect(fetch).resolves.toEqual());
+        //await expect(fetch).resolves.toEqual({ data: {} }); 
     });

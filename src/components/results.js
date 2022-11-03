@@ -227,19 +227,23 @@ function Results({jsonData}) {
 
   }
 
+  const checkForJsonDataBoolean = () => {
+    if (jsonData){
+      console.log("Data found in result component");
+      
+      splitJsonDataIntoAppropriateArraysAndSetState();
+    }else{
+        console.log("Data not found in result component");
+        noJsonDataFoundSetGraphDataNull();
+    }
+  }
+
     useEffect(() => {
 
       console.log(jsonData);
       console.log(jsonData);
 
-        if (jsonData){
-            console.log("Data found in result component");
-            
-            splitJsonDataIntoAppropriateArraysAndSetState();
-        }else{
-            console.log("Data not found in result component");
-            noJsonDataFoundSetGraphDataNull();
-        }
+        checkForJsonDataBoolean();
     
     }, [])
 

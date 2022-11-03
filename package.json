@@ -23,9 +23,10 @@
     "build": "react-scripts build"
   },
   "engines": {
-    "node": "16.x",
+    "node": "18.x",
     "npm": "7.x"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",

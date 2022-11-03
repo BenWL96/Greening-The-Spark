@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.0b542a82.css",
-    "main.js": "/static/js/main.f1af8f84.js",
+    "main.js": "/static/js/main.995409c9.js",
     "static/js/787.53d651ea.chunk.js": "/static/js/787.53d651ea.chunk.js",
     "static/media/gts_temp_collage.jpg": "/static/media/gts_temp_collage.9e910de2d24660518d1f.jpg",
     "static/media/gts_logo.png": "/static/media/gts_logo.b40958ffc253340b9734.png",
+    "static/media/info.png": "/static/media/info.03be044946002989f93f.png",
     "static/media/blue_spark_eco_friendliness.png": "/static/media/blue_spark_eco_friendliness.2ddb98dbf866c8dab7d5.png",
     "static/media/green_spark_eco_friendliness.png": "/static/media/green_spark_eco_friendliness.23b28df0941174906aed.png",
     "static/media/red_spark_eco_friendliness.png": "/static/media/red_spark_eco_friendliness.02b4cbed423896787f41.png",
@@ -17,11 +18,11 @@
     "static/media/crinkled-paper.jpg": "/static/media/crinkled-paper.a449ede0e96ad40e9038.jpg",
     "index.html": "/index.html",
     "main.0b542a82.css.map": "/static/css/main.0b542a82.css.map",
-    "main.f1af8f84.js.map": "/static/js/main.f1af8f84.js.map",
+    "main.995409c9.js.map": "/static/js/main.995409c9.js.map",
     "787.53d651ea.chunk.js.map": "/static/js/787.53d651ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b542a82.css",
-    "static/js/main.f1af8f84.js"
+    "static/js/main.995409c9.js"
   ]
 }

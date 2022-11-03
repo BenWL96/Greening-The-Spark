@@ -43,6 +43,28 @@ it("input game ID information into box then submit, check that loading indicated
 })
 
 
+it("Render expect info button not to be in document on initial load", () => {
+render(<Body/>)
+   const icon = screen.queryByTestId("section_body_info");
+   expect(icon).toBeNull();
+})
+
+//Test that the icon is loaded after a value is fired.
+
+it("input game ID information into box then submit, check that loading indicated that data is being fetched", () => {
+    render(<Body/>);
+    const inputText = screen.getByPlaceholderText("Input Your Game ID here");
+    fireEvent.change(inputText, { target: { value: "1"}});
+    const submitButton = screen.getByTestId("section_body_form_submit_button");
+    fireEvent.click(submitButton);
+    const icon = screen.queryByTestId("section_body_info");
+    expect(icon).toBeInTheDocument();
+    //Test fetch mock failure??
+
+})
+
+
+
 //Here we are mocking api call 
 
 {/*

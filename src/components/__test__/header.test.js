@@ -14,5 +14,3 @@ it("Render section_header_title of header component", () => {
    expect(icon).toBeInTheDocument();
 })
 
-
-

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Results from './results';
 import '../css/components/body.css';
 import Api from '../helper/api.js';
-
+import Info from "../images/info.png";
 
 // When jsonData doesn't exist, background is fixed,
 
@@ -97,7 +97,10 @@ function Body() {
         <>
         
         {dataExists & !dataBeingFetchedAndPageLoading ?
-          <button className="section_body_back_button" onClick={() => backButtonClicked()} data-testid="section_body_back_button">Go Back</button>
+          <>
+            <button className="section_body_back_button" onClick={() => backButtonClicked()} data-testid="section_body_back_button">Go Back</button>
+            <img className="section_body_info" src={Info} data-testid="section_body_info"/>
+          </>  
           :
           <div className='section_body'>
             <div className='section_body_form_wrapper'>
