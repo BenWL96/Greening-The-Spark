@@ -99,7 +99,7 @@ function Body() {
         {dataExists & !dataBeingFetchedAndPageLoading ?
           <>
             <button className="section_body_back_button" onClick={() => backButtonClicked()} data-testid="section_body_back_button">Go Back</button>
-            <img className="section_body_info" src={Info} data-testid="section_body_info"/>
+            {/*<img className="section_body_info" src={Info} data-testid="section_body_info"/>*/}
           </>  
           :
           <div className='section_body'>
