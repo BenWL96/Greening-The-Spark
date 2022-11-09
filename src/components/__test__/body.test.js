@@ -2,6 +2,8 @@ import React, {render, screen, fireEvent } from '@testing-library/react';
 import Body from '../body';
 //jest.mock('../../helper/api.js');
 import '@testing-library/jest-dom/extend-expect';
+import SimulationReport from '../simulationReport';
+import workingData from './mockData/data';
 
 //Test form input and text upon page render
 it("Form input box renders on page open.", () => {
@@ -36,7 +38,7 @@ it("input game ID information into box then submit, check that loading indicated
     fireEvent.change(inputText, { target: { value: "1"}});
     const submitButton = screen.getByTestId("section_body_form_submit_button");
     fireEvent.click(submitButton);
-    const loadingMessage= screen.getByText("Loading");
+    const loadingMessage= screen.getByText("Loading your game...");
     expect(loadingMessage).toBeInTheDocument();
     //Test fetch mock failure??
 
@@ -51,17 +53,16 @@ render(<Body/>)
 
 //Test that the icon is loaded after a value is fired.
 
-it("input game ID information into box then submit, check that loading indicated that data is being fetched", () => {
+{/*it("input game ID information into box then submit, check that info button in dom", () => {
+    render(<SimulationReport/>);
     render(<Body/>);
-    const inputText = screen.getByPlaceholderText("Input Your Game ID here");
-    fireEvent.change(inputText, { target: { value: "1"}});
-    const submitButton = screen.getByTestId("section_body_form_submit_button");
-    fireEvent.click(submitButton);
-    const icon = screen.queryByTestId("section_body_info");
+    //pass json data to results.
+
+    const icon = screen.getByTestId("section_body_info");
     expect(icon).toBeInTheDocument();
     //Test fetch mock failure??
 
-})
+})*/}
 
 
 

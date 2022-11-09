@@ -20,3 +20,17 @@
     background-color: black;
     
 }
+
+.section_header_info_logo{
+    height: 5vh;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: black;
+    
+}
+
+.section_header_info_logo:hover{
+    
+    opacity: 50%;
+    
+}

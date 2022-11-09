@@ -95,12 +95,11 @@ function Body() {
 
         
         <>
-        
         {dataExists & !dataBeingFetchedAndPageLoading ?
-          <>
+          <div data-testid="section_body_loading_wrapper">
             <button className="section_body_back_button" onClick={() => backButtonClicked()} data-testid="section_body_back_button">Go Back</button>
-            {/*<img className="section_body_info" src={Info} data-testid="section_body_info"/>*/}
-          </>  
+            <img className="section_body_info" src={Info} data-testid="section_body_info"/>
+          </div>  
           :
           <div className='section_body'>
             <div className='section_body_form_wrapper'>
