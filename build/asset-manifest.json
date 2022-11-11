@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.9751d2af.css",
-    "main.js": "/static/js/main.bb57cde4.js",
+    "main.css": "/static/css/main.8e8fa50f.css",
+    "main.js": "/static/js/main.ca360479.js",
     "static/js/787.2079449d.chunk.js": "/static/js/787.2079449d.chunk.js",
     "static/media/gts_temp_collage.jpg": "/static/media/gts_temp_collage.9e910de2d24660518d1f.jpg",
     "static/media/info.png": "/static/media/info.526302ccea27886a7079.png",
     "static/media/gts_logo.png": "/static/media/gts_logo.b40958ffc253340b9734.png",
     "static/media/Black-X.png": "/static/media/Black-X.7fb94a48fdb2cce7362a.png",
+    "static/media/questionmarkblue.png": "/static/media/questionmarkblue.7309116b03d6a664325f.png",
+    "static/media/questionmark.png": "/static/media/questionmark.6a9e942435da014a8946.png",
     "static/media/blue_spark_eco_friendliness.png": "/static/media/blue_spark_eco_friendliness.2ddb98dbf866c8dab7d5.png",
     "static/media/green_spark_eco_friendliness.png": "/static/media/green_spark_eco_friendliness.23b28df0941174906aed.png",
     "static/media/red_spark_eco_friendliness.png": "/static/media/red_spark_eco_friendliness.02b4cbed423896787f41.png",
@@ -18,12 +20,12 @@
     "static/media/red_spark_economy.png": "/static/media/red_spark_economy.5b408fbff71a1967ea09.png",
     "static/media/crinkled-paper.jpg": "/static/media/crinkled-paper.a449ede0e96ad40e9038.jpg",
     "index.html": "/index.html",
-    "main.9751d2af.css.map": "/static/css/main.9751d2af.css.map",
-    "main.bb57cde4.js.map": "/static/js/main.bb57cde4.js.map",
+    "main.8e8fa50f.css.map": "/static/css/main.8e8fa50f.css.map",
+    "main.ca360479.js.map": "/static/js/main.ca360479.js.map",
     "787.2079449d.chunk.js.map": "/static/js/787.2079449d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9751d2af.css",
-    "static/js/main.bb57cde4.js"
+    "static/css/main.8e8fa50f.css",
+    "static/js/main.ca360479.js"
   ]
 }
