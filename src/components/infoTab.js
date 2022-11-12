@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/components/infoTab.css';
 
 import X from "../images/Black-X.png";
@@ -7,12 +7,13 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-
+import Stack from 'react-bootstrap/Stack';
 
 import Accordion from 'react-bootstrap/Accordion';
 
 
 function InfoTab({changeStatePanelActivated}) {
+
 
   return (
 
@@ -20,15 +21,29 @@ function InfoTab({changeStatePanelActivated}) {
 
       <div className="info_wrapper_nest_title">
       
-        <br />
-        <Row>
+        
+
+        <Stack direction="horizontal" gap={3}>
+          <div>
+            <p className="info_wrapper_title">
+              Info
+            </p>
+          </div>
+
+          <div className="ms-auto"></div>
+          <div>
+            <img className="info_wrapper_exit_img" data-testid="info_wrapper_exit_img" src={X} onClick={changeStatePanelActivated}/>
+          </div>
+        </Stack>
+        
+        {/*<Row>
           <Col xs={9} sm={9} md={9}>
-            <p className="info_wrapper_title">Info</p>
+            
           </Col>
           <Col xs={1} sm={1} md={1}>
           <img className="info_wrapper_exit_img" data-testid="info_wrapper_exit_img" src={X} onClick={changeStatePanelActivated}/>
           </Col>
-        </Row>
+        </Row>*/}
         <br />
       </div>
         <div className="info_wrapper_table_wrapper">

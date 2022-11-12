@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../css/components/simulationReport.css';
 import GreenSparkEfficiency from '../images/green_spark_efficiency.png';
 import GreenSparkEconomy from '../images/green_spark_economy.png';
@@ -19,6 +19,7 @@ import Popover from 'react-bootstrap/Popover';
 
 
 
+//Put these popovers in another file and import them.
 const popoverDemand = (
     <Popover id="popover_demand-basic" className="popover_tile" style={{maxWidth: '60vw' }}>
         <Popover.Header >
@@ -236,7 +237,6 @@ const popoverAverageCostScore = (
 function SimulationReport({jsonData}){
 
 
-        
     console.log("jsonData Data Is Being Passed To Simulation Report.");
     console.log(jsonData);
     
@@ -342,10 +342,13 @@ function SimulationReport({jsonData}){
                         <div className="section_simrepo_wrapper_table_2_wrapper">
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverDemand}>
+                                    
+                                    {/* This overlaytrigger only activated if button activated and ID !== null */}
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverDemand}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
+
+
                                     &nbsp; Demand
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{demand}</Col>
@@ -354,9 +357,12 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverWind}>
+                                    {/* This overlaytrigger only activated if button activated and ID !== null */}
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverWind}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
+
+
                                     &nbsp; Wind
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{wind}</Col>
@@ -365,9 +371,12 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverSolar}>
+                                    {/* This overlaytrigger only activated if button activated and ID !== null */}
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverSolar}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
+
+                                    
                                     &nbsp; Solar
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={4} lg={4}>{solar}</Col>
@@ -376,7 +385,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverFossilFuels}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverFossilFuels}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp;Fossil Fuels
@@ -387,7 +396,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverNuclear}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverNuclear}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Nuclear
@@ -398,7 +407,9 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverSurplus}>
+                                    
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverSurplus}>
+
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Surplus
@@ -409,7 +420,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverShortfall}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverShortfall}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Shortfall
@@ -420,7 +431,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverInitialStored}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverInitialStored}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Initial Stored
@@ -431,7 +442,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverFinalStored}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverFinalStored}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Final Stored
@@ -442,7 +453,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverStorageDiscrepancy}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverStorageDiscrepancy}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Storage Difference
@@ -453,7 +464,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverEfficiencyScore}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverEfficiencyScore}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Efficiency Score
@@ -464,7 +475,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverTotalCO2}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverTotalCO2}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Total CO2 (tonnes)
@@ -475,7 +486,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverTotalCost}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverTotalCost}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Total Cost (£M)
@@ -486,7 +497,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverAverageCost}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCost}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average Cost (£Million/Gwh)
@@ -498,7 +509,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverAverageCO2}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCO2}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average CO2 (tonnes/GWh)
@@ -509,7 +520,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverAverageCO2Score}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCO2Score}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average CO2 Score
@@ -520,7 +531,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={6} md={4} lg={4}>
-                                    <OverlayTrigger trigger="click" placement="right" overlay={popoverAverageCostScore}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCostScore}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average Cost Score
