@@ -14,7 +14,7 @@
 }
 
 .section_header_logo{
-    height: 5vh;
+    height: 7vh;
     margin-left: 10px;
     margin-top: 10px;
     background-color: black;
@@ -29,7 +29,7 @@
 
 
 .section_header_info_logo{
-    height: 5vh;
+    height: 7vh;
     margin-top: 10px; 
     background-color: black;
     border-radius: 5px;

@@ -133,6 +133,18 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .popover-header{
+        font-size: 40px;
+        width: 650px;
+    }
+    
+    .popover_tile{
+        outline: solid;
+        max-width: 650px ! important;
+    }
+
+    
 }
 
 @media(max-width: 800px){
@@ -141,6 +153,17 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .popover-header{
+        font-size: 40px;
+        width: 80vw;
+    }
+    
+    .popover_tile{
+        outline: solid;
+        max-width: 80vw ! important;
+    }
+    
 }
 
 .section_simrepo_wrapper_table_title{
@@ -213,12 +236,8 @@
 
 .section_simrepo_wrapper_questionmark:hover{
     cursor: pointer;
-    rotation-point:50% 50%;
-    rotation:180deg;
-}
-
-.tooltip{
-    width: 80vw;
+    background-color: black;
+    border-radius: 40px;
 }
 
 
@@ -226,15 +245,6 @@
     background-color: rgb(178, 234, 195);
     color: black;
     font-size: 20px;
-}
-
-.popover-header{
-    font-size: 40px;
-    width: 60vw;
-}
-
-.popover_tile{
-    outline: solid;
 }
 
 .popover_header{

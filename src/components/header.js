@@ -26,7 +26,8 @@ function Header() {
 
                 <Stack direction="horizontal" gap={3}>
                     <div>
-                        <img className="section_header_logo" href="https://www.cornucopia.co.uk/gts/" target="_blank" data-testid="section_header_logo" src={Logo}/>
+                
+                        <img className="section_header_logo" href="https://www.cornucopia.co.uk/gts/" target="_blank" data-testid="section_header_logo" src={Logo} target="_blank"/>
                     </div>
                     <div className="ms-auto"></div>
                     <div />

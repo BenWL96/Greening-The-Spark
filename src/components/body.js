@@ -3,6 +3,7 @@ import Results from './results';
 import '../css/components/body.css';
 import Api from '../helper/api.js';
 import Info from "../images/info.png";
+import Stack from 'react-bootstrap/Stack';
 
 // When jsonData doesn't exist, background is fixed,
 
@@ -61,7 +62,7 @@ function Body() {
         } else {
         setDataBeingFetchedAndPageLoading(false);
         console.log("An error occurred");
-        setMessage("The game with ID: " + inputGameId + " could not be found.");
+        setMessage("The game with ID: " + inputGameId + " could not be found. Please try again.");
       }
     
     };
@@ -83,7 +84,7 @@ function Body() {
     }
 
 
-    const backButtonClicked = () => {
+    const backButtonClickedUpdateState = () => {
     setJsonData(null);
     setDataExists(null);
     setSuccessMessage("");
@@ -97,7 +98,7 @@ function Body() {
         <>
         {dataExists & !dataBeingFetchedAndPageLoading ?
           <div data-testid="section_body_loading_wrapper">
-            <button className="section_body_back_button" onClick={() => backButtonClicked()} data-testid="section_body_back_button">Go Back</button>
+            <button className="section_body_back_button" onClick={() => backButtonClickedUpdateState()} data-testid="section_body_back_button">Go Back</button>
           </div>  
           :
           <div className='section_body'>
@@ -105,17 +106,29 @@ function Body() {
               <div className="section_body_form_wrapper_card">
                 <p className='prompt_game_ID'>Please Enter Your Game ID</p>
                 <form onSubmit={handleSubmit} data-testid="section_body_form" className='section_body_form_wrapper_form'>
-                  <input required
-                    type="number"
-                    value={inputGameId}
-                    placeholder="Input Your Game ID here"
-                    onChange={(e) => setInputGameId(e.target.value)}
-                    min="0"
-                  className="section_body_form_wrapper_input"/>
-                
-                  <button type="submit" data-testid="section_body_form_submit_button" className="section_body_form_wrapper_button">Submit</button>
 
-                  <div className="message">{message ? <p data-testid="section_body_form_message" className='section_body_form_message'>{message}</p> : null}</div>
+                <Stack direction="horizontal" gap={0}>
+                    <div>
+
+                      <input required
+                      type="number"
+                      value={inputGameId}
+                      placeholder="Input Your Game ID here"
+                      onChange={(e) => setInputGameId(e.target.value)}
+                      min="0"
+                      className="section_body_form_wrapper_input"/>
+                      
+                    </div>
+                    <div>
+                      <button type="submit" data-testid="section_body_form_submit_button" className="section_body_form_wrapper_button">Submit</button>
+                    </div>
+                    <div className="ms-auto"></div>
+
+                </Stack>
+                 
+                
+                
+                  <div className="message">{message ? <p data-testid="section_body_form_message" className='section_body_form_message_failure'>{message}</p> : null}</div>
                   <div className="section_body_form_wrapper_success_message">{successMessage ? <p data-testid="section_body_form_message">{successMessage}</p> : null}</div>
                 </form>
 
