@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b780b58.css",
-    "main.js": "/static/js/main.c5def5ce.js",
+    "main.css": "/static/css/main.aca45bec.css",
+    "main.js": "/static/js/main.55e6fb6a.js",
     "static/js/787.2079449d.chunk.js": "/static/js/787.2079449d.chunk.js",
     "static/media/gts_temp_collage.jpg": "/static/media/gts_temp_collage.711b34209b090022effa.jpg",
     "static/media/info.png": "/static/media/info.526302ccea27886a7079.png",
@@ -20,12 +20,12 @@
     "static/media/red_spark_economy.png": "/static/media/red_spark_economy.5b408fbff71a1967ea09.png",
     "static/media/crinkled-paper.jpg": "/static/media/crinkled-paper.a449ede0e96ad40e9038.jpg",
     "index.html": "/index.html",
-    "main.5b780b58.css.map": "/static/css/main.5b780b58.css.map",
-    "main.c5def5ce.js.map": "/static/js/main.c5def5ce.js.map",
+    "main.aca45bec.css.map": "/static/css/main.aca45bec.css.map",
+    "main.55e6fb6a.js.map": "/static/js/main.55e6fb6a.js.map",
     "787.2079449d.chunk.js.map": "/static/js/787.2079449d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b780b58.css",
-    "static/js/main.c5def5ce.js"
+    "static/css/main.aca45bec.css",
+    "static/js/main.55e6fb6a.js"
   ]
 }
