@@ -141,7 +141,7 @@
 }
 
 
-@media(max-width: 700px){
+@media(max-width: 700px) and (min-width: 420px){
 
     .section_body_form_wrappern_card{
         background-size: 800px;
@@ -181,6 +181,46 @@
         font-size: 15px;
     }
 
+}
+
+@media(max-width: 420px){
+    .section_body_form_wrappern_card{
+        background-size: 800px;
+    }
+
+
+    .section_body_form_wrapper_card{
+        width: 100%;
+    }
+
+
+    .prompt_game_ID {
+        font-size: 30px;
+    }
+    
+    .section_body_form_wrapper_input{
+        height: 50px;
+        width: 50vw ! important;
+        font-size: 20px;
+    }
+
+    .section_body_form_wrapper_button{
+        height: 50px;
+        width: 30vw ! important;
+        font-size: 20px;
+    }
+
+    .section_body_form_message_failure{
+        font-size: 15px;
+    }
+
+    .section_body_form_wrapper_success_message{
+        font-size: 15px;
+    }
+
+    .section_body_loading{
+        font-size: 15px;
+    }
 }
 
 .prompt_game_ID{
