@@ -26,6 +26,7 @@
     outline: solid;
     outline-color: green;
     outline-width: 1px;
+    overflow: scroll;
 }
 
 .graph_wrapper_graph{
@@ -58,7 +59,7 @@
 
     .graph_wrapper{
         width: 100%;
-        overflow: scroll;
+
     }
 
     .graph_wrapper_graph{

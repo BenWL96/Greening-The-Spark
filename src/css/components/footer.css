@@ -1,6 +1,5 @@
 .section_footer{
     background-color: transparent;
-    margin-bottom: 0;
     height: 10vh;
 }
 
@@ -9,44 +8,25 @@
     color: white;
     margin-left: 10px;
     font-weight: 500;
+    font-size: 20px;
 }
 
 .section_footer_wrapper_title:hover {
-    color: grey;
+    
+    opacity: 85%;
+    color: white;
     text-decoration: none;
 
 }
 
-@media(min-width: 350px){ 
-    .section_footer_wrapper_title{
-        font-size: 15px;
-    }
-
-    .icon_1{
-        width: 30px;
-        height: 30px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-        color: white;
-        
-    }
+.section_footer_wrapper_icon{
+    height: 7vh;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: white;   
 }
 
-@media(max-width: 350px){
-    .section_footer_wrapper_title{
-        font-size: 10px;
-    }
-
-    .icon_1{
-        width: 22px;
-        height: 22px;
-        color: white;      
-        margin-left: 10px;
-        margin-bottom: 10px; 
-    }
-}
-
-.icon_1:hover{
+.section_footer_wrapper_icon:hover{
     color: grey;
     cursor: pointer;
 }

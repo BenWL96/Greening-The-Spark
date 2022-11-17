@@ -5,20 +5,27 @@ import {
     AiFillTwitterSquare, 
     AiFillInstagram 
 } from "react-icons/ai";
+import Stack from 'react-bootstrap/Stack';
+
+import Logo from '../images/gts_logo.png';
+import Info from '../images/info.png';
+
 
 function Footer() {
     return (
         <div>
             <div className='section_footer' data-testid='section_footer'>
-                <div className='section_footer_wrapper' data-testid='section_footer_wrapper'>
-                    
-                    <AiFillFacebook className="icon_1" data-testid='section_footer_wrapper_icon_1'/>
-                    <AiFillInstagram className="icon_1" data-testid='section_footer_wrapper_icon_2'/>
-                    <AiFillTwitterSquare className="icon_1" data-testid='section_footer_wrapper_icon_3'/>
-                    <a href="https://www.cornucopia.co.uk" target="_blank" className='section_footer_wrapper_title' data-testid='section_footer_wrapper_title'>https://www.cornucopia.co.uk</a>
-                </div>
+                
+                <Stack direction="horizontal">
+                
+                    <div>
+                        <a href="https://www.cornucopia.co.uk" target="_blank" className='section_footer_wrapper_title' data-testid='section_footer_wrapper_title'>https://www.cornucopia.co.uk</a>
+                    </div>
+                        
+                </Stack>
 
-            </div>
+                    
+                </div>
         </div>
     );
 }

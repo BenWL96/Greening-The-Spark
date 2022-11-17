@@ -12,7 +12,8 @@ code {
     monospace;
 }
 
-@media(min-width: 1200px){
+
+@media(min-width: 1050px){
   .app_wrapper{
     background-repeat: no-repeat;
     background-image: url("./images/gts_temp_collage.jpg");
@@ -21,12 +22,11 @@ code {
   }
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1050px){
   .app_wrapper{
     background-repeat: no-repeat;
     background-image: url("./images/gts_temp_collage.jpg");
-    background-size: 1200px;
+    background-size: 1050px;
     background-attachment: fixed;
-    background-position: center top;
   }
 }

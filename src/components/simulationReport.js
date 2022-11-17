@@ -110,21 +110,21 @@ function SimulationReport({jsonData}){
 
                         <br />
 
-                        <p className='section_simrepo_wrapper_title' >Simulation Report: #{gameID}</p>
-                        <p className='section_simrepo_wrapper_sub_title'> {datePlayed}  {timePlayed} </p>
+                        <p className='section_simrepo_wrapper_title' >Simulation Report #{gameID}</p>
+                        <p className='section_simrepo_wrapper_sub_title'> {datePlayed}  &nbsp; &nbsp; &nbsp; {timePlayed} </p>
 
                         <br />
                         
                         <div className="section_simrepo_wrapper_table_1_wrapper">
                             <Row className="section_simrepo_wrapper_table_1_wrapper_row">
-                                <Col className="row_header" xs={4} sm={3} md={3} lg={3}>Difficulty</Col>
-                                <Col className="row_text" xs={2} sm={3} md={3} lg={3}>{difficulty}</Col>
-                                <Col xs={1} sm={1} md={1} lg={1}></Col>
-                                <Col xs={1} sm={1} md={1} lg={1}></Col>
+                                <Col className="row_header" xs={6} sm={4} md={4} lg={4}>Difficulty</Col>
+                                <Col className="row_text_difficulty" xs={3} sm={3} md={2} lg={2}>{difficulty}</Col>
+
                             </Row>
+                            <br /><br />
                             <br />
                             <Row className="section_simrepo_wrapper_table_1_wrapper_row">
-                                <Col className="row_header" xs={12} sm={2} md={3} lg={3}>Sparks Earned</Col>
+                                <Col className="row_header_sparks_earned" xs={12} sm={2} md={3} lg={3}>Sparks Earned:</Col>
                                 <Col xs={12} sm={3} md={3} lg={3}>
                                     {efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }
                                 </Col>
@@ -140,8 +140,6 @@ function SimulationReport({jsonData}){
                         <br /><br />
 
                         <p className="section_simrepo_wrapper_table_title">Results Summary</p>
-                        <br />    
-                        <p className="section_simrepo_wrapper_table_subtitle">Description Goes Here</p>
                         <br />
                     
 
@@ -221,7 +219,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Surplus
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{surplus}</Col>
-                                <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{surplusComment}</Col>
+                                <Col className="section_simrepo_wrapper_table_2_wrapper_row_comment" xs={3} sm={3} md={2} lg={2}>{surplusComment}</Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -232,7 +230,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Shortfall
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{shortfall}</Col>
-                                <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{shortfallComment}</Col>
+                                <Col className="row_text" xs={3} sm={3} md={3} lg={3}>{shortfallComment}</Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -265,7 +263,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Storage Difference
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{storageDiscrepancy}</Col>
-                                <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{storageDiscrepancyComment}</Col>
+                                <Col className="section_simrepo_wrapper_table_2_wrapper_row_comment" xs={3} sm={3} md={4} lg={4}>{storageDiscrepancyComment}</Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -276,7 +274,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Efficiency Score
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{efficiencyScore}</Col>
-                                <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{efficiencyScoreComment}</Col>
+                                <Col className="section_simrepo_wrapper_table_2_wrapper_row_comment" xs={3} sm={3} md={4} lg={4}>{efficiencyScoreComment}</Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -287,7 +285,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Total CO2 (tonnes)
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{totalCO2Tonnes}</Col>
-                                <Col xs={3} sm={3} md={2} lg={2}></Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -298,7 +296,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Total Cost (£M)
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{totalCostMillionPounds}</Col>
-                                <Col xs={3} sm={3} md={2} lg={2}></Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -310,7 +308,7 @@ function SimulationReport({jsonData}){
                                     
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{averageCostMillionPerGWH}</Col>
-                                <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{averageCostComment}</Col>
+                                <Col className="section_simrepo_wrapper_table_2_wrapper_row_comment" xs={3} sm={3} md={4} lg={4}>{averageCostComment}</Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -321,7 +319,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Average CO2 (tonnes/GWh)
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{averageCO2}</Col>
-                                <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{averageCO2Comment}</Col>
+                                <Col className="section_simrepo_wrapper_table_2_wrapper_row_comment" xs={3} sm={3} md={4} lg={4}>{averageCO2Comment}</Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -332,7 +330,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Average CO2 Score
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{averageCO2Score}</Col>
-                                <Col className="row_text" xs={3} sm={3} md={2} lg={2}></Col>
+                                <Col className="row_text" xs={3} sm={3} md={4} lg={4}></Col>
                             </Row>
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
@@ -343,7 +341,7 @@ function SimulationReport({jsonData}){
                                     &nbsp; Average Cost Score
                                 </Col>
                                 <Col className="row_text" xs={3} sm={3} md={2} lg={2}>{averageCostScore}</Col>
-                                <Col xs={3} sm={3} md={2} lg={2}></Col>
+                                <Col xs={3} sm={3} md={4} lg={4}></Col>
                             </Row>
                         </div>
                         <br /><br />
