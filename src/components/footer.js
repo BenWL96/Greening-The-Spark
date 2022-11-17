@@ -1,6 +1,10 @@
 import React from 'react';
 import '../css/components/footer.css';
-import { AiFillFacebook, AiFillTwitterSquare, AiFillInstagram } from "react-icons/ai";
+import { 
+    AiFillFacebook, 
+    AiFillTwitterSquare, 
+    AiFillInstagram 
+} from "react-icons/ai";
 
 function Footer() {
     return (

@@ -5,8 +5,6 @@ import Api from '../helper/api.js';
 import Info from "../images/info.png";
 import Stack from 'react-bootstrap/Stack';
 
-// When jsonData doesn't exist, background is fixed,
-
 function Body() {
 
     {/*Json Data*/}
@@ -22,7 +20,7 @@ function Body() {
 
     useEffect(() => {
       
-        //The Three States
+        //Three States:
         //Json exists
         //Json doesn't exist and loading
         //Json doesn't exist and not loading.
@@ -46,23 +44,31 @@ function Body() {
 
 
     let handleSubmit = async (e) => {
-      e.preventDefault();
 
+      e.preventDefault();
       setMessage("");
       setDataBeingFetchedAndPageLoading(true);
     
       const json = await Api(inputGameId);
 
+      //Json fetch either success or fail
+      //Success then Sim Reports displayed
+      //Failure then error displayed.
+
       if (json) {
+
         //Remove the input box, display the loading logic.
+
         setDataBeingFetchedAndPageLoading(false);
         setJsonData(json);
-        
         setSuccessMessage("Data from the game with ID: " + inputGameId + " was successfully fetched.");
-        } else {
+        
+      } else {
+        
         setDataBeingFetchedAndPageLoading(false);
         console.log("An error occurred");
         setMessage("The game with ID: " + inputGameId + " could not be found. Please try again.");
+        
       }
     
     };
@@ -74,12 +80,14 @@ function Body() {
     if (jsonData){
       
       return (
+
         <Results jsonData={jsonData}/>
 
       )}else{
       return (
 
         <div></div>
+
       )}
     }
 
@@ -88,6 +96,7 @@ function Body() {
     setJsonData(null);
     setDataExists(null);
     setSuccessMessage("");
+
     }
 
 
@@ -107,7 +116,7 @@ function Body() {
                 <p className='prompt_game_ID'>Please Enter Your Game ID</p>
                 <form onSubmit={handleSubmit} data-testid="section_body_form" className='section_body_form_wrapper_form'>
 
-                <Stack direction="horizontal" gap={0}>
+                <Stack direction="horizontal" gap={0} className="section_body_form_wrapper_form_stack">
                     <div>
 
                       <input required
@@ -147,9 +156,7 @@ function Body() {
             : 
             displayDataOrNothing()
           }
-          
-
-
+        
       </>
 
     );

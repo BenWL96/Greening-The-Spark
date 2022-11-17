@@ -8,10 +8,13 @@
 }
 
 
+
 .section_body_form_message{
     margin: 0px;
     padding: 0px;
 }
+
+.section_body_form_wrapper_form_stack{}
 
 .section_body_back_button{
     width: 100px;
@@ -48,7 +51,9 @@
     margin-left: auto;
     margin-right: auto;
     height: 70vh;
+    
 }
+
 
 @media(min-width: 800px){
 
@@ -56,12 +61,15 @@
         background-size: 100vw;
     }
 
-    .prompt_game_ID {
-        font-size: 50px;
-    }
+    
 
     .section_body_form_wrapper_card{
         width: 800px;
+    }
+   
+    .prompt_game_ID {
+        font-size: 50px;
+        
     }
 
     .section_body_form_wrapper_input{
@@ -90,21 +98,64 @@
 
 }
 
-@media(max-width: 800px){
+@media(max-width: 800px) and (min-width: 700px){
 
     .section_body_form_wrappern_card{
         background-size: 800px;
     }
 
 
-    .prompt_game_ID {
-        font-size: 30px;
+    .section_body_form_wrapper_card{
+        width: 100%;
     }
+
+
+    .prompt_game_ID {
+        font-size: 50px;
+    }
+    
+    .section_body_form_wrapper_input{
+        height: 80px;
+        width: 430px ! important;
+        font-size: 35px;
+    }
+
+    .section_body_form_wrapper_button{
+        height: 80px;
+        width: 190px ! important;
+        font-size: 35px;
+    }
+
+    .section_body_form_message_failure{
+        font-size: 20px;
+    }
+
+    .section_body_form_wrapper_success_message{
+        font-size: 20px;
+    }
+
+    .section_body_loading{
+        font-size: 20px;
+    }
+
+}
+
+
+@media(max-width: 700px){
+
+    .section_body_form_wrappern_card{
+        background-size: 800px;
+    }
+
 
     .section_body_form_wrapper_card{
         width: 100%;
     }
 
+
+    .prompt_game_ID {
+        font-size: 30px;
+    }
     
     .section_body_form_wrapper_input{
         height: 60px;
@@ -130,18 +181,15 @@
         font-size: 15px;
     }
 
-
 }
-
-
 
 .prompt_game_ID{
     text-align: left;
     color: black;
-    font-weight: 500;
-    text-shadow: black 1px 1px 1px;
+    font-weight: 700;
     margin-left: 10px;
     opacity: 85%;
+    margin-top: 5vh;
 
 }
 
@@ -187,6 +235,7 @@
 
 .section_body_loading{
     margin-left: 10px;
+    font-weight: 600;
 }
 
 
@@ -194,11 +243,13 @@
 .section_body_form_wrapper_success_message{
     color: green;
     margin-left: 10px;
+    font-weight: 600;
 }
 
 
 .section_body_form_message_failure{
-    font-weight: 500;
+    font-weight: 600;
     padding-left: 10px;
     font-style: italic;
 }
+

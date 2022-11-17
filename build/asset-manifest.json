@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.aca45bec.css",
-    "main.js": "/static/js/main.55e6fb6a.js",
+    "main.css": "/static/css/main.4b7149eb.css",
+    "main.js": "/static/js/main.d6d829bc.js",
     "static/js/787.2079449d.chunk.js": "/static/js/787.2079449d.chunk.js",
-    "static/media/gts_temp_collage.jpg": "/static/media/gts_temp_collage.711b34209b090022effa.jpg",
+    "static/media/gts_temp_collage.jpg": "/static/media/gts_temp_collage.f32c2cdb600ef3eecea5.jpg",
     "static/media/info.png": "/static/media/info.526302ccea27886a7079.png",
     "static/media/gts_logo.png": "/static/media/gts_logo.b40958ffc253340b9734.png",
     "static/media/Black-X.png": "/static/media/Black-X.7fb94a48fdb2cce7362a.png",
@@ -20,12 +20,12 @@
     "static/media/red_spark_economy.png": "/static/media/red_spark_economy.5b408fbff71a1967ea09.png",
     "static/media/crinkled-paper.jpg": "/static/media/crinkled-paper.a449ede0e96ad40e9038.jpg",
     "index.html": "/index.html",
-    "main.aca45bec.css.map": "/static/css/main.aca45bec.css.map",
-    "main.55e6fb6a.js.map": "/static/js/main.55e6fb6a.js.map",
+    "main.4b7149eb.css.map": "/static/css/main.4b7149eb.css.map",
+    "main.d6d829bc.js.map": "/static/js/main.d6d829bc.js.map",
     "787.2079449d.chunk.js.map": "/static/js/787.2079449d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aca45bec.css",
-    "static/js/main.55e6fb6a.js"
+    "static/css/main.4b7149eb.css",
+    "static/js/main.d6d829bc.js"
   ]
 }

@@ -36,14 +36,7 @@ function InfoTab({changeStatePanelActivated}) {
           </div>
         </Stack>
         
-        {/*<Row>
-          <Col xs={9} sm={9} md={9}>
-            
-          </Col>
-          <Col xs={1} sm={1} md={1}>
-          <img className="info_wrapper_exit_img" data-testid="info_wrapper_exit_img" src={X} onClick={changeStatePanelActivated}/>
-          </Col>
-        </Row>*/}
+     
         <br />
       </div>
         <div className="info_wrapper_table_wrapper">

@@ -12,225 +12,31 @@ import RedSparkEcoFriendliness from '../images/red_spark_eco_friendliness.png';
 import QuestionMark from '../images/questionmark.png';
 import QuestionMarkBlue from '../images/questionmarkblue.png';
 
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Popover from 'react-bootstrap/Popover';
 
+import {
 
+    PopoverDemand,
+    PopoverWind,
+    PopoverSolar,
+    PopoverFossilFuels,
+    PopoverNuclear,
+    PopoverSurplus,
+    PopoverShortfall,
+    PopoverInitialStored,
+    PopoverFinalStored,
+    PopoverStorageDiscrepancy,
+    PopoverEfficiencyScore,
+    PopoverTotalCO2,
+    PopoverTotalCost,
+    PopoverAverageCost,
+    PopoverAverageCO2,
+    PopoverAverageCO2Score,
+    PopoverAverageCostScore
 
-//Put these popovers in another file and import them.
-const popoverDemand = (
-    <Popover id="popover_demand-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Demand</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-  );
-
-const popoverWind = (
-    <Popover id="popover_wind-basic" className="popover_tile" >
-        <Popover.Header >
-            <p className="popover_header">Wind</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-  );
-
-const popoverSolar = (
-    <Popover id="popover_solar-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Solar</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-  );
-
-const popoverFossilFuels = (
-    <Popover id="popoverFossil_fuels-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Fossil Fuels</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverNuclear = (
-    <Popover id="popover_nuclear-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Nuclear</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverSurplus = (
-    <Popover id="popover_surplus-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Surplus</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverShortfall = (
-    <Popover id="popover_shortfall-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Shortfall</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverInitialStored = (
-    <Popover id="popover_initial_stored-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Initial Stored</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverFinalStored = (
-    <Popover id="popover_final_stored-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Final Stored</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverStorageDiscrepancy = (
-    <Popover id="popover_storage_discrepancy-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Storage Discrepancy</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverEfficiencyScore = (
-    <Popover id="popover_efficiency_score-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Efficiency Score</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverTotalCO2 = (
-    <Popover id="popover_total_CO2-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Total CO2</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-
-const popoverTotalCost = (
-    <Popover id="popover_total_cost-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Total Cost</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverAverageCost = (
-    <Popover id="popover_average_cost-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Average Cost</p>
-        </Popover.Header>
-        <Popover.Body>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverAverageCO2 = (
-    <Popover id="popover_average_CO2-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Average CO2</p>
-        </Popover.Header>
-        <Popover.Body>
-            <p className="popover_body">
-                And here's some <strong>amazing</strong> content. It's very engaging.
-                right?
-            </p>
-        </Popover.Body>
-    </Popover>
-);
-
-const popoverAverageCO2Score = (
-    <Popover id="popover_average_CO2_score-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Average CO2 Score</p>
-        </Popover.Header>
-        <Popover.Body>
-            <p className="popover_body">
-                And here's some <strong>amazing</strong> content. It's very engaging.
-                right?
-            </p>
-        </Popover.Body>
-    </Popover>
-);
-
-
-const popoverAverageCostScore = (
-    <Popover id="popover_average_cost_score-basic" className="popover_tile">
-        <Popover.Header >
-            <p className="popover_header">Average Cost Score</p>
-        </Popover.Header>
-        <Popover.Body>
-            <p className="popover_body">
-                And here's some <strong>amazing</strong> content. It's very engaging.
-                right?
-            </p>
-        </Popover.Body>
-    </Popover>
-);
+} from './popovers/popover.js'
 
 
 
@@ -344,7 +150,7 @@ function SimulationReport({jsonData}){
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
                                     
                                     {/* This overlaytrigger only activated if button activated and ID !== null */}
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverDemand}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverDemand}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
 
@@ -358,7 +164,7 @@ function SimulationReport({jsonData}){
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
                                     {/* This overlaytrigger only activated if button activated and ID !== null */}
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverWind}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverWind}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
 
@@ -372,7 +178,7 @@ function SimulationReport({jsonData}){
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
                                     {/* This overlaytrigger only activated if button activated and ID !== null */}
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverSolar}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverSolar}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
 
@@ -385,7 +191,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverFossilFuels}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverFossilFuels}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp;Fossil Fuels
@@ -396,7 +202,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverNuclear}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverNuclear}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Nuclear
@@ -408,7 +214,7 @@ function SimulationReport({jsonData}){
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
                                     
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverSurplus}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverSurplus}>
 
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
@@ -420,7 +226,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverShortfall}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverShortfall}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Shortfall
@@ -431,7 +237,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverInitialStored}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverInitialStored}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Initial Stored
@@ -442,7 +248,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverFinalStored}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverFinalStored}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Final Stored
@@ -453,7 +259,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverStorageDiscrepancy}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverStorageDiscrepancy}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Storage Difference
@@ -464,7 +270,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverEfficiencyScore}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverEfficiencyScore}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Efficiency Score
@@ -475,7 +281,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverTotalCO2}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverTotalCO2}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Total CO2 (tonnes)
@@ -486,7 +292,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverTotalCost}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverTotalCost}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Total Cost (£M)
@@ -497,7 +303,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCost}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverAverageCost}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average Cost (£Million/Gwh)
@@ -509,7 +315,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCO2}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverAverageCO2}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average CO2 (tonnes/GWh)
@@ -520,7 +326,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCO2Score}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverAverageCO2Score}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average CO2 Score
@@ -531,7 +337,7 @@ function SimulationReport({jsonData}){
                             <br />
                             <Row className="section_simrepo_wrapper_table_2_wrapper_row">
                                 <Col className="row_header" xs={6} sm={4} md={4} lg={4}>
-                                    <OverlayTrigger trigger="hover" placement="right" overlay={popoverAverageCostScore}>
+                                    <OverlayTrigger trigger="hover" placement="right" overlay={PopoverAverageCostScore}>
                                         <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     &nbsp; Average Cost Score
