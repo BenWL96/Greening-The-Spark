@@ -97,15 +97,15 @@ def Simulation_Reports_CREATE(request):
 
 
 @api_view(['GET'])
-def Information_Info_Panel_List_GET(request):
+def Information_Panel_List_GET(request):
 	# fetch all questions and then pass to serialiser to get all answers related.
 	questions = models.Info_Panel_Questions.objects.all()
-
 	# By this point we must already checked whether the questions have an answer. 	#If not then they should be filtered out.
 
 	if questions.count() > 0:
-		serializer = serializers.Serialize_Info(
-			questions, many=True
+		serializer = serializers.Serialize_Information_Panel_Questions(
+			questions,
+			many=True
 		)
 		return Response(serializer.data)
 	else:

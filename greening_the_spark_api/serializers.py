@@ -17,11 +17,12 @@ class SerializeSimulation_Report_Detail(serializers.ModelSerializer):
 		fields = '__all__'
 
 
+
 class Serialize_Information_Panel_Answers(serializers.ModelSerializer):
 
 	class Meta:
 		model = models.Info_Panel_Answers
-		exclude = ["answer_id"]
+		exclude = ["answer_id", 'question']
 
 
 class Serialize_Information_Panel_Questions(serializers.ModelSerializer):
@@ -30,3 +31,4 @@ class Serialize_Information_Panel_Questions(serializers.ModelSerializer):
 	class Meta:
 		model = models.Info_Panel_Questions
 		fields = ["question_id", "question", "answers"]
+

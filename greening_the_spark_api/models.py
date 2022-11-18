@@ -82,7 +82,7 @@ class Info_Panel_Questions(models.Model):
 
 class Info_Panel_Answers(models.Model):
 	answer_id = models.AutoField(primary_key=True)
-	question = models.ForeignKey(Info_Panel_Questions, on_delete=models.CASCADE)
+	question = models.OneToOneField(Info_Panel_Questions, on_delete=models.CASCADE)
 	the_simple_answer = models.CharField(max_length=255)
 	the_gts_answer = models.CharField(max_length=255)
 	the_complex_answer = models.CharField(max_length=255)

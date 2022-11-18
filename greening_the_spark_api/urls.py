@@ -7,5 +7,5 @@ urlpatterns = [
     path('sim-reports/', views.Simulation_Reports_LIST, name="simulation-reports"),
     path('sim-reports/<int:game_id>/details/', views.Simulation_Reports_DETAIL, name="simulation-report-detail"),
     path('sim-reports/dump/', views.Simulation_Reports_CREATE, name="simulation-report-create"),
-    path('information-panel/', views.Information_Info_Panel_List_GET, name="information-panel-list-get")
+    path('information-panel/', views.Information_Panel_List_GET, name="information-panel-list-get")
 ]
