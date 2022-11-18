@@ -74,3 +74,15 @@ class Simulation_Report(models.Model):
 	batteries_power_data_values = models.CharField(max_length=150)
 	hydro_power_data_values = models.CharField(max_length=150)
 	grid_surplus_data_values = models.CharField(max_length=150)
+
+
+class Info_Panel_Questions(models.Model):
+	question_id = models.AutoField(primary_key=True)
+	question = models.CharField(unique=True, max_length=255)
+
+class Info_Panel_Answers(models.Model):
+	answer_id = models.AutoField(primary_key=True)
+	question = models.ForeignKey(Info_Panel_Questions, on_delete=models.CASCADE)
+	the_simple_answer = models.CharField(max_length=255)
+	the_gts_answer = models.CharField(max_length=255)
+	the_complex_answer = models.CharField(max_length=255)
