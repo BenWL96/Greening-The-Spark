@@ -428,3 +428,25 @@ working_post_data_fields_rearranged = {
 	"average_CO2_comment": 1,
 	"average_cost_comment": 51,
 }
+
+
+
+info_data = {
+	"question_id": 1,
+	"question": "Info Panel Q1",
+	"answers": {
+		"the_simple_answer": "answer 1",
+		"the_gts_answer": "answer 2",
+		"the_complex_answer": "answer 3"
+	}
+}
+
+info_data_2 = {
+	"question_id": 2,
+	"question": "Info Panel Q2",
+	"answers": {
+		"the_simple_answer": "answer 1",
+		"the_gts_answer": "answer 2",
+		"the_complex_answer": "answer 3"
+	}
+}
