@@ -96,6 +96,28 @@ class test_simulation_report_endpoints_auth(TestCase):
 		user = UserFactory(username=username, password=password)
 		self.client.force_login(user)
 
+		self.info = "relevant info"
+		self.field_info = models.Field_Related_Info.objects.create(
+			demand_info=self.info,
+			wind_info=self.info,
+			solar_info=self.info,
+			fossil_fuels_info=self.info,
+			nuclear_info=self.info,
+			fossil_fuels_utilisation_percentage_info=self.info,
+			nuclear_fuels_utilisation_percentage_info=self.info,
+			surplus_info=self.info,
+			shortfall_info=self.info,
+			initial_stored_info=self.info,
+			final_stored_info=self.info,
+			storage_discrepancy_info=self.info,
+			efficiency_score_info=self.info,
+			total_CO2_tonnes_info=self.info,
+			total_cost_million_pounds_info=self.info,
+			average_CO2_tonnes_per_gwh_info=self.info,
+			average_cost_million_pounds_per_gwh_info=self.info
+		)
+
+
 	def test_sim_reports_list_auth_no_results(self):
 		url = reverse('simulation-reports')
 
@@ -128,9 +150,24 @@ class test_simulation_report_endpoints_auth(TestCase):
 		self.assertEqual(response_dict[0], match_dict)
 
 
+	def test_GET_sim_report_response_length(self):
 
+		url = reverse('simulation-report-create')
 
+		self.client.post(
+			url,
+			data=working_post_data,
+		)
 
+		arg = {"game_id": 1}
+		url = reverse('simulation-report-detail', kwargs=arg)
+
+		response = self.client.get(
+			url)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		self.assertEquals(len(response_dict), 2)
 
 class test_info_panel_endpoint(TestCase):
 
@@ -159,6 +196,7 @@ class test_info_panel_endpoint(TestCase):
 			the_gts_answer="answer 2",
 			the_complex_answer="answer 3"
 		)
+
 
 	def test_get_request(self):
 
@@ -200,3 +238,5 @@ class test_info_panel_endpoint(TestCase):
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
 		self.assertEquals(len(response_dict), 2)
+
+
