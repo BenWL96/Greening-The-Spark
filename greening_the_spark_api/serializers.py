@@ -11,6 +11,11 @@ class SerializeSimulation_Report_DATACHECK(serializers.ModelSerializer):
 		model = models.Simulation_Report
 		exclude = ['game_id']
 
+class Serialize_Field_Related_Info(serializers.ModelSerializer):
+	class Meta:
+		model = models.Field_Related_Info
+		exclude = ['id']
+
 class SerializeSimulation_Report_Detail(serializers.ModelSerializer):
 	class Meta:
 		model = models.Simulation_Report

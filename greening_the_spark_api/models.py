@@ -86,3 +86,31 @@ class Info_Panel_Answers(models.Model):
 	the_simple_answer = models.CharField(max_length=255)
 	the_gts_answer = models.CharField(max_length=255)
 	the_complex_answer = models.CharField(max_length=255)
+
+
+class Field_Related_Info(models.Model):
+
+	#This needs to be a part of every single simulation report..
+
+	id = models.AutoField(primary_key=True)
+
+	demand_info = models.CharField(max_length=200)
+	wind_info = models.CharField(max_length=200)
+	solar_info = models.CharField(max_length=200)
+	fossil_fuels_info = models.CharField(max_length=200)
+	nuclear_info = models.CharField(max_length=200)
+
+	fossil_fuels_utilisation_percentage_info = models.CharField(max_length=200)
+	nuclear_fuels_utilisation_percentage_info = models.CharField(max_length=200)
+
+	surplus_info = models.CharField(max_length=200)
+	shortfall_info = models.CharField(max_length=200)
+	initial_stored_info = models.CharField(max_length=200)
+	final_stored_info = models.CharField(max_length=200)
+	storage_discrepancy_info = models.CharField(max_length=200)
+	efficiency_score_info = models.CharField(max_length=200)
+	total_CO2_tonnes_info = models.CharField(max_length=200)
+	total_cost_million_pounds_info = models.CharField(max_length=200)
+	average_CO2_tonnes_per_gwh_info = models.CharField(max_length=200)
+	average_cost_million_pounds_per_gwh_info = models.CharField(max_length=200)
+

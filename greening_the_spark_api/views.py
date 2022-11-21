@@ -53,12 +53,29 @@ def Simulation_Reports_DETAIL(request, game_id):
 		except models.Simulation_Report.DoesNotExist:
 			raise Http404("A game with this ID does not exist")
 
-		# This serializer should only relay info that EVERYONE can see.
-		serializer = serializers.SerializeSimulation_Report_Detail(
-			simulation_report_object, many=False
+
+		try:
+			field_relation_info_object = models.Field_Related_Info.objects.get(
+				id=1)
+
+		except models.Simulation_Report.DoesNotExist:
+			raise Http404("A game with this ID does not exist")
+
+
+		serialize_simulation_report_object = serializers.SerializeSimulation_Report_Detail(
+			simulation_report_object,
+			many=False
 			)
 
-		return Response(serializer.data)
+		serialize_field_relation_info_object = serializers.Serialize_Field_Related_Info(
+			field_relation_info_object,
+			many=False
+		)
+
+		return Response([
+			serialize_simulation_report_object.data,
+			serialize_field_relation_info_object.data
+		])
 
 
 

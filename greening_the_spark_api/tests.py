@@ -65,7 +65,7 @@ class test_simulation_report_endpoints_non_auth(TestCase):
 
 		#why 2 ??
 
-		
+
 		match_dict = {'display_game_id': 2}
 		self.assertEqual(response_dict, match_dict)
 

@@ -1,0 +1,262 @@
+
+class test_simulation_report_endpoints(TestCase):
+
+
+	# Here we're just testing the error codes
+	# We don't need to add anything to the database.
+	def setup(self):
+		self.client = Client()
+
+	def test_endpoints_and_functionality(self):
+
+
+
+
+
+
+
+		"""POST to Simulation_Reports_LIST"""
+
+		url = reverse('simulation-reports')
+
+		response = self.client.post(
+			url)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {'detail': 'Method "POST" not allowed.'}
+
+
+		print("T3 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T3: Post method was allowed to "
+				"Simulation_Reports_LIST when it shouldn't "
+				"have been"
+			)
+
+
+		"""GET to Simulation_Reports_DETAIL test length response dict
+		Take into account generated ID."""
+
+		arg = {"game_id": 1}
+		url = reverse('simulation-report-detail', kwargs=arg)
+
+		response = self.client.get(
+			url)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+
+		#Here we are matching the response data to the origin variables
+		#We set. We establish the format which Carl can use to post to endpoint.
+
+
+		print("T5 initiate")
+		if self.assertEqual(len(response_dict), len(working_post_data) + 1) == False:
+			return print("T5: Simulation Reports Detail returned incorrect info")
+
+		"""GET to Simulation_Reports_DETAIL pass string parameter
+
+		arg = {"simulation_id": "p"}
+		url = reverse('simulation-report-detail', kwargs=arg)
+
+		msg_match = "django.urls.exceptions.NoReverseMatch: Reverse for 'simulation-report-detail' with keyword arguments '{'simulation_id': 'p'}' not found."
+		# Here we are matching the response data to the origin variables
+		# We set. We establish the format which Carl can use to post to endpoint.
+
+		print("T6 initiate")
+		if self.assertRaises(url, NoReverseMatch) == False:
+			return print(
+				"T6: Simulation Reports Detail returned incorrect info")"""
+
+		"""POST malicious data to Simulation_Reports_CREATE"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=malicious_post_data,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {
+			'message': "the data passed to the endpoint is not valid."}
+
+		print("T7 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T7: An incorrect error message has been thrown in response to"
+				"malicious data being passed to the endpoint."
+			)
+
+		"""Post Simulation_Reports_CREATE nuclear_fossil at 100%"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_100,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+
+		match_dict = {'display_game_id': 2}
+
+		print("T8 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T8: Nuclear and fossil utilisation percentage "
+				"cannot be 100% ??"
+			)
+
+		"""Post Simulation_Reports_CREATE nuclear_fossil at 0%"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_0,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+
+		match_dict = {'display_game_id': 3}
+
+		print("T9 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T8: Nuclear and fossil utilisation percentage "
+				"cannot be 0% ??"
+			)
+
+		"""POST Simulation_Reports_CREATE incorrect data, utilisation_percentage
+		not an within range 0-100"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_minus_one,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {
+			'message': "the data passed to the endpoint is not valid."}
+
+		print("T10 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T10: The data posted should not be serialized"
+			)
+
+		"""POST Simulation_Reports_CREATE incorrect data, utilisation_percentage
+				not an within range 0-100"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=post_data_fossil_nuclear_at_101,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		match_dict = {
+			'message': "the data passed to the endpoint is not valid."}
+
+		print("T11 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T11: The data posted should not be serialized"
+			)
+
+		"""Post Simulation_Reports_CREATE Correct Data But Rearranged Fields"""
+
+		url = reverse('simulation-report-create')
+
+		response = self.client.post(
+			url,
+			data=working_post_data_fields_rearranged,
+		)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		print(response_dict)
+		print(response_dict)
+		"""match_dict = {'display_game_id': 1}
+
+		print("T1 initiate")
+		if self.assertEqual(response_dict, match_dict) == False:
+			return print(
+				"T1: The dictionary posted is not the same "
+				"dictionary that is retrieved."
+			)"""
+
+
+
+from django.test import SimpleTestCase
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+# Create your tests here.
+class WebNavigationTest(SimpleTestCase):
+
+	#selenium.common.exceptions.InvalidArgumentException: Message: invalid argument
+  	#(Session info: chrome=106.0.5249.119)
+
+	def setUp(self):
+		self.driver = webdriver.Chrome('/usr/local/Caskroom/chromedriver/106.0.5249.61/chromedriver')
+
+		self.driver.get('http://127.0.0.1:8000/admin/')
+
+	def tearDown(self):
+		self.driver.close()
+
+	def testSignIn(self):
+
+		#this successfully adds a question !
+
+		user_name = WebDriverWait(self.driver, timeout=5).until(
+			lambda d: d.find_element(By.NAME, "username"))
+
+		user_name.send_keys("ben" + Keys.ENTER)
+
+		password = WebDriverWait(self.driver, timeout=5).until(
+			lambda d: d.find_element(By.NAME, "password"))
+
+		password.send_keys("1234" + Keys.ENTER)
+
+		time.sleep(1)
+
+		info_panel_questions = WebDriverWait(self.driver, timeout=5).until(
+			lambda d: d.find_element(By.LINK_TEXT, "Info_ panel_ questionss"))
+		time.sleep(1)
+		info_panel_questions.click()
+
+		add_link = WebDriverWait(self.driver, timeout=5).until(
+			lambda d: d.find_element(By.CLASS_NAME, "addlink"))
+		time.sleep(1)
+		add_link.click()
+
+		question = WebDriverWait(self.driver, timeout=5).until(
+			lambda d: d.find_element(By.NAME, "question"))
+
+		question.send_keys("question 1" + Keys.ENTER)
+
+		save_button = WebDriverWait(self.driver, timeout=5).until(
+			lambda d: d.find_element(By.NAME, "_save"))
+
+		save_button.click()
+
+
+		"""type = WebDriverWait(self.driver, timeout=5).until(
+			lambda d: d.find_element(By.CLASS_NAME, "title"))
+		self.assertEqual(title.text, "Chronology")"""
