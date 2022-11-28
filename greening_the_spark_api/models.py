@@ -75,7 +75,12 @@ class Simulation_Report(models.Model):
 	hydro_power_data_values = models.CharField(max_length=150)
 	grid_surplus_data_values = models.CharField(max_length=150)
 
+	def __str__(self):
+		return "Simultion report " + self.game_id
 
+	class Meta:
+		verbose_name = "Simulation Report"
+		verbose_name_plural = "Simulation Reports"
 
 class Info_Panel_Questions_And_Answers(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -83,6 +88,13 @@ class Info_Panel_Questions_And_Answers(models.Model):
 	the_simple_answer = models.CharField(max_length=255)
 	the_gts_answer = models.CharField(max_length=255)
 	the_complex_answer = models.CharField(max_length=255)
+
+	def __str__(self):
+		return self.question
+
+	class Meta:
+		verbose_name = "Info Panel Q&A"
+		verbose_name_plural = "Info Panel Q&A's"
 
 
 
@@ -112,3 +124,9 @@ class Field_Related_Info(models.Model):
 	average_CO2_tonnes_per_gwh_info = models.CharField(max_length=200)
 	average_cost_million_pounds_per_gwh_info = models.CharField(max_length=200)
 
+	def __str__(self):
+		return "Field Related Info"
+
+	class Meta:
+		verbose_name = "Field Related Info"
+		verbose_name_plural = "Field Related Info"
