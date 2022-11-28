@@ -15,6 +15,7 @@ from .data import (
 	working_post_data_fields_rearranged,
 	info_data,
 	info_data_2,
+	questionmark_data,
 	date,
 	time,
 
@@ -66,7 +67,7 @@ class test_simulation_report_endpoints_non_auth(TestCase):
 		#why 2 ??
 
 
-		match_dict = {'display_game_id': 2}
+		match_dict = {'display_game_id': 4}
 		self.assertEqual(response_dict, match_dict)
 
 	def test_post_sim_reports_create_failing_data(self):
@@ -145,7 +146,7 @@ class test_simulation_report_endpoints_auth(TestCase):
 
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
-		match_dict = {'game_id': 1, 'date': date}
+		match_dict = {'game_id': 3, 'date': date}
 
 		self.assertEqual(response_dict[0], match_dict)
 
@@ -169,33 +170,55 @@ class test_simulation_report_endpoints_auth(TestCase):
 		response_dict = json.loads(json.dumps(input_dict))
 		self.assertEquals(len(response_dict), 2)
 
+
+	def test_GET_sim_report_response_second_json(self):
+
+		url = reverse('simulation-report-create')
+
+		response_1 = self.client.post(
+			url,
+			data=working_post_data,
+		)
+
+		input_dict = response_1.data
+		response_dict = json.loads(json.dumps(input_dict))
+
+		game_id = response_dict['display_game_id']
+
+		arg = {"game_id": game_id}
+		url = reverse('simulation-report-detail', kwargs=arg)
+
+		response_2 = self.client.get(
+			url
+		)
+
+		input_dict = response_2.data
+		response_dict = json.loads(json.dumps(input_dict))
+		print(response_dict)
+		print(response_dict)
+
+		#self.assertEquals(response_dict[1], questionmark_data)
+
 class test_info_panel_endpoint(TestCase):
 
 	def setUp(self):
 
 		self.client = Client()
 
-		self.question = models.Info_Panel_Questions.objects.create(
-			question="Info Panel Q1"
-		)
-
-		self.answer = models.Info_Panel_Answers.objects.create(
-			question=self.question,
+		self.question = models.Info_Panel_Questions_And_Answers.objects.create(
+			question="Info Panel Q1",
 			the_simple_answer="answer 1",
 			the_gts_answer="answer 2",
 			the_complex_answer="answer 3"
 		)
 
-		self.question_2 = models.Info_Panel_Questions.objects.create(
-			question="Info Panel Q2"
-		)
-
-		self.answer_2 = models.Info_Panel_Answers.objects.create(
-			question=self.question_2,
+		self.question_2 = models.Info_Panel_Questions_And_Answers.objects.create(
+			question="Info Panel Q2",
 			the_simple_answer="answer 1",
 			the_gts_answer="answer 2",
 			the_complex_answer="answer 3"
 		)
+
 
 
 	def test_get_request(self):
@@ -225,7 +248,7 @@ class test_info_panel_endpoint(TestCase):
 
 	def test_quantity_returned_database(self):
 
-		count_questions = models.Info_Panel_Questions.objects.all()
+		count_questions = models.Info_Panel_Questions_And_Answers.objects.all()
 		self.assertEquals(count_questions.count(), 2)
 
 	def test_quantity_return_endpoint(self):

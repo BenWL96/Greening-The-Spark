@@ -432,21 +432,40 @@ working_post_data_fields_rearranged = {
 
 
 info_data = {
-	"question_id": 1,
+	"id": 1,
 	"question": "Info Panel Q1",
-	"answers": {
-		"the_simple_answer": "answer 1",
-		"the_gts_answer": "answer 2",
-		"the_complex_answer": "answer 3"
-	}
+	"the_simple_answer": "answer 1",
+	"the_gts_answer": "answer 2",
+	"the_complex_answer": "answer 3"
+
 }
 
 info_data_2 = {
-	"question_id": 2,
+	"id": 2,
 	"question": "Info Panel Q2",
-	"answers": {
-		"the_simple_answer": "answer 1",
-		"the_gts_answer": "answer 2",
-		"the_complex_answer": "answer 3"
-	}
+	"the_simple_answer": "answer 1",
+	"the_gts_answer": "answer 2",
+	"the_complex_answer": "answer 3"
+
+}
+
+
+questionmark_data = {
+    "demand_info": "relevant info",
+    "wind_info": "relevant info",
+    "solar_info": "relevant info",
+    "fossil_fuels_info": "relevant info",
+    "nuclear_info": "relevant info",
+    "fossil_fuels_utilisation_percentage_info": "relevant info",
+    "nuclear_fuels_utilisation_percentage_info": "relevant info",
+    "surplus_info": "relevant info",
+    "shortfall_info": "relevant info",
+    "initial_stored_info": "relevant info",
+    "final_stored_info": "relevant info",
+    "storage_discrepancy_info": "relevant info",
+    "efficiency_score_info": "relevant info",
+    "total_CO2_tonnes_info": "relevant info",
+    "total_cost_million_pounds_info": "relevant info",
+    "average_CO2_tonnes_per_gwh_info": "relevant info",
+    "average_cost_million_pounds_per_gwh_info": "relevant info"
 }

@@ -22,18 +22,8 @@ class SerializeSimulation_Report_Detail(serializers.ModelSerializer):
 		fields = '__all__'
 
 
-
-class Serialize_Information_Panel_Answers(serializers.ModelSerializer):
-
+class Serialize_Information_Panel(serializers.ModelSerializer):
 	class Meta:
-		model = models.Info_Panel_Answers
-		exclude = ["answer_id", 'question']
-
-
-class Serialize_Information_Panel_Questions(serializers.ModelSerializer):
-	answers = Serialize_Information_Panel_Answers(read_only=True, source="info_panel_answers")
-
-	class Meta:
-		model = models.Info_Panel_Questions
-		fields = ["question_id", "question", "answers"]
+		model = models.Info_Panel_Questions_And_Answers
+		fields = "__all__"
 
