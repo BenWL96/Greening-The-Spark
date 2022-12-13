@@ -61,11 +61,6 @@ def Simulation_Reports_DETAIL(request, game_id):
 		if len(field_relation_info_objects) == 0:
 			print("Field related objects do not exist")
 			raise Http404("Field related objects do not exist")
-		elif len(field_relation_info_objects) == 1:
-			serialize_field_relation_info_object = serializers.Serialize_Field_Related_Info(
-				field_relation_info_objects,
-				many=False
-			)
 		else:
 			serialize_field_relation_info_object = serializers.Serialize_Field_Related_Info(
 				field_relation_info_objects[0],
