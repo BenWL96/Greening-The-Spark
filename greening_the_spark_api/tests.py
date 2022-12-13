@@ -21,7 +21,7 @@ from .data import (
 
 )
 
-
+"""
 class test_simulation_report_endpoints_non_auth(TestCase):
 
 	def setUp(self):
@@ -66,7 +66,6 @@ class test_simulation_report_endpoints_non_auth(TestCase):
 
 		#why 2 ??
 
-
 		match_dict = {'display_game_id': 4}
 		self.assertEqual(response_dict, match_dict)
 
@@ -81,7 +80,8 @@ class test_simulation_report_endpoints_non_auth(TestCase):
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
 		match_dict = {
-			'message': "the data passed to the endpoint is not valid."}
+			'message': "the data passed to the endpoint is not valid."
+		}
 		self.assertEqual(response_dict, match_dict)
 
 
@@ -180,10 +180,10 @@ class test_simulation_report_endpoints_auth(TestCase):
 			data=working_post_data,
 		)
 
-		input_dict = response_1.data
-		response_dict = json.loads(json.dumps(input_dict))
+		input_dict_1 = response_1.data
+		response_dict_1 = json.loads(json.dumps(input_dict_1))
 
-		game_id = response_dict['display_game_id']
+		game_id = response_dict_1['display_game_id']
 
 		arg = {"game_id": game_id}
 		url = reverse('simulation-report-detail', kwargs=arg)
@@ -192,12 +192,16 @@ class test_simulation_report_endpoints_auth(TestCase):
 			url
 		)
 
-		input_dict = response_2.data
-		response_dict = json.loads(json.dumps(input_dict))
-		print(response_dict)
-		print(response_dict)
+		input_dict_2 = response_2.data
+		response_array = json.loads(json.dumps(input_dict_2))
 
-		#self.assertEquals(response_dict[1], questionmark_data)
+		match_data = questionmark_data
+
+		print(response_array)
+		self.assertEquals(response_array[1], match_data)
+
+
+
 
 class test_info_panel_endpoint(TestCase):
 
@@ -224,11 +228,9 @@ class test_info_panel_endpoint(TestCase):
 	def test_get_request(self):
 
 		url = reverse('information-panel-list-get')
-
 		response = self.client.get(
 			url,
 		)
-
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
 		self.assertEquals(response_dict[0], info_data)
@@ -261,5 +263,28 @@ class test_info_panel_endpoint(TestCase):
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
 		self.assertEquals(len(response_dict), 2)
+"""
 
+class test_simulation_report_detail(TestCase):
 
+	def setUp(self):
+		self.client = Client()
+
+	def test_sim_repo_detail_endpoint_no_field_info(self):
+		url = reverse('simulation-report-create')
+
+		self.client.post(
+			url,
+			data=working_post_data,
+		)
+
+		arg = {"game_id": 1}
+		url = reverse('simulation-report-detail', kwargs=arg)
+
+		response = self.client.get(
+			url)
+
+		input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		print(response_dict)
+		print(response_dict)
