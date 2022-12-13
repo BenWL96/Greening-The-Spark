@@ -51,13 +51,13 @@ def Simulation_Reports_DETAIL(request, game_id):
 				models.Simulation_Report,
 				game_id=game_id
 			)
+			print("game with ID found")
 		except models.Simulation_Report.DoesNotExist:
 			raise Http404("A game with this ID does not exist")
 
-
 		try:
-			field_relation_info_object = models.Field_Related_Info.objects.get(
-				id=1)
+			field_relation_info_objects = models.Field_Related_Info.objects.all()
+			print("game with ID found")
 
 		except models.Field_Related_Info.DoesNotExist:
 			raise Http404("field info with this ID does not exist")
@@ -69,7 +69,7 @@ def Simulation_Reports_DETAIL(request, game_id):
 			)
 
 		serialize_field_relation_info_object = serializers.Serialize_Field_Related_Info(
-			field_relation_info_object,
+			field_relation_info_objects[0],
 			many=False
 		)
 
