@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 import json, datetime
 from django.urls import reverse
 from factory_djoy import UserFactory
-from . import models
+from . import models, utils
 from .data import (
 
 	working_post_data,
@@ -288,3 +288,16 @@ class test_simulation_report_detail(TestCase):
 		response_dict = json.loads(json.dumps(input_dict))
 		print(response_dict)
 		print(response_dict)
+
+class testTypeChecker(TestCase):
+
+	def test_Simulation_Reports_DETAIL_fail(self):
+		game_id = "123"
+		check_game_id_return_false = utils.game_id_type_checker(game_id)
+		self.assertEquals(check_game_id_return_false, False)
+
+	def test_Simulation_Reports_DETAIL_success(self):
+		game_id = 123
+		check_game_id_return_true = utils.game_id_type_checker(game_id)
+		self.assertEquals(check_game_id_return_true, True)
+
