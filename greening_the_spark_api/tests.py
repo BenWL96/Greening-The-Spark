@@ -21,7 +21,7 @@ from .data import (
 
 )
 
-"""
+
 class test_simulation_report_endpoints_non_auth(TestCase):
 
 	def setUp(self):
@@ -263,8 +263,8 @@ class test_info_panel_endpoint(TestCase):
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
 		self.assertEquals(len(response_dict), 2)
-"""
 
+"""
 class test_simulation_report_detail(TestCase):
 
 	def setUp(self):
@@ -287,7 +287,7 @@ class test_simulation_report_detail(TestCase):
 		input_dict = response.data
 		response_dict = json.loads(json.dumps(input_dict))
 		print(response_dict)
-		print(response_dict)
+		print(response_dict)"""
 
 class testTypeChecker(TestCase):
 

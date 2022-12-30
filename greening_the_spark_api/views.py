@@ -46,19 +46,24 @@ def Simulation_Reports_LIST(request):
 @api_view(['GET'])
 def Simulation_Reports_DETAIL(request, game_id):
 
+		"""
 		#type check game_id
+		#perhaps unnecessary.
 		if utils.game_id_type_checker(game_id) == False:
 			content = {'msg': 'parameter type incorrect, ensure an integer.'}
 			return Response(content, status=status.HTTP_400_NOT_FOUND)
-
+"""
 		try:
 			simulation_report_object = get_object_or_404(
 				models.Simulation_Report,
 				game_id=game_id
 			)
 			print("game with ID found")
+
 		except models.Simulation_Report.DoesNotExist:
-			raise Http404("A game with this ID does not exist")
+			content = {'msg': "A game with this ID does not exist."}
+			return Response(content, status=status.HTTP_404_NOT_FOUND)
+
 
 		field_related_info_objects = models.Field_Related_Info.objects.all()
 		zero_field_related_info_objects = len(field_related_info_objects) == 0
@@ -68,7 +73,7 @@ def Simulation_Reports_DETAIL(request, game_id):
 			raise Http404("Field related objects do not exist")
 		else:
 			serialize_field_related_info_object = serializers.Serialize_Field_Related_Info(
-				field_relation_info_objects[0],
+				field_related_info_objects[0],
 				many=False
 			)
 

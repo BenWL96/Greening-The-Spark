@@ -348,6 +348,7 @@ post_data_fossil_nuclear_at_101 = {
 	"average_CO2_tonnes_per_gwh": 62,
 	"average_cost_million_pounds_per_gwh": 72,
 
+
 	"surplus_comment": 23,
 	"shortfall_comment": 16,
 	"storage_discrepancy_comment": 1,
@@ -382,8 +383,6 @@ working_post_data_fields_rearranged = {
 	"time": time_4,
 
 	"difficulty": "easy",
-
-
 
 	"fossil_fuels_utilisation_percentage": 0,
 	"nuclear_fuels_utilisation_percentage": 99,
