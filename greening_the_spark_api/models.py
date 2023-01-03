@@ -45,7 +45,7 @@ class Simulation_Report(models.Model):
 	total_cost_million_pounds = models.IntegerField()
 	average_CO2_tonnes_per_gwh = models.IntegerField()
 	average_cost_million_pounds_per_gwh = models.IntegerField()
-	
+
 	#comments
 	surplus_comment = models.CharField(max_length=15)
 	shortfall_comment = models.CharField(max_length=15)
