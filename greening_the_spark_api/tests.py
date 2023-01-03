@@ -182,7 +182,7 @@ class test_simulation_report_endpoints_auth(TestCase):
 		self.assertEquals(len(response_dict), 2)
 
 
-	"""def test_GET_sim_report_response_second_json_when_qmark_data(self):
+	def test_GET_sim_report_response_second_json_when_qmark_data(self):
 
 		info = "relevant info"
 		models.Field_Related_Info.objects.create(
@@ -206,19 +206,7 @@ class test_simulation_report_endpoints_auth(TestCase):
 		)
 
 
-		url = reverse('simulation-report-create')
-
-		response_1 = self.client.post(
-			url,
-			data=working_post_data,
-		)
-
-		input_dict_1 = response_1.data
-		response_dict_1 = json.loads(json.dumps(input_dict_1))
-
-		game_id = response_dict_1['display_game_id']
-
-		arg = {"game_id": game_id}
+		arg = {"game_id": self.simulation_id}
 		url = reverse('simulation-report-detail', kwargs=arg)
 
 		response_2 = self.client.get(
@@ -231,7 +219,7 @@ class test_simulation_report_endpoints_auth(TestCase):
 		match_data = questionmark_data
 
 		print(response_array)
-		self.assertEquals(response_array[1], match_data)"""
+		self.assertEquals(response_array[1], match_data)
 
 
 
