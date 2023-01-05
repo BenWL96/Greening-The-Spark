@@ -28,22 +28,6 @@
 
 
 
-.section_header_info_logo{
-    height: 7vh;
-    margin-top: 10px; 
-    background-color: black;
-    border-radius: 25px;
-    margin-right: 10px;
-}
-
-
-
-.section_header_info_logo:hover{
-    cursor: pointer;
-    opacity: 50%;
-    
-}
-
 .hstack {
     background-color: transparent;
     

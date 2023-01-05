@@ -1,0 +1,15 @@
+.section_body_back_button{
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    margin-left: 10px;
+
+}
+
+.section_body_back_button:hover{
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,196 @@
+.section_body_form_wrapper_card{
+    background-repeat: no-repeat;
+    background-image: url("../../images/crinkled-paper.jpg");
+    border-radius: 5px;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70vh;
+    background-size: 100vw;
+    width: 100vw;
+    
+}
+
+
+.prompt_game_ID{
+    text-align: left;
+    color: black;
+    font-weight: 700;
+    margin-left: 10px;
+    opacity: 85%;
+    margin-top: 5vh;
+
+}
+
+.section_body_form_wrapper_form_stack{
+    z-index: 100;
+}
+
+
+.section_body_form_wrapper_input{
+
+    margin-bottom: 10px;
+    margin-left: 10px;
+    opacity: 85%;
+}
+
+
+
+.section_body_form_wrapper_success_message{
+    color: green;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.section_body_loading{
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+
+
+
+@media(min-width: 800px){
+
+    .section_body_form_wrapper_card{
+        width: 100%;
+    }
+
+
+    .prompt_game_ID {
+        font-size: 50px;
+        
+    }
+
+    .section_body_form_wrapper_input{
+        height: 80px;
+        width: 430px ! important;
+        font-size: 35px;
+    }
+
+    .section_body_form_wrapper_success_message{
+        font-size: 20px;
+    }
+
+    .section_body_loading{
+        font-size: 20px;
+    }
+    
+}
+
+@media(max-width: 800px) and (min-width: 700px){
+
+    .section_body_form_wrapper_card{
+        width: 100%;
+    }
+
+    .prompt_game_ID {
+        font-size: 50px;
+    }
+
+    .section_body_form_wrapper_input{
+        height: 80px;
+        width: 430px ! important;
+        font-size: 35px;
+    }
+
+    .section_body_form_wrapper_success_message{
+        font-size: 20px;
+    }
+
+    .section_body_loading{
+        font-size: 20px;
+    }
+
+}
+
+@media(max-width: 700px) and (min-width: 420px){
+
+    .section_body_form_wrapper_card{
+        width: 100%;
+    }
+
+    .prompt_game_ID {
+        font-size: 30px;
+    }
+
+    .section_body_form_wrapper_input{
+        height: 60px;
+        width: 280px ! important;
+        font-size: 20px;
+    }
+
+    .section_body_form_wrapper_success_message{
+        font-size: 15px;
+    }
+
+    .section_body_loading{
+        font-size: 15px;
+    }
+
+
+}
+
+@media(max-width: 420px){
+
+    .section_body_form_wrapper_card{
+        width: 100%;
+    }
+
+    .prompt_game_ID {
+        font-size: 30px;
+    }
+
+    .section_body_form_wrapper_input{
+        height: 50px;
+        width: 50vw ! important;
+        font-size: 20px;
+    }
+
+    .section_body_form_wrapper_success_message{
+        font-size: 15px;
+    }
+
+    .section_body_loading{
+        font-size: 15px;
+    }
+
+}
+
+
+.section_body_form_wrapper_button{
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 85%;
+}
+
+.section_body_form_wrapper_button:hover{
+    background-color: lightgray;
+}
+
+
+
+@media(min-width: 360px){
+
+    .section_body_form_wrapper_button{
+        width: 100px;
+    }
+
+
+    .section_body_form_wrapper_input{
+        width: 200px;
+    }
+}
+
+@media(max-width: 360px){
+
+    .section_body_form_wrapper_button{
+        width: 80px;
+    }
+
+    .section_body_form_wrapper_input{
+        width: 125px;
+    }
+}

@@ -285,31 +285,6 @@ class test_info_panel_endpoint(TestCase):
 		response_dict = json.loads(json.dumps(input_dict))
 		self.assertEquals(len(response_dict), 2)
 
-"""
-class test_simulation_report_detail(TestCase):
-
-	def setUp(self):
-		self.client = Client()
-
-	def test_sim_repo_detail_endpoint_no_field_info(self):
-		url = reverse('simulation-report-create')
-
-		self.client.post(
-			url,
-			data=working_post_data,
-		)
-
-		arg = {"game_id": 1}
-		url = reverse('simulation-report-detail', kwargs=arg)
-
-		response = self.client.get(
-			url)
-
-		input_dict = response.data
-		response_dict = json.loads(json.dumps(input_dict))
-		print(response_dict)
-		print(response_dict)"""
-
 class testTypeChecker(TestCase):
 
 	def test_Simulation_Reports_DETAIL_fail(self):

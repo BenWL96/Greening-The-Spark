@@ -22,9 +22,103 @@
 
 
 .row_header{
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 600 !important;  
     opacity: 85%;
+}
+
+.stack_0{
+    margin-right: 15px;
+}
+
+.stack_2{
+    text-align: center;
+
+}
+.stack_3{
+    width: 120px;
+    text-align: left;
+}
+
+.column_title{
+    font-weight: 700 !important;  
+    opacity: 85%;
+    text-decoration: underline !important;
+
+}
+
+
+
+
+@media(min-width:600px ){
+    
+    .stack_0 {
+        width: 40px;
+      }
+
+    .stack_1{
+        width: 150px;
+    }
+
+    
+    .stack_2{
+        width: 100px;
+        text-align: center;
+    
+    }
+
+    .stack_3{
+        width: 150px;
+    }
+
+
+    .row_header{
+        font-size: 25px;
+    }
+
+    .row_text{
+        font-size: 25px;
+    }
+
+    .row_text_2{
+        font-size: 25px;
+        text-align: left;
+    }
+}
+
+@media(max-width:600px ){
+
+    .stack_0 {
+        width: 20px;
+      }
+
+    .stack_1 {
+        width: 20%;
+    }
+
+    .stack_2{
+        width: 5%;
+        text-align: center;
+    
+    }
+
+    .stack_3{
+        width: 30%
+    }
+    
+    .row_header{
+        font-size: 18px;
+    }
+
+    .row_text{
+        font-size: 18px;
+    }
+    
+    .row_text_2{
+        font-size: 18px;
+        text-align: center;
+    }
+
+
 }
 
 .row_header_sparks_earned{
@@ -37,9 +131,14 @@
     font-weight: 300;
     text-align: left;
     opacity: 85%;
-    font-size: 25px;
-    
 }
+
+.row_text_2{
+    font-weight: 300;
+    opacity: 85%;
+    font-style: italic;
+}
+
 
 .row_text_difficulty{
     font-weight: 300;
@@ -99,6 +198,8 @@
     .section_simrepo_wrapper_table_2_wrapper_row{
         width: 700px;
     }
+
+    
 }
 
 @media(max-width: 800px){
@@ -142,6 +243,23 @@
 
 }
 
+.section_simrepo_wrapper_stack_wrapper_row{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+@media(min-width: 600px){
+    .section_simrepo_wrapper_stack_wrapper_row{
+        width: 600px;
+    }
+}
+
+@media(max-width: 600px){
+    .section_simrepo_wrapper_stack_wrapper_row{
+        width: 100%;
+    }
+}
 
 .section_simrepo_wrapper{
     border-radius: 5px;
@@ -150,7 +268,9 @@
     outline-width: 1px;
     background-repeat: repeat;
     background-image: url("../../images/crinkled-paper.jpg");
-    background-size: 100vw;
+    background-size: 800px;
+    background-position: fixed;
+
 }
 
 @media(min-width: 800px){
@@ -211,32 +331,6 @@
     margin-top: -20px; 
 }
 
-.section_simrepo_wrapper_spark{
-    opacity: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media(min-width: 575px){
-    .section_simrepo_wrapper_spark{
-        width: 150px;
-        height: 150px;
-        opacity: 75%;
-        margin-top: -50px;
-    }
-
-}
-
-@media(max-width: 575px){
-    .section_simrepo_wrapper_spark{
-        width: 50vw;
-        height: 100%;
-        margin-left: 25vw;
-
-    }
-
-   
-}
 
 .section_simrepo_wrapper_questionmark{
     width: 20px;
@@ -249,6 +343,23 @@
     cursor: pointer;
     background-color: black;
     border-radius: 40px;
+    /*transform: rotate(10deg);
+    transition: all 0.3s ease-in;*/
+    display: inline-block;
+    animation: rotation 2s infinite linear;
 }
 
 
+@keyframes rotation {
+    33% {
+      transform: rotate(20deg);
+    }
+    66% {
+      transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+      }
+  }
+
+ 

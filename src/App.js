@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import Header from './components/header.js';
-import Footer from './components/footer';
-import Body from './components/body';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+import Body from './components/body/body';
 
 
 const App = () => {
@@ -11,8 +11,6 @@ const App = () => {
     <>  
 
       <Header/>
-
-
 
       <Body/>      
 

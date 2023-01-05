@@ -1,7 +1,6 @@
 from pathlib import Path
 from decouple import config
 import os
-import oracledb
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -10,7 +9,7 @@ SECRET_KEY=config("SECRET_KEY", default='')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['greening-the-spark.herokuapp.com']
+ALLOWED_HOSTS = ["https://greeningthespark.com"]
 
 #'greening-the-spark.herokuapp.com'
 
@@ -51,7 +50,10 @@ B_IP=config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://greening-the-spark.herokuapp.com",
+    "https://greeningthespark.com",
+    "http://127.0.0.1:8000",
+    "http://127.0.0.1:3000",
+    "https://localhost:3000",
     B_IP,
     C_IP
 ]
@@ -83,7 +85,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config("DATABASE_NAME_2", default=''),
@@ -93,15 +95,15 @@ WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
         'PASSWORD': config('DATABASE_PASS_2', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
-"""
 
-import dj_database_url
+
+"""import dj_database_url
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 DATABASES = {
     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-}
+}"""
 
 
 REST_FRAMEWORK = {
@@ -139,6 +141,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')

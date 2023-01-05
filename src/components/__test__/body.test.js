@@ -1,9 +1,14 @@
 import React, {render, screen, fireEvent } from '@testing-library/react';
-import Body from '../body';
+import Body from '../body/body';
 //jest.mock('../../helper/api.js');
 import '@testing-library/jest-dom/extend-expect';
 import SimulationReport from '../simulationReport';
 import workingData from './mockData/data';
+
+
+
+
+
 
 //Test form input and text upon page render
 it("Form input box renders on page open.", () => {
@@ -83,7 +88,6 @@ render(<Body/>)
 
 })
 
-*/}
 
 
 //Test when user input in form succeeds
@@ -94,3 +98,4 @@ render(<Body/>)
 
 //When user form submitted, then display loading
 //Async find and pass data to the components, which display after successfull ID entry.
+*/}

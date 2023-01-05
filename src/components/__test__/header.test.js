@@ -1,5 +1,7 @@
 import React, {render, screen, fireEvent } from '@testing-library/react';
-import Header from '../header';
+import Header from '../header/header';
+import InfoAnimation from '../infoAnimation';
+
 import '@testing-library/jest-dom/extend-expect';
 
 it("Render section_header of header component", () => {
@@ -8,16 +10,28 @@ it("Render section_header of header component", () => {
    expect(text).toBeInTheDocument();
 })
 
+//useEffect disables this.
+
 it("Render section_header_title of header component", () => {
     render(<Header/>);
    const icon = screen.getByTestId("section_header_logo");
    expect(icon).toBeInTheDocument();
 })
 
-it("Expect info logo to be in document", () => {
+it("Expect info logo not to be in document", () => {
     render(<Header/>);
    const icon = screen.getByTestId("section_header_info_logo");
-   expect(icon).toBeInTheDocument();
+   expect(icon).not.toBeVisible();
+
+})
+
+
+
+it("Expect info logo not to be in document", () => {
+    render(<Header/>);
+   const icon = screen.getByTestId("section_header_info_logo");
+   expect(icon).not.toBeVisible();
+
 })
 
 
@@ -47,3 +61,42 @@ it("click info logo and show info panel, then click x to exit.", () => {
 
 
 
+
+it("Expect info logo not to be in document", () => {
+    render(<Header/>);
+    const icon = screen.getByTestId("section_header_info_logo");
+    expect(icon).not.toBeVisible();
+
+})
+
+
+//Test to make sure that localstorage functioning correctly
+//fetch needs to be mocked in order for this to work
+//as the component accepts no parameters.
+
+{/*const localStorageMock = {
+    getItem: jest.fn(),
+    setItem: jest.fn(),
+    clear: jest.fn()
+  };
+  
+global.localStorage = localStorageMock;
+
+
+const data = [
+    {
+        "question_id": 1,
+        "question": "Who Did What",
+        "the_simple_answer": "Jimmy Neutron Did It",
+        "the_gts_answer": "GTS tries to model This",
+        "the_complex_answer": "Jimmy Neutron Fired A Neutrino Gun"
+    }
+];
+
+
+it("expect that localstorage not set when no fetch.", () => {
+    render(<Header/>);
+    console.log(localStorageMock.setItem);
+    //expect(localStorageMock.setItem).not.toHaveBeenCalledWith('info_tab_data');
+
+});*/}

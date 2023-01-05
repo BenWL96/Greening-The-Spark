@@ -11,7 +11,6 @@ export const WindSolarDemandDetails = {
         text: 'Wind, Solar, And Demand Inputs',
         font: {
           size: 25,
-          opacity: "3%"
         },
         color: '#0000000'
       },

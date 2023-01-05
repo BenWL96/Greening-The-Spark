@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import SimulationReport from '../simulationReport';
+import SimulationReport from '../simulationReport/simulationReport';
 import '@testing-library/jest-dom/extend-expect';
 import { editableInputTypes } from '@testing-library/user-event/dist/utils';
 import workingData from './mockData/data';

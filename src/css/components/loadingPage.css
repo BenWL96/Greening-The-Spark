@@ -1,0 +1,31 @@
+.loading_screen_wrapper{
+    width: 60vw;
+    margin-top: 40vh;
+    z-index: 110;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25vh !important;
+}
+
+
+.loading_screen_background{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: green;
+    position: fixed;
+    z-index: 100;
+}
+
+
+
+.progressbar{
+    height: 15vh !important;
+    opacity: 75% !important;
+    border: solid !important;
+    border-color: black !important;
+    border-width: 1px !important;
+    background-color: white !important;
+
+}

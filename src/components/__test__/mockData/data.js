@@ -1,4 +1,4 @@
-const workingData = {
+export const workingData = {
     
     game_id: 1,
     date: "2022-10-11",
@@ -42,4 +42,3 @@ const workingData = {
     grid_surplus_data_values: "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61"
 };
 
-export default workingData;
