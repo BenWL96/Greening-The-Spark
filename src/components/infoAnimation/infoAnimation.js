@@ -14,7 +14,7 @@ function InfoAnimation({changeStatePanelActivated}) {
             propellerMesh.current.rotation.y = clock.getElapsedTime();  
             }) 
           
-        const gltf = useLoader(GLTFLoader, './assets/models/info/infoIconSmooth.glb ');
+        const gltf = useLoader(GLTFLoader, '/assets/models/info/infoIconSmooth.glb ');
        
         
         return (
