@@ -19,7 +19,7 @@ function EcoSparkAnimation() {
                 propellerMesh.current.rotation.y = clock.getElapsedTime(); 
             }) 
           
-        const gltf = useLoader(GLTFLoader, './assets/models/sparks/efficiencyspark_red_3.glb');
+        const gltf = useLoader(GLTFLoader, './assets/models/traditional-irish-cottage-rathkeale-limerick-3d-model/scene.gltf');
         return (
             
             <primitive object={gltf.scene} ref={propellerMesh}/>
