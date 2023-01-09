@@ -19,7 +19,7 @@ function EconomySparkAnimation() {
                 propellerMesh.current.rotation.y = clock.getElapsedTime(); 
             }) 
           
-        const gltf = useLoader(GLTFLoader, './assets/models/sparks/traditional-irish-cottage-rathkeale-limerick-3d-model/scene.gltf');
+        const gltf = useLoader(GLTFLoader, 'https://brightonblockchainbb.s3.eu-west-2.amazonaws.com/efficiencyspark_red_3.glb');
         return (
             
             <primitive object={gltf.scene} ref={propellerMesh}/>

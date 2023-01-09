@@ -14,7 +14,7 @@ function InfoAnimation({changeStatePanelActivated}) {
             propellerMesh.current.rotation.y = clock.getElapsedTime();  
             }) 
           
-        const gltf = useLoader(GLTFLoader, './assets/models/traditional-irish-cottage-rathkeale-limerick-3d-model/scene.gltf');
+        const gltf = useLoader(GLTFLoader, 'https://brightonblockchainbb.s3.eu-west-2.amazonaws.com/infoIconSmooth.glb');
        
         
         return (
