@@ -19,7 +19,7 @@ function EfficiencySparkAnimation() {
                 propellerMesh.current.rotation.y = clock.getElapsedTime(); 
             }) 
           
-        const gltf = useLoader(GLTFLoader, '..../public/assets/models/sparks/efficiencyspark_red.glb');
+        const gltf = useLoader(GLTFLoader, './assets/models/sparks/efficiencyspark_red.glb');
         return (
             
             <primitive object={gltf.scene} ref={propellerMesh}/>

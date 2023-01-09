@@ -22,7 +22,7 @@ function LoadingPageAnimation({loadingScreenState}) {
              //modelMesh.current.rotation.z = clock.getElapsedTime();
             }) 
           
-        const gltf = useLoader(GLTFLoader, '..../public/assets/models/powerplant/powerplant.glb')
+        const gltf = useLoader(GLTFLoader, './assets/models/powerplant/powerplant.glb')
         return (
             
             <primitive object={gltf.scene} ref={modelMesh}/>
