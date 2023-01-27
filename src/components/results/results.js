@@ -287,34 +287,34 @@ function Results({jsonData}) {
     return (
 
      
-      <section className='section section_results'>
+      <section className='section-results'>
   
         
         
-        <div className='section_results_wrapper'>
+        <div className='section-results_wrapper'>
           
         
           <SimulationReport jsonData={jsonData}/>
 
           <br />
 
-          <div className='graph_wrapper_wrapper'>
-           <div className='graph_wrapper'>
-                <Line options={WindSolarDemandDetails} data={WindSolarDemandLabels} className="graph_wrapper_graph"/>
+          <div className='graph-wrapper_parent'>
+           <div className='graph-wrapper_child'>
+                <Line options={WindSolarDemandDetails} data={WindSolarDemandLabels} className="graphs"/>
             </div>
           </div>
         
           <br />
-            <div className='graph_wrapper_wrapper'>
-              <div className='graph_wrapper'>
-                  <Line options={ManualControlOfRenewablesDetails} data={ManualControlOfRenewablesLabels} className="graph_wrapper_graph"/>
+            <div className='graph-wrapper_parent'>
+              <div className='graph-wrapper_child'>
+                  <Line options={ManualControlOfRenewablesDetails} data={ManualControlOfRenewablesLabels} className="graphs"/>
               </div>
             </div>
 
               <br />
-              <div className='graph_wrapper_wrapper'>
-                <div className='graph_wrapper'>
-                    <Line options={BatteriesHydroSupplyStatusDetails} data={BatteriesHydroSupplyStatusLabels} className="graph_wrapper_graph"/>
+              <div className='graph-wrapper_parent'>
+                <div className='graph-wrapper_child'>
+                    <Line options={BatteriesHydroSupplyStatusDetails} data={BatteriesHydroSupplyStatusLabels} className="graphs"/>
                 </div>
               </div>
           </div>

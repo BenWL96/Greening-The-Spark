@@ -1,0 +1,16 @@
+.info-logo{
+    height: 9vh;
+    width: 9vh;
+    margin-top: 10px; 
+    background-color: transparent;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+
+
+.info-logo:hover{
+    cursor: pointer;
+    opacity: 50%;
+    
+}

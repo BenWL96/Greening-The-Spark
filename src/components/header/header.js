@@ -2,9 +2,9 @@ import React, {useState, useEffect, useRef} from 'react';
 import '../../css/components/header.css';
 import infoPanelApiFetch from '../../helper/infoPanelApiFetch.js';
 import Logo from '../../images/gts_logo.png';
-import InfoTab from '../infoTab/infoTab';
+import InfoPanel from '../infoPanel/infoPanel';
 import Stack from 'react-bootstrap/Stack';
-import InfoAnimation from '../infoAnimation/infoAnimation';
+import InfoIconModel from '../infoIconModel/infoIconModel';
 import InfoPanelScrollingLogic from './infoPanelScrollingLogic';
 import EnableDisableInfoPanel from './enableDisableInfoPanel';
 
@@ -18,10 +18,10 @@ function Header() {
         InfoPanelScrollingLogic({infoPanelActivated});
     }
 
-
     const changeStatePanelActivated = () => {
 
         if (infoPanelActivated == false) {
+            
             setInfoPanelActivated(true);   
             
         } else {
@@ -33,17 +33,23 @@ function Header() {
     }
 
     //After functionality works, pass to popovers.
-    
-
-    
+     
     const infoPanelDataHandler = (data) => {
         
         EnableDisableInfoPanel();
 
         if (data) {
 
+            console.log("Data has been fetched successfully");
+            console.log("Set it to localstorage");
+
             localStorage.setItem("info_tab_data", JSON.stringify(data));
+
+            console.log("Data has now been set to state");
             setInfoPanelData(data);
+
+            console.log("Activate the info panel now");
+            changeStatePanelActivated();
 
             
         } else {
@@ -70,9 +76,10 @@ function Header() {
 
             setInfoPanelData(JSON.parse(localStorage.getItem("info_tab_data")));
             
+            console.log("info panel data in localstorage now passed to state hooksetInfoPanelData");   
+            
         }
     }
-
 
     useEffect(() => {
 
@@ -85,19 +92,19 @@ function Header() {
     return (
         <div>
             
-            {infoPanelActivated ? <InfoTab changeStatePanelActivated={changeStatePanelActivated} infoPanelData={infoPanelData}/> : 
-                <section className='section section_header' data-testid="section_header">
+            {infoPanelActivated ? <InfoPanel changeStatePanelActivated={changeStatePanelActivated} infoPanelData={infoPanelData}/> : 
+                <section className='section section-header' data-testid="section_header">
 
                     <Stack direction="horizontal" gap={3}>
                         <div>
                     
-                            <img className="section_header_logo" href="https://www.cornucopia.co.uk/gts/" target="_blank" data-testid="section_header_logo" src={Logo} target="_blank"/>
+                            <img className="section-header_logo" href="https://www.cornucopia.co.uk/gts/" target="_blank" data-testid="section_header_logo" src={Logo} target="_blank"/>
                         </div>
                         <div className="ms-auto"></div>
                         <div />
                         <div>  
 
-                            <InfoAnimation changeStatePanelActivated={changeStatePanelActivated}/>
+                            <InfoIconModel changeStatePanelActivated={changeStatePanelActivated}/>
                             
                         </div>
 

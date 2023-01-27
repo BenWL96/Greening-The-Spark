@@ -1,24 +1,11 @@
-.section_simulation_header{
-    font-size: 30px;
-    text-align: left;
-}
 
-.section_results{
+
+.section-results{
     padding-bottom: 25px;
 }
 
-.section_results_wrapper_tab{
-    color: black;
-    background-color: white
-}
 
-.section_simulation_header{
-    color: white;
-    text-align: center;
-}
-
-
-.graph_wrapper{
+.graph-wrapper_child{
     background-repeat: no-repeat;
     background-image: url("../../images/crinkled-paper.jpg");
     background-size: 2000px 1000px;
@@ -30,7 +17,7 @@
     overflow: scroll;
 }
 
-.graph_wrapper_graph{
+.graphs{
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -39,22 +26,17 @@
 }
 
 @media(min-width: 800px){
-    .graph_wrapper{
+
+    .graph-wrapper_child{
         width: 800px;
         margin-left: auto;
         margin-right: auto;
     }
-    .graph_wrapper_graph{
+    .graphs{
         width: 800px;
     }
 
-    .graph_wrapper{
-        width: 800px;
-
-    }
-
-
-    .section_results_wrapper{
+    .section-results_wrapper{
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -64,21 +46,21 @@
 
 @media(max-width: 800px){
 
-    .graph_wrapper_wrapper{
+    .graph-wrapper_parent{
         width: 100%;
         overflow: scroll;
     }
     
-    .graph_wrapper{
+    .graph-wrapper_child{
         width: 800px;
 
     }
 
-    .graph_wrapper_graph{
+    .graphs{
         width: 800px;
     }
 
-    .section_results_wrapper{
+    .section-results_wrapper{
         width: 100%;
         margin-left: auto;
         margin-right: auto;

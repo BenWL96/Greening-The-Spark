@@ -107,30 +107,27 @@ function SimulationReport({jsonData}){
             
             <div>
                 <br />
-                <section className="section section_simrepo">
-                    <div className='section_simrepo_wrapper'>
+                <section className="simreport">
+                    <div className='simreport_wrapper'>
 
                         <br />
 
-                        <p className='section_simrepo_wrapper_title' >Simulation Report #{gameID}</p>
-                        <p className='section_simrepo_wrapper_sub_title'> {datePlayed}  &nbsp; &nbsp; &nbsp; {timePlayed} </p>
+                        <p className='simreport_title' >Simulation Report #{gameID}</p>
+                        <p className='simreport_sub-title'> {datePlayed}  &nbsp; &nbsp; &nbsp; {timePlayed} </p>
 
                         <br />
                         
-                        <div className="section_simrepo_wrapper_table_1_wrapper">
+                        <div className="simreport_table1">
 
-                        
-            
-
-                            <Row className="section_simrepo_wrapper_table_1_wrapper_row">
-                                <Col className="row_header_sparks_earned" xs={6} sm={4} md={4} lg={4}>Difficulty</Col>
-                                <Col className="row_text_difficulty" xs={3} sm={3} md={2} lg={2}>{difficulty}</Col>
+                            <Row className="table1_row">
+                                <Col className="table1_col1-text" xs={6} sm={4} md={4} lg={4}>Difficulty</Col>
+                                <Col className="table1_col2-text" xs={3} sm={3} md={2} lg={2}>{difficulty}</Col>
 
                             </Row>
                             <br /><br />
                             <br />
-                            <Row className="section_simrepo_wrapper_table_1_wrapper_row">
-                                <Col className="row_header_sparks_earned" xs={12} sm={3} md={3} lg={3}>Sparks Earned:</Col>
+                            <Row className="table1_row">
+                                <Col className="table1_col1-text" xs={12} sm={3} md={3} lg={3}>Sparks Earned:</Col>
                                 <Col xs={12} sm={3} md={3} lg={3}>
                                     
                                     <EfficiencySparkAnimation />
@@ -154,305 +151,305 @@ function SimulationReport({jsonData}){
                         
                         <br /><br />
 
-                        <p className="section_simrepo_wrapper_table_title">Results Summary</p>
+                        <p className="table2_title">Results Summary</p>
                         <br />
                     
 
-                        <div className="section_simrepo_wrapper_table_2_wrapper">
+                        <div className="table2">
 
-                        <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                        <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                    <div className="stack_0  column_title">
+                                    <div className="table2_stack0  table2_column-title">
                                         
                                     </div>
-                                    <div className="row_header stack_1 column_title">
+                                    <div className="table2_row-header table2_stack1 table2_column-title">
                                       Something
                                        
                                     </div>
                               
-                                    <div className="row_header row_text stack_2 ms-auto column_title">
+                                    <div className="table2_row-header table2_row-text table2_stack2 ms-auto table2_column-title">
                                         
                                         Score
                                     </div>
                                     {/*-MAKE THIS SIMILAR CSS TO STACK 3 BUT NOT THE SAME.*/}
-                                    <div className="row_header row_text_2 stack_3 ms-auto column_title">
-                                        Comments  
+                                    <div className="table2_row-header table2_row-text2 table2_stack3 ms-auto table2_column-title">
+                                        Comments
                                     </div>
                                 </Stack>
     
                             </Row>
 
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverDemand(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         Demand
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {demand}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                                         Could Do Better...
                                     </div>
                                 </Stack>
     
                             </Row>
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverWind(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                     
 
                                         Wind
                                     </div>
-                              
-                                    <div className="row_text stack_2 ms-auto">
+                                
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {wind}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
 
                                     </div>
                                 </Stack>
     
                             </Row>
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                     <div className="stack_0">
+                                     <div className="table2_stack0">
                                      <OverlayTrigger trigger="hover" placement="right" overlay={PopoverSolar(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                     
                                         
                                         Solar
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {solar}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
-                                   
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
+                                        Could Do Better...
                                     </div>
                                 </Stack>
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverFossilFuels(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                         
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
 
                                         Fossil Fuels
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {fossilFuels}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
-                                    
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
+                                        Could Do Better...
                                     </div>
                                 </Stack>
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverNuclear(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Nuclear
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {nuclear}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                                     Could Do Better...
                                     </div>
                                 </Stack>
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                     <OverlayTrigger trigger="hover" placement="right" overlay={PopoverSurplus(jsonData)}>
 
-                                        <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                        <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                     </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                        
                                         Surplus
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {surplus}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                                          {surplusComment}
                                     </div>
                                 </Stack>
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverShortfall(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Shortfall
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {shortfall}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                                         {shortfallComment}
                                     </div>
                                 </Stack>
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverInitialStored(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
 
                                         
                                         Initial Stored
 
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {initialStored}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                               
                                     </div>
                                 </Stack>
     
                             </Row>
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverFinalStored(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Final Stored
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {finalStored}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                             
                                     </div>
                                 </Stack>
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
 
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverStorageDiscrepancy(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
 
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Storage Difference
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {storageDiscrepancy}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                                         {storageDiscrepancyComment}
                                     </div>
                                 </Stack>
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverEfficiencyScore(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                        
                                         Efficiency Score
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {efficiencyScore}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
 
                                         {efficiencyScoreComment}
                                     </div>
@@ -460,93 +457,93 @@ function SimulationReport({jsonData}){
     
                             </Row>
 
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverTotalCO2(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Total CO2 (tonnes)
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {totalCO2Tonnes}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                             
                                     </div>
                                 </Stack>
     
                             </Row>
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverTotalCost(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Total Cost (£M)
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {totalCostMillionPounds}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                             
                                     </div>
                                 </Stack>
     
                             </Row>
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverAverageCost(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Average Cost (£Million/Gwh)
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {averageCostMillionPerGWH}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                                         {averageCostComment}
                                     </div>
                                 </Stack>
     
                             </Row>
-                            <Row className="section_simrepo_wrapper_stack_wrapper_row">
+                            <Row className="table2_row">
                                 
                                 <Stack direction="horizontal">
-                                    <div className="stack_0">
+                                    <div className="table2_stack0">
                                         <OverlayTrigger trigger="hover" placement="right" overlay={PopoverAverageCO2(jsonData)}>
-                                            <img className="section_simrepo_wrapper_questionmark" src={QuestionMarkBlue} />
+                                            <img className="simrepo_questionmark" src={QuestionMarkBlue} />
                                         </OverlayTrigger>
                                     </div>
-                                    <div className="row_header stack_1">
+                                    <div className="table2_row-header table2_stack1">
                                         
                                         Average CO2 (tonnes/GWh)
                                     </div>
                               
-                                    <div className="row_text stack_2 ms-auto">
+                                    <div className="table2_row-text table2_stack2 ms-auto">
                                         
                                         {averageCO2}
                                     </div>
-                                    <div className="row_text_2 stack_3 ms-auto">
+                                    <div className="table2_row-text2 table2_stack3 ms-auto">
                                         {averageCO2Comment}
                                     </div>
                                 </Stack>

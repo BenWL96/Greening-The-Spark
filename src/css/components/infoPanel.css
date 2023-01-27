@@ -1,0 +1,198 @@
+/* Info Panel Macro CSS */
+
+.info-panel{
+    z-index: 50;
+    background-color: rgb(248, 248, 248);
+    height: 100vh;
+    position: fixed;
+
+}
+
+.info-panel_title-section{
+    height: 18vh;
+}
+
+.info-panel_title{
+    text-align: left;
+    font-size: 60px;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-left: 10vw;
+    color: black;
+}
+
+
+.info-panel_desktop-body{
+    z-index: 50;
+    background-color: rgb(178, 234, 195);
+    height: 78vh;
+    position: fixed;
+    border-radius: 25px!important;
+    width: 90vw;
+    margin-left: 5vw;
+
+    
+
+}
+
+.info-panel_phone-body{
+    z-index: 50;
+    background-color: rgb(0, 0, 0);
+    height: 78vh;
+    position: fixed;
+    overflow: scroll;
+    width: 90vw;
+    margin-left: 5vw;
+    border-radius: 25px;
+}
+
+
+
+/* Accordion CSS */
+
+
+.accordion-button {
+    background-color: #000000 !important;
+}
+
+.accordion-button:focus {
+box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+color: #ffffff;
+}
+
+
+::after {
+   background-color: rgb(248, 248, 248);
+   border-radius: 5px;
+}
+    
+
+.info-panel_exit-button{
+    width: 40px;
+    height: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+    margin-right: 10vw;
+}
+
+.info-panel_exit-button:hover{
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.desktop-body_column1_panel-text{
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    text-align: left;
+    font-size: 20px;
+}
+
+.accordion_panel-title{
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    text-align: left;
+    font-size: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+}
+
+.desktop-body_column2{
+    background-color: rgb(178, 234, 195);
+}
+
+.accordion-body{
+    background-color: rgb(178, 234, 195);
+
+}
+
+.desktop-body_column2_panel-text{
+    width: 90%;
+    text-align: left;
+    margin-left: 20px; 
+    font-weight: 200;
+    font-size: 22px;
+}
+
+.accordion-body_text{
+    width: 90%;
+    text-align: left;
+    margin-left: 20px; 
+    font-weight: 200;
+    font-size: 22px; 
+}
+
+.desktop-body_column2_panel-title{
+    text-align: left;
+    margin-left: 20px; 
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+    width: 90%;
+    color: black;
+    
+}
+
+.accordion-body_title{
+    text-align: left;
+    margin-left: 20px; 
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 20px;
+    width: 90%;
+    color: black;
+}
+
+.nav-pills {
+    width: 100%;
+}
+
+
+
+.info_wrapper_phone_table_wrapper_header{
+    background-color: black;
+}
+
+@media(max-width: 1400px){
+
+}
+
+.info-panel_desktop-body{
+    width: 90vw;
+    margin-left: 5vw;
+
+}
+
+.info-panel{
+    width: 100vw;
+}
+
+
+@media(min-width: 768px){
+    .info-panel_desktop-body{
+        display: block;
+    }
+    .info-panel_phone-body{
+        display: none;
+    }
+}
+
+@media(max-width: 768px){
+    .info-panel_desktop-body{
+        display: none;
+    }
+
+    .info-panel_phone-body{
+        display: block;
+    }
+}
+
+

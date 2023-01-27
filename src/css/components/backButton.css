@@ -1,4 +1,4 @@
-.section_body_back_button{
+.loading-wrapper_back-button{
     width: 100px;
     height: 50px;
     font-weight: bold;
@@ -6,7 +6,7 @@
 
 }
 
-.section_body_back_button:hover{
+.loading-wrapper_back-button:hover{
     width: 100px;
     height: 50px;
     font-weight: bold;

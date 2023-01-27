@@ -18,7 +18,7 @@ export const PopoverDemand = (jsonData) => {
 
 
     return(
-    <Popover id="popover_demand-basic" className="popover_tile">
+    <Popover id="popover_demand-basic" className="popover">
         <Popover.Header >
             <p className="popover_header">Demand</p>
 
@@ -37,7 +37,7 @@ export const PopoverWind = (jsonData) => {
 
     return (
 
-    <Popover id="popover_wind-basic" className="popover_tile" >
+    <Popover id="popover_wind-basic" className="popover" >
         <Popover.Header >
             <p className="popover_header">Wind</p>
         
@@ -54,7 +54,7 @@ export const PopoverSolar = (jsonData) => {
     const infoSolar = jsonData[1].solar_info;
 
     return (
-    <Popover id="popover_solar-basic" className="popover_tile">
+    <Popover id="popover_solar-basic" className="popover">
         <Popover.Header >
             <p className="popover_header">Solar</p>
         </Popover.Header>
@@ -70,7 +70,7 @@ export const PopoverFossilFuels = (jsonData) => {
     const infoFossilFuels = jsonData[1].fossil_fuels_info;
    
     return (
-        <Popover id="popoverFossil_fuels-basic" className="popover_tile">
+        <Popover id="popoverFossil_fuels-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Fossil Fuels</p>
              
@@ -88,7 +88,7 @@ export const PopoverNuclear = (jsonData) => {
     const infoNuclear = jsonData[1].nuclear_info;
 
     return(
-        <Popover id="popover_nuclear-basic" className="popover_tile">
+        <Popover id="popover_nuclear-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Nuclear</p>
             
@@ -105,7 +105,7 @@ export const PopoverSurplus = (jsonData) => {
     const infoSurplus = jsonData[1].surplus_info;
 
     return(
-        <Popover id="popover_surplus-basic" className="popover_tile">
+        <Popover id="popover_surplus-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Surplus</p>
             
@@ -121,7 +121,7 @@ export const PopoverShortfall = (jsonData) => {
     const infoShortfall = jsonData[1].shortfall_info
 
     return(
-        <Popover id="popover_shortfall-basic" className="popover_tile">
+        <Popover id="popover_shortfall-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Shortfall</p>
             
@@ -138,7 +138,7 @@ export const PopoverInitialStored = (jsonData) => {
     const infoInitialStored = jsonData[1].initial_stored_info;
     return(
 
-        <Popover id="popover_initial_stored-basic" className="popover_tile">
+        <Popover id="popover_initial_stored-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Initial Stored</p>
             
@@ -154,7 +154,7 @@ export const PopoverFinalStored = (jsonData) => {
     const infoFinalStored = jsonData[1].final_stored_info;
     
     return (
-        <Popover id="popover_final_stored-basic" className="popover_tile">
+        <Popover id="popover_final_stored-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Final Stored</p>
          
@@ -171,7 +171,7 @@ export const PopoverStorageDiscrepancy = (jsonData) => {
     const infoStorageDiscrepancy = jsonData[1].storage_discrepancy_info;
     
     return(
-        <Popover id="popover_storage_discrepancy-basic" className="popover_tile">
+        <Popover id="popover_storage_discrepancy-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Storage Discrepancy</p>
          
@@ -189,7 +189,7 @@ export const PopoverEfficiencyScore = (jsonData) => {
     const infoEfficiencyScore = jsonData[1].efficiency_score_info;
     
     return(
-        <Popover id="popover_efficiency_score-basic" className="popover_tile">
+        <Popover id="popover_efficiency_score-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Efficiency Score</p>
           
@@ -206,7 +206,7 @@ export const PopoverTotalCO2 = (jsonData) => {
     const infoTotalCO2Tonnes = jsonData[1].total_CO2_tonnes_info;
 
     return(
-        <Popover id="popover_total_CO2-basic" className="popover_tile">
+        <Popover id="popover_total_CO2-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Total CO2</p>
           
@@ -224,7 +224,7 @@ export const PopoverTotalCost = (jsonData) => {
     const infoTotalCostMillionPounds = jsonData[1].total_cost_million_pounds_info;
     
     return(
-        <Popover id="popover_total_cost-basic" className="popover_tile">
+        <Popover id="popover_total_cost-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Total Cost</p>
             
@@ -241,7 +241,7 @@ export const PopoverAverageCost = (jsonData) => {
     const infoAverageCostMillionPerGWH = jsonData[1].average_cost_million_pounds_per_gwh_info;
    
     return(
-        <Popover id="popover_average_cost-basic" className="popover_tile">
+        <Popover id="popover_average_cost-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Average Cost</p>
         
@@ -259,7 +259,7 @@ export const PopoverAverageCO2 = (jsonData) => {
     const infoAverageCO2 = jsonData[1].average_CO2_tonnes_per_gwh_info;
 
     return (
-        <Popover id="popover_average_CO2-basic" className="popover_tile">
+        <Popover id="popover_average_CO2-basic" className="popover">
             <Popover.Header >
                 <p className="popover_header">Average CO2</p>
           

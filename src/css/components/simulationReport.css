@@ -21,25 +21,25 @@
 }
 
 
-.row_header{
+.table2_row-header{
     font-weight: 600 !important;  
     opacity: 85%;
 }
 
-.stack_0{
+.table2_stack0{
     margin-right: 15px;
 }
 
-.stack_2{
+.table2_stack2{
     text-align: center;
 
 }
-.stack_3{
+.table2_stack3{
     width: 120px;
     text-align: left;
 }
 
-.column_title{
+.table2_column-title{
     font-weight: 700 !important;  
     opacity: 85%;
     text-decoration: underline !important;
@@ -51,35 +51,35 @@
 
 @media(min-width:600px ){
     
-    .stack_0 {
+    .table2_stack0 {
         width: 40px;
       }
 
-    .stack_1{
+    .table2_stack1{
         width: 150px;
     }
 
     
-    .stack_2{
+    .table2_stack2{
         width: 100px;
         text-align: center;
     
     }
 
-    .stack_3{
+    .table2_stack3{
         width: 150px;
     }
 
 
-    .row_header{
+    .table2_row-header{
         font-size: 25px;
     }
 
-    .row_text{
+    .table2_row-text{
         font-size: 25px;
     }
 
-    .row_text_2{
+    .table2_row-text2{
         font-size: 25px;
         text-align: left;
     }
@@ -87,33 +87,33 @@
 
 @media(max-width:600px ){
 
-    .stack_0 {
+    .table2_stack0 {
         width: 20px;
       }
 
-    .stack_1 {
+    .table2_stack1 {
         width: 20%;
     }
 
-    .stack_2{
+    .table2_stack2{
         width: 5%;
         text-align: center;
     
     }
 
-    .stack_3{
+    .table2_stack3{
         width: 30%
     }
     
-    .row_header{
+    .table2_row-header{
         font-size: 18px;
     }
 
-    .row_text{
+    .table2_row-text{
         font-size: 18px;
     }
     
-    .row_text_2{
+    .table2_row-text2{
         font-size: 18px;
         text-align: center;
     }
@@ -121,26 +121,26 @@
 
 }
 
-.row_header_sparks_earned{
+.table1_col1-text{
     font-weight: 600;
     font-size: 25px;
     opacity: 85%;
 }
 
-.row_text{
+.table2_row-text{
     font-weight: 300;
     text-align: left;
     opacity: 85%;
 }
 
-.row_text_2{
+.table2_row-text2{
     font-weight: 300;
     opacity: 85%;
     font-style: italic;
 }
 
 
-.row_text_difficulty{
+.table1_col2-text{
     font-weight: 300;
     text-align: left;
     opacity: 85%;
@@ -163,13 +163,13 @@
 
 @media(min-width: 800px){
 
-    .section_simrepo_wrapper_title{
+    .simreport_title{
         margin-left: 75px;
         padding-top: 20px
     }
 
     
-    .section_simrepo_wrapper_sub_title{
+    .simreport_sub-title{
         margin-left: 75px;
     }
 
@@ -183,15 +183,15 @@
     }
 
 
-    .section_simrepo_wrapper_table_1_wrapper{
+    .simreport_table1{
         margin-left: 75px;
     }
     
-    .section_simrepo_wrapper_table_2_wrapper{
+    .table2{
         margin-left: 75px;
     }
 
-    .section_simrepo_wrapper_table_1_wrapper_row{
+    .table1_row{
         width: 700px;
     }
     
@@ -206,12 +206,12 @@
 
     
 
-    .section_simrepo_wrapper_title{
+    .simreport_title{
         margin-left: 10px;
         padding-top: 20px
     }
     
-    .section_simrepo_wrapper_sub_title{
+    .simreport_sub-title{
         margin-left: 10px;
     }
 
@@ -224,16 +224,16 @@
         padding-bottom: 50px;
     }
     
-    .section_simrepo_wrapper_table_1_wrapper{
+    .simreport_table1{
         margin-left: 10px;
     }
 
     
-    .section_simrepo_wrapper_table_2_wrapper{
+    .table2{
         margin-left: 10px;
     }
 
-    .section_simrepo_wrapper_table_1_wrapper_row{
+    .table1_row{
         width: 90vw;
     }
     
@@ -243,25 +243,26 @@
 
 }
 
-.section_simrepo_wrapper_stack_wrapper_row{
+.table2_row{
     margin-left: auto;
     margin-right: auto;
-    padding-top: 20px;
 }
 
 @media(min-width: 600px){
-    .section_simrepo_wrapper_stack_wrapper_row{
+    .table2_row{
+        height: 110px;
         width: 600px;
     }
 }
 
 @media(max-width: 600px){
-    .section_simrepo_wrapper_stack_wrapper_row{
+    .table2_row{
         width: 100%;
+        height: 75px;
     }
 }
 
-.section_simrepo_wrapper{
+.simreport_wrapper{
     border-radius: 5px;
     outline: solid;
     outline-color: green;
@@ -274,7 +275,7 @@
 }
 
 @media(min-width: 800px){
-    .section_simrepo_wrapper{
+    .simreport_wrapper{
         width: 800px;
         margin-left: auto;
         margin-right: auto;
@@ -286,7 +287,7 @@
 }
 
 @media(max-width: 800px){
-    .section_simrepo_wrapper{
+    .simreport_wrapper{
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -295,7 +296,7 @@
     
 }
 
-.section_simrepo_wrapper_table_title{
+.table2_title{
     font-size: 35px;
     text-align: center;
     color: black;
@@ -313,7 +314,7 @@
 }
 
 
-.section_simrepo_wrapper_title{
+.simreport_title{
     font-size: 40px;
     text-align: left;
     font-weight: 700;
@@ -322,7 +323,7 @@
     opacity: 85%;
 }
 
-.section_simrepo_wrapper_sub_title{
+.simreport_sub-title{
     text-align: left;
     font-weight: 300;
     opacity: 85%;
@@ -332,14 +333,14 @@
 }
 
 
-.section_simrepo_wrapper_questionmark{
+.simrepo_questionmark{
     width: 20px;
     height: 20px;
     opacity: 70%;
 
 }
 
-.section_simrepo_wrapper_questionmark:hover{
+.simrepo_questionmark:hover{
     cursor: pointer;
     background-color: black;
     border-radius: 40px;

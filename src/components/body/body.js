@@ -3,7 +3,7 @@ import Results from '../results/results';
 import '../../css/components/body.css';
 import Api from '../../helper/api.js';
 import LoadingPage from '../loadingPage/loadingPage.js'
-import LoadingPageAnimation from '../loadingPageAnimation/loadingPageAnimation';
+import PowerPlantModel from '../powerPlantModel/powerPlantModel';
 import Form from '../form/form';
 import BackButton from '../backButton/backButton.js'
 
@@ -34,16 +34,21 @@ function Body() {
         
 
       if(jsonData){
-        console.log("data was found in useEffect");
+
+        console.log("Localstorage data found on page loading using useEffect");
         setDataBeingFetchedAndPageLoading(false);
         setDataExists(true);
         
       }else if(!jsonData & dataBeingFetchedAndPageLoading === true){
+
         console.log("Data non existent in useEffect");
         setDataExists(false);
+
       }else{
+
         console.log("Data Non existent and no fetch");
         setDataExists(false);
+
 
       }
     
@@ -59,11 +64,7 @@ function Body() {
     
       const json = await Api(inputGameId);
 
-      //Json fetch either success or fail
-      //if Success then Sim Reports displayed
-      //if Failure then error displayed.
-
-      if (json) {
+      if (json !== 500 && json !== 404) {
 
         //Remove the input box, display the loading logic.
 
@@ -71,12 +72,18 @@ function Body() {
         setJsonData(json);
         setSuccessMessage("Data from the game with ID: " + inputGameId + " was successfully fetched.");
         
-      } else {
-        
+      } else if (json === 500) {
+
         setDataBeingFetchedAndPageLoading(false);
         console.log("An error occurred");
-        setMessage("The game with ID: " + inputGameId + " could not be found. Please try again.");
+        setMessage("Fetch request failed: 500 error");
         
+      } else if (json === 404) {
+
+        setDataBeingFetchedAndPageLoading(false);
+        console.log("404 error.");
+        setMessage("The game with ID: " + inputGameId + " could not be found. Please try again.");
+
       }
     
     };
@@ -125,7 +132,6 @@ function Body() {
 
     return (
 
-        
       <>
       
         {
@@ -140,18 +146,20 @@ function Body() {
         
           dataExists & !dataBeingFetchedAndPageLoading ?
           
+          //If json data doesn't exists and the page is loading
+          //Display the back button.
+
           <BackButton backButtonClickedUpdateState={backButtonClickedUpdateState}/>
           
           :
 
           //If json data doesn't exists and the page isn't loading
-          //If json data doesn't exists and the page is loading
-          //Display the body of 70vh
+          //Display the body of 70vh.
           
-          <section className='section_body'>
-            <div className='section_body_form_wrapper'>
+          <section className='section-body'>
+            <div className='section-body_wrapper'>
 
-              <LoadingPageAnimation loadingScreenState={loadingScreenState}/>
+              <PowerPlantModel loadingScreenState={loadingScreenState}/>
 
               <Form 
               handleSubmit={handleSubmit} 

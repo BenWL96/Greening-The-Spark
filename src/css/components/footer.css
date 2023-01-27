@@ -1,32 +1,19 @@
-.section_footer{
+.section-footer{
     background-color: transparent;
     height: 10vh;
 }
 
 
-.section_footer_wrapper_title{
+.section-footer_gts-hyperlink{
     color: white;
     margin-left: 10px;
     font-weight: 500;
     font-size: 20px;
 }
 
-.section_footer_wrapper_title:hover {
-    
-    opacity: 85%;
+.section-footer_gts-hyperlink:hover{
+    opacity: 75%;
     color: white;
-    text-decoration: none;
 
 }
 
-.section_footer_wrapper_icon{
-    height: 7vh;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    color: white;   
-}
-
-.section_footer_wrapper_icon:hover{
-    color: grey;
-    cursor: pointer;
-}

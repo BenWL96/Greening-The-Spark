@@ -1,4 +1,4 @@
-.section_body_form_wrapper_card{
+.form-wrapper{
     background-repeat: no-repeat;
     background-image: url("../../images/crinkled-paper.jpg");
     border-radius: 5px;
@@ -13,8 +13,7 @@
     
 }
 
-
-.prompt_game_ID{
+.form-wrapper_text-prompt{
     text-align: left;
     color: black;
     font-weight: 700;
@@ -24,21 +23,18 @@
 
 }
 
-.section_body_form_wrapper_form_stack{
+.form_stack{
     z-index: 100;
 }
 
-
-.section_body_form_wrapper_input{
+.form_input-box{
 
     margin-bottom: 10px;
     margin-left: 10px;
     opacity: 85%;
 }
 
-
-
-.section_body_form_wrapper_success_message{
+.form_success-message{
     color: green;
     margin-left: 10px;
     font-weight: 600;
@@ -51,26 +47,25 @@
 
 
 
-
 @media(min-width: 800px){
 
-    .section_body_form_wrapper_card{
+    .form-wrapper{
         width: 100%;
     }
 
 
-    .prompt_game_ID {
+    .form-wrapper_text-prompt {
         font-size: 50px;
         
     }
 
-    .section_body_form_wrapper_input{
+    .form_input-box{
         height: 80px;
         width: 430px ! important;
         font-size: 35px;
     }
 
-    .section_body_form_wrapper_success_message{
+    .form_success-message{
         font-size: 20px;
     }
 
@@ -82,21 +77,21 @@
 
 @media(max-width: 800px) and (min-width: 700px){
 
-    .section_body_form_wrapper_card{
+    .form-wrapper{
         width: 100%;
     }
 
-    .prompt_game_ID {
+    .form-wrapper_text-prompt {
         font-size: 50px;
     }
 
-    .section_body_form_wrapper_input{
+    .form_input-box{
         height: 80px;
         width: 430px ! important;
         font-size: 35px;
     }
 
-    .section_body_form_wrapper_success_message{
+    .form_success-message{
         font-size: 20px;
     }
 
@@ -108,21 +103,21 @@
 
 @media(max-width: 700px) and (min-width: 420px){
 
-    .section_body_form_wrapper_card{
+    .form-wrapper{
         width: 100%;
     }
 
-    .prompt_game_ID {
+    .form-wrapper_text-prompt {
         font-size: 30px;
     }
 
-    .section_body_form_wrapper_input{
+    .form_input-box{
         height: 60px;
         width: 280px ! important;
         font-size: 20px;
     }
 
-    .section_body_form_wrapper_success_message{
+    .form_success-message{
         font-size: 15px;
     }
 
@@ -135,21 +130,21 @@
 
 @media(max-width: 420px){
 
-    .section_body_form_wrapper_card{
+    .form-wrapper{
         width: 100%;
     }
 
-    .prompt_game_ID {
+    .form-wrapper_text-prompt {
         font-size: 30px;
     }
 
-    .section_body_form_wrapper_input{
+    .form_input-box{
         height: 50px;
         width: 50vw ! important;
         font-size: 20px;
     }
 
-    .section_body_form_wrapper_success_message{
+    .form_success-message{
         font-size: 15px;
     }
 
@@ -160,13 +155,15 @@
 }
 
 
-.section_body_form_wrapper_button{
+/* Form Button Css */
+
+.form_button{
     font-weight: bold;
     margin-bottom: 10px;
     opacity: 85%;
 }
 
-.section_body_form_wrapper_button:hover{
+.form_button:hover{
     background-color: lightgray;
 }
 
@@ -174,23 +171,98 @@
 
 @media(min-width: 360px){
 
-    .section_body_form_wrapper_button{
+    .form_button{
         width: 100px;
     }
 
 
-    .section_body_form_wrapper_input{
+    .form_input-box{
         width: 200px;
     }
 }
 
 @media(max-width: 360px){
 
-    .section_body_form_wrapper_button{
+    .form_button{
         width: 80px;
     }
 
-    .section_body_form_wrapper_input{
+    .form_input-box{
         width: 125px;
     }
 }
+
+
+
+.section_body_form{
+    background-color: transparent;
+}
+
+
+
+
+@media(min-width: 800px){
+
+    .form_button{
+        height: 80px;
+        width: 190px ! important;
+        font-size: 35px;
+    }
+
+    .form_failure-message{
+        font-size: 20px;
+    }
+
+}
+
+@media(max-width: 800px) and (min-width: 700px){
+
+
+    .form_button{
+        height: 80px;
+        width: 190px ! important;
+        font-size: 35px;
+    }
+
+    .form_failure-message{
+        font-size: 20px;
+    }
+
+
+}
+
+@media(max-width: 700px) and (min-width: 420px){
+
+
+    .form_button{
+        height: 60px;
+        width: 110px ! important;
+        font-size: 20px;
+    }
+
+    .form_failure-message{
+        font-size: 15px;
+    }
+
+}
+
+@media(max-width: 420px){
+
+    .form_button{
+        height: 50px;
+        width: 30vw ! important;
+        font-size: 20px;
+    }
+
+    .form_failure-message{
+        font-size: 15px;
+    }
+
+}
+
+.form_failure-message{
+    font-weight: 600;
+    padding-left: 10px;
+    font-style: italic;
+}
+

@@ -1,23 +1,10 @@
-.section_body{
+.section-body{
     background: transparent;
     height: 80vh;
 }
 
-.section_body_form{
-    background-color: transparent;
-}
 
-
-
-
-.section_body_form_message{
-    margin: 0px;
-    padding: 0px;
-}
-
-
- 
-.section_body_form_wrapper{
+.section-body_wrapper{
     width: 100%;
     justify-content: center;
     padding-top: 5vh;
@@ -25,82 +12,4 @@
 
 }
 
-
-.section_body_form_wrapper_anim{
-    margin-left: auto;
-    margin-right: auto;
-    height: 100%;
-    width: 100vw;
-    position: fixed;
-}
-
-
-@media(min-width: 800px){
-
-    .section_body_form_wrapper_button{
-        height: 80px;
-        width: 190px ! important;
-        font-size: 35px;
-    }
-
-    .section_body_form_message_failure{
-        font-size: 20px;
-    }
-
-}
-
-@media(max-width: 800px) and (min-width: 700px){
-
-
-    .section_body_form_wrapper_button{
-        height: 80px;
-        width: 190px ! important;
-        font-size: 35px;
-    }
-
-    .section_body_form_message_failure{
-        font-size: 20px;
-    }
-
-
-}
-
-
-@media(max-width: 700px) and (min-width: 420px){
-
-
-    .section_body_form_wrapper_button{
-        height: 60px;
-        width: 110px ! important;
-        font-size: 20px;
-    }
-
-    .section_body_form_message_failure{
-        font-size: 15px;
-    }
-
-}
-
-@media(max-width: 420px){
-
-    .section_body_form_wrapper_button{
-        height: 50px;
-        width: 30vw ! important;
-        font-size: 20px;
-    }
-
-    .section_body_form_message_failure{
-        font-size: 15px;
-    }
-
-}
-
-
-
-
-.section_body_form_message_failure{
-    font-weight: 600;
-    padding-left: 10px;
-    font-style: italic;
-}
 
