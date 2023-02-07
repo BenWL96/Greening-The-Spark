@@ -31,7 +31,7 @@ function EfficiencySparkAnimation() {
     return (
         <div className="section_simrepo_wrapper_spark">
 
-            <Canvas camera={{ fov: 10, position: [0, 0, 140] }}>
+            <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
                 <directionalLight position={[0, 0, 5]} />                            
                 <Scene />
             </Canvas>

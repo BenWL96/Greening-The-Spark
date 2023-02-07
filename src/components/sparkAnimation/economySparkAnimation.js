@@ -1,11 +1,8 @@
-import {React, useRef, Suspense} from 'react';
+import {React, useRef} from 'react';
 import '../../css/components/sparkAnimation.css';
-
-
 import {Canvas, useFrame} from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useProgress, OrbitControls } from '@react-three/drei';
 
 
 function EconomySparkAnimation() {
@@ -32,7 +29,7 @@ function EconomySparkAnimation() {
     return (
         <div className="section_simrepo_wrapper_spark">
 
-            <Canvas camera={{ fov: 10, position: [0, 0, 140] }}>
+            <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
                 <directionalLight position={[0, 0, 5]} />                
                 <Scene_2 />
             </Canvas>

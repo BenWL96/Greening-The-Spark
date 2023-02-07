@@ -165,7 +165,7 @@ function SimulationReport({jsonData}){
                                         
                                     </div>
                                     <div className="table2_row-header table2_stack1 table2_column-title">
-                                      Something
+                                      Metric
                                        
                                     </div>
                               
@@ -467,7 +467,7 @@ function SimulationReport({jsonData}){
                                     </div>
                                     <div className="table2_row-header table2_stack1">
                                         
-                                        Total CO2 (tonnes)
+                                        Total CO2
                                     </div>
                               
                                     <div className="table2_row-text table2_stack2 ms-auto">
@@ -490,7 +490,7 @@ function SimulationReport({jsonData}){
                                     </div>
                                     <div className="table2_row-header table2_stack1">
                                         
-                                        Total Cost (£M)
+                                        Total Cost
                                     </div>
                               
                                     <div className="table2_row-text table2_stack2 ms-auto">
@@ -513,7 +513,7 @@ function SimulationReport({jsonData}){
                                     </div>
                                     <div className="table2_row-header table2_stack1">
                                         
-                                        Average Cost (£Million/Gwh)
+                                        Average Cost
                                     </div>
                               
                                     <div className="table2_row-text table2_stack2 ms-auto">
@@ -536,7 +536,7 @@ function SimulationReport({jsonData}){
                                     </div>
                                     <div className="table2_row-header table2_stack1">
                                         
-                                        Average CO2 (tonnes/GWh)
+                                        Average CO2 
                                     </div>
                               
                                     <div className="table2_row-text table2_stack2 ms-auto">

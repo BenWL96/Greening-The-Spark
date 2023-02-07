@@ -27,7 +27,7 @@ const App = () => {
 
     <>
       {
-        GTSLandingPageActivated ? <LandingPage alterStateLandingPageActivated={alterStateLandingPageActivated}/> :
+        GTSLandingPageActivated ? <LandingPage alterStateLandingPageActivated={alterStateLandingPageActivated} Id="landingPage"/> :
         
         <>
           <Header/>
