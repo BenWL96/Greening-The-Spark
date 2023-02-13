@@ -29,4 +29,4 @@ class Serialize_Information_Panel(serializers.ModelSerializer):
 class Serialize_Three_Dimensional_Models(serializers.ModelSerializer):
 	class Meta:
 		model = models.Three_Dimensional_Model
-		exclude = ["id"]
+		exclude = ["model_id"]

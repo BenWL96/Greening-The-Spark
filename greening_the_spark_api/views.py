@@ -64,6 +64,10 @@ def Simulation_Reports_DETAIL(request, game_id):
 			content = {'msg': "A game with this ID does not exist."}
 			return Response(content, status=status.HTTP_404_NOT_FOUND)
 
+		serialize_simulation_report_object = serializers.SerializeSimulation_Report_Detail(
+			simulation_report_object,
+			many=False
+		)
 
 		field_related_info_objects = models.Field_Related_Info.objects.all()
 		zero_field_related_info_objects = len(field_related_info_objects) == 0
@@ -77,14 +81,9 @@ def Simulation_Reports_DETAIL(request, game_id):
 				many=False
 			)
 
-		serialize_simulation_report_object = serializers.SerializeSimulation_Report_Detail(
-			simulation_report_object,
-			many=False
-			)
-
 		return Response([
 			serialize_simulation_report_object.data,
-			serialize_field_related_info_object.data
+			serialize_field_related_info_object.data,
 		])
 
 
@@ -134,6 +133,24 @@ def Information_Panel_List_GET(request):
 			questions,
 			many=True
 		)
-		return Response(serializer.data)
 	else:
 		raise Http404("No questions and / or answers exists")
+
+	three_dimension_model_objects = models.Three_Dimensional_Model.objects.all()
+	zero_three_dimension_model_objects = len(three_dimension_model_objects) == 0
+
+	print(three_dimension_model_objects)
+	if zero_three_dimension_model_objects == True:
+		print("Field related objects do not exist")
+		raise Http404("Field related objects do not exist")
+	else:
+		serialize_three_dimension_model_objects = serializers.Serialize_Three_Dimensional_Models(
+			three_dimension_model_objects,
+			many=True
+		)
+		print(serialize_three_dimension_model_objects)
+
+	return Response([
+		serializer.data,
+		serialize_three_dimension_model_objects.data,
+	])
