@@ -296,4 +296,3 @@ class testTypeChecker(TestCase):
 		game_id = 123
 		check_game_id_return_true = utils.game_id_type_checker(game_id)
 		self.assertEquals(check_game_id_return_true, True)
-

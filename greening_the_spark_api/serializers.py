@@ -21,9 +21,12 @@ class SerializeSimulation_Report_Detail(serializers.ModelSerializer):
 		model = models.Simulation_Report
 		fields = '__all__'
 
-
 class Serialize_Information_Panel(serializers.ModelSerializer):
 	class Meta:
 		model = models.Info_Panel_Questions_And_Answers
 		fields = "__all__"
 
+class Serialize_Three_Dimensional_Models(serializers.ModelSerializer):
+	class Meta:
+		model = models.Three_Dimensional_Models
+		exclude = ["id"]

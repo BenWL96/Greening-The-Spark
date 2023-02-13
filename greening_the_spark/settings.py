@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY=config("SECRET_KEY", default='')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["greening-the-spark.herokuapp.com"]
+ALLOWED_HOSTS = []
 
 #'greening-the-spark.herokuapp.com'
 
@@ -88,22 +88,15 @@ WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME_2", default=''),
-        'USER': config('DATABASE_USER_2', default=''),
-        'HOST': config('DATABASE_HOST_2', default=''),
-        'PORT': config('PORT_2', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS_2', default=''),
+        'NAME': config("DATABASE_NAME", default=''),
+        'USER': config('DATABASE_USER', default=''),
+        'HOST': config('DATABASE_HOST', default=''),
+        'PORT': config('PORT', default='3306', cast=float),
+        'PASSWORD': config('DATABASE_PASS', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
 
 
-"""import dj_database_url
-
-DATABASE_URL = os.getenv("DATABASE_URL")
-
-DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-}"""
 
 
 REST_FRAMEWORK = {
@@ -175,3 +168,32 @@ BATON = {
         'url': '/search/',
     }
 }
+
+
+
+USE_S3 = config("USES3", default='False') == 'TRUE'
+AWS_S3_ADDRESSING_STYLE = "virtual"
+
+if USE_S3 == True:
+    # aws settings
+    AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID", default='')
+    AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY", default='')
+    AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME", default='')
+
+    AWS_DEFAULT_ACL = None
+
+    AWS_S3_REGION_NAME = config("AWS_S3_REGION_NAME", default='')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+
+    #PUBLIC_MEDIA_LOCATION = 'media'
+    #MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    #DEFAULT_FILE_STORAGE = 'creative_cortex.storage_backends.PublicMediaStorage'
+
+    PRIVATE_MEDIA_LOCATION = 'private'
+    PRIVATE_FILE_STORAGE = 'greening_the_spark.storage_backends.PrivateMediaStorage'
+
+else:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+

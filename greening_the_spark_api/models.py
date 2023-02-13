@@ -1,4 +1,5 @@
 from django.db import models
+from greening_the_spark.storage_backends import PrivateMediaStorage
 
 from django.core.validators import MaxValueValidator, MinValueValidator
 RESULTS = (
@@ -73,6 +74,8 @@ class Simulation_Report(models.Model):
 	hydro_power_data_values = models.CharField(max_length=150)
 	grid_surplus_data_values = models.CharField(max_length=150)
 
+
+
 	def __str__(self):
 		return "Simultion report " + str(self.game_id)
 
@@ -128,3 +131,8 @@ class Field_Related_Info(models.Model):
 	class Meta:
 		verbose_name = "Field Related Info"
 		verbose_name_plural = "Field Related Info"
+
+
+class Three_Dimensional_Models(models.Model):
+	model_id = models.AutoField(primary_key=True)
+	model_url = models.ImageField(storage=PrivateMediaStorage())
