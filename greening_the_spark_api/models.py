@@ -133,6 +133,15 @@ class Field_Related_Info(models.Model):
 		verbose_name_plural = "Field Related Info"
 
 
-class Three_Dimensional_Models(models.Model):
+class Three_Dimensional_Model(models.Model):
+
 	model_id = models.AutoField(primary_key=True)
+	model_title = models.CharField(max_length=30)
 	model_url = models.ImageField(storage=PrivateMediaStorage())
+
+	def __str__(self):
+		return self.model_title
+
+	class Meta:
+		verbose_name = "Three Dimensional Model"
+		verbose_name_plural = "Three Dimensional Models"
