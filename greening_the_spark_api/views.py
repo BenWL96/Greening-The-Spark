@@ -136,6 +136,14 @@ def Information_Panel_List_GET(request):
 	else:
 		raise Http404("No questions and / or answers exists")
 
+	return Response(
+		serializer.data
+	)
+
+
+
+@api_view(['GET'])
+def Three_Dimensional_Model_List_GET(request):
 	three_dimension_model_objects = models.Three_Dimensional_Model.objects.all()
 	zero_three_dimension_model_objects = len(three_dimension_model_objects) == 0
 
@@ -150,7 +158,6 @@ def Information_Panel_List_GET(request):
 		)
 		print(serialize_three_dimension_model_objects)
 
-	return Response([
-		serializer.data,
-		serialize_three_dimension_model_objects.data,
-	])
+	return Response(
+		serialize_three_dimension_model_objects.data
+	)

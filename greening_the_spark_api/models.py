@@ -133,10 +133,24 @@ class Field_Related_Info(models.Model):
 		verbose_name_plural = "Field Related Info"
 
 
+MODELS = (
+	('economy spark red', 'economy spark red'),
+	('economy spark blue', 'economy spark blue'),
+	('economy spark green', 'economy spark green'),
+	('eco spark red', 'eco spark red'),
+	('eco spark blue', 'eco spark blue'),
+	('eco spark green', 'eco spark green'),
+	('efficiency spark red', 'efficiency spark red'),
+	('efficiency spark blue', 'efficiency spark blue'),
+	('efficiency spark green', 'efficiency spark green'),
+	('info model', 'info model'),
+	('powerplant model', 'powerplant model'),
+)
+
 class Three_Dimensional_Model(models.Model):
 
 	model_id = models.AutoField(primary_key=True)
-	model_title = models.CharField(max_length=30)
+	model_title = models.CharField(max_length=30, choices=MODELS)
 	model_url = models.FileField(storage=PrivateMediaStorage())
 
 	def __str__(self):
