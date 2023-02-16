@@ -382,4 +382,53 @@ class test_Three_Dimensional_Model_List_Endpoint(TestCase):
 		)
 		self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
+	def test_endpoint_failure_5_models(self):
+		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
+		models.Three_Dimensional_Model.objects.create(
+			model_title='economy spark red',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='economy spark blue',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='economy spark green',
+			model_url=a_simple_file
+		)
+
+		models.Three_Dimensional_Model.objects.create(
+			model_title='eco spark red',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='eco spark blue',
+			model_url=a_simple_file
+		)
+
+
+		url = reverse('model-list-get')
+		response = self.client.get(
+			url,
+		)
+		self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+
+
+class test_choice_models(TestCase):
+
+	def test_three_dim_models(self):
+		#According to docs, the names of these models should be limited
+		#to the names specified in MODELS array.
+		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
+
+		object = models.Three_Dimensional_Model.objects.create(
+			model_title='ecosparkblue',
+			model_url=a_simple_file
+		)
+
+		ecosparkblue = models.Three_Dimensional_Model.objects.get(model_title="ecosparkblue")
+		print(ecosparkblue)
+
+		self.assertEquals(object, ecosparkblue)
