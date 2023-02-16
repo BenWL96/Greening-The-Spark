@@ -1,9 +1,9 @@
+import json, datetime, tempfile, unittest
+
 from django.test import (
 	TestCase,
 	Client
 )
-import unittest
-import json, datetime
 from django.urls import reverse
 from factory_djoy import UserFactory
 from . import models, utils
@@ -24,7 +24,7 @@ from .data import (
 	time,
 
 )
-
+from rest_framework import status
 
 class test_simulation_report_endpoints_non_auth(TestCase):
 
@@ -285,7 +285,7 @@ class test_info_panel_endpoint(TestCase):
 		response_dict = json.loads(json.dumps(input_dict))
 		self.assertEquals(len(response_dict), 2)
 
-class testTypeChecker(TestCase):
+class test_type_checker(TestCase):
 
 	def test_Simulation_Reports_DETAIL_fail(self):
 		game_id = "123"
@@ -296,3 +296,90 @@ class testTypeChecker(TestCase):
 		game_id = 123
 		check_game_id_return_true = utils.game_id_type_checker(game_id)
 		self.assertEquals(check_game_id_return_true, True)
+
+
+class test_Three_Dimensional_Model_List_Endpoint(TestCase):
+
+	def setUp(self):
+		self.client = Client()
+
+	def test_endpoint_success(self):
+
+		"""can't figure out why this is not working"""
+
+		# create 11 objects, then ensure
+		# successful fetch from endpoint
+
+		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
+
+		models.Three_Dimensional_Model.objects.create(
+			model_title='economy spark red',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='economy spark blue',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='economy spark green',
+			model_url=a_simple_file
+		)
+
+		models.Three_Dimensional_Model.objects.create(
+			model_title='eco spark red',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='eco spark blue',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='eco spark green',
+			model_url=a_simple_file
+		)
+
+		models.Three_Dimensional_Model.objects.create(
+			model_title='efficiency spark red',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='efficiency spark blue',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='efficiency spark green',
+			model_url=a_simple_file
+		)
+
+		models.Three_Dimensional_Model.objects.create(
+			model_title='info model',
+			model_url=a_simple_file
+		)
+		models.Three_Dimensional_Model.objects.create(
+			model_title='powerplant model',
+			model_url=a_simple_file
+		)
+
+		url = reverse('model-list-get')
+		response = self.client.get(
+			url,
+		)
+
+		print(response.status_code)
+		print(response.status_code)
+		print(response.status_code)
+		"""input_dict = response.data
+		response_dict = json.loads(json.dumps(input_dict))
+		print(response_dict)
+		print(response_dict)
+		print(response_dict)"""
+		pass
+
+	def test_endpoint_failure(self):
+		url = reverse('model-list-get')
+		response = self.client.get(
+			url,
+		)
+		self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+

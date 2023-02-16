@@ -16,8 +16,8 @@ def apiOverview(request):
 		'simulation reports': '/sim-reports/',
 		'simulation report detail': '/sim-reports/<str:simulation_id>/details',
 		'simulation report dump': '/sim-reports/dump/',
-		'information-panel/': '/information-panel/',
-
+		'information-panel': '/information-panel/',
+		'three dimensional models': '/models/'
 	}
 
 	return Response(api_urls)
@@ -144,19 +144,20 @@ def Information_Panel_List_GET(request):
 
 @api_view(['GET'])
 def Three_Dimensional_Model_List_GET(request):
-	three_dimension_model_objects = models.Three_Dimensional_Model.objects.all()
-	zero_three_dimension_model_objects = len(three_dimension_model_objects) == 0
 
-	print(three_dimension_model_objects)
-	if zero_three_dimension_model_objects == True:
-		print("Field related objects do not exist")
-		raise Http404("Field related objects do not exist")
+	three_dimension_model_objects = models.Three_Dimensional_Model.objects.all()
+
+	eleven_three_dimension_model_objects = len(three_dimension_model_objects) == 11
+
+	if eleven_three_dimension_model_objects != True:
+		print("11 glb files need to be passed through, else fail")
+		raise Http404("11 glb files need to be passed through, else fail")
 	else:
+		print("11 glb files exist at the endpoint.")
 		serialize_three_dimension_model_objects = serializers.Serialize_Three_Dimensional_Models(
 			three_dimension_model_objects,
 			many=True
 		)
-		print(serialize_three_dimension_model_objects)
 
 	return Response(
 		serialize_three_dimension_model_objects.data
