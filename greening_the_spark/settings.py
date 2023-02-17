@@ -5,14 +5,13 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY=config("SECRET_KEY", default='')
+SECRET_KEY = config("SECRET_KEY", default='')
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#'greening-the-spark.herokuapp.com'
-
+# 'greening-the-spark.herokuapp.com'
 
 INSTALLED_APPS = [
     'baton',
@@ -45,8 +44,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-C_IP=config("C_IP", default='')
-B_IP=config("B_IP", default='')
+C_IP = config("C_IP", default='')
+B_IP = config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
@@ -57,13 +56,6 @@ CORS_ALLOWED_ORIGINS = [
     B_IP,
     C_IP
 ]
-
-""""#cors allowed origins
- http://127.0.0.1:8000
- http://127.0.0.1:3000
-https://greening-the-spark.herokuapp.com",
-    C_IP,
-    B_IP,"""
 
 ROOT_URLCONF = 'greening_the_spark.urls'
 
@@ -96,12 +88,9 @@ DATABASES = {
         'OPTIONS': {'sql_mode': 'traditional'}}
 }
 
-
-
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-   'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.AllowAny',
     ]
 }
 
@@ -149,7 +138,8 @@ BATON = {
     'SITE_TITLE': 'Greening The Spark',
     'INDEX_TITLE': 'Site administration',
     'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
-    'COPYRIGHT': 'copyright © 2017 <a href="www.cornucopia.co.uk/"Cornucopia</a>', # noqa
+    'COPYRIGHT':
+        'copyright © 2017 <a href="www.cornucopia.co.uk/"Cornucopia</a>',
     'POWERED_BY': '<a href="https://www.cornucopia.co.uk/">Cornucopia</a>',
     'CONFIRM_UNSAVED_CHANGES': True,
     'SHOW_MULTIPART_UPLOADING': True,
@@ -170,11 +160,10 @@ BATON = {
 }
 
 
-
 USE_S3 = config("USES3", default='False') == 'TRUE'
 AWS_S3_ADDRESSING_STYLE = "virtual"
 
-if USE_S3 == True:
+if USE_S3 is True:
     # aws settings
     AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID", default='')
     AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY", default='')
@@ -186,14 +175,10 @@ if USE_S3 == True:
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-    #PUBLIC_MEDIA_LOCATION = 'media'
-    #MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    #DEFAULT_FILE_STORAGE = 'creative_cortex.storage_backends.PublicMediaStorage'
-
     PRIVATE_MEDIA_LOCATION = 'private'
-    PRIVATE_FILE_STORAGE = 'greening_the_spark.storage_backends.PrivateMediaStorage'
+    PRIVATE_FILE_STORAGE =\
+        'greening_the_spark.storage_backends.PrivateMediaStorage'
 
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
