@@ -307,8 +307,9 @@ class test_Three_Dimensional_Model_List_Endpoint(TestCase):
 
 		"""can't figure out why this is not working"""
 
-		# create 11 objects, then ensure
-		# successful fetch from endpoint
+		# why is this returning 400 error ?
+		#something is going wrong at serialiser level as logic works perfectly up until serialised
+
 
 		a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 

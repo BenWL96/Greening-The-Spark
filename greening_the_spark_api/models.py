@@ -2,6 +2,7 @@ from django.db import models
 from greening_the_spark.storage_backends import PrivateMediaStorage
 
 from django.core.validators import MaxValueValidator, MinValueValidator
+
 RESULTS = (
 	('green', 'green'),
 	('blue', 'blue'),
@@ -14,9 +15,8 @@ DIFFICULTIES = (
 	('hard', 'hard')
 )
 
-class Simulation_Report(models.Model):
 
-	#Simulation report Data
+class Simulation_Report(models.Model):
 
 	game_id = models.AutoField(primary_key=True, unique=True)
 
@@ -31,9 +31,18 @@ class Simulation_Report(models.Model):
 	fossil_fuels = models.IntegerField()
 	nuclear = models.IntegerField()
 
-	#we should use % for both of these valus
-	fossil_fuels_utilisation_percentage = models.IntegerField(validators=[MinValueValidator(0, message="value has to be above 0"), MaxValueValidator(100, message="value has to be below 100.")])
-	nuclear_fuels_utilisation_percentage = models.IntegerField(validators=[MinValueValidator(0, message="value has to be above 0"), MaxValueValidator(100, message="value has to be below 100.")])
+	fossil_fuels_utilisation_percentage = models.IntegerField(
+		validators=[
+			MinValueValidator(0, message="value has to be above 0"),
+			MaxValueValidator(100, message="value has to be below 100.")
+		]
+	)
+	nuclear_fuels_utilisation_percentage = models.IntegerField(
+		validators=[
+			MinValueValidator(0, message="value has to be above 0"),
+			MaxValueValidator(100, message="value has to be below 100.")
+		]
+	)
 
 	surplus = models.IntegerField()
 	shortfall = models.IntegerField()
@@ -47,7 +56,8 @@ class Simulation_Report(models.Model):
 	average_CO2_tonnes_per_gwh = models.IntegerField()
 	average_cost_million_pounds_per_gwh = models.IntegerField()
 
-	#comments
+	# Comments
+
 	surplus_comment = models.CharField(max_length=15)
 	shortfall_comment = models.CharField(max_length=15)
 	storage_discrepancy_comment = models.CharField(max_length=15)
@@ -55,13 +65,13 @@ class Simulation_Report(models.Model):
 	average_CO2_comment = models.CharField(max_length=15)
 	average_cost_comment = models.CharField(max_length=15)
 
-	#Spark Results
+	# Spark Results
 
 	efficiency_spark = models.CharField(choices=RESULTS, max_length=5)
 	economy_spark = models.CharField(choices=RESULTS, max_length=5)
 	eco_friendliness_spark = models.CharField(choices=RESULTS, max_length=5)
 
-	#All graph related data.
+	# All graph related data.
 
 	wind_power_data_values = models.CharField(max_length=150)
 	solar_power_data_values = models.CharField(max_length=150)
@@ -74,14 +84,13 @@ class Simulation_Report(models.Model):
 	hydro_power_data_values = models.CharField(max_length=150)
 	grid_surplus_data_values = models.CharField(max_length=150)
 
-
-
 	def __str__(self):
 		return "Simultion report " + str(self.game_id)
 
 	class Meta:
 		verbose_name = "Simulation Report"
 		verbose_name_plural = "Simulation Reports"
+
 
 class Info_Panel_Questions_And_Answers(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -96,7 +105,6 @@ class Info_Panel_Questions_And_Answers(models.Model):
 	class Meta:
 		verbose_name = "Info Panel Q&A"
 		verbose_name_plural = "Info Panel Q&A's"
-
 
 
 class Field_Related_Info(models.Model):
@@ -146,6 +154,7 @@ MODELS = (
 	('info model', 'info model'),
 	('powerplant model', 'powerplant model'),
 )
+
 
 class Three_Dimensional_Model(models.Model):
 
