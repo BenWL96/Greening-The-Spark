@@ -1,17 +1,17 @@
-.section-header{
-    background: transparent;
-    height: 15vh;
+.section-header {
+  background: transparent;
+  height: 15vh;
 }
 
-.section-header_logo{
-    height: 7vh;
-    margin-left: 10px;
-    margin-top: 10px;
-    background-color: black;
-    border-radius: 5px;
+.section-header_logo {
+  height: 7vh;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: black;
+  border-radius: 5px;
 }
 
-.section-header_logo:hover{
-    opacity: 50%;
-    cursor: pointer;
+.section-header_logo:hover {
+  opacity: 50%;
+  cursor: pointer;
 }

@@ -1,47 +1,33 @@
-import React, { useState } from 'react';
-import './App.css';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
-import Body from './components/body/body';
-import LandingPage from './components/landingPage/landingPage';
+import React, { useState } from "react";
+import "./App.css";
+import GtsApp from "./components/gtsApp/gtsApp";
+import LandingPage from "./components/landingPage/landingPage";
 
 const App = () => {
-
   const [GTSLandingPageActivated, setGTSLandingPageActivated] = useState(true);
 
   const alterStateLandingPageActivated = () => {
-   
-    if (GTSLandingPageActivated === true){
+    if (GTSLandingPageActivated === true) {
       setGTSLandingPageActivated(false);
     } else {
       setGTSLandingPageActivated(true);
     }
 
     console.log(GTSLandingPageActivated);
-
   };
 
-
-
   return (
-
     <>
-      {
-        GTSLandingPageActivated ? <LandingPage alterStateLandingPageActivated={alterStateLandingPageActivated} Id="landingPage"/> :
-        
-        <>
-          <Header/>
-
-          <Body/>      
-
-          <Footer/>
-        </> 
-      }
+      {GTSLandingPageActivated ? (
+        <LandingPage
+          alterStateLandingPageActivated={alterStateLandingPageActivated}
+          Id="landingPage"
+        />
+      ) : (
+        <GtsApp />
+      )}
     </>
-  
-
-  )
-
-}
+  );
+};
 
 export default App;

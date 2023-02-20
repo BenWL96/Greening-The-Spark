@@ -1,8 +1,8 @@
-const infoPanelApiFetch = async () => {
+const ThreeModelsApiFetch = async () => {
   console.log("Fetching Info Panel Data");
 
   try {
-    let res = await fetch("/api/v1/information-panel/", {
+    let res = await fetch("/api/v1/models/", {
       method: "GET",
     });
     let data = await res.json();
@@ -23,4 +23,4 @@ const infoPanelApiFetch = async () => {
   }
 };
 
-export default infoPanelApiFetch;
+export default ThreeModelsApiFetch;

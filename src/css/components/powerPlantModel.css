@@ -1,9 +1,8 @@
-.powerplant-model{
-    margin-left: auto;
-    margin-right: auto;
-    height: 75vh;
-    width: 100vw;
-    position: fixed;
-    opacity: 85%;
+.powerplant-model {
+  margin-left: auto;
+  margin-right: auto;
+  height: 75vh;
+  width: 100vw;
+  position: fixed;
+  opacity: 85%;
 }
-

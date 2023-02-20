@@ -1,77 +1,69 @@
-
-
-.section-results{
-    padding-bottom: 25px;
+.section-results {
+  padding-bottom: 25px;
 }
 
-
-.graph-wrapper_child{
-    background-repeat: no-repeat;
-    background-image: url("../../images/crinkled-paper.jpg");
-    background-size: 2000px 1000px;
-    border-radius: 5px;
-    background-position: top;
-    outline: solid;
-    outline-color: green;
-    outline-width: 1px;
-    overflow: scroll;
+.graph-wrapper_child {
+  background-repeat: no-repeat;
+  background-image: url("../../images/crinkled-paper.jpg");
+  background-size: 2000px 1000px;
+  border-radius: 5px;
+  background-position: top;
+  outline: solid;
+  outline-color: green;
+  outline-width: 1px;
+  overflow: scroll;
 }
 
-.graphs{
-    border-radius: 15px;
+.graphs {
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 75% !important;
+}
+
+@media (min-width: 800px) {
+  .graph-wrapper_child {
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
-    opacity: 75% !important;
-    
+  }
+  .graphs {
+    width: 800px;
+  }
+
+  .section-results_wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+  }
 }
 
-@media(min-width: 800px){
+@media (max-width: 800px) {
+  .graph-wrapper_parent {
+    width: 100%;
+    overflow: scroll;
+  }
 
-    .graph-wrapper_child{
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .graphs{
-        width: 800px;
-    }
+  .graph-wrapper_child {
+    width: 800px;
+  }
 
-    .section-results_wrapper{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: transparent;
-    }
+  .graphs {
+    width: 800px;
+  }
+
+  .section-results_wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+  }
 }
 
-@media(max-width: 800px){
-
-    .graph-wrapper_parent{
-        width: 100%;
-        overflow: scroll;
-    }
-    
-    .graph-wrapper_child{
-        width: 800px;
-
-    }
-
-    .graphs{
-        width: 800px;
-    }
-
-    .section-results_wrapper{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: transparent;
-    }
-
+::-webkit-scrollbar-button {
+  color: black;
 }
-
-::-webkit-scrollbar-button{
-    color: black;
-}  
-::-webkit-scrollbar-track{
-    color: black;
+::-webkit-scrollbar-track {
+  color: black;
 }

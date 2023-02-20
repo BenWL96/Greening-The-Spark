@@ -1,20 +1,17 @@
-.section-footer{
-    background-color: transparent;
-    height: 5vh;
+.section-footer {
+  background-color: transparent;
+  height: 5vh;
 }
 
-
-.section-footer_gts-hyperlink{
-    color: white;
-    margin-left: 10px !important;
-    margin-bottom: 10px !important;
-    font-weight: 500;
-    font-size: 20px;
+.section-footer_gts-hyperlink {
+  color: white;
+  margin-left: 10px !important;
+  margin-bottom: 10px !important;
+  font-weight: 500;
+  font-size: 20px;
 }
 
-.section-footer_gts-hyperlink:hover{
-    opacity: 75%;
-    color: white;
-
+.section-footer_gts-hyperlink:hover {
+  opacity: 75%;
+  color: white;
 }
-

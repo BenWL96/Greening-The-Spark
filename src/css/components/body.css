@@ -1,14 +1,10 @@
-.section-body{
-    background: transparent;
-    height: 80vh;
+.section-body {
+  background: transparent;
+  height: 80vh;
 }
 
-
-.section-body_wrapper{
-    width: 100%;
-    justify-content: center;
-    height: 80vh;
-
+.section-body_wrapper {
+  width: 100%;
+  justify-content: center;
+  height: 80vh;
 }
-
-
