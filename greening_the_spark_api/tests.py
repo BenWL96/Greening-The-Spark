@@ -18,7 +18,7 @@ from .data import (date, failing_post_data, info_data, info_data_2,
                    working_post_data_fields_rearranged)
 
 """
-class test_simulation_report_endpoints_non_auth(TestCase):
+class TestSimulationReportEndpointsNonAuth(TestCase):
 
     def setUp(self):
         self.client = Client()
@@ -81,10 +81,7 @@ class test_simulation_report_endpoints_non_auth(TestCase):
         self.assertEqual(response_dict, match_dict)
 
 
-
-
-
-class test_simulation_report_endpoints_auth(TestCase):
+class TestSimulationReportEndpointsAuth(TestCase):
 
     def setUp(self):
         self.client = Client()
@@ -215,7 +212,7 @@ class test_simulation_report_endpoints_auth(TestCase):
 
 
 
-class test_info_panel_endpoint(TestCase):
+class TestInfoPanelEndpoint(TestCase):
 
     def setUp(self):
 
@@ -234,8 +231,6 @@ class test_info_panel_endpoint(TestCase):
             the_gts_answer="answer 2",
             the_complex_answer="answer 3"
         )
-
-
 
     def test_get_request(self):
 
@@ -276,7 +271,8 @@ class test_info_panel_endpoint(TestCase):
         response_dict = json.loads(json.dumps(input_dict))
         self.assertEquals(len(response_dict), 2)
 
-class test_type_checker(TestCase):
+
+class TestTypeChecker(TestCase):
 
     def test_Simulation_Reports_DETAIL_fail(self):
         game_id = "123"
@@ -289,7 +285,8 @@ class test_type_checker(TestCase):
         self.assertEquals(check_game_id_return_true, True)
 """
 
-class test_Three_Dimensional_Model_List_Endpoint(TestCase):
+
+class TestThreeDimensionalModelListEndpoint(TestCase):
 
     def setUp(self):
         self.client = Client()
@@ -404,8 +401,7 @@ class test_Three_Dimensional_Model_List_Endpoint(TestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
 
-
-class test_choice_models(TestCase):
+class TestChoiceModels(TestCase):
 
     def test_three_dim_models(self):
         #According to docs, the names of these models should be limited
@@ -423,13 +419,12 @@ class test_choice_models(TestCase):
         self.assertEquals(object, ecosparkblue)
 
 
-
-class Test_Create_Endpoint(TestCase):
+class TestCreateEndpointFieldValidation(TestCase):
 
     def setUp(self):
         self.client = Client()
 
-    def test_create_when_fossil_nuclear_at_100(self):
+    def test_sim_repo_validation_when_fossil_nuclear_at_100(self):
 
         """Post Simulation_Reports_CREATE nuclear_fossil at 100%"""
 
@@ -445,7 +440,7 @@ class Test_Create_Endpoint(TestCase):
 
         self.assertNotEqual(response_dict.keys(), "error")
 
-    def test_create_when_fossil_nuclear_at_0(self):
+    def test_sim_repo_validation_when_fossil_nuclear_at_0(self):
         """Post Simulation_Reports_CREATE nuclear_fossil at 0%"""
 
         url = reverse('simulation-report-create')
@@ -460,7 +455,7 @@ class Test_Create_Endpoint(TestCase):
 
         self.assertNotEqual(response_dict.keys(), "error")
 
-    def test_create_when_not_between_0_and_100(self):
+    def test_sim_repo_validation_when_not_between_0_and_100(self):
 
         url = reverse('simulation-report-create')
 
@@ -476,7 +471,7 @@ class Test_Create_Endpoint(TestCase):
 
         self.assertEqual(response_dict, match_dict)
 
-    def test_create_when_utilisation_percentage_not_between_0_and_100(self):
+    def test_sim_repo_validation_when_utilis_perc_not_between_0_and_100(self):
 
         url = reverse('simulation-report-create')
 
