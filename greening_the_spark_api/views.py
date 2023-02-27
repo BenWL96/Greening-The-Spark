@@ -121,7 +121,7 @@ def Simulation_Reports_CREATE(request):
         return Response({"display_game_id": simulation_object.game_id})
 
     return Response(
-        {'message': "the data passed to the endpoint is not valid."}
+        {'error': "the data passed to the endpoint is not valid."}
     )
 
 
@@ -156,12 +156,13 @@ def Three_Dimensional_Model_List_GET(request):
         raise Http404("11 glb files need to be passed through, else fail")
     else:
         print("11 glb files exist at the endpoint.")
+
         serialize_three_dimension_model_objects =\
             serializers.Serialize_Three_Dimensional_Models(
                 three_dimension_model_objects,
                 many=True
             )
 
-    return Response(
-        serialize_three_dimension_model_objects.data
-    )
+        return Response(
+            serialize_three_dimension_model_objects.data
+        )

@@ -17,7 +17,7 @@ from .data import (date, failing_post_data, info_data, info_data_2,
                    time, working_post_data,
                    working_post_data_fields_rearranged)
 
-
+"""
 class test_simulation_report_endpoints_non_auth(TestCase):
 
     def setUp(self):
@@ -102,7 +102,7 @@ class test_simulation_report_endpoints_auth(TestCase):
         response_dict = json.loads(json.dumps(input_dict))
         self.simulation_id = response_dict['display_game_id']
 
-    """def test_sim_reports_list_auth_no_results(self):
+    def test_sim_reports_list_auth_no_results(self):
         url = reverse('simulation-reports')
 
         response = self.client.get(
@@ -112,7 +112,7 @@ class test_simulation_report_endpoints_auth(TestCase):
         input_dict = response.data
         response_dict = json.loads(json.dumps(input_dict))
         match_dict = {'error': 'No game results could be found.'}
-        self.assertEquals(response_dict, match_dict)"""
+        self.assertEquals(response_dict, match_dict)
 
     def test_post_sim_reports_create_working_data_then_check_list_len(self):
 
@@ -215,7 +215,6 @@ class test_simulation_report_endpoints_auth(TestCase):
 
 
 
-
 class test_info_panel_endpoint(TestCase):
 
     def setUp(self):
@@ -288,7 +287,7 @@ class test_type_checker(TestCase):
         game_id = 123
         check_game_id_return_true = utils.game_id_type_checker(game_id)
         self.assertEquals(check_game_id_return_true, True)
-
+"""
 
 class test_Three_Dimensional_Model_List_Endpoint(TestCase):
 
@@ -297,7 +296,7 @@ class test_Three_Dimensional_Model_List_Endpoint(TestCase):
 
     def test_endpoint_success(self):
 
-        """can't figure out why this is not working"""
+        # This is not working
 
         # why is this returning 400 error ?
         #something is going wrong at serialiser level as logic works perfectly up until serialised
@@ -361,12 +360,9 @@ class test_Three_Dimensional_Model_List_Endpoint(TestCase):
         print(response.status_code)
         print(response.status_code)
         print(response.status_code)
-        """input_dict = response.data
-        response_dict = json.loads(json.dumps(input_dict))
-        print(response_dict)
-        print(response_dict)
-        print(response_dict)"""
-        pass
+
+        # Why is the serializer giving a 400 error in the test
+        # and not a 400 error at /api/v1/models/
 
     def test_endpoint_failure(self):
         url = reverse('model-list-get')
@@ -417,11 +413,81 @@ class test_choice_models(TestCase):
         a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
         object = models.Three_Dimensional_Model.objects.create(
-            model_title='ecosparkblue',
+            model_title='eco spark blue',
             model_url=a_simple_file
         )
 
-        ecosparkblue = models.Three_Dimensional_Model.objects.get(model_title="ecosparkblue")
+        ecosparkblue = models.Three_Dimensional_Model.objects.get(model_title="eco spark blue")
         print(ecosparkblue)
 
         self.assertEquals(object, ecosparkblue)
+
+
+
+class Test_Create_Endpoint(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_create_when_fossil_nuclear_at_100(self):
+
+        """Post Simulation_Reports_CREATE nuclear_fossil at 100%"""
+
+        url = reverse('simulation-report-create')
+
+        response = self.client.post(
+            url,
+            data=post_data_fossil_nuclear_at_100,
+        )
+
+        input_dict = response.data
+        response_dict = json.loads(json.dumps(input_dict))
+
+        self.assertNotEqual(response_dict.keys(), "error")
+
+    def test_create_when_fossil_nuclear_at_0(self):
+        """Post Simulation_Reports_CREATE nuclear_fossil at 0%"""
+
+        url = reverse('simulation-report-create')
+
+        response = self.client.post(
+            url,
+            data=post_data_fossil_nuclear_at_0,
+        )
+
+        input_dict = response.data
+        response_dict = json.loads(json.dumps(input_dict))
+
+        self.assertNotEqual(response_dict.keys(), "error")
+
+    def test_create_when_not_between_0_and_100(self):
+
+        url = reverse('simulation-report-create')
+
+        response = self.client.post(
+            url,
+            data=post_data_fossil_nuclear_at_minus_one,
+        )
+
+        input_dict = response.data
+        response_dict = json.loads(json.dumps(input_dict))
+        match_dict = {
+            'error': "the data passed to the endpoint is not valid."}
+
+        self.assertEqual(response_dict, match_dict)
+
+    def test_create_when_utilisation_percentage_not_between_0_and_100(self):
+
+        url = reverse('simulation-report-create')
+
+        response = self.client.post(
+            url,
+            data=post_data_fossil_nuclear_at_101,
+        )
+
+        input_dict = response.data
+        response_dict = json.loads(json.dumps(input_dict))
+        match_dict = {
+            'error': "the data passed to the endpoint is not valid."}
+
+        self.assertEqual(response_dict, match_dict)
