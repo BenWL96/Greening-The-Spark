@@ -296,7 +296,8 @@ class TestThreeDimensionalModelListEndpoint(TestCase):
         # This is not working
 
         # why is this returning 400 error ?
-        #something is going wrong at serialiser level as logic works perfectly up until serialised
+        # something is going wrong at serialiser level as
+        # logic works perfectly up until serialised
 
 
         a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
@@ -404,8 +405,8 @@ class TestThreeDimensionalModelListEndpoint(TestCase):
 class TestChoiceModels(TestCase):
 
     def test_three_dim_models(self):
-        #According to docs, the names of these models should be limited
-        #to the names specified in MODELS array.
+        # According to docs, the names of these models should be limited
+        # to the names specified in MODELS array.
         a_simple_file = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
         object = models.Three_Dimensional_Model.objects.create(
@@ -413,7 +414,9 @@ class TestChoiceModels(TestCase):
             model_url=a_simple_file
         )
 
-        ecosparkblue = models.Three_Dimensional_Model.objects.get(model_title="eco spark blue")
+        ecosparkblue = models.Three_Dimensional_Model.objects.get(
+            model_title="eco spark blue"
+        )
         print(ecosparkblue)
 
         self.assertEquals(object, ecosparkblue)

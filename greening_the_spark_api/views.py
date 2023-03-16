@@ -69,6 +69,12 @@ def Simulation_Reports_DETAIL(request, game_id):
             many=False
         )
 
+    return Response(serialize_simulation_report_object.data)
+
+
+@api_view(['GET'])
+def Simulation_Report_Field_Info(request):
+
     field_related_info_objects = models.Field_Related_Info.objects.all()
     zero_field_related_info_objects = len(field_related_info_objects) == 0
 
@@ -76,16 +82,12 @@ def Simulation_Reports_DETAIL(request, game_id):
         print("Field related objects do not exist")
         raise Http404("Field related objects do not exist")
     else:
-        serialize_field_related_info_object =\
+        serialize_field_related_info_object = \
             serializers.Serialize_Field_Related_Info(
                 field_related_info_objects[0],
                 many=False
             )
-
-    return Response([
-        serialize_simulation_report_object.data,
-        serialize_field_related_info_object.data,
-    ])
+    return Response(serialize_field_related_info_object.data)
 
 
 @api_view(['POST'])

@@ -9,12 +9,6 @@ class test_simulation_report_endpoints(TestCase):
 
 	def test_endpoints_and_functionality(self):
 
-
-
-
-
-
-
 		"""POST to Simulation_Reports_LIST"""
 
 		url = reverse('simulation-reports')
