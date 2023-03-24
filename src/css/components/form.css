@@ -1,13 +1,9 @@
 .form-wrapper {
   background-repeat: no-repeat;
   background-image: url("../../images/crinkled-paper.jpg");
-  border-radius: 5px;
-  border-style: solid;
-  border-color: green;
-  border-width: 1px;
   margin-left: auto;
   margin-right: auto;
-  height: 75vh;
+  height: 83vh;
   background-size: 100vw;
   width: 100vw;
 }
@@ -18,7 +14,6 @@
   font-weight: 700;
   margin-left: 10px;
   opacity: 85%;
-  margin-top: 5vh;
 }
 
 .form_stack {
@@ -26,9 +21,12 @@
 }
 
 .form_input-box {
+  outline: none;
   margin-bottom: 10px;
   margin-left: 10px;
   opacity: 85%;
+  box-shadow: #282828 1px 0px 4px;
+  border-radius: 5px;
 }
 
 .form_success-message {
@@ -144,6 +142,8 @@
   font-weight: bold;
   margin-bottom: 10px;
   opacity: 85%;
+  box-shadow: #282828 1px 0px 4px;
+  border-radius: 5px;
 }
 
 .form_button:hover {

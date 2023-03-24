@@ -8,18 +8,23 @@ const infoPanelApiFetch = async () => {
     let data = await res.json();
 
     if (res.status === 200) {
-      console.log(data);
 
-      //set local storage so fetch request doesn't
-      //always
+      console.log(data);
       return data;
+
     } else {
+
       console.log("Sorry but the fetch failed");
-      return;
+      const data = 404;
+      return data;
+
     }
   } catch (err) {
+
     console.log(err);
-    return;
+    const data = 500;
+    return data;
+    
   }
 };
 

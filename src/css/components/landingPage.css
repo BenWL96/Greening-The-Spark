@@ -13,7 +13,6 @@
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10vh;
 }
 
 .landing-page_col {
@@ -28,24 +27,10 @@
     rgba(96, 147, 164, 1) 42%,
     rgba(81, 126, 140, 1) 82%
   );
-  border-radius: 15px;
-  width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.coloured-square-2 {
-  background: rgb(183, 207, 96);
-  background: linear-gradient(
-    90deg,
-    rgba(183, 207, 96, 1) 0%,
-    rgba(145, 171, 68, 1) 82%
-  );
-  border-radius: 15px;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .landing-page_row {
   padding-top: 20px;
@@ -95,11 +80,6 @@
   cursor: pointer;
 }
 
-.scroll-icon {
-  width: 80%;
-  border-radius: 15px;
-}
-
 .scroll-icon:hover {
   opacity: 50%;
   cursor: pointer;
@@ -120,4 +100,54 @@
 
 .stack2 {
   width: 25%;
+}
+
+
+.scroll-icon{
+  border-radius: 15px;
+}
+.scroll-icon-thin{
+  border-radius: 15px;
+}
+
+@media(min-width: 576px){
+  .scroll-icon{
+    width: 90%;
+    display: block;
+  }
+
+  .scroll-icon-thin{
+    display: none;
+  }
+
+  .coloured-square-1{
+    width: 90%;
+    border-radius: 15px;
+  }
+
+  .landing-page_text {
+    font-size: 50px;
+  }
+}
+
+
+@media(max-width: 576px){
+  .scroll-icon{
+    display: none;
+  }
+
+  .scroll-icon-thin{
+    display: block;
+    width: 95%;
+  }
+
+  .coloured-square-1{
+    width: 90%;
+    border-radius: 8px;
+  }
+
+  .landing-page_text {
+    font-size: 30px;
+  }
+
 }

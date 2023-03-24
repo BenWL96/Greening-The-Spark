@@ -32,7 +32,7 @@ ChartJS.register(
   Legend
 );
 
-function Results({ jsonData, models }) {
+function Results({ simReportData, models, simRepoFieldData }) {
   {
     /*Graphs*/
   }
@@ -155,31 +155,31 @@ function Results({ jsonData, models }) {
   };
 
   const SplitJsonDataStringReturnArrayIntegers = () => {
-    let windDataValues = jsonData[0].wind_power_data_values.split(" ");
+    let windDataValues = simReportData.wind_power_data_values.split(" ");
     var windDataValuesArray = windDataValues.map(Number);
 
-    let solarDataValues = jsonData[0].solar_power_data_values.split(" ");
+    let solarDataValues = simReportData.solar_power_data_values.split(" ");
     var solarDataValuesArray = solarDataValues.map(Number);
 
-    let demandDataValues = jsonData[0].demand_power_data_values.split(" ");
+    let demandDataValues = simReportData.demand_power_data_values.split(" ");
     var demandDataValuesArray = demandDataValues.map(Number);
 
     let FossilFuelsPowerDataValues =
-      jsonData[0].fossil_fuels_power_data_values.split(" ");
+      simReportData.fossil_fuels_power_data_values.split(" ");
     var fossilFuelsDataValuesarray = FossilFuelsPowerDataValues.map(Number);
 
     let nuclearPowerDataValues =
-      jsonData[0].nuclear_power_data_values.split(" ");
+      simReportData.nuclear_power_data_values.split(" ");
     var nuclearPowerDataValuesArray = nuclearPowerDataValues.map(Number);
 
     let batteriesPowerDataValues =
-      jsonData[0].batteries_power_data_values.split(" ");
+      simReportData.batteries_power_data_values.split(" ");
     var batteriesPowerDataValuesArray = batteriesPowerDataValues.map(Number);
 
-    let hydroPowerDataValues = jsonData[0].hydro_power_data_values.split(" ");
+    let hydroPowerDataValues = simReportData.hydro_power_data_values.split(" ");
     var hydroPowerDataValuesArray = hydroPowerDataValues.map(Number);
 
-    let gridSurplusDataValues = jsonData[0].grid_surplus_data_values.split(" ");
+    let gridSurplusDataValues = simReportData.grid_surplus_data_values.split(" ");
     var gridSurplusDataValuesArray = gridSurplusDataValues.map(Number);
 
     return {
@@ -196,7 +196,7 @@ function Results({ jsonData, models }) {
 
   const splitJsonDataIntoAppropriateArraysAndSetState = () => {
     const arraysOfIntegersGraphData =
-      SplitJsonDataStringReturnArrayIntegers(jsonData);
+      SplitJsonDataStringReturnArrayIntegers(simReportData);
 
     var windDataValuesArray = arraysOfIntegersGraphData.wind_power_data_values;
 
@@ -260,7 +260,7 @@ function Results({ jsonData, models }) {
   };
 
   const checkForJsonDataBoolean = () => {
-    if (jsonData) {
+    if (simReportData) {
       console.log("Data found in result component");
 
       splitJsonDataIntoAppropriateArraysAndSetState();
@@ -271,8 +271,8 @@ function Results({ jsonData, models }) {
   };
 
   useEffect(() => {
-    console.log(jsonData);
-    console.log(jsonData);
+    console.log(simReportData);
+    console.log(simReportData);
 
     checkForJsonDataBoolean();
   }, []);
@@ -280,7 +280,7 @@ function Results({ jsonData, models }) {
   return (
     <section className="section-results">
       <div className="section-results_wrapper">
-        <SimulationReport jsonData={jsonData} models={models} />
+        <SimulationReport simReportData={simReportData} models={models} simRepoFieldData={simRepoFieldData}/>
 
         <br />
 
@@ -323,6 +323,6 @@ function Results({ jsonData, models }) {
 export default Results;
 
 Results.propTypes = {
-  jsonData: PropTypes.json,
+  simReportData: PropTypes.json,
   models: PropTypes.json,
 };

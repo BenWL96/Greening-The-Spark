@@ -1,23 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.709ff6ee.css",
-    "main.js": "/static/js/main.1776b793.js",
+    "main.css": "/static/css/main.1c33c4cd.css",
+    "main.js": "/static/js/main.32ffc8b5.js",
     "static/js/787.53d651ea.chunk.js": "/static/js/787.53d651ea.chunk.js",
-    "static/media/gts_temp_collage.jpg": "/static/media/gts_temp_collage.0e36beb1a10ca867b9e6.jpg",
+    "static/media/defaultPowerplant.glb": "/static/media/defaultPowerplant.d8a929745cc29e23f259.glb",
+    "static/media/economyspark_red.glb": "/static/media/economyspark_red.1a2d17524886d13fca67.glb",
+    "static/media/economyspark_red_2.glb": "/static/media/economyspark_red_2.1a2d17524886d13fca67.glb",
+    "static/media/economyspark_red_3.glb": "/static/media/economyspark_red_3.1a2d17524886d13fca67.glb",
+    "static/media/ecospark_red.glb": "/static/media/ecospark_red.1a2d17524886d13fca67.glb",
+    "static/media/ecospark_red_2.glb": "/static/media/ecospark_red_2.1a2d17524886d13fca67.glb",
+    "static/media/ecospark_red_3.glb": "/static/media/ecospark_red_3.1a2d17524886d13fca67.glb",
+    "static/media/efficiencyspark_red.glb": "/static/media/efficiencyspark_red.1a2d17524886d13fca67.glb",
+    "static/media/efficiencyspark_red_2.glb": "/static/media/efficiencyspark_red_2.1a2d17524886d13fca67.glb",
+    "static/media/efficiencyspark_red_3.glb": "/static/media/efficiencyspark_red_3.1a2d17524886d13fca67.glb",
     "static/media/landingPageImage.png": "/static/media/landingPageImage.fd5b2d614f8cbefb79b0.png",
     "static/media/gts_logo.png": "/static/media/gts_logo.aea77dddc27285f3afc8.png",
     "static/media/Black-X.png": "/static/media/Black-X.7fb94a48fdb2cce7362a.png",
     "static/media/questionmarkblue.png": "/static/media/questionmarkblue.7309116b03d6a664325f.png",
     "static/media/crinkled-paper.jpg": "/static/media/crinkled-paper.a449ede0e96ad40e9038.jpg",
-    "static/media/arrowRightBlock.png": "/static/media/arrowRightBlock.eaa5b77529fc07522979.png",
-    "static/media/homeIcon.png": "/static/media/homeIcon.6d019ee399824beb6477.png",
+    "static/media/defaultInfoIconSmooth.glb": "/static/media/defaultInfoIconSmooth.40cdaad00c91de5ef9c2.glb",
     "index.html": "/index.html",
-    "main.709ff6ee.css.map": "/static/css/main.709ff6ee.css.map",
-    "main.1776b793.js.map": "/static/js/main.1776b793.js.map",
+    "main.1c33c4cd.css.map": "/static/css/main.1c33c4cd.css.map",
+    "main.32ffc8b5.js.map": "/static/js/main.32ffc8b5.js.map",
     "787.53d651ea.chunk.js.map": "/static/js/787.53d651ea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.709ff6ee.css",
-    "static/js/main.1776b793.js"
+    "static/css/main.1c33c4cd.css",
+    "static/js/main.32ffc8b5.js"
   ]
 }

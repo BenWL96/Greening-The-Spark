@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 
 //This does not follow DRY
 
-export const PopoverDemand = (jsonData) => {
-  const infoDemand = jsonData[1].demand_info;
+export const PopoverDemand = (simRepoFieldData) => {
+  const infoDemand = simRepoFieldData.demand_info;
 
   return (
     <Popover id="popover_demand-basic" className="popover">
@@ -18,8 +18,8 @@ export const PopoverDemand = (jsonData) => {
   );
 };
 
-export const PopoverWind = (jsonData) => {
-  const infoWind = jsonData[1].wind_info;
+export const PopoverWind = (simRepoFieldData) => {
+  const infoWind = simRepoFieldData.wind_info;
 
   return (
     <Popover id="popover_wind-basic" className="popover">
@@ -31,8 +31,8 @@ export const PopoverWind = (jsonData) => {
   );
 };
 
-export const PopoverSolar = (jsonData) => {
-  const infoSolar = jsonData[1].solar_info;
+export const PopoverSolar = (simRepoFieldData) => {
+  const infoSolar = simRepoFieldData.solar_info;
 
   return (
     <Popover id="popover_solar-basic" className="popover">
@@ -44,8 +44,8 @@ export const PopoverSolar = (jsonData) => {
   );
 };
 
-export const PopoverFossilFuels = (jsonData) => {
-  const infoFossilFuels = jsonData[1].fossil_fuels_info;
+export const PopoverFossilFuels = (simRepoFieldData) => {
+  const infoFossilFuels = simRepoFieldData.fossil_fuels_info;
 
   return (
     <Popover id="popoverFossil_fuels-basic" className="popover">
@@ -57,8 +57,8 @@ export const PopoverFossilFuels = (jsonData) => {
   );
 };
 
-export const PopoverNuclear = (jsonData) => {
-  const infoNuclear = jsonData[1].nuclear_info;
+export const PopoverNuclear = (simRepoFieldData) => {
+  const infoNuclear = simRepoFieldData.nuclear_info;
 
   return (
     <Popover id="popover_nuclear-basic" className="popover">
@@ -70,8 +70,8 @@ export const PopoverNuclear = (jsonData) => {
   );
 };
 
-export const PopoverSurplus = (jsonData) => {
-  const infoSurplus = jsonData[1].surplus_info;
+export const PopoverSurplus = (simRepoFieldData) => {
+  const infoSurplus = simRepoFieldData.surplus_info;
 
   return (
     <Popover id="popover_surplus-basic" className="popover">
@@ -83,8 +83,8 @@ export const PopoverSurplus = (jsonData) => {
   );
 };
 
-export const PopoverShortfall = (jsonData) => {
-  const infoShortfall = jsonData[1].shortfall_info;
+export const PopoverShortfall = (simRepoFieldData) => {
+  const infoShortfall = simRepoFieldData.shortfall_info;
 
   return (
     <Popover id="popover_shortfall-basic" className="popover">
@@ -96,8 +96,8 @@ export const PopoverShortfall = (jsonData) => {
   );
 };
 
-export const PopoverInitialStored = (jsonData) => {
-  const infoInitialStored = jsonData[1].initial_stored_info;
+export const PopoverInitialStored = (simRepoFieldData) => {
+  const infoInitialStored = simRepoFieldData.initial_stored_info;
   return (
     <Popover id="popover_initial_stored-basic" className="popover">
       <Popover.Header>
@@ -108,8 +108,8 @@ export const PopoverInitialStored = (jsonData) => {
   );
 };
 
-export const PopoverFinalStored = (jsonData) => {
-  const infoFinalStored = jsonData[1].final_stored_info;
+export const PopoverFinalStored = (simRepoFieldData) => {
+  const infoFinalStored = simRepoFieldData.final_stored_info;
 
   return (
     <Popover id="popover_final_stored-basic" className="popover">
@@ -121,8 +121,8 @@ export const PopoverFinalStored = (jsonData) => {
   );
 };
 
-export const PopoverStorageDiscrepancy = (jsonData) => {
-  const infoStorageDiscrepancy = jsonData[1].storage_discrepancy_info;
+export const PopoverStorageDiscrepancy = (simRepoFieldData) => {
+  const infoStorageDiscrepancy = simRepoFieldData.storage_discrepancy_info;
 
   return (
     <Popover id="popover_storage_discrepancy-basic" className="popover">
@@ -134,8 +134,8 @@ export const PopoverStorageDiscrepancy = (jsonData) => {
   );
 };
 
-export const PopoverEfficiencyScore = (jsonData) => {
-  const infoEfficiencyScore = jsonData[1].efficiency_score_info;
+export const PopoverEfficiencyScore = (simRepoFieldData) => {
+  const infoEfficiencyScore = simRepoFieldData.efficiency_score_info;
 
   return (
     <Popover id="popover_efficiency_score-basic" className="popover">
@@ -147,8 +147,8 @@ export const PopoverEfficiencyScore = (jsonData) => {
   );
 };
 
-export const PopoverTotalCO2 = (jsonData) => {
-  const infoTotalCO2Tonnes = jsonData[1].total_CO2_tonnes_info;
+export const PopoverTotalCO2 = (simRepoFieldData) => {
+  const infoTotalCO2Tonnes = simRepoFieldData.total_CO2_tonnes_info;
 
   return (
     <Popover id="popover_total_CO2-basic" className="popover">
@@ -160,8 +160,8 @@ export const PopoverTotalCO2 = (jsonData) => {
   );
 };
 
-export const PopoverTotalCost = (jsonData) => {
-  const infoTotalCostMillionPounds = jsonData[1].total_cost_million_pounds_info;
+export const PopoverTotalCost = (simRepoFieldData) => {
+  const infoTotalCostMillionPounds = simRepoFieldData.total_cost_million_pounds_info;
 
   return (
     <Popover id="popover_total_cost-basic" className="popover">
@@ -173,9 +173,9 @@ export const PopoverTotalCost = (jsonData) => {
   );
 };
 
-export const PopoverAverageCost = (jsonData) => {
+export const PopoverAverageCost = (simRepoFieldData) => {
   const infoAverageCostMillionPerGWH =
-    jsonData[1].average_cost_million_pounds_per_gwh_info;
+  simRepoFieldData.average_cost_million_pounds_per_gwh_info;
 
   return (
     <Popover id="popover_average_cost-basic" className="popover">
@@ -187,8 +187,8 @@ export const PopoverAverageCost = (jsonData) => {
   );
 };
 
-export const PopoverAverageCO2 = (jsonData) => {
-  const infoAverageCO2 = jsonData[1].average_CO2_tonnes_per_gwh_info;
+export const PopoverAverageCO2 = (simRepoFieldData) => {
+  const infoAverageCO2 = simRepoFieldData.average_CO2_tonnes_per_gwh_info;
 
   return (
     <Popover id="popover_average_CO2-basic" className="popover">
@@ -203,61 +203,61 @@ export const PopoverAverageCO2 = (jsonData) => {
 };
 
 PopoverDemand.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverWind.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverSolar.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverNuclear.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverSurplus.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverShortfall.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverAverageCO2.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverEfficiencyScore.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverInitialStored.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverFinalStored.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverFossilFuels.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverTotalCost.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverAverageCost.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverTotalCO2.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };
 
 PopoverStorageDiscrepancy.propTypes = {
-  jsonData: PropTypes.json,
+  simRepoFieldData: PropTypes.json,
 };

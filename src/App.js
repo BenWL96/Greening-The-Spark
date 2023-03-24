@@ -21,10 +21,11 @@ const App = () => {
       {GTSLandingPageActivated ? (
         <LandingPage
           alterStateLandingPageActivated={alterStateLandingPageActivated}
-          Id="landingPage"
+          id="landingPage"
         />
       ) : (
-        <GtsApp />
+        <GtsApp 
+        />
       )}
     </>
   );

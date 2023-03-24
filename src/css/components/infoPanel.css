@@ -2,18 +2,21 @@
 
 .info-panel {
   z-index: 50;
-  background-color: rgb(248, 248, 248);
+  background-color: #fafafa;
   height: 100vh;
   position: fixed;
 }
 
 .info-panel_title-section {
-  height: 18vh;
+  height: 12vh;
+}
+
+.info-panel-bottom{
+  height: 12vh;
 }
 
 .info-panel_title {
   text-align: left;
-  font-size: 60px;
   font-weight: 700;
   text-decoration: underline;
   margin-left: 10vw;
@@ -23,22 +26,24 @@
 .info-panel_desktop-body {
   z-index: 50;
   background-color: rgb(178, 234, 195);
-  height: 78vh;
+  height: 76vh;
   position: fixed;
   border-radius: 25px !important;
   width: 90vw;
   margin-left: 5vw;
+  box-shadow: #282828 1px 0px 4px;
 }
 
 .info-panel_phone-body {
   z-index: 50;
   background-color: rgb(0, 0, 0);
-  height: 78vh;
+  height: 76vh;
   position: fixed;
   overflow: scroll;
   width: 90vw;
   margin-left: 5vw;
   border-radius: 25px;
+  box-shadow: #282828 1px 0px 4px;
 }
 
 /* Accordion CSS */
@@ -61,8 +66,6 @@
 }
 
 .info-panel_exit-button {
-  width: 40px;
-  height: 40px;
   border-style: solid;
   border-width: 1px;
   border-color: black;
@@ -146,7 +149,8 @@
   background-color: black;
 }
 
-@media (max-width: 1400px) {
+.info-panel_title {
+  font-size: 50px;
 }
 
 .info-panel_desktop-body {
@@ -159,6 +163,17 @@
 }
 
 @media (min-width: 768px) {
+
+  .info-panel_exit-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .info-panel_title {
+    font-size: 50px;
+  }
+
+
   .info-panel_desktop-body {
     display: block;
   }
@@ -168,6 +183,16 @@
 }
 
 @media (max-width: 768px) {
+
+  .info-panel_exit-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .info-panel_title {
+    font-size: 35px;
+  }
+
   .info-panel_desktop-body {
     display: none;
   }

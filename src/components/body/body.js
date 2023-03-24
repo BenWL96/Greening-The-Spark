@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Results from "../results/results";
 import "../../css/components/body.css";
-import Api from "../../helper/api.js";
+import SimReportDetailApiFetch from "../../helper/simReportDetailApiFetch.js";
+import SimReportFieldInfoApiFetch from "../../helper/simReportFieldInfoApiFetch.js";
 import LoadingPage from "../loadingPage/loadingPage.js";
 import PowerPlantModel from "../powerPlantModel/powerPlantModel";
 import Form from "../form/form";
@@ -12,10 +13,11 @@ function Body({ models }) {
   {
     /* Json Data State */
   }
-  const [jsonData, setJsonData] = useState(null);
+  const [simReportData, setSimReportData] = useState(null);
   const [dataExists, setDataExists] = useState(false);
   const [dataBeingFetchedAndPageLoading, setDataBeingFetchedAndPageLoading] =
     useState(false);
+  const [simRepoFieldData, setSimRepoFieldData] = useState(null);
 
   {
     /* User Input State */
@@ -36,11 +38,11 @@ function Body({ models }) {
     //Json doesn't exist and loading
     //Json doesn't exist and not loading.
 
-    if (jsonData) {
+    if (simReportData) {
       console.log("Localstorage data found on page loading using useEffect");
       setDataBeingFetchedAndPageLoading(false);
       setDataExists(true);
-    } else if (!jsonData & (dataBeingFetchedAndPageLoading === true)) {
+    } else if (!simReportData & (dataBeingFetchedAndPageLoading === true)) {
       console.log("Data non existent in useEffect");
       setDataExists(false);
     } else {
@@ -49,28 +51,42 @@ function Body({ models }) {
     }
   }, [dataBeingFetchedAndPageLoading]);
 
+
+
   let handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
     setDataBeingFetchedAndPageLoading(true);
 
-    const json = await Api(inputGameId);
+    const simReportResponse = await SimReportDetailApiFetch(inputGameId);
 
-    if (json !== 500 && json !== 404) {
+    if (simReportResponse !== 500 && simReportResponse !== 404) {
       //Remove the input box, display the loading logic.
+      
+      const fieldDataResponse = await SimReportFieldInfoApiFetch();
+
+      if (fieldDataResponse !== 500 && simReportResponse !== 404) {
+        // Set state fieldDataResponse variable.
+        setSimRepoFieldData(fieldDataResponse);
+      } else if (fieldDataResponse === 500) {
+        console.log("fieldDataResponse 500 error");
+      } else if (fieldDataResponse === 404) {
+        setDataBeingFetchedAndPageLoading(false);
+        console.log("404 error. fieldDataResponse could not be found");
+      }
 
       setDataBeingFetchedAndPageLoading(false);
-      setJsonData(json);
+      setSimReportData(simReportResponse);
       setSuccessMessage(
         "Data from the game with ID: " +
           inputGameId +
           " was successfully fetched."
       );
-    } else if (json === 500) {
+    } else if (simReportResponse === 500) {
       setDataBeingFetchedAndPageLoading(false);
       console.log("An error occurred");
       setMessage("Fetch request failed: 500 error");
-    } else if (json === 404) {
+    } else if (simReportResponse === 404) {
       setDataBeingFetchedAndPageLoading(false);
       console.log("404 error.");
       setMessage(
@@ -82,15 +98,15 @@ function Body({ models }) {
   };
 
   const displayDataOrNothing = () => {
-    if (jsonData) {
-      return <Results jsonData={jsonData} models={models} />;
+    if (simReportData) {
+      return <Results simReportData={simReportData} models={models} simRepoFieldData={simRepoFieldData}/>;
     } else {
       return <></>;
     }
   };
 
   const backButtonClickedUpdateState = () => {
-    setJsonData(null);
+    setSimReportData(null);
     setDataExists(null);
     setSuccessMessage("");
   };
@@ -116,23 +132,36 @@ function Body({ models }) {
       )}
 
       {dataExists & !dataBeingFetchedAndPageLoading ? (
-        //If json data doesn't exists and the page is loading
+        //If simReportResponse data doesn't exists and the page is loading
         //Display the back button.
 
         <BackButton
           backButtonClickedUpdateState={backButtonClickedUpdateState}
         />
       ) : (
-        //If json data doesn't exists and the page isn't loading
-        //Display the body of 70vh.
+        //If simReportResponse data doesn't exists and the page isn't loading
+        //Display the body of 76vh.
 
         <section className="section-body">
           <div className="section-body_wrapper">
+
+          {/* Model should either be json is status code 200 or int if 404 or 500 */}
+
+          {typeof models != 'number' ? (
+            <PowerPlantModel
+            loadingScreenState={loadingScreenState}
+            models={models}
+          />
+          ) : (
+
+            /* Replace this with a default model*/
             <PowerPlantModel
               loadingScreenState={loadingScreenState}
               models={models}
             />
 
+          )}
+            
             <Form
               handleSubmit={handleSubmit}
               message={message}
@@ -152,8 +181,10 @@ function Body({ models }) {
 
 export default Body;
 
-/*Body.propTypes = {
-  //Length 11 required.
-  models: PropTypes.json.isRequired
-  
-};*/
+Body.propTypes = {
+
+  models: PropTypes.oneOfType([
+    PropTypes.json,
+    PropTypes.number
+  ]),
+};

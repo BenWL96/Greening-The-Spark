@@ -34,25 +34,22 @@ function GtsApp() {
     if (doesInfoPanelDataExistBoolean === true) {
       const data = await infoPanelApiFetch();
 
-      assignInfoPanelDataToLocalStorage(data);
+      if (typeof data != 'number' ){
+        //Do not set the error code to local storage...
+
+        assignInfoPanelDataToLocalStorage(data);
+      }
 
       const models = await ThreeModelsApiFetch();
-      if (models.length === 11) {
-        setModels(models);
-      } else {
-        setModels({});
-      }
+      
+      setModels(models);
     } else {
       //useEffect only runs on page load, so set state to local storage.
 
       setInfoPanelData(JSON.parse(localStorage.getItem("info_tab_data")));
 
       const models = await ThreeModelsApiFetch();
-      if (models.length === 11) {
-        setModels(models);
-      } else {
-        setModels({});
-      }
+      setModels(models);
 
       console.log(
         "info panel data in localstorage now passed to state hooksetInfoPanelData"
@@ -66,7 +63,7 @@ function GtsApp() {
 
   return (
     <>
-      <Header infoPanelData={infoPanelData} models={models} />
+      <Header infoPanelData={infoPanelData} models={models} dataIsSetTrigger={assignInfoPanelDataToLocalStorage} />
 
       <Body models={models} />
 

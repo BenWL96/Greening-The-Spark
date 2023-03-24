@@ -1,6 +1,6 @@
 import React, { render, screen, fireEvent } from "@testing-library/react";
 import Header from "../header/header";
-import InfoAnimation from "../infoAnimation";
+import InfoIconModel from "../infoIconModel/infoIconModel.js";
 
 import "@testing-library/jest-dom/extend-expect";
 

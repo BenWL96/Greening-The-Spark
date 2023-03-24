@@ -8,9 +8,6 @@
   background-size: 2000px 1000px;
   border-radius: 5px;
   background-position: top;
-  outline: solid;
-  outline-color: green;
-  outline-width: 1px;
   overflow: scroll;
 }
 
@@ -21,11 +18,13 @@
   opacity: 75% !important;
 }
 
+
 @media (min-width: 800px) {
   .graph-wrapper_child {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: #282828 1px 0px 4px;
   }
   .graphs {
     width: 800px;
@@ -43,10 +42,13 @@
   .graph-wrapper_parent {
     width: 100%;
     overflow: scroll;
+    box-shadow: #282828 1px 0px 4px;
+    
   }
 
   .graph-wrapper_child {
     width: 800px;
+    
   }
 
   .graphs {

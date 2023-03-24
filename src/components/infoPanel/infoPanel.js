@@ -116,7 +116,7 @@ function InfoPanel({ changeStatePanelActivated, infoPanelData }) {
               md={3}
               style={{
                 backgroundColor: "black",
-                height: "78vh",
+                height: "76vh",
                 overflow: "scroll",
                 borderRadius: "25px",
               }}
@@ -130,7 +130,7 @@ function InfoPanel({ changeStatePanelActivated, infoPanelData }) {
               md={9}
               className="desktop-body_column2"
               style={{
-                height: "78vh",
+                height: "76vh",
                 overflow: "scroll",
                 position: "top",
                 borderRadius: "25px",
@@ -148,6 +148,9 @@ function InfoPanel({ changeStatePanelActivated, infoPanelData }) {
 
       <div className="info-panel_phone-body">
         <Accordion>{mapAccordionItems(infoPanelData)}</Accordion>
+      </div>
+
+      <div className="info-panel-bottom">
       </div>
     </div>
   );

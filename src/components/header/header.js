@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/components/header.css";
 import Logo from "../../images/gts_logo.png";
 import InfoPanel from "../infoPanel/infoPanel";
@@ -8,7 +8,7 @@ import InfoPanelScrollingLogic from "./infoPanelScrollingLogic";
 import EnableDisableInfoPanel from "./enableDisableInfoPanel";
 import PropTypes from "prop-types";
 
-function Header({ infoPanelData, models }) {
+function Header({ infoPanelData, models, dataIsSetTrigger}) {
   const [infoPanelActivated, setInfoPanelActivated] = useState(false);
 
   const infoPanelScrollingLogicController = () => {
@@ -24,6 +24,10 @@ function Header({ infoPanelData, models }) {
 
     infoPanelScrollingLogicController();
   };
+
+  useEffect(() => {
+    EnableDisableInfoPanel();
+  }, [dataIsSetTrigger]);
 
   return (
     <div>
@@ -45,6 +49,7 @@ function Header({ infoPanelData, models }) {
                 target="_blank"
                 data-testid="section_header_logo"
                 src={Logo}
+                alt="gts-logo"
               />
             </div>
             <div className="ms-auto"></div>
@@ -67,6 +72,15 @@ export default Header;
 /* json proptype returning undfined */
 
 Header.propTypes = {
-  infoPanelData: PropTypes.json,
-  models: PropTypes.json,
+
+  infoPanelData: PropTypes.oneOfType([
+    PropTypes.json,
+    PropTypes.number
+  ]),
+  models: PropTypes.oneOfType([
+    PropTypes.json,
+    PropTypes.number
+  ]),
+
+  dataIsSetTrigger: PropTypes.func.isRequired
 };

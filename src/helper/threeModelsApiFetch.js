@@ -15,11 +15,13 @@ const ThreeModelsApiFetch = async () => {
       return data;
     } else {
       console.log("Sorry but the fetch failed");
-      return;
+      const data = 404;
+      return data;
     }
   } catch (err) {
     console.log(err);
-    return;
+    const data = 500;
+    return data;
   }
 };
 

@@ -14,6 +14,16 @@ import Col from "react-bootstrap/Col";
 
 import Stack from "react-bootstrap/Stack";
 
+import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economyspark_red.glb";
+import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economyspark_red_2.glb";
+import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economyspark_red_3.glb";
+import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecospark_red.glb";
+import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecospark_red_2.glb";
+import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecospark_red_3.glb";
+import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencyspark_red.glb";
+import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencyspark_red_2.glb";
+import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencyspark_red_3.glb";
+
 import {
   PopoverDemand,
   PopoverWind,
@@ -32,12 +42,11 @@ import {
   PopoverAverageCO2,
 } from "../popovers/popover.js";
 
-function SimulationReport({ jsonData, models }) {
-  console.log("jsonData Data Is Being Passed To Simulation Report.");
-  console.log(jsonData);
+function SimulationReport({ simReportData, models, simRepoFieldData }) {
+  console.log("simReportData Data Is Being Passed To Simulation Report.");
+  console.log(simReportData);
 
-  if (jsonData) {
-    const simReportData = jsonData[0];
+  if (simReportData) {
     //change simReportData into a variable
 
     var gameID = simReportData.game_id;
@@ -80,34 +89,66 @@ function SimulationReport({ jsonData, models }) {
     var ecoFriendlinessSpark = simReportData.eco_friendliness_spark;
 
     //Here filter models, and pass them into three dimensional model components
-    var efficiencySparkModel;
-    var ecoSparkModel;
-    var economySparkModel;
+    var EconomySparkModel;
+    var EcoSparkModel;
+    var EfficiencySparkModel;
+    
 
-    if (model.lenth == 11) {
-      if (efficiencySpark == "red") {
-        efficiencySparkModel = "";
-      } else if (efficiencySpark == "blue") {
-        efficiencySparkModel = "";
-      } else if (efficiencySpark == "green") {
-        efficiencySparkModel = "";
-      }
+    if (models.length == 11) {
 
       if (economySpark == "red") {
-        economySparkModel = "";
+        EconomySparkModel = models[0].model_url;
       } else if (economySpark == "blue") {
-        economySparkModel = "";
+        EconomySparkModel = models[1].model_url;
       } else if (economySpark == "green") {
-        economySparkModel = "";
+        EconomySparkModel = models[2].model_url;
       }
 
-      if (ecoSpark == "red") {
-        ecoSparkModel = "";
-      } else if (ecoSpark == "blue") {
-        ecoSparkModel = "";
-      } else if (ecoSpark == "green") {
-        ecoSparkModel = "";
+      if (ecoFriendlinessSpark == "red") {
+        EcoSparkModel = models[3].model_url;
+      } else if (ecoFriendlinessSpark == "blue") {
+        EcoSparkModel = models[4].model_url;
+      } else if (ecoFriendlinessSpark == "green") {
+        EcoSparkModel = models[5].model_url;
       }
+
+      if (efficiencySpark == "red") {
+        EfficiencySparkModel = models[6].model_url;
+      } else if (efficiencySpark == "blue") {
+        EfficiencySparkModel = models[7].model_url;
+      } else if (efficiencySpark == "green") {
+        EfficiencySparkModel = models[8].model_url;
+      }
+
+    } else {
+
+      //here pass all the default models to the compone
+
+      if (economySpark == "red") {
+        EconomySparkModel = DefaultEconomySparkRed;
+      } else if (economySpark == "blue") {
+        EconomySparkModel = DefaultEconomySparkBlue;
+      } else if (economySpark == "green") {
+        EconomySparkModel = DefaultEconomySparkGreen;
+      }
+
+      if (ecoFriendlinessSpark == "red") {
+        EcoSparkModel = DefaultEcoSparkRed;
+      } else if (ecoFriendlinessSpark == "blue") {
+        EcoSparkModel = DefaultEcoSparkBlue;
+      } else if (ecoFriendlinessSpark == "green") {
+        EcoSparkModel = DefaultEcoSparkGreen;
+      }
+
+      if (efficiencySpark == "red") {
+        EfficiencySparkModel = DefaultEfficiencySparkRed;
+      } else if (efficiencySpark == "blue") {
+        EfficiencySparkModel = DefaultEfficiencySparkBlue;
+      } else if (efficiencySpark == "green") {
+        EfficiencySparkModel = DefaultEfficiencySparkGreen;
+      }
+
+
     }
 
     console.log("Json data has been assigned to variables.");
@@ -117,10 +158,10 @@ function SimulationReport({ jsonData, models }) {
 
   return (
     <div>
-      <br />
+
       <section className="simreport">
         <div className="simreport_wrapper">
-          <br />
+     
 
           <p className="simreport_title">Simulation Report #{gameID}</p>
           <p className="simreport_sub-title">
@@ -128,10 +169,10 @@ function SimulationReport({ jsonData, models }) {
             {datePlayed} &nbsp; &nbsp; &nbsp; {timePlayed}{" "}
           </p>
 
-          <br />
+
 
           <div className="simreport_table1">
-            <Row className="table1_row">
+            <Row className="table1_row1">
               <Col className="table1_col1-text" xs={6} sm={4} md={4} lg={4}>
                 Difficulty
               </Col>
@@ -139,36 +180,32 @@ function SimulationReport({ jsonData, models }) {
                 {difficulty}
               </Col>
             </Row>
-            <br />
-            <br />
-            <br />
-            <Row className="table1_row">
+     
+            <Row className="table1_row2">
               <Col className="table1_col1-text" xs={12} sm={3} md={3} lg={3}>
                 Sparks Earned:
               </Col>
-              <Col xs={12} sm={3} md={3} lg={3}>
-                <EfficiencySpark models={models} />
+              
+              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
+                <EconomySpark model={EconomySparkModel} />
 
-                {/*{efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }*/}
+                {/*{economySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEconomy} /> : economySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEconomy} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEconomy} /> }*/}
               </Col>
-              <Col xs={12} sm={3} md={3} lg={3}>
-                <EcoSpark models={models} />
+              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
+                <EcoSpark model={EcoSparkModel} />
 
                 {/*{ecoFriendlinessSpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEcoFriendliness} /> : ecoFriendlinessSpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEcoFriendliness} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEcoFriendliness} /> }*/}
               </Col>
-              <Col xs={12} sm={3} md={3} lg={3}>
-                <EconomySpark models={models} />
+              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
+                <EfficiencySpark model={EfficiencySparkModel} />
 
-                {/*{economySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEconomy} /> : economySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEconomy} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEconomy} /> }*/}
+                {/*{efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }*/}
               </Col>
             </Row>
           </div>
 
-          <br />
-          <br />
-
+   
           <p className="table2_title">Results Summary</p>
-          <br />
 
           <div className="table2">
             <Row className="table2_row">
@@ -194,7 +231,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverDemand(jsonData)}
+                    overlay={PopoverDemand(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -218,7 +255,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverWind(jsonData)}
+                    overlay={PopoverWind(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -240,7 +277,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverSolar(jsonData)}
+                    overlay={PopoverSolar(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -265,7 +302,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverFossilFuels(jsonData)}
+                    overlay={PopoverFossilFuels(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -292,7 +329,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverNuclear(jsonData)}
+                    overlay={PopoverNuclear(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -317,7 +354,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverSurplus(jsonData)}
+                    overlay={PopoverSurplus(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -342,7 +379,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverShortfall(jsonData)}
+                    overlay={PopoverShortfall(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -367,7 +404,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverInitialStored(jsonData)}
+                    overlay={PopoverInitialStored(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -391,7 +428,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverFinalStored(jsonData)}
+                    overlay={PopoverFinalStored(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -416,7 +453,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverStorageDiscrepancy(jsonData)}
+                    overlay={PopoverStorageDiscrepancy(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -444,7 +481,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverEfficiencyScore(jsonData)}
+                    overlay={PopoverEfficiencyScore(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -471,7 +508,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverTotalCO2(jsonData)}
+                    overlay={PopoverTotalCO2(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -493,7 +530,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverTotalCost(jsonData)}
+                    overlay={PopoverTotalCost(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -517,7 +554,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverAverageCost(jsonData)}
+                    overlay={PopoverAverageCost(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -543,7 +580,7 @@ function SimulationReport({ jsonData, models }) {
                   <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverAverageCO2(jsonData)}
+                    overlay={PopoverAverageCO2(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -564,8 +601,6 @@ function SimulationReport({ jsonData, models }) {
               </Stack>
             </Row>
           </div>
-          <br />
-          <br />
         </div>
       </section>
     </div>

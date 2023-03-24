@@ -68,6 +68,10 @@
     font-size: 25px;
     text-align: left;
   }
+
+  .table_1_sparkcol{
+    height: 100% !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -100,13 +104,26 @@
     font-size: 18px;
     text-align: center;
   }
+
+  .table_1_sparkcol{
+    height: 220px !important;
+    margin-top: -30px !important;
+  }
 }
 
 .table1_col1-text {
   font-weight: 600;
-  font-size: 25px;
   opacity: 85%;
 }
+
+.table1_col2-text {
+  font-weight: 300;
+  text-align: left;
+  opacity: 85%;
+  font-style: italic;
+  text-decoration: underline;
+}
+
 
 .table2_row-text {
   font-weight: 300;
@@ -120,13 +137,27 @@
   font-style: italic;
 }
 
-.table1_col2-text {
-  font-weight: 300;
-  text-align: left;
-  opacity: 85%;
-  font-size: 25px;
-  font-style: italic;
-  text-decoration: underline;
+
+
+@media(min-width: 600px){
+  .table1_col1-text {
+    font-size: 25px;
+  }
+  
+  .table1_col2-text {
+    font-size: 25px;
+  }
+  
+}
+
+@media(max-width: 600px){
+  .table1_col1-text {
+    font-size: 20px;
+  }
+  
+  .table1_col2-text {
+    font-size: 20px;
+  }
 }
 
 .section_simrepo_wrapper_table_2_wrapper_row_comment {
@@ -164,7 +195,7 @@
     margin-left: 75px;
   }
 
-  .table1_row {
+  .table1_row2 {
     width: 700px;
   }
 
@@ -176,7 +207,7 @@
 @media (max-width: 800px) {
   .simreport_title {
     margin-left: 10px;
-    padding-top: 20px;
+    padding-top: 0px;
   }
 
   .simreport_sub-title {
@@ -200,7 +231,7 @@
     margin-left: 10px;
   }
 
-  .table1_row {
+  .table1_row2 {
     width: 90vw;
   }
 
@@ -216,23 +247,37 @@
 
 @media (min-width: 600px) {
   .table2_row {
-    height: 110px;
+    height: 80px;
     width: 600px;
   }
+
+  .table1_row1 {
+    width: 700px;
+    height: 70px !important;
+  }
+
 }
 
 @media (max-width: 600px) {
   .table2_row {
     width: 100%;
-    height: 75px;
+    height: 60px;
   }
+
+  .table1_row1 {
+    width: 90vw;
+    height: 40px !important;
+  }
+}
+
+.simreport{
+  margin-top: 10px;
 }
 
 .simreport_wrapper {
   border-radius: 5px;
-  outline: solid;
-  outline-color: green;
-  outline-width: 1px;
+  background-position: top;
+  box-shadow: #282828 1px 0px 4px;
   background-repeat: repeat;
   background-image: url("../../images/crinkled-paper.jpg");
   background-size: 800px;
@@ -245,13 +290,19 @@
     margin-left: auto;
     margin-right: auto;
   }
+
 }
+
 
 @media (max-width: 800px) {
   .simreport_wrapper {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .table2_title{
+    margin-top: 20px;
   }
 }
 
@@ -263,6 +314,9 @@
   opacity: 85%;
 }
 
+
+
+
 .section_simrepo_wrapper_table_subtitle {
   font-size: 20px;
   text-align: left;
@@ -272,13 +326,26 @@
 }
 
 .simreport_title {
-  font-size: 40px;
   text-align: left;
   font-weight: 700;
   color: black;
-  padding-top: 20px;
   opacity: 85%;
 }
+
+@media(min-width: 600px){
+  .simreport_title{
+    font-size: 40px;
+  }
+}
+
+
+
+@media(max-width: 600px){
+  .simreport_title{
+    font-size: 25px;
+  }
+}
+
 
 .simreport_sub-title {
   text-align: left;

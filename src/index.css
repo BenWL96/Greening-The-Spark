@@ -15,17 +15,20 @@ code {
 @media (min-width: 1050px) {
   .app_wrapper {
     background-repeat: no-repeat;
-    background-image: url("./images/gts_temp_collage.jpg");
+    /*background-image: url("./images/gts_temp_collage.jpg");*/
     background-size: 100vw;
     background-attachment: fixed;
+    background: rgb(221,218,217);
+    background: linear-gradient(90deg, rgba(221,218,217,1) 61%, rgba(203,203,203,1) 100%);
   }
 }
 
 @media (max-width: 1050px) {
   .app_wrapper {
     background-repeat: no-repeat;
-    background-image: url("./images/gts_temp_collage.jpg");
+    /*background-image: url("./images/gts_temp_collage.jpg");*/
     background-size: 1050px;
-    background-attachment: fixed;
+    background: rgb(221,218,217);
+    background: linear-gradient(90deg, rgba(221,218,217,1) 61%, rgba(203,203,203,1) 100%);  
   }
 }

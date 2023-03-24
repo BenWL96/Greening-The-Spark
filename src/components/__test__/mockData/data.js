@@ -48,3 +48,17 @@ export const workingData = {
   grid_surplus_data_values:
     "54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61 54 41 24 15 61",
 };
+
+export const models = {
+  model_1: "Url",
+  model_2: "Url",
+  model_3: "Url",
+  model_4: "Url",
+  model_5: "Url",
+  model_6: "Url",
+  model_7: "Url",
+  model_8: "Url",
+  model_9: "Url",
+  model_10: "Url",
+  model_11: "Url",
+}
