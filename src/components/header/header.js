@@ -17,8 +17,12 @@ function Header({ infoPanelData, models, dataIsSetTrigger}) {
 
   const changeStatePanelActivated = () => {
     if (infoPanelActivated == false) {
+      console.log("info panel has been activated");
+      console.log("so change state to true");
       setInfoPanelActivated(true);
     } else {
+      console.log("info panel has been activated");
+      console.log("so change state to false");
       setInfoPanelActivated(false);
     }
 
@@ -26,6 +30,7 @@ function Header({ infoPanelData, models, dataIsSetTrigger}) {
   };
 
   useEffect(() => {
+    console.log("EnableDisableInfoPanel triggered");
     EnableDisableInfoPanel();
   }, [dataIsSetTrigger]);
 

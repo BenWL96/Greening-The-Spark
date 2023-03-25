@@ -1,5 +1,7 @@
 import React from "react";
 import "../../css/components/backButton.css";
+import PropTypes from "prop-types";
+
 
 function BackButton({ backButtonClickedUpdateState }) {
   return (
@@ -16,3 +18,8 @@ function BackButton({ backButtonClickedUpdateState }) {
 }
 
 export default BackButton;
+
+BackButton.propTypes = {
+
+  backButtonClickedUpdateState: PropTypes.func.isRequired
+};

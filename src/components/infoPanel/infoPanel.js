@@ -9,6 +9,7 @@ import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
 import Stack from "react-bootstrap/Stack";
 
+
 import Accordion from "react-bootstrap/Accordion";
 import PropTypes from "prop-types";
 
@@ -88,28 +89,21 @@ function InfoPanel({ changeStatePanelActivated, infoPanelData }) {
   return (
     <div className="info-panel" data-testid="info_wrapper">
       <div className="info-panel_title-section">
-        <Stack direction="horizontal" gap={3}>
-          <div>
-            <p className="info-panel_title">Info</p>
-          </div>
-
-          <div className="ms-auto"></div>
-          <div>
-            <img
-              className="info-panel_exit-button"
-              data-testid="info_wrapper_exit_img"
-              src={X}
-              onClick={changeStatePanelActivated}
-            />
-          </div>
-        </Stack>
-
-        <br />
+           <img
+                className="info-panel_exit-button"
+                data-testid="info_wrapper_exit_img"
+                src={X}
+                onClick={changeStatePanelActivated}
+              />
+           
       </div>
 
       {/* Split these into two separate componenets ?? */}
 
       <div className="info-panel_desktop-body">
+
+      
+
         <Tab.Container id="left-tabs-example" defaultActiveKey={firstInfoPanel}>
           <Row>
             <Col

@@ -94,7 +94,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
     var EfficiencySparkModel;
     
 
-    if (models.length == 11) {
+    if (typeof data != 'number' ) {
 
       if (economySpark == "red") {
         EconomySparkModel = models[0].model_url;
