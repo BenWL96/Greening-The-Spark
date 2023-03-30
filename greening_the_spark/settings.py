@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY", default='')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['greening-the-spark.herokuapp.com']
 
