@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three-stdlib';
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 
-/*function EconomySpark({ model }) {
+function EconomySpark({ model }) {
   
   function EconomySparkScene() {
     const propellerMesh = useRef();
@@ -36,7 +36,10 @@ import { useGLTF, useAnimations } from '@react-three/drei'
   );
 }
 
-export default EconomySpark;*/
+export default EconomySpark;
+
+
+/* THE ANIMATED MODEL
 
 
 function EconomySpark({ model }) {
@@ -73,19 +76,6 @@ function EconomySpark({ model }) {
   return <primitive object={scene} ref={propellerMesh}/>
 
 
-    /*const propellerMesh = useRef();
-    useFrame(({ clock }) => {
-      //propellerMesh.current.rotation.x = clock.getElapsedTime();
-      propellerMesh.current.rotation.y = clock.getElapsedTime();
-    });
-
-    const gltf = useLoader(
-      GLTFLoader,
-      model
-    ); 
-
-    return <primitive object={gltf.scene} ref={propellerMesh} />;
-  }*/
 }
 
   return (
@@ -101,5 +91,5 @@ function EconomySpark({ model }) {
   );
 }
 
-export default EconomySpark;
+export default EconomySpark;*/
 

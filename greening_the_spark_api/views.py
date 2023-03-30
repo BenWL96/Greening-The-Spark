@@ -45,13 +45,6 @@ def Simulation_Reports_LIST(request):
 @api_view(['GET'])
 def Simulation_Reports_DETAIL(request, game_id):
 
-    """
-    #type check game_id
-    #perhaps unnecessary.
-    if utils.game_id_type_checker(game_id) == False:
-        content = {'msg': 'parameter type incorrect, ensure an integer.'}
-        return Response(content, status=status.HTTP_400_NOT_FOUND)
-    """
     try:
         simulation_report_object = get_object_or_404(
             models.Simulation_Report,
