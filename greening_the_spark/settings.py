@@ -80,9 +80,7 @@ WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 
 
 DATABASES['default'] = dj_database_url.config(
-    default=config("JAWSDB_URL", default=''),
-    conn_max_age=600,
-    conn_health_checks=True,
+    default=config("JAWSDB_URL", default='')
 )
 
 """DATABASES = {
