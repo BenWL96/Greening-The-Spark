@@ -1,4 +1,4 @@
-import os
+import os, dj_database_url
 from pathlib import Path
 
 from decouple import config
