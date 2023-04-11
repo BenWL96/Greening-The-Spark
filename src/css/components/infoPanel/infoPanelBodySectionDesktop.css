@@ -1,0 +1,56 @@
+.info-panel_desktop-body {
+    width: 90vw;
+    margin-left: 5vw;
+  }
+  
+@media (min-width: 768px) {
+  
+    .info-panel_desktop-body {
+        display: block;
+    }
+
+}
+  
+@media (max-width: 768px) {
+  
+    .info-panel_desktop-body {
+        display: none;
+    }
+}
+
+
+.desktop-body_column2 {
+    background-color: rgb(178, 234, 195);
+    box-shadow: #282828 0px 1px 4px;
+  }
+.desktop-body_column1{
+  box-shadow: #282828 0px 1px 4px;
+}
+
+  
+.desktop-body_column1_panel-text {
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    text-align: left;
+    font-size: 20px;
+  }
+
+
+.desktop-body_column2_panel-title {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+    width: 90%;
+    color: black;
+}
+
+.desktop-body_column2_panel-text {
+    width: 90%;
+    text-align: left;
+    margin-left: 20px;
+    font-weight: 200;
+    font-size: 22px;
+  }
+

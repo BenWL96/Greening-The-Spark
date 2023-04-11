@@ -28,7 +28,7 @@ function EconomySpark({ model }) {
     
         <>
           <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
-            <directionalLight position={[0, 0, 5]} />
+            <ambientLight intensity={3}/>
             <EconomySparkScene />
           </Canvas>
         </>
@@ -39,10 +39,10 @@ function EconomySpark({ model }) {
 export default EconomySpark;
 
 
-/* THE ANIMATED MODEL
+/* THE ANIMATED MODEL */
 
 
-function EconomySpark({ model }) {
+/*function EconomySpark({ model }) {
   
   function EconomySparkScene() {
 
@@ -77,13 +77,13 @@ function EconomySpark({ model }) {
 
 
 }
-
   return (
     <div className="section_simrepo_wrapper_spark">
     
         <>
           <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
-            <directionalLight position={[0, 0, 5]} />
+            <ambientLight intensity={3}/>
+        
             <EconomySparkScene />
           </Canvas>
         </>

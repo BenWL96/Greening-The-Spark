@@ -146,15 +146,17 @@ function Body({ models }) {
           <div className="section-body_wrapper">
 
           {/* Model should either be json is status code 200 or int if 404 or 500 */}
-
-          {typeof models != 'number' ? (
+          
+          {/*
+          
+          { typeof models != 'number' ? (
             <PowerPlantModel
             loadingScreenState={loadingScreenState}
             models={models}
           />
           ) : (
 
-            /* Replace this with a default model*/
+            
             <PowerPlantModel
               loadingScreenState={loadingScreenState}
               models={models}
@@ -162,6 +164,9 @@ function Body({ models }) {
 
           )}
             
+          */}
+
+
             <Form
               handleSubmit={handleSubmit}
               message={message}

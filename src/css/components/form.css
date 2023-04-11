@@ -3,9 +3,33 @@
   background-image: url("../../images/crinkled-paper.jpg");
   margin-left: auto;
   margin-right: auto;
-  height: 83vh;
-  background-size: 100vw;
+  height: 76vh;
   width: 100vw;
+}
+
+
+.form-wrapper-child{
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+}
+
+
+@media(min-width: 500px){
+
+  .form-wrapper-child{
+    width: 90%;
+  }
+
+  .form-wrapper {
+    background-size: 100vw;
+  }
+}
+
+@media(max-width: 500px){
+  .form-wrapper {
+    background-size: 500px;
+  }
 }
 
 .form-wrapper_text-prompt {
@@ -25,7 +49,7 @@
   margin-bottom: 10px;
   margin-left: 10px;
   opacity: 85%;
-  box-shadow: #282828 1px 0px 4px;
+  box-shadow: #282828 0px 1px 4px;
   border-radius: 5px;
 }
 
@@ -142,7 +166,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   opacity: 85%;
-  box-shadow: #282828 1px 0px 4px;
+  box-shadow: #282828 0px 1px 4px;
   border-radius: 5px;
 }
 

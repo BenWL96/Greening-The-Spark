@@ -69,6 +69,7 @@ function LandingPage({ alterStateLandingPageActivated }) {
             <motion.img
               className="landing-page_img"
               alt="landing-Page-img"
+              onClick={alterStateLandingPageActivated}
               src={LandingPageImage}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -143,9 +144,11 @@ function LandingPage({ alterStateLandingPageActivated }) {
             lg={12}
             className="landing-page_col"
           >
+            <a class="more-info-anchor" href="https://www.cornucopia.co.uk/gts/" target="_blank" rel="noopener noreferrer">
             <div className="coloured-square-1">
               <p className="landing-page_text">More Info</p>
             </div>
+            </a>
           </Col>
           
         </Row>

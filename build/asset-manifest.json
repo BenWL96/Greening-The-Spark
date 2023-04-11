@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c283c0e.css",
-    "main.js": "/static/js/main.9112e2a4.js",
+    "main.css": "/static/css/main.102a7594.css",
+    "main.js": "/static/js/main.a7651964.js",
     "static/js/787.53d651ea.chunk.js": "/static/js/787.53d651ea.chunk.js",
     "static/media/defaultPowerplant.glb": "/static/media/defaultPowerplant.d8a929745cc29e23f259.glb",
-    "static/media/economyspark_red.glb": "/static/media/economyspark_red.1a2d17524886d13fca67.glb",
-    "static/media/economyspark_red_2.glb": "/static/media/economyspark_red_2.1a2d17524886d13fca67.glb",
-    "static/media/economyspark_red_3.glb": "/static/media/economyspark_red_3.1a2d17524886d13fca67.glb",
-    "static/media/ecospark_red.glb": "/static/media/ecospark_red.1a2d17524886d13fca67.glb",
-    "static/media/ecospark_red_2.glb": "/static/media/ecospark_red_2.1a2d17524886d13fca67.glb",
-    "static/media/ecospark_red_3.glb": "/static/media/ecospark_red_3.1a2d17524886d13fca67.glb",
-    "static/media/efficiencyspark_red.glb": "/static/media/efficiencyspark_red.1a2d17524886d13fca67.glb",
-    "static/media/efficiencyspark_red_2.glb": "/static/media/efficiencyspark_red_2.1a2d17524886d13fca67.glb",
-    "static/media/efficiencyspark_red_3.glb": "/static/media/efficiencyspark_red_3.1a2d17524886d13fca67.glb",
+    "static/media/economysparkgreenNEW.glb": "/static/media/economysparkgreenNEW.cfcb8c350f40777c8f1d.glb",
+    "static/media/economysparkredNEW.glb": "/static/media/economysparkredNEW.c4d5603ba984002b8953.glb",
+    "static/media/economysparkblueNEW.glb": "/static/media/economysparkblueNEW.496871e4420aa9fe3920.glb",
+    "static/media/efficiencysparkredNEW.glb": "/static/media/efficiencysparkredNEW.603c16aea7382e870fac.glb",
+    "static/media/efficiencysparkgreenNEW.glb": "/static/media/efficiencysparkgreenNEW.f2a10154c2a78430355d.glb",
+    "static/media/efficiencysparkblueNEW.glb": "/static/media/efficiencysparkblueNEW.25ebedce562db08028ea.glb",
     "static/media/landingPageImage.png": "/static/media/landingPageImage.fd5b2d614f8cbefb79b0.png",
     "static/media/gts_logo.png": "/static/media/gts_logo.aea77dddc27285f3afc8.png",
+    "static/media/ecosparkgreenNEW.glb": "/static/media/ecosparkgreenNEW.0122c1c9fba7f934431b.glb",
+    "static/media/ecosparkredNEW.glb": "/static/media/ecosparkredNEW.d4f7d8e88eff354f7df2.glb",
+    "static/media/ecosparkblueNEW.glb": "/static/media/ecosparkblueNEW.c5fd9e16217a863d67a5.glb",
     "static/media/Black-X.png": "/static/media/Black-X.7fb94a48fdb2cce7362a.png",
     "static/media/questionmarkblue.png": "/static/media/questionmarkblue.7309116b03d6a664325f.png",
     "static/media/crinkled-paper.jpg": "/static/media/crinkled-paper.a449ede0e96ad40e9038.jpg",
     "static/media/defaultInfoIconSmooth.glb": "/static/media/defaultInfoIconSmooth.40cdaad00c91de5ef9c2.glb",
     "index.html": "/index.html",
-    "main.8c283c0e.css.map": "/static/css/main.8c283c0e.css.map",
-    "main.9112e2a4.js.map": "/static/js/main.9112e2a4.js.map",
+    "main.102a7594.css.map": "/static/css/main.102a7594.css.map",
+    "main.a7651964.js.map": "/static/js/main.a7651964.js.map",
     "787.53d651ea.chunk.js.map": "/static/js/787.53d651ea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c283c0e.css",
-    "static/js/main.9112e2a4.js"
+    "static/css/main.102a7594.css",
+    "static/js/main.a7651964.js"
   ]
 }

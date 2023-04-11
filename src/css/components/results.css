@@ -24,7 +24,7 @@
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: #282828 1px 0px 4px;
+    box-shadow: #282828 0px 1px 4px;
   }
   .graphs {
     width: 800px;
@@ -42,7 +42,7 @@
   .graph-wrapper_parent {
     width: 100%;
     overflow: scroll;
-    box-shadow: #282828 1px 0px 4px;
+    box-shadow: #282828 0px 1px 4px;
     
   }
 

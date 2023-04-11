@@ -14,15 +14,15 @@ import Col from "react-bootstrap/Col";
 
 import Stack from "react-bootstrap/Stack";
 
-import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economyspark_red.glb";
-import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economyspark_red_2.glb";
-import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economyspark_red_3.glb";
-import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecospark_red.glb";
-import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecospark_red_2.glb";
-import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecospark_red_3.glb";
-import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencyspark_red.glb";
-import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencyspark_red_2.glb";
-import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencyspark_red_3.glb";
+import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economysparkredNEW.glb";
+import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economysparkblueNEW.glb";
+import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economysparkgreenNEW.glb";
+import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecosparkredNEW.glb";
+import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecosparkblueNEW.glb";
+import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecosparkgreenNEW.glb";
+import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencysparkredNEW.glb";
+import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencysparkblueNEW.glb";
+import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencysparkgreenNEW.glb";
 
 import {
   PopoverDemand,

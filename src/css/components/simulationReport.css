@@ -277,7 +277,7 @@
 .simreport_wrapper {
   border-radius: 5px;
   background-position: top;
-  box-shadow: #282828 1px 0px 4px;
+  box-shadow: #282828 0px 1px 4px;
   background-repeat: repeat;
   background-image: url("../../images/crinkled-paper.jpg");
   background-size: 800px;
