@@ -73,7 +73,9 @@ def Simulation_Report_Field_Info(request):
 
     if zero_field_related_info_objects is True:
         print("Field related objects do not exist")
-        raise Http404("Field related objects do not exist")
+        content = {'error': "No field info exists for the simulation report, "
+                            "please sign into the admin panel to add some."}
+        return Response(content, status=status.HTTP_404_NOT_FOUND)
     else:
         serialize_field_related_info_object = \
             serializers.Serialize_Field_Related_Info(
@@ -111,7 +113,8 @@ def Simulation_Reports_CREATE(request):
             )
 
         except models.Simulation_Report.DoesNotExist:
-            raise Http404("Game ID Not Found")
+            content = {'error': "Simulation Report does not exist."}
+            return Response(content, status=status.HTTP_404_NOT_FOUND)
 
         return Response({"display_game_id": simulation_object.game_id})
 
@@ -131,7 +134,9 @@ def Information_Panel_List_GET(request):
             many=True
         )
     else:
-        raise Http404("No questions and / or answers exists")
+        content = {"error": "Currently, no questions and / or answers exist,"
+                            "please sign into the admin panel to add some."}
+        return Response(content, status=status.HTTP_404_NOT_FOUND)
 
     return Response(
         serializer.data

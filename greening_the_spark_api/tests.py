@@ -76,7 +76,7 @@ class TestSimulationReportEndpointsNonAuth(TestCase):
         input_dict = response.data
         response_dict = json.loads(json.dumps(input_dict))
         match_dict = {
-            'message': "the data passed to the endpoint is not valid."
+            'error': "the data passed to the endpoint is not valid."
         }
         self.assertEqual(response_dict, match_dict)
 
@@ -283,7 +283,7 @@ class TestTypeChecker(TestCase):
         game_id = 123
         check_game_id_return_true = utils.game_id_type_checker(game_id)
         self.assertEquals(check_game_id_return_true, True)
-"""
+
 
 
 class TestThreeDimensionalModelListEndpoint(TestCase):
@@ -429,7 +429,7 @@ class TestCreateEndpointFieldValidation(TestCase):
 
     def test_sim_repo_validation_when_fossil_nuclear_at_100(self):
 
-        """Post Simulation_Reports_CREATE nuclear_fossil at 100%"""
+        # Post Simulation_Reports_CREATE nuclear_fossil at 100%
 
         url = reverse('simulation-report-create')
 
@@ -444,7 +444,7 @@ class TestCreateEndpointFieldValidation(TestCase):
         self.assertNotEqual(response_dict.keys(), "error")
 
     def test_sim_repo_validation_when_fossil_nuclear_at_0(self):
-        """Post Simulation_Reports_CREATE nuclear_fossil at 0%"""
+        # Post Simulation_Reports_CREATE nuclear_fossil at 0%
 
         url = reverse('simulation-report-create')
 
@@ -474,7 +474,7 @@ class TestCreateEndpointFieldValidation(TestCase):
 
         self.assertEqual(response_dict, match_dict)
 
-    def test_sim_repo_validation_when_utilis_perc_not_between_0_and_100(self):
+    def test_sim_repo_validation_when_utils_perc_not_between_0_and_100(self):
 
         url = reverse('simulation-report-create')
 
@@ -487,5 +487,81 @@ class TestCreateEndpointFieldValidation(TestCase):
         response_dict = json.loads(json.dumps(input_dict))
         match_dict = {
             'error': "the data passed to the endpoint is not valid."}
+
+        self.assertEqual(response_dict, match_dict)
+    """
+
+
+class TestSimulationReportFieldInfo(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_field_related_info_no_data(self):
+
+        url = reverse('simulation-report-field-info')
+
+        response = self.client.get(
+            url,
+        )
+
+        input_dict = response.data
+        response_dict = json.loads(json.dumps(input_dict))
+        match_dict = {
+            'error': "No field info exists for the simulation report, "
+                     "please sign into the admin panel to add some."
+        }
+
+        self.assertEqual(response_dict, match_dict)
+
+    def test_field_related_info(self):
+
+        # An object needs to exists for this to be successful
+        models.Field_Related_Info.objects.create(
+            demand_info="Field 1",
+            wind_info="Field 1",
+            solar_info="Field 1",
+            fossil_fuels_info="Field 1",
+            nuclear_info="Field 1",
+            fossil_fuels_utilisation_percentage_info="Field 1",
+            nuclear_fuels_utilisation_percentage_info="Field 1",
+            surplus_info="Field 1",
+            shortfall_info="Field 1",
+            initial_stored_info="Field 1",
+            final_stored_info="Field 1",
+            storage_discrepancy_info="Field 1",
+            efficiency_score_info="Field 1",
+            total_CO2_tonnes_info="Field 1",
+            total_cost_million_pounds_info="Field 1",
+            average_CO2_tonnes_per_gwh_info="Field 1",
+            average_cost_million_pounds_per_gwh_info="Field 1"
+        )
+        url = reverse('simulation-report-field-info')
+
+        response = self.client.get(
+            url,
+        )
+
+        input_dict = response.data
+        response_dict = json.loads(json.dumps(input_dict))
+        match_dict ={
+            'demand_info': 'Field 1',
+            'wind_info': 'Field 1',
+            'solar_info': 'Field 1',
+            'fossil_fuels_info': 'Field 1',
+            'nuclear_info': 'Field 1',
+            'fossil_fuels_utilisation_percentage_info': 'Field 1',
+            'nuclear_fuels_utilisation_percentage_info': 'Field 1',
+            'surplus_info': 'Field 1',
+            'shortfall_info': 'Field 1',
+            'initial_stored_info': 'Field 1',
+            'final_stored_info': 'Field 1',
+            'storage_discrepancy_info': 'Field 1',
+            'efficiency_score_info': 'Field 1',
+            'total_CO2_tonnes_info': 'Field 1',
+            'total_cost_million_pounds_info': 'Field 1',
+            'average_CO2_tonnes_per_gwh_info': 'Field 1',
+            'average_cost_million_pounds_per_gwh_info': 'Field 1'
+        }
 
         self.assertEqual(response_dict, match_dict)
