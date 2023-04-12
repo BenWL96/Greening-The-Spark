@@ -152,7 +152,6 @@ MODELS = (
 	('efficiency spark blue', 'efficiency spark blue'),
 	('efficiency spark green', 'efficiency spark green'),
 	('info model', 'info model'),
-	('powerplant model', 'powerplant model'),
 )
 
 

@@ -514,7 +514,7 @@ class TestSimulationReportFieldInfo(TestCase):
 
         self.assertEqual(response_dict, match_dict)
 
-    def test_field_related_info(self):
+    def test_field_related_info_data(self):
 
         # An object needs to exists for this to be successful
         models.Field_Related_Info.objects.create(
