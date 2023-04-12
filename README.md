@@ -1,6 +1,6 @@
 # Greening The Spark Scoreboard APP.
 
-This scoreboard is a single page application which accompanies the Python based game Greening The Spark, enabling players to see their performance and various analytics related to the game that they just played. 
+This scoreboard is a single page application which accompanies the Python based game <a href="https://www.cornucopia.co.uk/gts/">Greening The Spark</a>, enabling players to see their performance and various analytics related to the game that they just played. 
 
 <img src="https://github.com/BenWL96/Greening-The-Spark/blob/master/src/images/green_spark.png" width="200" height="200">
 
@@ -13,9 +13,14 @@ Greening the Spark is a model of a system for electricity generation, distributi
 
 
 ## The App Was Made With
-- Django Rest Framework API
-- React.js UI
-- MYSQL
+<a href="https://www.django-rest-framework.org/">- Django Rest Framework API</a>
+
+<a href="https://react.dev/">- React.js</a>
+
+<a href="https://docs.pmnd.rs/react-three-fiber/getting-started/introduction">- React Three Fiber</a>
+
+<a href="https://www.blender.org/">- Blender</a>
+
 
 
 ## Info Panel
@@ -29,3 +34,9 @@ By utilising Chart.js
 
 ## Endpoints
 
+
+## 3d Models 
+The Simulation Report utilises React-Three-Fiber in order to display 
+models exported from blender in .glb or .gltf format.
+There are 3d models installed by default, but they can be replaced 
+through the django admin interface. 

@@ -151,25 +151,34 @@ def Simulation_Reports_CREATE(request):
 @api_view(['GET'])
 def Information_Panel_List_GET(request):
 
+    # We query the database for all the Q&A's.
+    # This data is fetched when the user enters the 'enter game id'
+    # section of the Simulation Report app.
+
     questions = models.Info_Panel_Questions_And_Answers.objects.all()
 
     if questions.count() > 0:
+
         serializer = serializers.Serialize_Information_Panel(
             questions,
             many=True
         )
+        return Response(
+            serializer.data
+        )
+
     else:
         content = {"error": "Currently, no questions and / or answers exist,"
                             "please sign into the admin panel to add some."}
         return Response(content, status=status.HTTP_404_NOT_FOUND)
 
-    return Response(
-        serializer.data
-    )
 
 
 @api_view(['GET'])
 def Three_Dimensional_Model_List_GET(request):
+
+    # We query the database for all the .glb files .
+    # This data is fetched when the user enters the 'enter game id'
 
     three_dimension_model_objects = models.Three_Dimensional_Model.objects.all()
 
