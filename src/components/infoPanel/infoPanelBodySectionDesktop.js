@@ -37,24 +37,19 @@ function InfoPanelBodySectionDesktop({infoPanelData}) {
                 <p className="desktop-body_column2_panel-title">{data.question}</p>
                 <p className="desktop-body_column2_panel-text">
                 {data.the_simple_answer}
-                {data.the_complex_answer}
-                {data.the_gts_answer}
+
                 </p>
                 <p className="desktop-body_column2_panel-title">
                 How does GTS approach this?
                 </p>
                 <p className="desktop-body_column2_panel-text">
-                {data.the_simple_answer}
-                {data.the_complex_answer}
                 {data.the_gts_answer}
                 </p>
                 <p className="desktop-body_column2_panel-title">
-                What's happening in detail{" "}
+                What's happening in detail
                 </p>
                 <p className="desktop-body_column2_panel-text">
-                {data.the_simple_answer}
                 {data.the_complex_answer}
-                {data.the_gts_answer}
                 </p>
             </Tab.Pane>
         ));

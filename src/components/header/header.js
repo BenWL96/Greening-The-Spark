@@ -8,7 +8,7 @@ import InfoPanelScrollingLogic from "./infoPanelScrollingLogic";
 import EnableDisableInfoPanel from "./enableDisableInfoPanel";
 import PropTypes from "prop-types";
 
-function Header({ infoPanelData, models, dataIsSetTrigger}) {
+function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPageActivated}) {
   const [infoPanelActivated, setInfoPanelActivated] = useState(false);
 
   const infoPanelScrollingLogicController = () => {
@@ -16,22 +16,31 @@ function Header({ infoPanelData, models, dataIsSetTrigger}) {
   };
 
   const changeStatePanelActivated = () => {
+
     if (infoPanelActivated == false) {
-      console.log("info panel has been activated");
-      console.log("so change state to true");
+
+      // Info panel has been activated
+      // Change State to true.
       setInfoPanelActivated(true);
+
     } else {
-      console.log("info panel has been activated");
-      console.log("so change state to false");
+
+      // Info panel has been deactivated 
+      // so change state to false
       setInfoPanelActivated(false);
+
     }
 
+    // ?
     infoPanelScrollingLogicController();
   };
 
   useEffect(() => {
-    console.log("EnableDisableInfoPanel triggered");
+
+    // On page load check localstorage
+    // Display 3d info icon if data exists.
     EnableDisableInfoPanel();
+
   }, [dataIsSetTrigger]);
 
   return (
@@ -42,19 +51,22 @@ function Header({ infoPanelData, models, dataIsSetTrigger}) {
           infoPanelData={infoPanelData}
         />
       ) : (
+
+        
         <section
           className="section section-header"
-          data-testid="section_header"
         >
+          {/* Place the code starting from section section-header in it's own component. */}
+
           <Stack direction="horizontal" gap={3}>
             <div>
               <img
                 className="section-header_logo"
                 href="https://www.cornucopia.co.uk/gts/"
                 target="_blank"
-                data-testid="section_header_logo"
                 src={Logo}
                 alt="gts-logo"
+                onClick={alterStateLandingPageActivated}
               />
             </div>
             <div className="ms-auto"></div>
@@ -86,6 +98,8 @@ Header.propTypes = {
     PropTypes.json,
     PropTypes.number
   ]),
+
+  alterStateLandingPageActivated: PropTypes.func.isRequired,
 
   dataIsSetTrigger: PropTypes.func.isRequired
 };

@@ -25,6 +25,7 @@ const App = () => {
         />
       ) : (
         <GtsApp 
+        alterStateLandingPageActivated={alterStateLandingPageActivated}
         />
       )}
     </>

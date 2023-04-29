@@ -108,6 +108,7 @@
   .table_1_sparkcol{
     height: 220px !important;
     margin-top: -30px !important;
+    margin-bottom: 30px;
   }
 }
 
@@ -207,7 +208,7 @@
 @media (max-width: 800px) {
   .simreport_title {
     margin-left: 10px;
-    padding-top: 0px;
+    padding-top: 10px;
   }
 
   .simreport_sub-title {
@@ -342,7 +343,7 @@
 
 @media(max-width: 600px){
   .simreport_title{
-    font-size: 25px;
+    font-size:35px;
   }
 }
 

@@ -5,55 +5,50 @@ import Footer from "../footer/footer";
 import Body from "../body/body";
 import infoPanelApiFetch from "../../helper/infoPanelApiFetch.js";
 import ThreeModelsApiFetch from "../../helper/threeModelsApiFetch.js";
+import {AssignInfoPanelDataToLocalStorage} from "./assignInfoPanelDataToLocalStorage";
 
-function GtsApp() {
-  //After functionality works, pass to popovers.
+function GtsApp({alterStateLandingPageActivated}) {
+  
+  // Info panel data fetched.
+  // Along with this 3d model icons fetched
+
   const [infoPanelData, setInfoPanelData] = useState({});
   const [models, setModels] = useState({});
 
-  const assignInfoPanelDataToLocalStorage = (data) => {
-    if (data) {
-      console.log("Data has been fetched successfully");
-      console.log("Set data to localstorage");
-
-      localStorage.setItem("info_tab_data", JSON.stringify(data));
-
-      console.log("Data has now been set to state");
+  const changeStateInfoPanelData = (data) => {
       setInfoPanelData(data);
-
-      //Pass the information to the header and body
-    } else {
-      console.log("Something went wrong with the fetch, please try again");
-    }
-  };
+  }
 
   const fetchInfoPanelDataORResetInfoPanelDataState = async () => {
-    const doesInfoPanelDataExistBoolean =
+
+
+    const localStorageInfoPanelDataIsNull =
       JSON.parse(localStorage.getItem("info_tab_data")) === null;
 
-    if (doesInfoPanelDataExistBoolean === true) {
+    if (localStorageInfoPanelDataIsNull === true) {
+
+      // Data doesn't exist so fetch it.
       const data = await infoPanelApiFetch();
 
+      // The endpoint X will return data or a error code.
       if (typeof data != 'number' ){
-        //Do not set the error code to local storage...
-
-        assignInfoPanelDataToLocalStorage(data);
+        
+        // The fetch was successful.
+        // Set data to local storage.
+        AssignInfoPanelDataToLocalStorage(data, changeStateInfoPanelData);
       }
 
+      // ! Error handling should be here
       const models = await ThreeModelsApiFetch();
-      
       setModels(models);
+
     } else {
-      //useEffect only runs on page load, so set state to local storage.
 
+      // Fetch the information stored.
       setInfoPanelData(JSON.parse(localStorage.getItem("info_tab_data")));
-
       const models = await ThreeModelsApiFetch();
       setModels(models);
 
-      console.log(
-        "info panel data in localstorage now passed to state hooksetInfoPanelData"
-      );
     }
   };
 
@@ -63,7 +58,7 @@ function GtsApp() {
 
   return (
     <>
-      <Header infoPanelData={infoPanelData} models={models} dataIsSetTrigger={assignInfoPanelDataToLocalStorage} />
+      <Header infoPanelData={infoPanelData} models={models} dataIsSetTrigger={AssignInfoPanelDataToLocalStorage} alterStateLandingPageActivated={alterStateLandingPageActivated}/>
 
       <Body models={models} />
 

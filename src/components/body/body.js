@@ -3,8 +3,6 @@ import Results from "../results/results";
 import "../../css/components/body.css";
 import SimReportDetailApiFetch from "../../helper/simReportDetailApiFetch.js";
 import SimReportFieldInfoApiFetch from "../../helper/simReportFieldInfoApiFetch.js";
-import LoadingPage from "../loadingPage/loadingPage.js";
-import PowerPlantModel from "../powerPlantModel/powerPlantModel";
 import Form from "../form/form";
 import BackButton from "../backButton/backButton.js";
 import PropTypes from "prop-types";
@@ -26,27 +24,26 @@ function Body({ models }) {
   const [message, setMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  {
-    /* Loading Screen */
-  }
-  const [displayLoadingScreen, setDisplayLoadingScreen] = useState(false);
-  const [loadingScreenValue, setLoadingScreenValue] = useState(0);
 
   useEffect(() => {
+
+
     //Three States:
     //Json exists
     //Json doesn't exist and loading
     //Json doesn't exist and not loading.
 
+    const fetchingSimReportData = !simReportData & (dataBeingFetchedAndPageLoading === true)
+    
     if (simReportData) {
-      console.log("Localstorage data found on page loading using useEffect");
+      console.log("Display the simulation report and back button.");
       setDataBeingFetchedAndPageLoading(false);
       setDataExists(true);
-    } else if (!simReportData & (dataBeingFetchedAndPageLoading === true)) {
-      console.log("Data non existent in useEffect");
+    } else if (fetchingSimReportData == true) {
+      console.log("Feetching the simulation report");
       setDataExists(false);
     } else {
-      console.log("Data Non existent and no fetch");
+      console.log("Display the form");
       setDataExists(false);
     }
   }, [dataBeingFetchedAndPageLoading]);
@@ -61,6 +58,7 @@ function Body({ models }) {
     const simReportResponse = await SimReportDetailApiFetch(inputGameId);
 
     if (simReportResponse !== 500 && simReportResponse !== 404) {
+
       //Remove the input box, display the loading logic.
       
       const fieldDataResponse = await SimReportFieldInfoApiFetch();
@@ -82,18 +80,25 @@ function Body({ models }) {
           inputGameId +
           " was successfully fetched."
       );
+
     } else if (simReportResponse === 500) {
-      setDataBeingFetchedAndPageLoading(false);
+
+      
       console.log("An error occurred");
-      setMessage("Fetch request failed: 500 error");
-    } else if (simReportResponse === 404) {
       setDataBeingFetchedAndPageLoading(false);
+      setMessage("Fetch request failed: 500 error");
+
+
+    } else if (simReportResponse === 404) {
+
       console.log("404 error.");
+      setDataBeingFetchedAndPageLoading(false);
       setMessage(
         "The game with ID: " +
           inputGameId +
           " could not be found. Please try again."
       );
+
     }
   };
 
@@ -111,10 +116,6 @@ function Body({ models }) {
     setSuccessMessage("");
   };
 
-  const loadingScreenState = (trueOrFalse, loadingValue) => {
-    setLoadingScreenValue(loadingValue);
-    setDisplayLoadingScreen(trueOrFalse);
-  };
 
   const changeInputGameID = ({ e }) => {
     setInputGameId(e.target.value);
@@ -122,14 +123,6 @@ function Body({ models }) {
 
   return (
     <>
-      {displayLoadingScreen ? (
-        <>
-          {" "}
-          <LoadingPage loadingScreenValue={loadingScreenValue} />{" "}
-        </>
-      ) : (
-        <> </>
-      )}
 
       {dataExists & !dataBeingFetchedAndPageLoading ? (
         //If simReportResponse data doesn't exists and the page is loading
@@ -139,44 +132,18 @@ function Body({ models }) {
           backButtonClickedUpdateState={backButtonClickedUpdateState}
         />
       ) : (
+
         //If simReportResponse data doesn't exists and the page isn't loading
         //Display the body of 76vh.
 
-        <section className="section-body">
-          <div className="section-body_wrapper">
-
-          {/* Model should either be json is status code 200 or int if 404 or 500 */}
-          
-          {/*
-          
-          { typeof models != 'number' ? (
-            <PowerPlantModel
-            loadingScreenState={loadingScreenState}
-            models={models}
-          />
-          ) : (
-
-            
-            <PowerPlantModel
-              loadingScreenState={loadingScreenState}
-              models={models}
-            />
-
-          )}
-            
-          */}
-
-
-            <Form
-              handleSubmit={handleSubmit}
-              message={message}
-              successMessage={successMessage}
-              dataBeingFetchedAndPageLoading={dataBeingFetchedAndPageLoading}
-              changeInputGameID={changeInputGameID}
-              inputGameId={inputGameId}
-            />
-          </div>
-        </section>
+        <Form
+          handleSubmit={handleSubmit}
+          message={message}
+          successMessage={successMessage}
+          dataBeingFetchedAndPageLoading={dataBeingFetchedAndPageLoading}
+          changeInputGameID={changeInputGameID}
+          inputGameId={inputGameId}
+        />
       )}
 
       {dataBeingFetchedAndPageLoading ? <></> : displayDataOrNothing()}

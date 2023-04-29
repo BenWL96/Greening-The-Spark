@@ -1,3 +1,16 @@
+.section-body {
+  background: transparent;
+  height: 76vh;
+}
+
+.section-body_wrapper {
+  width: 100%;
+  justify-content: center;
+  height: 76vh;
+}
+
+
+
 .form-wrapper {
   background-repeat: no-repeat;
   background-image: url("../../images/crinkled-paper.jpg");
@@ -53,6 +66,15 @@
   border-radius: 5px;
 }
 
+.form_input-box-phone {
+  outline: none;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  opacity: 85%;
+  box-shadow: #282828 0px 1px 4px;
+  border-radius: 5px;
+}
+
 .form_success-message {
   color: green;
   margin-left: 10px;
@@ -79,6 +101,12 @@
     font-size: 35px;
   }
 
+  .form_input-box-phone {
+    height: 80px;
+    width: 430px !important;
+    font-size: 35px;
+  }
+
   .form_success-message {
     font-size: 20px;
   }
@@ -103,6 +131,12 @@
     font-size: 35px;
   }
 
+  .form_input-box-phone {
+    height: 80px;
+    width: 430px !important;
+    font-size: 35px;
+  }
+
   .form_success-message {
     font-size: 20px;
   }
@@ -118,13 +152,19 @@
   }
 
   .form-wrapper_text-prompt {
-    font-size: 30px;
+    font-size: 45px;
   }
 
   .form_input-box {
     height: 60px;
     width: 280px !important;
     font-size: 20px;
+  }
+
+  .form_input-box-phone {
+    height: 80px;
+    width: 400px !important;
+    font-size: 35px;
   }
 
   .form_success-message {
@@ -142,13 +182,19 @@
   }
 
   .form-wrapper_text-prompt {
-    font-size: 30px;
+    font-size: 35px;
   }
 
   .form_input-box {
     height: 50px;
     width: 50vw !important;
     font-size: 20px;
+  }
+
+  .form_input-box-phone {
+    height: 80px;
+    width: 320px !important;
+    font-size: 35px;
   }
 
   .form_success-message {
@@ -174,6 +220,21 @@
   background-color: lightgray;
 }
 
+
+.form_button-phone {
+  font-weight: bold;
+  margin-bottom: 10px;
+  opacity: 85%;
+  box-shadow: #282828 0px 1px 4px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.form_button-phone:hover {
+  background-color: lightgray;
+}
+
+
 @media (min-width: 360px) {
   .form_button {
     width: 100px;
@@ -182,6 +243,16 @@
   .form_input-box {
     width: 200px;
   }
+
+  .form_button-phone {
+    width: 100px;
+  }
+
+  .form_input-box-phone {
+    width: 200px;
+  }  
+
+
 }
 
 @media (max-width: 360px) {
@@ -190,6 +261,14 @@
   }
 
   .form_input-box {
+    width: 125px;
+  }
+
+  .form_button-phone {
+    width: 100%;
+  }
+
+  .form_input-box-phone {
     width: 125px;
   }
 }
@@ -208,6 +287,13 @@
   .form_failure-message {
     font-size: 20px;
   }
+
+  .form_button-phone {
+    height: 80px;
+    width: 190px !important;
+    font-size: 35px;
+  }
+
 }
 
 @media (max-width: 800px) and (min-width: 700px) {
@@ -219,6 +305,12 @@
 
   .form_failure-message {
     font-size: 20px;
+  }
+
+  .form_button-phone {
+    height: 80px;
+    width: 190px !important;
+    font-size: 35px;
   }
 }
 
@@ -232,6 +324,12 @@
   .form_failure-message {
     font-size: 15px;
   }
+
+  .form_button-phone {
+    height: 80px;
+    width: 400px !important;
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -244,6 +342,12 @@
   .form_failure-message {
     font-size: 15px;
   }
+
+  .form_button-phone {
+    height: 80px;
+    width: 320px !important;
+    font-size: 35px;
+  }
 }
 
 .form_failure-message {
@@ -251,3 +355,26 @@
   padding-left: 10px;
   font-style: italic;
 }
+
+
+@media(min-width: 700px){
+  .form-desktop-wrapper{
+    display: block;
+  }
+
+  .form-phone-wrapper{
+    display: none;
+  }
+}
+
+
+@media(max-width: 700px){
+  .form-desktop-wrapper{
+    display: none;
+  }
+
+  .form-phone-wrapper{
+    display: block;
+  }
+}
+
