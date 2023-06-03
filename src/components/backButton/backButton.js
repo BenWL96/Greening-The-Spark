@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 
 function BackButton({ backButtonClickedUpdateState }) {
+
   return (
     <div data-testid="loading-wrapper">
       <button

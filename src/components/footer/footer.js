@@ -4,7 +4,7 @@ import "../../css/components/footer.css";
 
 function Footer() {
   return (
-    <section className="section-footer" data-testid="section_footer">
+    <section className="section-footer">
     </section>
   );
 }

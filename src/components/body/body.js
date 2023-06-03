@@ -28,21 +28,34 @@ function Body({ models }) {
   useEffect(() => {
 
 
-    //Three States:
-    //Json exists
-    //Json doesn't exist and loading
-    //Json doesn't exist and not loading.
+    // Three States:
+    // Json exists
+    // Json doesn't exist and loading
+    // Json doesn't exist and not loading.
 
+    // States control the text that is displayed to the user
+    // depending on response success or failure.
     const fetchingSimReportData = !simReportData & (dataBeingFetchedAndPageLoading === true)
     
     if (simReportData) {
+
+      // Simulation Report loaded so display the 'Back Button'
+      // which takes the user back to the form input.
       console.log("Display the simulation report and back button.");
       setDataBeingFetchedAndPageLoading(false);
       setDataExists(true);
     } else if (fetchingSimReportData == true) {
-      console.log("Feetching the simulation report");
+      
+      // Fetching the simulation report but
+      // Simulation Report Doesn't Exist
+      // display an error
+      console.log("Fetching the simulation report");
       setDataExists(false);
+
     } else {
+
+      // Not fetching simulation report
+      // And user hasn't entered information
       console.log("Display the form");
       setDataExists(false);
     }
@@ -51,13 +64,18 @@ function Body({ models }) {
 
 
   let handleSubmit = async (e) => {
+
     e.preventDefault();
+
+    // Hide the message under the form field.
     setMessage("");
+    // 
     setDataBeingFetchedAndPageLoading(true);
 
     const simReportResponse = await SimReportDetailApiFetch(inputGameId);
+    const simReportResponseNoErrors = simReportResponse !== 500 && simReportResponse !== 404;
 
-    if (simReportResponse !== 500 && simReportResponse !== 404) {
+    if (simReportResponseNoErrors == true) {
 
       //Remove the input box, display the loading logic.
       
@@ -103,17 +121,33 @@ function Body({ models }) {
   };
 
   const displayDataOrNothing = () => {
+
+    // Data is not being fetched and page is not loading
+    // This means that the Simulation report may or may not 
+    // exists in state simReportData.
+
     if (simReportData) {
+
+      // Simulation report exists so disply the Simulation report
+      // to the user.
+
       return <Results simReportData={simReportData} models={models} simRepoFieldData={simRepoFieldData}/>;
     } else {
+      
+      // Simulation report doesn't exist 
       return <></>;
     }
   };
 
   const backButtonClickedUpdateState = () => {
+    
+    // Updating these states will take the user back 
+    // to the 'Enter Game ID form'
+
     setSimReportData(null);
     setDataExists(null);
     setSuccessMessage("");
+
   };
 
 
@@ -125,16 +159,18 @@ function Body({ models }) {
     <>
 
       {dataExists & !dataBeingFetchedAndPageLoading ? (
-        //If simReportResponse data doesn't exists and the page is loading
-        //Display the back button.
+
+        // If simReportResponse data doesn't exists and the page is loading
+        // Display the back button.
 
         <BackButton
           backButtonClickedUpdateState={backButtonClickedUpdateState}
         />
+
       ) : (
 
-        //If simReportResponse data doesn't exists and the page isn't loading
-        //Display the body of 76vh.
+        // If simReportResponse data doesn't exists and the page isn't loading
+        // Display the 'Input Game ID' form.
 
         <Form
           handleSubmit={handleSubmit}
@@ -144,8 +180,10 @@ function Body({ models }) {
           changeInputGameID={changeInputGameID}
           inputGameId={inputGameId}
         />
+
       )}
 
+      
       {dataBeingFetchedAndPageLoading ? <></> : displayDataOrNothing()}
     </>
   );

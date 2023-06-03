@@ -15,9 +15,9 @@ import React, { useEffect,useState } from "react";
 import { Line } from "react-chartjs-2";
 
 import {
-  BatteriesHydroSupplyStatusDetails,
+  GridPerformanceDetails,
   Labels,
-  ManualControlOfRenewablesDetails,
+  ControlledSourcesDetails,
   WindSolarDemandDetails,
 } from "../graphs/graphDetails";
 import SimulationReport from "../simulationReport/simulationReport.js";
@@ -88,8 +88,8 @@ function Results({ simReportData, models, simRepoFieldData }) {
     },
   };
 
-  const ManualControlOfRenewablesLabels = {
-    //Manual control of renewables
+  const ManualControlOfNonRenewablesLabels = {
+    //Manual control of non renewables
 
     labels: Labels,
     datasets: [
@@ -298,8 +298,8 @@ function Results({ simReportData, models, simRepoFieldData }) {
         <div className="graph-wrapper_parent">
           <div className="graph-wrapper_child">
             <Line
-              options={ManualControlOfRenewablesDetails}
-              data={ManualControlOfRenewablesLabels}
+              options={ControlledSourcesDetails}
+              data={ManualControlOfNonRenewablesLabels}
               className="graphs"
             />
           </div>
@@ -309,7 +309,7 @@ function Results({ simReportData, models, simRepoFieldData }) {
         <div className="graph-wrapper_parent">
           <div className="graph-wrapper_child">
             <Line
-              options={BatteriesHydroSupplyStatusDetails}
+              options={GridPerformanceDetails}
               data={BatteriesHydroSupplyStatusLabels}
               className="graphs"
             />

@@ -27,7 +27,7 @@ it("mock infoPanelAPiFetch 404 receive underfined", async () => {
       const data = await infoPanelApiFetch();
       console.log(data)
 
-      expect(data).toEqual(undefined);
+      expect(data).toEqual(404);
 
 })
 

@@ -17,53 +17,53 @@ function Form({
     <div className="form-wrapper">
       <div className="form-wrapper-child">
         <div class="form-desktop-wrapper">
-        <p className="form-wrapper_text-prompt">Enter Your Game ID</p>
-        <form
-          onSubmit={handleSubmit}
-          data-testid="section_body_form"
-          className="form"
-        >
-          <Stack direction="horizontal" gap={0} className="form_stack">
-            <div>
-              <input
-                required
-                type="number"
-                value={inputGameId}
-                placeholder="Input Your Game ID here"
-                onChange={(e) => changeInputGameID({ e })}
-                min="0"
-                className="form_input-box"
-              />
-            </div>
-            <div>
-              <button
-                type="submit"
-                data-testid="section_body_form_submit_button"
-                className="form_button"
-              >
-                Submit
-              </button>
-            </div>
-            <div className="ms-auto"></div>
-          </Stack>
+          <p className="form-wrapper_text-prompt">Enter Your Game ID</p>
+          <form
+            onSubmit={handleSubmit}
+            data-testid="section_body_form"
+            className="form"
+          >
+            <Stack direction="horizontal" gap={0} className="form_stack">
+              <div>
+                <input
+                  required
+                  type="number"
+                  value={inputGameId}
+                  placeholder="Input Your Game ID here"
+                  onChange={(e) => changeInputGameID({ e })}
+                  min="0"
+                  className="form_input-box"
+                />
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  data-testid="section_body_form_submit_button"
+                  className="form_button"
+                >
+                  Submit
+                </button>
+              </div>
+              <div className="ms-auto"></div>
+            </Stack>
 
-          <div className="message">
-            {message ? (
-              <p
-                data-testid="section_body_form_message"
-                className="form_failure-message"
-              >
-                {message}
-              </p>
-            ) : null}
-          </div>
-          <div className="form_success-message">
-            {successMessage ? (
-              <p data-testid="section_body_form_wrapper_success_message">
-                {successMessage}
-              </p>
-            ) : null}
-          </div>
+            <div className="message">
+              {message ? (
+                <p
+                  data-testid="section_body_form_message"
+                  className="form_failure-message"
+                >
+                  {message}
+                </p>
+              ) : null}
+            </div>
+            <div className="form_success-message">
+              {successMessage ? (
+                <p data-testid="section_body_form_wrapper_success_message">
+                  {successMessage}
+                </p>
+              ) : null}
+            </div>
           </form>
         </div>
 

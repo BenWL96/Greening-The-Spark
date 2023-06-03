@@ -27,7 +27,7 @@ function EcoSpark({ model }) {
    
         <>
           <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
-            <ambientLight intensity={3}/>
+            <ambientLight intensity={1}/>
             <EcoSparkScene />
           </Canvas>
         </>

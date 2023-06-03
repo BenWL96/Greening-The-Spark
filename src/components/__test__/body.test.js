@@ -9,22 +9,22 @@ import "@testing-library/jest-dom/extend-expect";
 //Test form input and text upon page render
 it("Form input box renders on page open.", () => {
   render(<Body models={models}/>);
-  const text = screen.getByPlaceholderText("Input Your Game ID here");
-  expect(text).toBeInTheDocument();
+  const text = screen.getAllByPlaceholderText("Input Your Game ID here");
+  expect(text[0]).toBeInTheDocument();
 });
 
 //Test when user input in form fails
 it("test that form in DOM on page", () => {
   render(<Body models={models}/>);
-  const inputText = screen.getByPlaceholderText("Input Your Game ID here");
-  expect(inputText).toBeInTheDocument();
+  const inputText = screen.getAllByPlaceholderText("Input Your Game ID here");
+  expect(inputText[0]).toBeInTheDocument();
 });
 
 it("input game ID information into box and render input", () => {
   render(<Body models={models}/>);
-  const inputText = screen.getByPlaceholderText("Input Your Game ID here");
-  fireEvent.change(inputText, { target: { value: "1" } });
-  expect(inputText.value).toBe("1");
+  const inputText = screen.getAllByPlaceholderText("Input Your Game ID here");
+  fireEvent.change(inputText[0], { target: { value: "1" } });
+  expect(inputText[0].value).toBe("1");
 });
 
 /*
