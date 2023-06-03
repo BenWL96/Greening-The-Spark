@@ -73,16 +73,16 @@ class Simulation_Report(models.Model):
 
 	# All graph related data.
 
-	wind_power_data_values = models.CharField(max_length=150)
-	solar_power_data_values = models.CharField(max_length=150)
-	demand_power_data_values = models.CharField(max_length=150)
+	wind_power_data_values = models.CharField(max_length=300)
+	solar_power_data_values = models.CharField(max_length=300)
+	demand_power_data_values = models.CharField(max_length=300)
 
-	fossil_fuels_power_data_values = models.CharField(max_length=150)
-	nuclear_power_data_values = models.CharField(max_length=150)
+	fossil_fuels_power_data_values = models.CharField(max_length=300)
+	nuclear_power_data_values = models.CharField(max_length=300)
 
-	batteries_power_data_values = models.CharField(max_length=150)
-	hydro_power_data_values = models.CharField(max_length=150)
-	grid_surplus_data_values = models.CharField(max_length=150)
+	batteries_power_data_values = models.CharField(max_length=300)
+	hydro_power_data_values = models.CharField(max_length=300)
+	grid_surplus_data_values = models.CharField(max_length=300)
 
 	def __str__(self):
 		return "Simultion report " + str(self.game_id)
