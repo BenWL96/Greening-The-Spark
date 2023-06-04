@@ -58,15 +58,18 @@
 
   .table2_row-header {
     font-size: 25px;
+    line-height: 25px;
   }
 
   .table2_row-text {
     font-size: 25px;
+    line-height: 25px;
   }
 
   .table2_row-text2 {
     font-size: 25px;
     text-align: left;
+    line-height: 25px;
   }
 
   .table_1_sparkcol{
@@ -85,7 +88,7 @@
 
   .table2_stack2 {
     width: 5%;
-    text-align: center;
+    text-align: left;
   }
 
   .table2_stack3 {
@@ -94,15 +97,18 @@
 
   .table2_row-header {
     font-size: 18px;
+    line-height: 18px;
   }
 
   .table2_row-text {
     font-size: 18px;
+    line-height: 18px;
   }
 
   .table2_row-text2 {
     font-size: 18px;
-    text-align: center;
+    text-align: left;
+    line-height: 18px;
   }
 
   .table_1_sparkcol{
@@ -283,6 +289,7 @@
   background-image: url("../../images/crinkled-paper.jpg");
   background-size: 800px;
   background-position: fixed;
+  padding-bottom: 20px;
 }
 
 @media (min-width: 800px) {
@@ -383,4 +390,45 @@
   100% {
     transform: rotate(0deg);
   }
+}
+
+
+.sim-repo-table-2{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.sim-report-grid{
+  display: grid;
+  gap: 32px 32px;
+  grid-template-columns: 20px 1fr 1fr 1fr;
+  
+}
+
+.sim-repo-table-2{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media(min-width: 800px) {
+  .sim-repo-table-2{
+    width: 90%;
+  }
+
+  .sim-repo-table-2{
+    display: grid;
+    gap: 32px;
+  }
+}
+
+@media(max-width: 800px) {
+  .sim-repo-table-2{
+    width: 95%;
+  }
+
+  .sim-repo-table-2{
+    display: grid;
+    gap: 8px;
+  }
+  
 }

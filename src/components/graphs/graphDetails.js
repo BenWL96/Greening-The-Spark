@@ -1,4 +1,4 @@
-export const WindSolarDemandDetails = {
+export const WeatherConsumerDemandScenarioDetails = {
   responsive: true,
   interaction: {
     mode: "index",
@@ -8,7 +8,7 @@ export const WindSolarDemandDetails = {
   plugins: {
     title: {
       display: true,
-      text: "Scenario",
+      text: "Weather and Consumer Demand Scenario",
       font: {
         size: 25,
       },
@@ -74,7 +74,7 @@ export const ControlledSourcesDetails = {
       position: "left",
       title: {
         display: true,
-        text: "Energy (GWh)",
+        text: "Power (GW)",
         font: {
           size: 20,
           style: "italic",

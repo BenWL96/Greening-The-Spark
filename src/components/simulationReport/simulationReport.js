@@ -207,31 +207,36 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
             </Row>
           </div>
 
-   
+          
           <p className="table2_title">Results Summary</p>
 
-          <div className="table2">
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0  table2_column-title"></div>
-                <div className="table2_row-header table2_stack1 table2_column-title">
+          {/* test */}
+          <div className="sim-repo-table-2">
+            <div className="sim-report-grid">
+              <div className="sim-report-item">
+              
+              </div>
+              <div className="sim-report-item">
+                <p className="table2_row-header">
                   Metric
-                </div>
-
-                <div className="table2_row-header table2_row-text table2_stack2 ms-auto table2_column-title">
+                </p>
+              </div>
+              <div className="sim-report-item">
+                <p className="table2_row-header">
                   Score
-                </div>
-                {/*-MAKE THIS SIMILAR CSS TO STACK 3 BUT NOT THE SAME.*/}
-                <div className="table2_row-header table2_row-text2 table2_stack3 ms-auto table2_column-title">
+                </p>
+              </div>
+              <div className="sim-report-item">
+                <p className="table2_row-header">
                   Comments
-                </div>
-              </Stack>
-            </Row>
+                </p>
+              </div>
 
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+            
+            </div>
+            <div className="sim-report-grid">
+              <div className="sim-report-item">
+                <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverDemand(simRepoFieldData)}
@@ -241,21 +246,27 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">Demand</div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div className="sim-report-item">
+                <p className="table2_row-header">
+                  Demand
+                </p>
+              </div>
+              <div className="sim-report-item">
+                <p className="table2_row-text">
                   {demand}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
-                  Could Do Better...
-                </div>
-              </Stack>
-            </Row>
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+              </div>
+              <div className="sim-report-item">
+                <p className="table2_row-text2">
+                </p>
+              </div>
+
+            
+            </div>
+            <div class="sim-report-grid">
+              <div class="sim-report-item">
+                <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverWind(simRepoFieldData)}
@@ -265,19 +276,28 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">Wind</div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Wind
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {wind}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto"></div>
-              </Stack>
-            </Row>
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+              
+              </div>
+
+            
+            </div>
+            <div class="sim-report-grid">
+              <div class="sim-report-item">
+                 <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverSolar(simRepoFieldData)}
@@ -287,22 +307,30 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">Solar</div>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Solar
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                 <p className="table2_row-text">
+                 {solar}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+         
+              </div>
+            </div>
 
-                <div className="table2_row-text table2_stack2 ms-auto">
-                  {solar}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
-                  Could Do Better...
-                </div>
-              </Stack>
-            </Row>
 
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+
+            <div class="sim-report-grid">
+              
+            <div class="sim-report-item">
+                <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverFossilFuels(simRepoFieldData)}
@@ -312,24 +340,30 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">
-                  Fossil Fuels
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                Fossil Fuels
+                </p>
+                
+              </div>
+              
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {fossilFuels}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
-                  Could Do Better...
-                </div>
-              </Stack>
-            </Row>
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+              
+              </div>
 
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+            
+            </div>
+            <div class="sim-report-grid">
+              <div class="sim-report-item">
+                <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverNuclear(simRepoFieldData)}
@@ -339,22 +373,33 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">Nuclear</div>
+              </div>
 
-                <div className="table2_row-text table2_stack2 ms-auto">
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                Nuclear
+                </p>
+                
+              </div>
+              
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {nuclear}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
-                  Could Do Better...
-                </div>
-              </Stack>
-            </Row>
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+              
+              </div>
 
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+            
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverSurplus(simRepoFieldData)}
@@ -364,22 +409,34 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">Surplus</div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Surplus
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {surplus}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
                   {surplusComment}
-                </div>
-              </Stack>
-            </Row>
+                </p>
+                
+              </div>
 
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+            
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverShortfall(simRepoFieldData)}
@@ -389,22 +446,32 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">Shortfall</div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Shortfall
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {shortfall}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
                   {shortfallComment}
-                </div>
-              </Stack>
-            </Row>
+                </p>
+                
+              </div>
+            
+            </div>
 
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverInitialStored(simRepoFieldData)}
@@ -414,21 +481,31 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
                   Initial Stored
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {initialStored}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto"></div>
-              </Stack>
-            </Row>
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+                
+                </p>
+                
+              </div>
+            
+            </div>
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverFinalStored(simRepoFieldData)}
@@ -438,22 +515,32 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
                   Final Stored
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {finalStored}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto"></div>
-              </Stack>
-            </Row>
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+              
+                </p>
+                
+              </div>
+            
+            </div>
 
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverStorageDiscrepancy(simRepoFieldData)}
@@ -463,25 +550,32 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-
-                <div className="table2_row-header table2_stack1">
-                  Storage Difference
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Storage Difference
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {storageDiscrepancy}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
                   {storageDiscrepancyComment}
-                </div>
-              </Stack>
-            </Row>
-
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+                
+              </div>
+            
+            </div>
+            
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverEfficiencyScore(simRepoFieldData)}
@@ -491,24 +585,31 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">
-                  Efficiency Score
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Efficiency Score
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {efficiencyScore}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
                   {efficiencyScoreComment}
-                </div>
-              </Stack>
-            </Row>
-
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+                
+              </div>
+            
+            </div>
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverTotalCO2(simRepoFieldData)}
@@ -518,19 +619,31 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">Total CO2</div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Total CO2
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {totalCO2Tonnes}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto"></div>
-              </Stack>
-            </Row>
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+   
+                </p>
+                
+              </div>
+            
+            </div>
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverTotalCost(simRepoFieldData)}
@@ -540,21 +653,31 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">
-                  Total Cost
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Total Cost
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {totalCostMillionPounds}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto"></div>
-              </Stack>
-            </Row>
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+                </p>
+                
+              </div>
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+                <OverlayTrigger
                     trigger="hover"
                     placement="right"
                     overlay={PopoverAverageCost(simRepoFieldData)}
@@ -564,46 +687,73 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">
-                  Average Cost
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Average Cost
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {averageCostMillionPerGWH}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
                   {averageCostComment}
-                </div>
-              </Stack>
-            </Row>
-            <Row className="table2_row">
-              <Stack direction="horizontal">
-                <div className="table2_stack0">
-                  <OverlayTrigger
+                </p>
+                
+              </div>
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverAverageCO2(simRepoFieldData)}
+                    overlay={PopoverTotalCost(simRepoFieldData)}
                   >
                     <img
                       className="simrepo_questionmark"
                       src={QuestionMarkBlue}
                     />
                   </OverlayTrigger>
-                </div>
-                <div className="table2_row-header table2_stack1">
-                  Average CO2
-                </div>
-
-                <div className="table2_row-text table2_stack2 ms-auto">
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Average CO2
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
                   {averageCO2}
-                </div>
-                <div className="table2_row-text2 table2_stack3 ms-auto">
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
                   {averageCO2Comment}
-                </div>
-              </Stack>
-            </Row>
-          </div>
+                </p>
+                
+              </div>
+            
+            </div>
+
+
+            
+
+            
+            </div>
+            {/* endtest */}
+
+
+
+          
         </div>
       </section>
     </div>

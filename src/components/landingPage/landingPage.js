@@ -152,6 +152,9 @@ function LandingPage({ alterStateLandingPageActivated }) {
           </Col>
           
         </Row>
+
+
+
       </div>
     </div>
   );

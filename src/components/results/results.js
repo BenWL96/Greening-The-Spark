@@ -18,7 +18,7 @@ import {
   GridPerformanceDetails,
   Labels,
   ControlledSourcesDetails,
-  WindSolarDemandDetails,
+  WeatherConsumerDemandScenarioDetails,
 } from "../graphs/graphDetails";
 import SimulationReport from "../simulationReport/simulationReport.js";
 
@@ -198,7 +198,7 @@ function Results({ simReportData, models, simRepoFieldData }) {
     const arraysOfIntegersGraphData =
       SplitJsonDataStringReturnArrayIntegers(simReportData);
 
-    var windDataValuesArray = arraysOfIntegersGraphData.wind_power_data_values;
+    var windDataValuesArray = arraysOfIntegersGraphData.windDataValuesArray;
 
     var solarDataValuesArray = arraysOfIntegersGraphData.solarDataValuesArray;
 
@@ -287,7 +287,7 @@ function Results({ simReportData, models, simRepoFieldData }) {
         <div className="graph-wrapper_parent">
           <div className="graph-wrapper_child">
             <Line
-              options={WindSolarDemandDetails}
+              options={WeatherConsumerDemandScenarioDetails}
               data={WindSolarDemandLabels}
               className="graphs"
             />
