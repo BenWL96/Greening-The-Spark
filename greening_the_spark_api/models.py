@@ -49,7 +49,6 @@ class Simulation_Report(models.Model):
 	initial_stored = models.IntegerField()
 	final_stored = models.IntegerField()
 	storage_discrepancy = models.IntegerField()
-	efficiency_score = models.IntegerField()
 
 	total_CO2_tonnes = models.IntegerField()
 	total_cost_million_pounds = models.IntegerField()

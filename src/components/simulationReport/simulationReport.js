@@ -66,7 +66,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
     var initialStored = simReportData.initial_stored;
     var finalStored = simReportData.final_stored;
     var storageDiscrepancy = simReportData.storage_discrepancy;
-    var efficiencyScore = simReportData.efficiency_score;
+
 
     var totalCO2Tonnes = simReportData.total_CO2_tonnes;
     var totalCostMillionPounds = simReportData.total_cost_million_pounds;
@@ -79,7 +79,6 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
     var surplusComment = simReportData.surplus_comment;
     var shortfallComment = simReportData.shortfall_comment;
     var storageDiscrepancyComment = simReportData.storage_discrepancy_comment;
-    var efficiencyScoreComment = simReportData.efficiency_score_comment;
     var averageCO2Comment = simReportData.average_CO2_comment;
     var averageCostComment = simReportData.average_cost_comment;
 
@@ -234,6 +233,190 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
 
             
             </div>
+
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverSurplus(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Surplus
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {surplus}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+                  {surplusComment}
+                </p>
+                
+              </div>
+
+            
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverShortfall(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Shortfall
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {shortfall}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+                  {shortfallComment}
+                </p>
+                
+              </div>
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverStorageDiscrepancy(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Storage Difference
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {storageDiscrepancy}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+                  {storageDiscrepancyComment}
+                </p>
+                
+              </div>
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverAverageCO2(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Average CO2
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {averageCO2}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+                  {averageCO2Comment}
+                </p>
+                
+              </div>
+            
+            </div>
+
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+                <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverAverageCost(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                    Average Cost
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {averageCostMillionPerGWH}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+                  {averageCostComment}
+                </p>
+                
+              </div>
+            
+            </div>
+
+
+
+
+
             <div className="sim-report-grid">
               <div className="sim-report-item">
                 <OverlayTrigger
@@ -396,77 +579,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
             
             </div>
 
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-              <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverSurplus(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                  Surplus
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {surplus}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-                  {surplusComment}
-                </p>
-                
-              </div>
-
-            
-            
-            </div>
-
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-              <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverShortfall(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                    Shortfall
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {shortfall}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-                  {shortfallComment}
-                </p>
-                
-              </div>
-            
-            </div>
+           
 
             <div class="sim-report-grid">
               
@@ -537,75 +650,9 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
             
             </div>
 
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-              <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverStorageDiscrepancy(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                    Storage Difference
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {storageDiscrepancy}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-                  {storageDiscrepancyComment}
-                </p>
-                
-              </div>
             
-            </div>
             
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-              <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverEfficiencyScore(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                    Efficiency Score
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {efficiencyScore}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-                  {efficiencyScoreComment}
-                </p>
-                
-              </div>
-            
-            </div>
+
             <div class="sim-report-grid">
               
               <div class="sim-report-item">
@@ -674,75 +721,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
             
             </div>
 
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-                <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverAverageCost(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                    Average Cost
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {averageCostMillionPerGWH}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-                  {averageCostComment}
-                </p>
-                
-              </div>
             
-            </div>
-
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-              <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverTotalCost(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                    Average CO2
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {averageCO2}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-                  {averageCO2Comment}
-                </p>
-                
-              </div>
-            
-            </div>
 
 
             
