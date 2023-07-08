@@ -222,7 +222,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               </div>
               <div className="sim-report-item">
                 <p className="table2_row-header">
-                  Score
+                  Value
                 </p>
               </div>
               <div className="sim-report-item">

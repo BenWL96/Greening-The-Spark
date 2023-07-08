@@ -39,12 +39,14 @@ function InfoPanelBodySectionDesktop({infoPanelData}) {
                 {data.the_simple_answer}
 
                 </p>
+                <hr className="separator"/>
                 <p className="desktop-body_column2_panel-title">
                 How does GTS approach this?
                 </p>
                 <p className="desktop-body_column2_panel-text">
                 {data.the_gts_answer}
                 </p>
+                <hr className="separator"/>
                 <p className="desktop-body_column2_panel-title">
                 What's happening in detail
                 </p>

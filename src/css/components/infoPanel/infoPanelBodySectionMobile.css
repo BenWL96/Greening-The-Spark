@@ -75,7 +75,7 @@
     text-align: left;
     margin-left: 20px;
     font-weight: 200;
-    font-size: 22px;
+    font-size: 16px;
   }
   
   
@@ -83,9 +83,14 @@
   .accordion-body_title {
     text-align: left;
     margin-left: 20px;
-    font-size: 35px;
+    font-size: 32px;
     font-weight: 700;
     margin-top: 20px;
     width: 90%;
     color: black;
+  }
+
+
+  .separator{
+    width: 90%;
   }

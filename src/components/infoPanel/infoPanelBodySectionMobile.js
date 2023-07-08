@@ -17,13 +17,20 @@ function InfoPanelBodySectionMobile({infoPanelData}) {
                 </Accordion.Header>
                 <Accordion.Body className="accordion-body">
                 <p className="accordion-body_title">{data.question}?</p>
-        
+
+                
                 <p className="accordion-body_text">{data.the_simple_answer}</p>
-        
+            
+                <hr className="separator"/>
+
+
                 <p className="accordion-body_title">How does GTS approach this?</p>
         
                 <p className="accordion-body_text">{data.the_gts_answer}</p>
-        
+
+                <hr className="separator"/>
+
+                
                 <p className="accordion-body_title">What's Happening In Detail?</p>
         
                 <p className="accordion-body_text">{data.the_complex_answer}</p>
