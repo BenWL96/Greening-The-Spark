@@ -40,6 +40,8 @@ import {
   PopoverTotalCost,
   PopoverAverageCost,
   PopoverAverageCO2,
+  PopoverNuclearUtilisation,
+  PopoverFossilFuelsUtilisation
 } from "../popovers/popover.js";
 
 function SimulationReport({ simReportData, models, simRepoFieldData }) {
@@ -61,24 +63,27 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
     var fossilFuels = simReportData.fossil_fuels;
     var nuclear = simReportData.nuclear;
 
+    var fossilFuelsUtilisation = simReportData.fossil_fuels_utilisation;
+    var nuclearUtilisation = simReportData.nuclear_utilisation;
+
     var surplus = simReportData.surplus;
     var shortfall = simReportData.shortfall;
     var initialStored = simReportData.initial_stored;
     var finalStored = simReportData.final_stored;
-    var storageDiscrepancy = simReportData.storage_discrepancy;
+    var storageChange = simReportData.storage_change;
 
 
-    var totalCO2Tonnes = simReportData.total_CO2_tonnes;
-    var totalCostMillionPounds = simReportData.total_cost_million_pounds;
-    var averageCO2 = simReportData.average_CO2_tonnes_per_gwh;
-    var averageCostMillionPerGWH =
-      simReportData.average_cost_million_pounds_per_gwh;
+    var totalCO2 = simReportData.total_CO2;
+    var totalCost = simReportData.total_cost;
+    var averageCO2 = simReportData.average_CO2;
+    var averageCost =
+      simReportData.average_cost;
 
     //COMMENTS
 
     var surplusComment = simReportData.surplus_comment;
     var shortfallComment = simReportData.shortfall_comment;
-    var storageDiscrepancyComment = simReportData.storage_discrepancy_comment;
+    var storageChangeComment = simReportData.storage_change_comment;
     var averageCO2Comment = simReportData.average_CO2_comment;
     var averageCostComment = simReportData.average_cost_comment;
 
@@ -209,6 +214,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
           
           <p className="table2_title">Results Summary</p>
 
+
           {/* test */}
           <div className="sim-repo-table-2">
             <div className="sim-report-grid">
@@ -233,7 +239,80 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
 
             
             </div>
+            
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverFossilFuelsUtilisation(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Fossil Fuels Utilisation
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {fossilFuelsUtilisation}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+        
+                </p>
+                
+              </div>
 
+            
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverNuclearUtilisation(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Nuclear Utilisation
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {nuclearUtilisation}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+     
+                </p>
+                
+              </div>
+
+            
+            
+            </div>
 
             <div class="sim-report-grid">
               
@@ -329,13 +408,13 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               </div>
               <div class="sim-report-item">
                 <p className="table2_row-text">
-                  {storageDiscrepancy}
+                  {storageChange}
                 </p>
                 
               </div>
               <div class="sim-report-item">
                 <p className="table2_row-text2">
-                  {storageDiscrepancyComment}
+                  {storageChangeComment}
                 </p>
                 
               </div>
@@ -400,7 +479,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               </div>
               <div class="sim-report-item">
                 <p className="table2_row-text">
-                  {averageCostMillionPerGWH}
+                  {averageCost}
                 </p>
                 
               </div>
@@ -675,7 +754,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               </div>
               <div class="sim-report-item">
                 <p className="table2_row-text">
-                  {totalCO2Tonnes}
+                  {totalCO2}
                 </p>
                 
               </div>
@@ -709,7 +788,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               </div>
               <div class="sim-report-item">
                 <p className="table2_row-text">
-                  {totalCostMillionPounds}
+                  {totalCost}
                 </p>
                 
               </div>

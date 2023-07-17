@@ -5,6 +5,34 @@ import PropTypes from "prop-types";
 
 //This does not follow DRY
 
+export const PopoverNuclearUtilisation = (simRepoFieldData) => {
+  const infoNuclearUtilisation = simRepoFieldData.nuclear_utilisation;
+
+  return (
+    <Popover id="popover_demand-basic" className="popover">
+      <Popover.Header>
+        <p className="popover_header">Nuclear Utilisation</p>
+      </Popover.Header>
+      <Popover.Body>{infoNuclearUtilisation}</Popover.Body>
+    </Popover>
+  );
+};
+
+export const PopoverFossilFuelsUtilisation = (simRepoFieldData) => {
+  const infoFossilFuelsUtilisation = simRepoFieldData.fossil_fuels_utilisation;
+
+  return (
+    <Popover id="popover_wind-basic" className="popover">
+      <Popover.Header>
+        <p className="popover_header">Fossil Fuels Utilisation</p>
+      </Popover.Header>
+      <Popover.Body>{infoFossilFuelsUtilisation}</Popover.Body>
+    </Popover>
+  );
+};
+
+
+
 export const PopoverDemand = (simRepoFieldData) => {
   const infoDemand = simRepoFieldData.demand_info;
 
