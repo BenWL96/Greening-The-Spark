@@ -31,13 +31,13 @@ class Simulation_Report(models.Model):
 	fossil_fuels = models.IntegerField()
 	nuclear = models.IntegerField()
 
-	fossil_fuels_utilisation_percentage = models.IntegerField(
+	fossil_fuels_utilisation = models.IntegerField(
 		validators=[
 			MinValueValidator(0, message="value has to be above 0"),
 			MaxValueValidator(100, message="value has to be below 100.")
 		]
 	)
-	nuclear_fuels_utilisation_percentage = models.IntegerField(
+	nuclear_utilisation = models.IntegerField(
 		validators=[
 			MinValueValidator(0, message="value has to be above 0"),
 			MaxValueValidator(100, message="value has to be below 100.")
@@ -48,19 +48,18 @@ class Simulation_Report(models.Model):
 	shortfall = models.IntegerField()
 	initial_stored = models.IntegerField()
 	final_stored = models.IntegerField()
-	storage_discrepancy = models.IntegerField()
+	storage_change = models.IntegerField()
 
-	total_CO2_tonnes = models.IntegerField()
-	total_cost_million_pounds = models.IntegerField()
-	average_CO2_tonnes_per_gwh = models.IntegerField()
-	average_cost_million_pounds_per_gwh = models.IntegerField()
+	total_CO2 = models.IntegerField()
+	total_cost = models.IntegerField()
+	average_CO2 = models.IntegerField()
+	average_cost = models.IntegerField()
 
 	# Comments
 
 	surplus_comment = models.CharField(max_length=15)
 	shortfall_comment = models.CharField(max_length=15)
-	storage_discrepancy_comment = models.CharField(max_length=15)
-	efficiency_score_comment = models.CharField(max_length=15)
+	storage_change_comment = models.CharField(max_length=15)
 	average_CO2_comment = models.CharField(max_length=15)
 	average_cost_comment = models.CharField(max_length=15)
 
