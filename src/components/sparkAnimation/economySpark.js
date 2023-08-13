@@ -28,7 +28,7 @@ function EconomySpark({ model }) {
     
         <>
           <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
-            <ambientLight intensity={0.75}/>
+            <ambientLight intensity={1}/>
             <EconomySparkScene />
           </Canvas>
         </>

@@ -16,13 +16,13 @@ import Stack from "react-bootstrap/Stack";
 
 import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economysparkredmerge3.glb";
 import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economysparkbluemerge3.glb";
-import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economysparkgreenNEW.glb";
+import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economysparkgreenmerge3.glb";
 import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecosparkredmerge3.glb";
 import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecosparkbluemerge3.glb";
-import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecosparkgreenNEW.glb";
+import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecosparkgreenmerge3.glb";
 import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencysparkredmerge3.glb";
 import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencysparkbluemerge3.glb";
-import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencysparkgreenNEW.glb";
+import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencysparkgreenmerge3.glb";
 
 import {
   PopoverDemand,
