@@ -14,14 +14,14 @@ import Col from "react-bootstrap/Col";
 
 import Stack from "react-bootstrap/Stack";
 
-import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economysparkredNEW.glb";
-import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economysparkblueNEW.glb";
+import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economysparkredmerge3.glb";
+import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economysparkbluemerge3.glb";
 import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economysparkgreenNEW.glb";
-import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecosparkredNEW.glb";
-import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecosparkblueNEW.glb";
+import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecosparkredmerge3.glb";
+import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecosparkbluemerge3.glb";
 import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecosparkgreenNEW.glb";
-import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencysparkredNEW.glb";
-import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencysparkblueNEW.glb";
+import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencysparkredmerge3.glb";
+import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencysparkbluemerge3.glb";
 import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencysparkgreenNEW.glb";
 
 import {
@@ -239,80 +239,6 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
 
             
             </div>
-            
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-              <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverFossilFuelsUtilisation(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                  Fossil Fuels Utilisation
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {fossilFuelsUtilisation}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-        
-                </p>
-                
-              </div>
-
-            
-            
-            </div>
-
-            <div class="sim-report-grid">
-              
-              <div class="sim-report-item">
-              <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverNuclearUtilisation(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                  Nuclear Utilisation
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {nuclearUtilisation}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text2">
-     
-                </p>
-                
-              </div>
-
-            
-            
-            </div>
 
             <div class="sim-report-grid">
               
@@ -402,7 +328,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               </div>
               <div class="sim-report-item">
                 <p className="table2_row-header">
-                    Storage Difference
+                    Storage Change
                 </p>
                 
               </div>
@@ -420,6 +346,13 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               </div>
             
             </div>
+
+
+      
+
+            
+
+            
 
             <div class="sim-report-grid">
               
@@ -493,7 +426,37 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
             </div>
 
 
+            <div class="sim-report-grid">
+              <div class="sim-report-item">
+                <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverWind(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Wind
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {wind}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+              
+              </div>
 
+            
+            </div>
 
 
             <div className="sim-report-grid">
@@ -526,37 +489,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
 
             
             </div>
-            <div class="sim-report-grid">
-              <div class="sim-report-item">
-                <OverlayTrigger
-                    trigger="hover"
-                    placement="right"
-                    overlay={PopoverWind(simRepoFieldData)}
-                  >
-                    <img
-                      className="simrepo_questionmark"
-                      src={QuestionMarkBlue}
-                    />
-                  </OverlayTrigger>
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-header">
-                  Wind
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-                <p className="table2_row-text">
-                  {wind}
-                </p>
-                
-              </div>
-              <div class="sim-report-item">
-              
-              </div>
-
             
-            </div>
             <div class="sim-report-grid">
               <div class="sim-report-item">
                  <OverlayTrigger
@@ -800,7 +733,82 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
             
             </div>
 
+
+
+             
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverFossilFuelsUtilisation(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Fossil Fuels Utilisation
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {fossilFuelsUtilisation}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+        
+                </p>
+                
+              </div>
+
             
+            
+            </div>
+
+            <div class="sim-report-grid">
+              
+              <div class="sim-report-item">
+              <OverlayTrigger
+                    trigger="hover"
+                    placement="right"
+                    overlay={PopoverNuclearUtilisation(simRepoFieldData)}
+                  >
+                    <img
+                      className="simrepo_questionmark"
+                      src={QuestionMarkBlue}
+                    />
+                  </OverlayTrigger>
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-header">
+                  Nuclear Utilisation
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text">
+                  {nuclearUtilisation}
+                </p>
+                
+              </div>
+              <div class="sim-report-item">
+                <p className="table2_row-text2">
+     
+                </p>
+                
+              </div>
+
+            
+            
+            </div>
 
 
             
