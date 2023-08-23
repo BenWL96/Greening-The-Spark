@@ -2,7 +2,7 @@
   "name": "greening_the_spark_frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://greening-the-spark.herokuapp.com",
+  "proxy": "https://gts-app-5fdd78ff9026.herokuapp.com",
   "dependencies": {
     "@react-three/drei": "^9.46.7",
     "@testing-library/user-event": "^13.5.0",

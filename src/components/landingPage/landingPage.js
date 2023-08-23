@@ -144,7 +144,7 @@ function LandingPage({ alterStateLandingPageActivated }) {
             lg={12}
             className="landing-page_col"
           >
-            <a class="more-info-anchor" href="https://www.cornucopia.co.uk/gts/" target="_blank" rel="noopener noreferrer">
+            <a class="more-info-anchor" href="https://www.greening-the-spark.com/" target="_blank" rel="noopener noreferrer">
             <div className="coloured-square-1">
               <p className="landing-page_text">More Info</p>
             </div>

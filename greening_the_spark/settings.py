@@ -8,9 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY", default='')
 
-DEBUG = True
+#manifest json error if false ?
+DEBUG = False
 
-ALLOWED_HOSTS = ['greening-the-spark.herokuapp.com']
+ALLOWED_HOSTS = ['gts-app-5fdd78ff9026.herokuapp.com']
 
 # 'greening-the-spark.herokuapp.com'
 
@@ -78,19 +79,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 
+# required for production
+# DATABASES = {'default': dj_database_url.config(default=config("JAWSDB_URL", default=''))}
 
-DATABASES = {'default': dj_database_url.config(default=config("JAWSDB_URL", default=''))}
-
-"""DATABASES = {
+# required for development
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DATABASE_NAME_2", default=''),
-        'USER': config('DATABASE_USER_2', default=''),
-        'HOST': config('DATABASE_HOST_2', default=''),
+        'NAME': config("DATABASE_NAME_3", default=''),
+        'USER': config('DATABASE_USER_3', default=''),
+        'HOST': config('DATABASE_HOST_3', default=''),
         'PORT': config('PORT', default='3306', cast=float),
-        'PASSWORD': config('DATABASE_PASS_2', default=''),
+        'PASSWORD': config('DATABASE_PASS_3', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
-}"""
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -164,7 +166,7 @@ BATON = {
 }
 
 
-USE_S3 = config("USES3", default='False') == 'TRUE'
+USE_S3 = config("USES3", default='False') == 'FALSE'
 AWS_S3_ADDRESSING_STYLE = "virtual"
 
 if USE_S3 is True:
