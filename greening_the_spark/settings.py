@@ -51,7 +51,7 @@ B_IP = config("B_IP", default='')
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://greening-the-spark.herokuapp.com",
+    "https://gts-app-5fdd78ff9026.herokuapp.com",
     "http://127.0.0.1:8000",
     "http://127.0.0.1:3000",
     "https://localhost:3000",
