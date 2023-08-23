@@ -80,10 +80,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'greening_the_spark.wsgi.application'
 
 # required for production
-# DATABASES = {'default': dj_database_url.config(default=config("JAWSDB_URL", default=''))}
+DATABASES = {'default': dj_database_url.config(default=config("JAWSDB_URL", default=''))}
 
 # required for development
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config("DATABASE_NAME_3", default=''),
@@ -92,7 +92,7 @@ DATABASES = {
         'PORT': config('PORT', default='3306', cast=float),
         'PASSWORD': config('DATABASE_PASS_3', default=''),
         'OPTIONS': {'sql_mode': 'traditional'}}
-}
+}"""
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
