@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d1573ee.css",
-    "main.js": "/static/js/main.36708d4c.js",
+    "main.css": "/static/css/main.1afee1f4.css",
+    "main.js": "/static/js/main.1367a557.js",
     "static/js/787.53d651ea.chunk.js": "/static/js/787.53d651ea.chunk.js",
     "static/media/economysparkgreenmerge3.glb": "/static/media/economysparkgreenmerge3.aef89fe3d703e8863be6.glb",
     "static/media/economysparkredmerge3.glb": "/static/media/economysparkredmerge3.b77293412c599447337b.glb",
@@ -19,12 +19,12 @@
     "static/media/crinkled-paper.jpg": "/static/media/crinkled-paper.a449ede0e96ad40e9038.jpg",
     "static/media/defaultInfoIconSmooth.glb": "/static/media/defaultInfoIconSmooth.40cdaad00c91de5ef9c2.glb",
     "index.html": "/index.html",
-    "main.0d1573ee.css.map": "/static/css/main.0d1573ee.css.map",
-    "main.36708d4c.js.map": "/static/js/main.36708d4c.js.map",
+    "main.1afee1f4.css.map": "/static/css/main.1afee1f4.css.map",
+    "main.1367a557.js.map": "/static/js/main.1367a557.js.map",
     "787.53d651ea.chunk.js.map": "/static/js/787.53d651ea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d1573ee.css",
-    "static/js/main.36708d4c.js"
+    "static/css/main.1afee1f4.css",
+    "static/js/main.1367a557.js"
   ]
 }

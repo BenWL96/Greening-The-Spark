@@ -44,7 +44,7 @@ function InfoIconModel({ changeStatePanelActivated, models }) {
       {typeof models != 'number' ? (
         <>
           <Canvas camera={{ fov: 5, position: [0, 0, 100] }}>
-            <ambientLight intensity={5} />
+            <ambientLight intensity={10} />
             <InfoIconScene />
           </Canvas>
         </>
@@ -52,7 +52,7 @@ function InfoIconModel({ changeStatePanelActivated, models }) {
 
         <>
           <Canvas camera={{ fov: 5, position: [0, 0, 100] }}>
-            <ambientLight intensity={5} />
+            <ambientLight intensity={10} />
             <DefaultInfoIconScene />
           </Canvas>
         </>
