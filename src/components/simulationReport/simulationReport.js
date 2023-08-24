@@ -192,6 +192,12 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <Col className="table1_col1-text" xs={12} sm={3} md={3} lg={3}>
                 Sparks Earned:
               </Col>
+
+              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
+                <EfficiencySpark model={EfficiencySparkModel} />
+
+                {/*{efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }*/}
+              </Col>
               
               <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
                 <EconomySpark model={EconomySparkModel} />
@@ -203,11 +209,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
 
                 {/*{ecoFriendlinessSpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEcoFriendliness} /> : ecoFriendlinessSpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEcoFriendliness} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEcoFriendliness} /> }*/}
               </Col>
-              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
-                <EfficiencySpark model={EfficiencySparkModel} />
-
-                {/*{efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }*/}
-              </Col>
+              
             </Row>
           </div>
 
