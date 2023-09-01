@@ -117,19 +117,19 @@ class Field_Related_Info(models.Model):
 	fossil_fuels_info = models.CharField(max_length=200)
 	nuclear_info = models.CharField(max_length=200)
 
-	fossil_fuels_utilisation_percentage_info = models.CharField(max_length=200)
-	nuclear_fuels_utilisation_percentage_info = models.CharField(max_length=200)
+	fossil_fuels_utilisation_info = models.CharField(max_length=200)
+	nuclear_utilisation_info = models.CharField(max_length=200)
 
 	surplus_info = models.CharField(max_length=200)
 	shortfall_info = models.CharField(max_length=200)
 	initial_stored_info = models.CharField(max_length=200)
 	final_stored_info = models.CharField(max_length=200)
-	storage_discrepancy_info = models.CharField(max_length=200)
-	efficiency_score_info = models.CharField(max_length=200)
-	total_CO2_tonnes_info = models.CharField(max_length=200)
-	total_cost_million_pounds_info = models.CharField(max_length=200)
-	average_CO2_tonnes_per_gwh_info = models.CharField(max_length=200)
-	average_cost_million_pounds_per_gwh_info = models.CharField(max_length=200)
+	storage_change_info = models.CharField(max_length=200)
+
+	total_CO2_info = models.CharField(max_length=200)
+	total_cost_info = models.CharField(max_length=200)
+	average_CO2_info = models.CharField(max_length=200)
+	average_cost_info = models.CharField(max_length=200)
 
 	def __str__(self):
 		return "Field Related Info"
