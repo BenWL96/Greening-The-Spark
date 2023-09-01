@@ -11,7 +11,7 @@ SECRET_KEY = config("SECRET_KEY", default='')
 #manifest json error if false ?
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://gts-app-5fdd78ff9026.herokuapp.com']
+ALLOWED_HOSTS = ['gts-app-5fdd78ff9026.herokuapp.com']
 
 # 'greening-the-spark.herokuapp.com'
 # 'gts-app-5fdd78ff9026.herokuapp.com'
