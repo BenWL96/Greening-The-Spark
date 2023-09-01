@@ -29,17 +29,15 @@ function GtsApp({alterStateLandingPageActivated}) {
 
       // Data doesn't exist so fetch it.
       const data = await infoPanelApiFetch();
-
       // The endpoint X will return data or a error code.
       if (typeof data != 'number' ){
-        
         // The fetch was successful.
         // Set data to local storage.
         AssignInfoPanelDataToLocalStorage(data, changeStateInfoPanelData);
       }
 
       // ! Error handling should be here
-      const models = await ThreeModelsApiFetch();
+      const models = await ThreeModelsApiFetch();;
       setModels(models);
 
     } else {

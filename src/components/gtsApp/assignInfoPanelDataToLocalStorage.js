@@ -1,5 +1,8 @@
-export const AssignInfoPanelDataToLocalStorage = ({data, changeStateInfoPanelData}) => {
+export const AssignInfoPanelDataToLocalStorage = (data, changeStateInfoPanelData) => {
+    
+
     if (data) {
+      
       console.log("Data has been fetched successfully");
       console.log("Set data to localstorage");
 

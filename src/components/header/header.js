@@ -9,7 +9,7 @@ import EnableDisableInfoPanel from "./enableDisableInfoPanel";
 import PropTypes, { oneOfType } from "prop-types";
 
 function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPageActivated}) {
-  const [infoPanelActivated, setInfoPanelActivated] = useState(false);
+  const [infoPanelActivated, setInfoPanelActivated] = useState(null);
 
   const infoPanelScrollingLogicController = () => {
     InfoPanelScrollingLogic({ infoPanelActivated });
@@ -17,7 +17,9 @@ function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPage
 
   const changeStatePanelActivated = () => {
 
-      if (infoPanelActivated == false){
+      if (infoPanelActivated == null){
+        setInfoPanelActivated(false);
+      } else if (infoPanelActivated == false){
         //info panel model has been clicked
         setInfoPanelActivated(true);
        } else {
