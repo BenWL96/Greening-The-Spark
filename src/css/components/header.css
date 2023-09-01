@@ -15,3 +15,9 @@
   opacity: 50%;
   cursor: pointer;
 }
+
+.threeModel {
+  top: 0px !important;
+  right: 0px !important;
+  position: fixed !important;
+}

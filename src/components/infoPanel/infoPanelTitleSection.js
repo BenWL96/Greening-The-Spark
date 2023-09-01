@@ -10,6 +10,7 @@ function InfoPanelTitleSection({changeStatePanelActivated}) {
                 data-testid="info_wrapper_exit_img"
                 src={X}
                 onClick={changeStatePanelActivated}
+                
               />
            
       </div>

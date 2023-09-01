@@ -35,7 +35,6 @@ import {
   PopoverInitialStored,
   PopoverFinalStored,
   PopoverStorageDiscrepancy,
-  PopoverEfficiencyScore,
   PopoverTotalCO2,
   PopoverTotalCost,
   PopoverAverageCost,
@@ -43,6 +42,7 @@ import {
   PopoverNuclearUtilisation,
   PopoverFossilFuelsUtilisation
 } from "../popovers/popover.js";
+import { type } from "@testing-library/user-event/dist/type";
 
 function SimulationReport({ simReportData, models, simRepoFieldData }) {
   console.log("simReportData Data Is Being Passed To Simulation Report.");
@@ -158,6 +158,63 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
 
     }
 
+    var infoFossilFuelsUtilisation;
+    var infoNuclearUtilisation;
+    var infoDemand;
+    var infoWind;
+    var infoSolar;
+    var infoFossilFuels;
+    var infoNuclear;
+    var infoSurplus;
+    var infoShortfall;
+    var infoInitialStored;
+    var infoFinalStored;
+    var infoStorageDiscrepancy;
+    var infoTotalCO2Tonnes;
+    var infoTotalCostMillionPounds;
+    var infoAverageCostMillionPerGWH;
+    var infoAverageCO2;
+
+    
+    if (typeof simRepoFieldData != 'number'){
+      // Define all the field variables here.
+      infoNuclearUtilisation = simRepoFieldData.nuclear_utilisation;
+      infoFossilFuelsUtilisation = simRepoFieldData.fossil_fuels_utilisation;
+      infoDemand = simRepoFieldData.demand_info;
+      infoWind = simRepoFieldData.wind_info;
+      infoSolar = simRepoFieldData.solar_info;
+      infoFossilFuels = simRepoFieldData.fossil_fuels_info;
+      infoNuclear = simRepoFieldData.nuclear_info;
+      infoSurplus = simRepoFieldData.surplus_info;
+      infoShortfall = simRepoFieldData.shortfall_info;
+      infoInitialStored = simRepoFieldData.initial_stored_info;
+      infoFinalStored = simRepoFieldData.final_stored_info;
+      infoStorageDiscrepancy = simRepoFieldData.storage_change_info;
+      infoTotalCO2Tonnes = simRepoFieldData.total_CO2_info;
+      infoTotalCostMillionPounds = simRepoFieldData.total_cost_info;
+      infoAverageCostMillionPerGWH = simRepoFieldData.average_cost_info;
+      infoAverageCO2 = simRepoFieldData.average_CO2_info;
+
+    } else {
+
+      infoNuclearUtilisation = "coming soon";
+      infoFossilFuelsUtilisation = "coming soon";
+      infoDemand = "coming soon";
+      infoWind = "coming soon";
+      infoSolar = "coming soon";
+      infoFossilFuels = "coming soon";
+      infoNuclear = "coming soon";
+      infoSurplus = "coming soon";
+      infoShortfall = "coming soon";
+      infoInitialStored = "coming soon";
+      infoFinalStored = "coming soon";
+      infoStorageDiscrepancy = "coming soon";
+      infoTotalCO2Tonnes = "coming soon";
+      infoTotalCostMillionPounds = "coming soon";
+      infoAverageCostMillionPerGWH = "coming soon";
+      infoAverageCO2 = "coming soon";
+    }
+
     console.log("Json data has been assigned to variables.");
   } else {
     console.log("No real data was passed to the simulation report..");
@@ -248,7 +305,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverSurplus(simRepoFieldData)}
+                    overlay={PopoverSurplus(infoSurplus)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -285,7 +342,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverShortfall(simRepoFieldData)}
+                    overlay={PopoverShortfall(infoShortfall)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -320,7 +377,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverStorageDiscrepancy(simRepoFieldData)}
+                    overlay={PopoverStorageDiscrepancy(infoStorageDiscrepancy)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -362,7 +419,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverAverageCO2(simRepoFieldData)}
+                    overlay={PopoverAverageCO2(infoAverageCO2)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -398,7 +455,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                 <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverAverageCost(simRepoFieldData)}
+                    overlay={PopoverAverageCost(infoAverageCostMillionPerGWH)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -433,7 +490,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                 <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverWind(simRepoFieldData)}
+                    overlay={PopoverWind(infoWind)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -466,7 +523,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                 <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverDemand(simRepoFieldData)}
+                    overlay={PopoverDemand(infoDemand)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -497,7 +554,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                  <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverSolar(simRepoFieldData)}
+                    overlay={PopoverSolar(infoSolar)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -530,7 +587,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                 <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverFossilFuels(simRepoFieldData)}
+                    overlay={PopoverFossilFuels(infoFossilFuels)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -563,7 +620,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
                 <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverNuclear(simRepoFieldData)}
+                    overlay={PopoverNuclear(infoNuclear)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -601,7 +658,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverInitialStored(simRepoFieldData)}
+                    overlay={PopoverInitialStored(infoInitialStored)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -635,7 +692,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverFinalStored(simRepoFieldData)}
+                    overlay={PopoverFinalStored(infoFinalStored)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -673,7 +730,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverTotalCO2(simRepoFieldData)}
+                    overlay={PopoverTotalCO2(infoTotalCO2Tonnes)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -707,7 +764,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverTotalCost(simRepoFieldData)}
+                    overlay={PopoverTotalCost(infoTotalCostMillionPounds)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -744,7 +801,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverFossilFuelsUtilisation(simRepoFieldData)}
+                    overlay={PopoverFossilFuelsUtilisation(infoFossilFuelsUtilisation)}
                   >
                     <img
                       className="simrepo_questionmark"
@@ -781,7 +838,7 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
               <OverlayTrigger
                     trigger="hover"
                     placement="right"
-                    overlay={PopoverNuclearUtilisation(simRepoFieldData)}
+                    overlay={PopoverNuclearUtilisation(infoNuclearUtilisation)}
                   >
                     <img
                       className="simrepo_questionmark"

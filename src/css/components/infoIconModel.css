@@ -5,6 +5,7 @@
   background-color: transparent;
   border-radius: 25px;
   margin-right: 10px;
+  z-index: 100;
 }
 
 .info-logo:hover {

@@ -6,7 +6,7 @@ import Stack from "react-bootstrap/Stack";
 import InfoIconModel from "../infoIconModel/infoIconModel";
 import InfoPanelScrollingLogic from "./infoPanelScrollingLogic";
 import EnableDisableInfoPanel from "./enableDisableInfoPanel";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
 
 function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPageActivated}) {
   const [infoPanelActivated, setInfoPanelActivated] = useState(false);
@@ -17,19 +17,17 @@ function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPage
 
   const changeStatePanelActivated = () => {
 
-    if (infoPanelActivated == false) {
+      if (infoPanelActivated == false){
+        //info panel model has been clicked
+        setInfoPanelActivated(true);
+       } else {
 
-      // Info panel has been activated
-      // Change State to true.
-      setInfoPanelActivated(true);
-
-    } else {
-
-      // Info panel has been deactivated 
+      // X button in Info panel has been clicked
       // so change state to false
+      
       setInfoPanelActivated(false);
 
-    }
+      }
 
     // ?
     infoPanelScrollingLogicController();
@@ -45,15 +43,8 @@ function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPage
 
   return (
     <div>
-      {infoPanelActivated ? (
-        <InfoPanel
-          changeStatePanelActivated={changeStatePanelActivated}
-          infoPanelData={infoPanelData}
-        />
-      ) : (
 
-        
-        <section
+<section
           className="section section-header"
         >
           {/* Place the code starting from section section-header in it's own component. */}
@@ -72,13 +63,24 @@ function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPage
             <div className="ms-auto"></div>
             <div />
             <div>
+              
               <InfoIconModel
                 changeStatePanelActivated={changeStatePanelActivated}
                 models={models}
+
               />
             </div>
           </Stack>
         </section>
+      {infoPanelActivated ? (
+        <InfoPanel
+          changeStatePanelActivated={changeStatePanelActivated}
+          infoPanelData={infoPanelData}
+        />
+      ) : (
+
+        <></>
+       
       )}
     </div>
   );
@@ -98,6 +100,8 @@ Header.propTypes = {
     PropTypes.json,
     PropTypes.number
   ]),
+
+  infoPanelActivated: PropTypes.any,
 
   alterStateLandingPageActivated: PropTypes.func.isRequired,
 

@@ -71,3 +71,4 @@ InfoIconModel.propTypes = {
     PropTypes.number
   ]),
 };
+ 

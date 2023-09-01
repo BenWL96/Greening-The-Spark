@@ -28,7 +28,7 @@ function EfficiencySpark({ model }) {
 
         <>
           <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
-            <ambientLight intensity={1}/>
+            <ambientLight intensity={2}/>
             <EfficiencySparkScene />
           </Canvas>
         </>
