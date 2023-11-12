@@ -33,7 +33,12 @@ By utilising Chart.js
 
 
 ## Endpoints
-
+'api/v1/sim-reports/' -> lists all sim reports
+'api/v1/sim-reports/<int:game_id>/details/' -> sim report game details
+'api/v1/sim-reports/dump/' -> GTS game passes results here
+'api/v1/sim-reports/field-info/' -> helpful text to explain metrics
+'api/v1/information-panel/' -> helpful text to explain goals of game
+'api/v1/models/' -> gltf files including spark icons and info button icon.
 
 ## 3d Models 
 The Simulation Report utilises React-Three-Fiber in order to display 
