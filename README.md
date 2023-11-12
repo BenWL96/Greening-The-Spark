@@ -33,14 +33,19 @@ By utilising Chart.js
 
 
 ## Endpoints
-ENDPOINT  | DESCRIPTION
-------------- | -------------
-api/v1/sim-reports/  | lists all sim reports
-api/v1/sim-reports/<int:game_id>/details/  | sim report game details
-api/v1/sim-reports/dump/  |  GTS game passes results here
-api/v1/sim-reports/field-info/  |  helpful text to explain metrics
-api/v1/information-panel/  |  helpful text to explain goals of game
-api/v1/models/  |  gltf files including spark icons and info button icon.
+ENDPOINT  | DESCRIPTION  | HTTP VERBS
+------------- | ------------- | -------------
+api/v1/sim-reports/  | lists all sim reports | GET
+api/v1/sim-reports/<int:game_id>/details/  | sim report game details | GET
+api/v1/sim-reports/dump/  |  GTS game passes results here | POST
+api/v1/sim-reports/field-info/  |  helpful text to explain metrics | GET
+api/v1/information-panel/  |  helpful text to explain goals of game | GET
+api/v1/models/  |  .gltf files including spark icons and info button icon. | GET
+
+## Django Admin Panel for CMS
+- [x] Edit field info 
+- [x] Edit information panel info
+- [x] Edit .gltf blender models.
 
 
 
