@@ -83,7 +83,7 @@ class Simulation_Report(models.Model):
 	grid_surplus_data_values = models.CharField(max_length=300)
 
 	def __str__(self):
-		return "Simultion report " + str(self.game_id)
+		return "Simulation report " + str(self.game_id)
 
 	class Meta:
 		verbose_name = "Simulation Report"
