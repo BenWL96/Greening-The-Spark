@@ -44,16 +44,16 @@ class Simulation_Report(models.Model):
 		]
 	)
 
-	surplus = models.IntegerField()
-	shortfall = models.IntegerField()
+	surplus = models.DecimalField(max_digits=10, decimal_places=2)
+	shortfall = models.DecimalField(max_digits=10, decimal_places=2)
 	initial_stored = models.IntegerField()
 	final_stored = models.IntegerField()
 	storage_change = models.IntegerField()
 
 	total_CO2 = models.IntegerField()
-	total_cost = models.IntegerField()
+	total_cost = models.DecimalField(max_digits=10, decimal_places=2)
 	average_CO2 = models.IntegerField()
-	average_cost = models.IntegerField()
+	average_cost = models.DecimalField(max_digits=10, decimal_places=2)
 
 	# Comments
 
