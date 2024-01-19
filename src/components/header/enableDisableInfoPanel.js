@@ -1,9 +1,10 @@
 const EnableDisableInfoPanel = () => {
 
-  const infoPanelDataDoesNotExistBoolean =
-    JSON.parse(localStorage.getItem("info_tab_data")) === null;
-  
-    //Fetch id of wrapper from infoIconModel
+
+  setTimeout(() => {
+    const infoPanelDataDoesNotExistBoolean = JSON.parse(localStorage.getItem("info_tab_data")) === null;
+
+     //Fetch id of wrapper from infoIconModel
   const infoButton = document.getElementById("section_header_info_logo");
 
   if (infoPanelDataDoesNotExistBoolean === true) {
@@ -15,6 +16,15 @@ const EnableDisableInfoPanel = () => {
     infoButton.style.display = "block";
     infoButton.style.cursor = "allowed";
   }
+
+  
+}, 1000);
+
+
+ 
+
+
+   
 };
 
 export default EnableDisableInfoPanel;

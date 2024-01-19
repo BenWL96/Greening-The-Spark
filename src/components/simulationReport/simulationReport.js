@@ -14,15 +14,15 @@ import Col from "react-bootstrap/Col";
 
 import Stack from "react-bootstrap/Stack";
 
-import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economysparkredmerge3.glb";
-import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economysparkbluemerge3.glb";
-import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economysparkgreenmerge3.glb";
-import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecosparkredmerge3.glb";
-import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecosparkbluemerge3.glb";
-import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecosparkgreenmerge3.glb";
-import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencysparkredmerge3.glb";
-import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencysparkbluemerge3.glb";
-import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencysparkgreenmerge3.glb";
+import DefaultEconomySparkRed from "../sparkAnimation/defaultModels/economy/economysparkred.glb";
+import DefaultEconomySparkBlue from "../sparkAnimation/defaultModels/economy/economysparkblue.glb";
+import DefaultEconomySparkGreen from "../sparkAnimation/defaultModels/economy/economysparkgreen.glb";
+import DefaultEcoSparkRed from "../sparkAnimation/defaultModels/eco/ecosparkred.glb";
+import DefaultEcoSparkBlue from "../sparkAnimation/defaultModels/eco/ecosparkblue.glb";
+import DefaultEcoSparkGreen from "../sparkAnimation/defaultModels/eco/ecosparkgreen.glb";
+import DefaultEfficiencySparkRed from "../sparkAnimation/defaultModels/efficiency/efficiencysparkred.glb";
+import DefaultEfficiencySparkBlue from "../sparkAnimation/defaultModels/efficiency/efficiencysparkblue.glb";
+import DefaultEfficiencySparkGreen from "../sparkAnimation/defaultModels/efficiency/efficiencysparkgreen.glb";
 
 import {
   PopoverDemand,
@@ -246,29 +246,30 @@ function SimulationReport({ simReportData, models, simRepoFieldData }) {
             </Row>
      
             <Row className="table1_row2">
-              <Col className="table1_col1-text" xs={12} sm={3} md={3} lg={3}>
+              <Col className="table1_col1-text">
                 Sparks Earned:
               </Col>
-
-              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
+            </Row>
+            
+          </div>
+          <div class="table1-grid">
+              <div class="table1-grid-item">
                 <EfficiencySpark model={EfficiencySparkModel} />
-
+              </div>
+              <div class="table1-grid-item">
                 {/*{efficiencySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEfficiency} /> : efficiencySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEfficiency} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEfficiency} /> }*/}
-              </Col>
-              
-              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
+           
                 <EconomySpark model={EconomySparkModel} />
-
+              </div>
+              <div class="table1-grid-item">
                 {/*{economySpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEconomy} /> : economySpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEconomy} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEconomy} /> }*/}
-              </Col>
-              <Col className="table_1_sparkcol" xs={12} sm={3} md={3} lg={3}>
+              
                 <EcoSpark model={EcoSparkModel} />
 
                 {/*{ecoFriendlinessSpark === "green" ? <img className="section_simrepo_wrapper_spark" src={GreenSparkEcoFriendliness} /> : ecoFriendlinessSpark === "blue" ? <img className="section_simrepo_wrapper_spark" src={BlueSparkEcoFriendliness} /> : <img className="section_simrepo_wrapper_spark" src={RedSparkEcoFriendliness} /> }*/}
-              </Col>
-              
-            </Row>
-          </div>
+                </div>
+             
+            </div>
 
           
           <p className="table2_title">Results Summary</p>

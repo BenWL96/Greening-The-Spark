@@ -1,9 +1,9 @@
 import React from "react";
 import "../../css/components/landingPage.css";
 import LandingPageImage from "../../images/landingPageImage.png";
-import ArrowRight from "../../images/landingPage/arrowRightBlock.png";
+import ArrowRight from "../../images/landingPage/arrowRightBlock.jpg";
 import ArrowRightHorizontal from "../../images/landingPage/arrowRightBlockHorizontal.png";
-import ArrowRightHorizontalThin from "../../images/landingPage/arrowRightBlockHorizontalThin.png";
+import ArrowRightHorizontalThin from "../../images/landingPage/arrowRightBlockHorizontalThin.jpg";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Stack from "react-bootstrap/Stack";
@@ -135,23 +135,11 @@ function LandingPage({ alterStateLandingPageActivated }) {
         </Row>
 
 
-        <Row className="landing-page_row">
-          <Col
-            direction="horizontal"
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            className="landing-page_col"
-          >
-            <a class="more-info-anchor" href="https://www.greening-the-spark.com/" target="_blank" rel="noopener noreferrer">
-            <div className="coloured-square-1">
-              <p className="landing-page_text">More Info</p>
-            </div>
+            <a class="more-info-anchor landing-page_text" href="https://www.greening-the-spark.com/" target="_blank" rel="noopener noreferrer">
+            
+              i
+         
             </a>
-          </Col>
-          
-        </Row>
 
 
 

@@ -6,10 +6,10 @@ import Stack from "react-bootstrap/Stack";
 import InfoIconModel from "../infoIconModel/infoIconModel";
 import InfoPanelScrollingLogic from "./infoPanelScrollingLogic";
 import EnableDisableInfoPanel from "./enableDisableInfoPanel";
-import PropTypes, { oneOfType } from "prop-types";
+import PropTypes, { number, oneOfType } from "prop-types";
 
 function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPageActivated}) {
-  const [infoPanelActivated, setInfoPanelActivated] = useState(null);
+  const [infoPanelActivated, setInfoPanelActivated] = useState(false);
 
   const infoPanelScrollingLogicController = () => {
     InfoPanelScrollingLogic({ infoPanelActivated });
@@ -17,9 +17,11 @@ function Header({ infoPanelData, models, dataIsSetTrigger, alterStateLandingPage
 
   const changeStatePanelActivated = () => {
 
-      if (infoPanelActivated == null){
-        setInfoPanelActivated(false);
-      } else if (infoPanelActivated == false){
+      //If no data data exists then set null, else set false.
+
+      
+        
+      if (infoPanelActivated == false){
         //info panel model has been clicked
         setInfoPanelActivated(true);
        } else {

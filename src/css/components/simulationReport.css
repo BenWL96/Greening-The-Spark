@@ -73,7 +73,9 @@
   }
 
   .table_1_sparkcol{
-    height: 100% !important;
+    height: 220px !important;
+    margin-top: -30px !important;
+    margin-bottom: 30px;
   }
 }
 
@@ -202,9 +204,6 @@
     margin-left: 75px;
   }
 
-  .table1_row2 {
-    width: 700px;
-  }
 
   .section_simrepo_wrapper_table_2_wrapper_row {
     width: 700px;
@@ -431,4 +430,13 @@
     gap: 8px;
   }
   
+}
+
+.table1-grid{
+  grid-template-columns: 1fr;
+  padding-top: 80px;
+}
+
+.table1-grid-item{
+  width: 100%
 }

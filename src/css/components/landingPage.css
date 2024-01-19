@@ -19,17 +19,7 @@
   padding-top: 20px;
 }
 
-.coloured-square-1 {
-  background: rgb(95, 146, 163);
-  background: linear-gradient(
-    90deg,
-    rgba(95, 146, 163, 1) 0%,
-    rgba(96, 147, 164, 1) 42%,
-    rgba(81, 126, 140, 1) 82%
-  );
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 
 .landing-page_row {
@@ -87,6 +77,21 @@
 
 .more-info-anchor{
   text-decoration: none !important;
+  bottom: 16px;
+  right: 16px;
+  position: fixed;
+  height: 40px;
+  width: 40px !important;
+  background: rgb(95, 146, 163);
+  background: linear-gradient(
+    90deg,
+    rgba(95, 146, 163, 1) 0%,
+    rgba(96, 147, 164, 1) 42%,
+    rgba(81, 126, 140, 1) 82%);
+  border-radius: 5px;
+  border-color: #282828;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .scroll-icon:hover {
@@ -129,13 +134,11 @@
     display: none;
   }
 
-  .coloured-square-1{
-    width: 90% !important;
-    border-radius: 15px !important;
-  }
+
 
   .landing-page_text {
-    font-size: 50px;
+    font-size: 24px;
+    text-align: center;
   }
 }
 
@@ -150,13 +153,9 @@
     width: 95%;
   }
 
-  .coloured-square-1{
-    width: 90% !important;
-    border-radius: 8px !important;
-  }
 
   .landing-page_text {
-    font-size: 30px;
+    font-size: 24px;
   }
 
 }

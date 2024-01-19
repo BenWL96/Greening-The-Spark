@@ -26,8 +26,8 @@ function EcoSpark({ model }) {
     <div className="section_simrepo_wrapper_spark">
    
         <>
-          <Canvas camera={{ fov: 9, position: [0, 0, 140] }}>
-            <ambientLight intensity={2}/>
+          <Canvas camera={{ fov: 10, position: [0, 0, 175] }}>
+            <ambientLight intensity={2.5}/>
             <EcoSparkScene />
           </Canvas>
         </>
