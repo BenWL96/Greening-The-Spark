@@ -48,30 +48,13 @@ def Simulation_Reports_LIST(request):
 
 @api_view(['GET'])
 def Simulation_Reports_DETAIL(request, game_id):
-
-    # Data related to the game_id is fetched from database
-    # Response passes this data to the Simulation Report app.
-
     try:
-        simulation_report_object = get_object_or_404(
-            models.Simulation_Report,
-            game_id=game_id
-        )
-        print("game with ID found")
-
+        simulation_report_object = models.Simulation_Report.objects.get(game_id=game_id)
     except models.Simulation_Report.DoesNotExist:
-        content = {'msg': "A game with this ID does not exist."}
-        return Response(content, status=status.HTTP_404_NOT_FOUND)
-
-    # only one object will pass be serialised
-
-    serialize_simulation_report_object = \
-        serializers.SerializeSimulation_Report_Detail(
-            simulation_report_object,
-            many=False
-        )
-
-    return Response(serialize_simulation_report_object.data)
+        return Response({'error': 'Game with ID {} does not exist.'.format(game_id)},
+                        status=status.HTTP_404_NOT_FOUND)
+    serializer = serializers.SerializeSimulation_Report_Detail(simulation_report_object)
+    return Response(serializer.data)
 
 
 @api_view(['GET'])
@@ -107,45 +90,13 @@ def Simulation_Report_Field_Info(request):
 @api_view(['POST'])
 def Simulation_Reports_CREATE(request):
 
-    # game results are posted to this endpoint
-
-    # pass the payload from the post request into the serializer.
-    serializer = serializers.SerializeSimulation_Report_DATACHECK(
-            data=request.data, many=False
-        )
+    serializer = serializers.SerializeSimulation_Report_DATACHECK(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        print(
-            "Data was successfully serialised, now only "
-            "return ID of the game."
-        )
-
-        # The Simulation Report has been successfully created.
-        # We now query the database using information from the payload
-        # to retrieve the correct Simulation Report object.
-        # We then serialize this object and return it in the response to
-        # the GTS display panel where the user will see their Game ID.
-
-        date = serializer.data['date']
-        game_start_time = serializer.data['time']
-
-        try:
-            simulation_object = get_object_or_404(
-                models.Simulation_Report,
-                date=date,
-                time=game_start_time
-            )
-
-        except models.Simulation_Report.DoesNotExist:
-            content = {'error': "Simulation Report does not exist."}
-            return Response(content, status=status.HTTP_404_NOT_FOUND)
-
+        simulation_object = serializer.instance  # Retrieve created object
         return Response({"display_game_id": simulation_object.game_id})
-
-    # under what context would this happen?
-    return Response(
-        {'error': "the data passed to the endpoint is not valid."}
-    )
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
