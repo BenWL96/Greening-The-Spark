@@ -57,19 +57,19 @@
   }
 
   .table2_row-header {
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .table2_row-text {
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 24px;
+    line-height: 24px;
   }
 
   .table2_row-text2 {
-    font-size: 25px;
+    font-size: 24px;
     text-align: left;
-    line-height: 25px;
+    line-height: 24px;
   }
 
   .table_1_sparkcol{
@@ -98,19 +98,19 @@
   }
 
   .table2_row-header {
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .table2_row-text {
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .table2_row-text2 {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 24px;
     text-align: left;
-    line-height: 18px;
   }
 
   .table_1_sparkcol{
@@ -407,28 +407,26 @@
 .sim-repo-table-2{
   margin-left: auto;
   margin-right: auto;
+  display: grid
 }
 
 @media(min-width: 800px) {
   .sim-repo-table-2{
     width: 90%;
-  }
-
-  .sim-repo-table-2{
-    display: grid;
     gap: 32px;
   }
+
+
 }
 
 @media(max-width: 800px) {
   .sim-repo-table-2{
+    padding-top: 24px;
     width: 95%;
+    gap: 16px;
   }
 
-  .sim-repo-table-2{
-    display: grid;
-    gap: 8px;
-  }
+
   
 }
 
